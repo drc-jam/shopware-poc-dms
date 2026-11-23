@@ -34,6 +34,8 @@ export interface B2BRoutesFile {
   status: "pending-discovery" | "discovered";
   routes: B2BRouteEntry[];
   employeeLogin?: { method: Method; path: string } | null;
+  /** Every order-creating route the instance exposes (from discovery). The BFF must deny all of them. */
+  orderCreatingRoutes?: { method: string; path: string; operationId: string | null }[];
 }
 
 const ID = "[A-Za-z0-9_-]{1,64}";
@@ -44,7 +46,12 @@ const LOGGED_IN: readonly PersonaKey[] = ["retail", "dealer-admin", "dealer-juni
 
 /** Order creation and account-mutation routes: denied for every persona, and B2B config may not re-allow them. */
 export const HARD_DENY: readonly RegExp[] = [
-  /^checkout\/order(\/|$)/,
+  // Order creation anywhere in the path, e.g. B2B "pending-order/{id}/checkout/order" (found in Phase 0 discovery).
+  /(^|\/)checkout\/order(\/|$)/,
+  // Any "<something>/order" conversion route, e.g. B2B "quote/{id}/order". Plain "order" (list own orders) is not matched.
+  /\/order(\/|$)/,
+  // Order returns (write on placed orders).
+  /^order\/[^/]+\/return(\/|$)/,
   /^handle-payment(\/|$)/,
   /^order\/payment(\/|$)/,
   /^account\/login(\/|$)/, // only via /api/persona (server-held credentials)

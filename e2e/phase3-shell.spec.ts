@@ -1,7 +1,13 @@
 import { expect, test } from "@playwright/test";
+import { readFileSync } from "node:fs";
+import path from "node:path";
 import { bff, mockHits, passGate, switchPersona } from "./helpers";
 
 const usingMock = !process.env.E2E_BASE_URL;
+// Order-creating routes recorded by seed:discover from the instance (e.g. the B2B pending-order and quote conversions).
+const discoveredOrderRoutes: string[] = (
+  JSON.parse(readFileSync(path.resolve(import.meta.dirname, "../data/b2b-routes.json"), "utf8")).orderCreatingRoutes ?? []
+).map((r: { path: string }) => r.path.replace(/\{[^}]+\}/g, "0123456789abcdef0123456789abcdef"));
 
 test.describe("demo gate", () => {
   test("redirects to /gate and blocks the API without the cookie", async ({ page }) => {
@@ -86,14 +92,14 @@ test.describe("BFF allowlist (negative tests)", () => {
       ["dealer-junior", "Dealer Junior Buyer"],
     ] as const) {
       if (key !== "guest") await switchPersona(page, key, label);
-      for (const path of ["checkout/order", "handle-payment", "account/login"]) {
+      for (const path of ["checkout/order", "handle-payment", "account/login", ...discoveredOrderRoutes]) {
         const res = await bff(page, "POST", path, {});
         expect(res.status(), `${key} → ${path}`).toBe(403);
       }
     }
     if (usingMock) {
       const hits = await mockHits(request);
-      expect(hits.filter((h) => h.route.startsWith("checkout/order"))).toEqual([]);
+      expect(hits.filter((h) => /(^|\/)checkout\/order|\/order$/.test(h.route))).toEqual([]);
     }
   });
 
@@ -114,9 +120,9 @@ test.describe("BFF allowlist (negative tests)", () => {
     expect(res.headers()["cache-control"]).toContain("no-store");
   });
 
-  test("B2B routes stay denied until discovery fills data/b2b-routes.json", async ({ page }) => {
+  test("routes outside the allowlist stay denied, including unknown B2B-looking paths", async ({ page }) => {
     await switchPersona(page, "dealer-junior", "Dealer Junior Buyer");
-    // Not a real Shopware route; any B2B-looking path must be denied while status is pending-discovery.
+    // Not a real Shopware route; anything not in data/b2b-routes.json (or the core rules) must be denied.
     expect((await bff(page, "POST", "b2b/anything", {})).status()).toBe(403);
   });
 

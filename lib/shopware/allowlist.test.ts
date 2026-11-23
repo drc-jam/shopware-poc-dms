@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { buildB2BRules, CORE_RULES, decide, type B2BRoutesFile } from "./allowlist";
+import { buildB2BRules, CORE_RULES, decide, defaultRules, type B2BRoutesFile } from "./allowlist";
+import discoveredFile from "@/data/b2b-routes.json";
 import type { ActivePersona } from "@/lib/personas";
 
 const ALL: ActivePersona[] = ["guest", "retail", "dealer-admin", "dealer-junior"];
@@ -76,5 +77,62 @@ describe("BFF allowlist", () => {
 
   it("refuses malformed templates", () => {
     expect(() => buildB2BRules({ status: "discovered", routes: [{ id: "x", method: "POST", path: "a/../b", kind: "read" }] })).toThrow();
+  });
+});
+
+// Runs against the real route file that seed:discover generated from the instance (Phase 0).
+describe("BFF allowlist with discovered B2B routes", () => {
+  const file = discoveredFile as B2BRoutesFile;
+  const real = defaultRules();
+  const concrete = (template: string) => template.replace(/\{[^}]+\}/g, "0123456789abcdef0123456789abcdef");
+  const byKind = (kind: string) => file.routes.filter((r) => r.kind === kind);
+
+  it("lists order-creating routes and denies every one for every persona and method", () => {
+    if (file.status !== "discovered") return;
+    expect(file.orderCreatingRoutes?.length).toBeGreaterThan(0);
+    for (const r of file.orderCreatingRoutes ?? []) {
+      for (const p of ALL) {
+        for (const m of ["GET", "POST", "PATCH", "DELETE"]) {
+          const d = decide(m, concrete(r.path), p, real);
+          expect(d.allowed, `${p} ${m} ${r.path}`).toBe(false);
+          if (!d.allowed) expect(d.status).toBe(403);
+        }
+      }
+    }
+  });
+
+  it("allows the approval request only for dealer-junior", () => {
+    if (file.status !== "discovered") return;
+    expect(byKind("approval-request").length).toBeGreaterThan(0);
+    for (const r of byKind("approval-request"))
+      for (const p of ALL) expect(decide(r.method, concrete(r.path), p, real).allowed, `${p} ${r.path}`).toBe(p === "dealer-junior");
+  });
+
+  it("allows approve/decline only for dealer-admin", () => {
+    if (file.status !== "discovered") return;
+    expect(byKind("approval-decide").length).toBe(2);
+    for (const r of byKind("approval-decide"))
+      for (const p of ALL) expect(decide(r.method, concrete(r.path), p, real).allowed, `${p} ${r.path}`).toBe(p === "dealer-admin");
+  });
+
+  it("keeps B2B read/write routes away from guest and retail", () => {
+    if (file.status !== "discovered") return;
+    for (const r of [...byKind("read"), ...byKind("write")]) {
+      for (const p of ["guest", "retail"] as const) expect(decide(r.method, concrete(r.path), p, real).allowed, `${p} ${r.path}`).toBe(false);
+      expect(decide(r.method, concrete(r.path), "dealer-admin", real).allowed, r.path).toBe(true);
+    }
+  });
+
+  it("does not allow B2B mutations outside the demo scope (employees, roles, approval rules, quotes)", () => {
+    for (const [m, path] of [
+      ["POST", "employee/create"],
+      ["PATCH", "employee/0123456789abcdef0123456789abcdef"],
+      ["DELETE", "role/0123456789abcdef0123456789abcdef"],
+      ["POST", "approval-rule/create"],
+      ["POST", "quote/request"],
+      ["POST", "pending-order/0123456789abcdef0123456789abcdef/payment-method"],
+    ] as const) {
+      for (const p of ALL) expect(decide(m, path, p, real).allowed, `${p} ${m} ${path}`).toBe(false);
+    }
   });
 });
