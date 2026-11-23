@@ -21,7 +21,8 @@
     "seed:plan": "node seed/plan.mjs",
     "seed:apply": "node seed/apply.mjs",
     "seed:verify": "node seed/verify.mjs",
-    "fitment:build": "node seed/build-fitment.mjs"
+    "fitment:build": "node seed/build-fitment.mjs",
+    "types:generate": "node tools/generate-store-types.mjs"
   },
   "dependencies": {
     "next": "16.4.6",
@@ -38,8 +39,9 @@
     "@types/react-dom": "19.3.0",
     "ajv": "8.20.0",
     "ajv-formats": "3.0.1",
+    "openapi-typescript": "7.13.0",
     "tailwindcss": "4.3.5",
-    "typescript": "7.0.2",
+    "typescript": "5.9.3",
     "vitest": "5.1.1"
   }
 }

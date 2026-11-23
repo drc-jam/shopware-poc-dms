@@ -1,0 +1,8 @@
+{
+  "$comment": "Mock Store API customers for e2e (fictional). Passwords come from the PERSONA_* env vars at runtime.",
+  "customers": [
+    { "persona": "retail", "envPrefix": "PERSONA_RETAIL", "id": "c0000000000000000000000000000001", "firstName": "Jordan", "lastName": "Avery", "company": null, "group": "Retail" },
+    { "persona": "dealer-admin", "envPrefix": "PERSONA_DEALER_ADMIN", "id": "c0000000000000000000000000000002", "firstName": "Morgan", "lastName": "Ellis", "company": "Summit Trail Powersports (Demo Dealer)", "group": "Dealer" },
+    { "persona": "dealer-junior", "envPrefix": "PERSONA_DEALER_JUNIOR", "id": "c0000000000000000000000000000003", "firstName": "Casey", "lastName": "Brooks", "company": "Summit Trail Powersports (Demo Dealer)", "group": "Dealer" }
+  ]
+}
