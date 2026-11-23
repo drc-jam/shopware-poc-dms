@@ -44,6 +44,12 @@ const b2bFeatures = Object.fromEntries(
   Object.entries(B2B_FEATURES).map(([lic, bundle]) => [lic, { licensed: toggleGroups[lic] === true, bundleInstalled: bundles.includes(bundle) }]),
 );
 const required = ["EMPLOYEE_MANAGEMENT", "ORDER_APPROVAL", "QUICK_ORDER", "SHOPPING_LISTS"];
+// Feature codes used by customer_specific_features, and the global defaults (both read-only GETs).
+const b2bFeatureCatalog = await admin.get("/_admin/licensing/features/B2B").catch((e) => ({ error: e.message }));
+const b2bGlobalDefaults = await admin.get("/_admin/b2b-components/global-config").catch((e) => ({ error: e.message }));
+for (const f of Array.isArray(b2bFeatureCatalog) ? b2bFeatureCatalog : []) {
+  if (b2bFeatures[f.code]) Object.assign(b2bFeatures[f.code], { featureCode: f.code, enabled: f.enabled, globalDefault: b2bGlobalDefaults?.[f.code] ?? null, dependencies: f.dependencies });
+}
 check(
   "13.1",
   "Shopware 6.7.x Commercial with B2B Components (Employee Mgmt, Order Approval, Quick Order, Shopping Lists)",
@@ -248,6 +254,8 @@ const discovery = {
     storeApiOpenApiVersion: openapi.info?.version,
     commercial: bundles.includes("SwagCommercial"),
     b2bFeatures,
+    b2bFeatureCatalog,
+    b2bGlobalDefaults,
     bundles,
   },
   prerequisites: checks.sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true })),
@@ -279,6 +287,9 @@ if (writeRouteFile) {
   if (existsSync(routePath)) {
     const prev = JSON.parse(readFileSync(routePath, "utf8"));
     if (prev.employeeLogin) routeFile.employeeLogin = prev.employeeLogin;
+    // Avoid timestamp-only churn in git: keep the previous discoveredAt when nothing else changed.
+    const same = (a, b) => JSON.stringify({ ...a, discoveredAt: null }) === JSON.stringify({ ...b, discoveredAt: null });
+    if (same(prev, routeFile)) routeFile.discoveredAt = prev.discoveredAt;
   }
   writeFileSync(routePath, JSON.stringify(routeFile, null, 2) + "\n");
 }

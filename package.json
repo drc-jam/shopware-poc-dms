@@ -18,6 +18,7 @@
     "fixture:review": "node tools/fixture-review.mjs",
     "check:bundle-secrets": "node tools/check-bundle-secrets.mjs",
     "seed:discover": "node seed/discover.mjs",
+    "spike:phase0": "node seed/spikes/phase0.mjs",
     "seed:plan": "node seed/plan.mjs",
     "seed:apply": "node seed/apply.mjs",
     "seed:verify": "node seed/verify.mjs",

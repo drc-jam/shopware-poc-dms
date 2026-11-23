@@ -4,6 +4,7 @@ import { personaCredentials } from "@/lib/env";
 import type { PersonaKey } from "@/lib/personas";
 import { storeFetch, StoreApiError } from "./store-client";
 import type { B2BRoutesFile } from "./allowlist";
+import type { StoreContext } from "./types";
 
 const routes = b2bRoutesFile as B2BRoutesFile;
 
@@ -25,11 +26,14 @@ export async function loginPersona(key: PersonaKey): Promise<string> {
   return token;
 }
 
-/** True when the token still belongs to a logged-in customer. */
+/**
+ * True when the token still belongs to a logged-in customer or B2B employee.
+ * Uses GET context, not account/customer: Phase 0 showed account/customer returns 403 for B2B employees in 6.7.16.
+ */
 export async function tokenIsLoggedIn(token: string): Promise<boolean> {
   try {
-    const res = await storeFetch("account/customer", { method: "GET", contextToken: token });
-    return res.ok;
+    const res = await storeFetch<StoreContext>("context", { method: "GET", contextToken: token });
+    return res.ok && !!res.data?.customer?.id;
   } catch {
     return false;
   }

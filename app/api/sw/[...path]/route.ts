@@ -3,6 +3,7 @@ import { z } from "zod";
 import { COOKIE, parseActivePersona } from "@/lib/personas";
 import { decide } from "@/lib/shopware/allowlist";
 import { sanitizeErrors, storeFetch, StoreApiError } from "@/lib/shopware/store-client";
+import { redactSecrets } from "@/lib/shopware/redact";
 import { isSameOrigin, isSecure, jsonError, NO_STORE, readCappedBody } from "@/lib/http";
 import { cookieBase, CTX_COOKIE_MAX_AGE } from "@/lib/session";
 
@@ -57,7 +58,7 @@ async function handle(req: NextRequest, ctx: Ctx) {
       contextToken: token,
     });
     const res = upstream.ok
-      ? NextResponse.json(upstream.data ?? {}, { status: upstream.status === 204 ? 200 : upstream.status, headers: NO_STORE })
+      ? NextResponse.json(redactSecrets(upstream.data ?? {}), { status: upstream.status === 204 ? 200 : upstream.status, headers: NO_STORE })
       : NextResponse.json(sanitizeErrors(upstream.data, upstream.status), { status: upstream.status, headers: NO_STORE });
     // Persist a rotated/new context token for this persona (guest gets one on first cart write).
     if (upstream.contextToken && upstream.contextToken !== token && /^[A-Za-z0-9_-]{8,128}$/.test(upstream.contextToken)) {

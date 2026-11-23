@@ -81,9 +81,25 @@ createServer(async (req, res) => {
   if (key === "GET account/customer" || key === "POST account/customer") {
     const c = customers.find((x) => x.id === session.customerId);
     if (!c) return err(res, 403, "CHECKOUT__CUSTOMER_NOT_LOGGED_IN", "Customer is not logged in.", H);
+    // Shopware 6.7.16 (Phase 0 spike): account/customer is 403 for a logged-in B2B employee.
+    if (c.persona === "dealer-junior") return err(res, 403, "B2B__EMPLOYEE_MISSING_PERMISSIONS", "Employee is missing permissions.", H);
     return send(res, 200, { id: c.id, firstName: c.firstName, lastName: c.lastName, company: c.company, group: { name: c.group } }, H);
   }
-  if (key === "GET context") return send(res, 200, { token, customer: session.customerId ? { id: session.customerId } : null }, H);
+  if (key === "GET context") {
+    const c = customers.find((x) => x.id === session.customerId);
+    if (!c) return send(res, 200, { token, customer: null }, H);
+    // Like Shopware: an employee's context carries the company owner as customer and the employee
+    // (including its password hash, which the BFF must redact) under extensions.b2bEmployee.
+    if (c.persona === "dealer-junior") {
+      const owner = customers.find((x) => x.persona === "dealer-admin");
+      return send(res, 200, {
+        token,
+        customer: { id: owner.id, firstName: owner.firstName, lastName: owner.lastName, company: owner.company },
+        extensions: { b2bEmployee: { firstName: c.firstName, lastName: c.lastName, email: "junior@example.com", password: "$2y$12$mockhashmockhashmockhash" } },
+      }, H);
+    }
+    return send(res, 200, { token, customer: { id: c.id, firstName: c.firstName, lastName: c.lastName, company: c.company } }, H);
+  }
   if (req.method === "POST" && /^navigation\/[^/]+\/[^/]+$/.test(route)) return send(res, 200, navigation, H);
 
   // ---- catalog ----

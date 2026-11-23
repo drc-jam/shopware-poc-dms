@@ -104,6 +104,15 @@ export interface Cart {
   errors?: Record<string, { message?: string; messageKey?: string }> | unknown[];
 }
 
+/** Subset of GET /store-api/context used by the app. */
+export interface StoreContext {
+  customer?: Customer | null;
+  extensions?: {
+    /** Present when a B2B employee is logged in (Shopware 6.7.16; Phase 0 spike). */
+    b2bEmployee?: { firstName?: string; lastName?: string; email?: string } | null;
+  };
+}
+
 export interface Customer {
   id: string;
   firstName: string;

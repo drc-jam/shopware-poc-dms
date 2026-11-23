@@ -46,7 +46,13 @@ test.describe("persona switcher", () => {
     await expect(page.getByTestId("persona-who")).toContainText("Morgan Ellis · Summit Trail Race Shop");
 
     await switchPersona(page, "dealer-junior", "Dealer Junior Buyer");
-    await expect(page.getByTestId("persona-who")).toContainText("Casey Brooks");
+    await expect(page.getByTestId("persona-who")).toContainText("Casey Brooks · Summit Trail Race Shop");
+    // GET context carries the employee's password hash upstream (Phase 0 finding); the BFF must redact it.
+    const ctx = await bff(page, "GET", "context");
+    expect(ctx.status()).toBe(200);
+    const text = await ctx.text();
+    expect(text).not.toMatch(/\$2y\$|"password"/);
+    if (usingMock) expect(text).toContain("b2bEmployee");
 
     await switchPersona(page, "guest", "Guest");
     await expect(page.getByTestId("persona-error")).toHaveCount(0);

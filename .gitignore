@@ -1,7 +1,8 @@
 node_modules/
 .next/
 out/
-artifacts/
+artifacts/*
+!artifacts/spikes.md
 test-results/
 playwright-report/
 *.tsbuildinfo
