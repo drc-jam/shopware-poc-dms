@@ -1,0 +1,8 @@
+{
+  "$comment": "Derived from artifacts/discovery.json by seed:discover (Phase 0). Do NOT fill in from memory (CLAUDE.md). Until discovery runs, every B2B route is denied by the BFF.",
+  "status": "pending-discovery",
+  "discoveredAt": null,
+  "shopwareVersion": null,
+  "employeeLogin": null,
+  "routes": []
+}
