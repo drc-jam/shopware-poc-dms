@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://demo.invalid/schemas/vehicles.demo.schema.json",
+  "title": "Powersports demo vehicle list (data/fixture/vehicles.json)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["vehicles"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "vehicles": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "site-project.demo.schema.json#/$defs/vehicle" }
+    }
+  }
+}

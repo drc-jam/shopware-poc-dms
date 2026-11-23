@@ -1,0 +1,45 @@
+{
+  "name": "powersports-b2b-shopware-demo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "e2e": "playwright test --trace off",
+    "mock:store-api": "node e2e/mock-store-api.mjs",
+    "fixture:validate": "node seed/validate-fixture.mjs",
+    "fixture:review": "node tools/fixture-review.mjs",
+    "check:bundle-secrets": "node tools/check-bundle-secrets.mjs",
+    "seed:discover": "node seed/discover.mjs",
+    "seed:plan": "node seed/plan.mjs",
+    "seed:apply": "node seed/apply.mjs",
+    "seed:verify": "node seed/verify.mjs",
+    "fitment:build": "node seed/build-fitment.mjs"
+  },
+  "dependencies": {
+    "next": "16.4.6",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "server-only": "0.0.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@tailwindcss/postcss": "4.3.5",
+    "@types/node": "22.20.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "tailwindcss": "4.3.5",
+    "typescript": "7.0.2",
+    "vitest": "5.1.1"
+  }
+}

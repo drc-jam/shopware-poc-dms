@@ -1,0 +1,165 @@
+{
+  "$schema": "../../schemas/vehicles.demo.schema.json",
+  "vehicles": [
+    {
+      "key": "HON-TRX420-2015-2024",
+      "make": "Honda",
+      "model": "FourTrax Rancher 420",
+      "yearFrom": 2015,
+      "yearTo": 2024,
+      "type": "ATV",
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "key": "HON-FOR520-2020-2025",
+      "make": "Honda",
+      "model": "FourTrax Foreman 520",
+      "yearFrom": 2020,
+      "yearTo": 2025,
+      "type": "ATV",
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "key": "HON-PIO1000-2016-2025",
+      "make": "Honda",
+      "model": "Pioneer 1000",
+      "yearFrom": 2016,
+      "yearTo": 2025,
+      "type": "UTV",
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "key": "HON-TAL1000-2019-2025",
+      "make": "Honda",
+      "model": "Talon 1000X",
+      "yearFrom": 2019,
+      "yearTo": 2025,
+      "type": "UTV",
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "key": "YAM-GRIZ700-2016-2025",
+      "make": "Yamaha",
+      "model": "Grizzly 700",
+      "yearFrom": 2016,
+      "yearTo": 2025,
+      "type": "ATV",
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "key": "YAM-KOD450-2018-2025",
+      "make": "Yamaha",
+      "model": "Kodiak 450",
+      "yearFrom": 2018,
+      "yearTo": 2025,
+      "type": "ATV",
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "key": "YAM-WOLV1000-2021-2025",
+      "make": "Yamaha",
+      "model": "Wolverine RMAX2 1000",
+      "yearFrom": 2021,
+      "yearTo": 2025,
+      "type": "UTV",
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "key": "YAM-YXZ1000-2016-2025",
+      "make": "Yamaha",
+      "model": "YXZ1000R",
+      "yearFrom": 2016,
+      "yearTo": 2025,
+      "type": "UTV",
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "key": "POL-SPT570-2014-2025",
+      "make": "Polaris",
+      "model": "Sportsman 570",
+      "yearFrom": 2014,
+      "yearTo": 2025,
+      "type": "ATV",
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "key": "POL-RZRXP1K-2014-2023",
+      "make": "Polaris",
+      "model": "RZR XP 1000",
+      "yearFrom": 2014,
+      "yearTo": 2023,
+      "type": "UTV",
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "key": "POL-RGRXP1K-2018-2025",
+      "make": "Polaris",
+      "model": "Ranger XP 1000",
+      "yearFrom": 2018,
+      "yearTo": 2025,
+      "type": "UTV",
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "key": "CAN-OUT570-2016-2023",
+      "make": "Can-Am",
+      "model": "Outlander 570",
+      "yearFrom": 2016,
+      "yearTo": 2023,
+      "type": "ATV",
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "key": "CAN-MAVX3-2017-2025",
+      "make": "Can-Am",
+      "model": "Maverick X3",
+      "yearFrom": 2017,
+      "yearTo": 2025,
+      "type": "UTV",
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "key": "CAN-DEFHD10-2017-2025",
+      "make": "Can-Am",
+      "model": "Defender HD10",
+      "yearFrom": 2017,
+      "yearTo": 2025,
+      "type": "UTV",
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "key": "KAW-BF750-2012-2025",
+      "make": "Kawasaki",
+      "model": "Brute Force 750 4x4i",
+      "yearFrom": 2012,
+      "yearTo": 2025,
+      "type": "ATV",
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "key": "KAW-MULEFXT-2015-2025",
+      "make": "Kawasaki",
+      "model": "Mule PRO-FXT",
+      "yearFrom": 2015,
+      "yearTo": 2025,
+      "type": "UTV",
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    }
+  ]
+}

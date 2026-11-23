@@ -1,0 +1,3454 @@
+{
+  "$schema": "../../schemas/site-project.demo.schema.json",
+  "source": {
+    "type": "synthetic-fixture",
+    "name": "powersports-b2b-demo",
+    "description": "Curated synthetic powersports catalog. All brands, people and companies are fictional. Fitment is synthetic.",
+    "extractionSource": "synthetic-fixture",
+    "priceConfidence": "generated"
+  },
+  "currency": "USD",
+  "brands": [
+    {
+      "code": "STP",
+      "name": "Stoneridge Moto",
+      "fictional": true,
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "code": "RDG",
+      "name": "Ridgeback Drivetrain",
+      "fictional": true,
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "code": "IRV",
+      "name": "Ironvale Offroad",
+      "fictional": true,
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "code": "HLV",
+      "name": "Halvard Filtration",
+      "fictional": true,
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "code": "KST",
+      "name": "Kestrel Powersports",
+      "fictional": true,
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "code": "BCE",
+      "name": "Bluecairn Electric",
+      "fictional": true,
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "code": "TGT",
+      "name": "Tallgrass Tire Co.",
+      "fictional": true,
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "code": "CPL",
+      "name": "Cinderpeak Lubricants",
+      "fictional": true,
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    }
+  ],
+  "categories": [
+    {
+      "path": [
+        "ATV & UTV Parts"
+      ],
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "path": [
+        "ATV & UTV Parts",
+        "Brakes"
+      ],
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "path": [
+        "ATV & UTV Parts",
+        "Drive & Axles"
+      ],
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "path": [
+        "ATV & UTV Parts",
+        "Suspension"
+      ],
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "path": [
+        "Engine"
+      ],
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "path": [
+        "Engine",
+        "Filters"
+      ],
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "path": [
+        "Engine",
+        "Gaskets & Seals"
+      ],
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "path": [
+        "Engine",
+        "Ignition"
+      ],
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "path": [
+        "Electrical"
+      ],
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "path": [
+        "Electrical",
+        "Batteries"
+      ],
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "path": [
+        "Electrical",
+        "Lighting"
+      ],
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "path": [
+        "Tires & Wheels"
+      ],
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "path": [
+        "Shop Supplies"
+      ],
+      "description": "Universal shop consumables. No vehicle fitment required.",
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    }
+  ],
+  "series": [
+    {
+      "code": "A",
+      "label": "CV Axle Series A",
+      "description": "Ridgeback heavy-duty CV axles",
+      "tiers": [
+        {
+          "minQty": 10,
+          "discountPct": 5
+        },
+        {
+          "minQty": 25,
+          "discountPct": 9.75
+        }
+      ],
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "code": "B",
+      "label": "Oil Filter Series B",
+      "description": "Halvard oil filters",
+      "tiers": [
+        {
+          "minQty": 10,
+          "discountPct": 5
+        },
+        {
+          "minQty": 25,
+          "discountPct": 9.75
+        }
+      ],
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "code": "C",
+      "label": "Brake Pad Series C",
+      "description": "Stoneridge sintered brake pads across models",
+      "tiers": [
+        {
+          "minQty": 10,
+          "discountPct": 5
+        },
+        {
+          "minQty": 25,
+          "discountPct": 9.75
+        }
+      ],
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "code": "D",
+      "label": "Spark Plug Series D",
+      "description": "Kestrel iridium spark plugs",
+      "tiers": [
+        {
+          "minQty": 10,
+          "discountPct": 5
+        },
+        {
+          "minQty": 25,
+          "discountPct": 9.75
+        }
+      ],
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    }
+  ],
+  "personas": [
+    {
+      "key": "retail",
+      "label": "Retail Rider",
+      "customer": "retail-rider"
+    },
+    {
+      "key": "dealer-admin",
+      "label": "Dealer Admin",
+      "customer": "dealer-admin"
+    },
+    {
+      "key": "dealer-junior",
+      "label": "Dealer Junior Buyer",
+      "employee": "junior-buyer"
+    }
+  ],
+  "products": [
+    {
+      "productNumber": "STP-BP-C-0142",
+      "name": "Sintered Front Brake Pads – Honda/Yamaha",
+      "brand": "Stoneridge Moto",
+      "categoryPath": [
+        "ATV & UTV Parts",
+        "Brakes"
+      ],
+      "description": "Synthetic demo item. Brake component for listed models; confirm fitment before ordering.",
+      "price": {
+        "gross": 54.99
+      },
+      "stock": 261,
+      "media": [
+        "media/brakes.png"
+      ],
+      "demo": {
+        "series": "C",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 38.49
+          },
+          {
+            "minQty": 5,
+            "gross": 36.59
+          },
+          {
+            "minQty": 10,
+            "gross": 34.69
+          },
+          {
+            "minQty": 25,
+            "gross": 32.99
+          }
+        ],
+        "fitment": [
+          "HON-TRX420-2015-2024",
+          "YAM-GRIZ700-2016-2025",
+          "YAM-WOLV1000-2021-2025",
+          "YAM-YXZ1000-2016-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "STP-BP-C-0143",
+      "name": "Sintered Rear Brake Pads – Honda/Yamaha",
+      "brand": "Stoneridge Moto",
+      "categoryPath": [
+        "ATV & UTV Parts",
+        "Brakes"
+      ],
+      "description": "Synthetic demo item. Brake component for listed models; confirm fitment before ordering.",
+      "price": {
+        "gross": 49.99
+      },
+      "stock": 28,
+      "media": [
+        "media/brakes.png"
+      ],
+      "demo": {
+        "series": "C",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 34.99
+          },
+          {
+            "minQty": 5,
+            "gross": 33.19
+          },
+          {
+            "minQty": 10,
+            "gross": 31.59
+          },
+          {
+            "minQty": 25,
+            "gross": 29.99
+          }
+        ],
+        "fitment": [
+          "HON-TRX420-2015-2024",
+          "YAM-GRIZ700-2016-2025",
+          "YAM-KOD450-2018-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "STP-BP-C-0210",
+      "name": "Sintered Front Brake Pads – Polaris",
+      "brand": "Stoneridge Moto",
+      "categoryPath": [
+        "ATV & UTV Parts",
+        "Brakes"
+      ],
+      "description": "Synthetic demo item. Brake component for listed models; confirm fitment before ordering.",
+      "price": {
+        "gross": 57.99
+      },
+      "stock": 131,
+      "media": [
+        "media/brakes.png"
+      ],
+      "demo": {
+        "series": "C",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 40.59
+          },
+          {
+            "minQty": 5,
+            "gross": 38.59
+          },
+          {
+            "minQty": 10,
+            "gross": 36.59
+          },
+          {
+            "minQty": 25,
+            "gross": 34.79
+          }
+        ],
+        "fitment": [
+          "POL-SPT570-2014-2025",
+          "POL-RZRXP1K-2014-2023",
+          "POL-RGRXP1K-2018-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "STP-BP-C-0211",
+      "name": "Sintered Rear Brake Pads – Polaris",
+      "brand": "Stoneridge Moto",
+      "categoryPath": [
+        "ATV & UTV Parts",
+        "Brakes"
+      ],
+      "description": "Synthetic demo item. Brake component for listed models; confirm fitment before ordering.",
+      "price": {
+        "gross": 52.99
+      },
+      "stock": 179,
+      "media": [
+        "media/brakes.png"
+      ],
+      "demo": {
+        "series": "C",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 37.09
+          },
+          {
+            "minQty": 5,
+            "gross": 35.19
+          },
+          {
+            "minQty": 10,
+            "gross": 33.49
+          },
+          {
+            "minQty": 25,
+            "gross": 31.79
+          }
+        ],
+        "fitment": [
+          "POL-SPT570-2014-2025",
+          "POL-RZRXP1K-2014-2023",
+          "POL-RGRXP1K-2018-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "STP-BP-C-0315",
+      "name": "Sintered Front Brake Pads – Can-Am",
+      "brand": "Stoneridge Moto",
+      "categoryPath": [
+        "ATV & UTV Parts",
+        "Brakes"
+      ],
+      "description": "Synthetic demo item. Brake component for listed models; confirm fitment before ordering.",
+      "price": {
+        "gross": 59.99
+      },
+      "stock": 223,
+      "media": [
+        "media/brakes.png"
+      ],
+      "demo": {
+        "series": "C",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 41.99
+          },
+          {
+            "minQty": 5,
+            "gross": 39.89
+          },
+          {
+            "minQty": 10,
+            "gross": 37.89
+          },
+          {
+            "minQty": 25,
+            "gross": 35.99
+          }
+        ],
+        "fitment": [
+          "CAN-OUT570-2016-2023",
+          "CAN-MAVX3-2017-2025",
+          "CAN-DEFHD10-2017-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "STP-BP-C-0420",
+      "name": "Sintered Front Brake Pads – Kawasaki/Honda",
+      "brand": "Stoneridge Moto",
+      "categoryPath": [
+        "ATV & UTV Parts",
+        "Brakes"
+      ],
+      "description": "Synthetic demo item. Brake component for listed models; confirm fitment before ordering.",
+      "price": {
+        "gross": 55.99
+      },
+      "stock": 280,
+      "media": [
+        "media/brakes.png"
+      ],
+      "demo": {
+        "series": "C",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 39.19
+          },
+          {
+            "minQty": 5,
+            "gross": 37.19
+          },
+          {
+            "minQty": 10,
+            "gross": 35.39
+          },
+          {
+            "minQty": 25,
+            "gross": 33.59
+          }
+        ],
+        "fitment": [
+          "KAW-BF750-2012-2025",
+          "KAW-MULEFXT-2015-2025",
+          "HON-PIO1000-2016-2025",
+          "HON-TAL1000-2019-2025",
+          "HON-FOR520-2020-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "STP-BR-X-0501",
+      "name": "Front Brake Rotor, Sport UTV",
+      "brand": "Stoneridge Moto",
+      "categoryPath": [
+        "ATV & UTV Parts",
+        "Brakes"
+      ],
+      "description": "Synthetic demo item. Brake component for listed models; confirm fitment before ordering.",
+      "price": {
+        "gross": 89.99
+      },
+      "stock": 67,
+      "media": [
+        "media/brakes.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 62.99
+          }
+        ],
+        "fitment": [
+          "POL-RZRXP1K-2014-2023",
+          "CAN-MAVX3-2017-2025",
+          "HON-TAL1000-2019-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "STP-BR-X-0502",
+      "name": "Front Brake Rotor, Utility ATV",
+      "brand": "Stoneridge Moto",
+      "categoryPath": [
+        "ATV & UTV Parts",
+        "Brakes"
+      ],
+      "description": "Synthetic demo item. Brake component for listed models; confirm fitment before ordering.",
+      "price": {
+        "gross": 79.99
+      },
+      "stock": 300,
+      "media": [
+        "media/brakes.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 55.99
+          }
+        ],
+        "fitment": [
+          "YAM-GRIZ700-2016-2025",
+          "YAM-KOD450-2018-2025",
+          "POL-SPT570-2014-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "STP-CK-X-0610",
+      "name": "Brake Caliper Rebuild Kit",
+      "brand": "Stoneridge Moto",
+      "categoryPath": [
+        "ATV & UTV Parts",
+        "Brakes"
+      ],
+      "description": "Synthetic demo item. Brake component for listed models; confirm fitment before ordering.",
+      "price": {
+        "gross": 34.99
+      },
+      "stock": 252,
+      "media": [
+        "media/brakes.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 24.49
+          },
+          {
+            "minQty": 5,
+            "gross": 23.29
+          },
+          {
+            "minQty": 10,
+            "gross": 22.09
+          },
+          {
+            "minQty": 25,
+            "gross": 20.99
+          }
+        ],
+        "fitment": [
+          "KAW-BF750-2012-2025",
+          "CAN-OUT570-2016-2023",
+          "HON-TRX420-2015-2024",
+          "HON-FOR520-2020-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "STP-BL-X-0720",
+      "name": "Stainless Braided Brake Line Kit",
+      "brand": "Stoneridge Moto",
+      "categoryPath": [
+        "ATV & UTV Parts",
+        "Brakes"
+      ],
+      "description": "Synthetic demo item. Brake component for listed models; confirm fitment before ordering.",
+      "price": {
+        "gross": 129.99
+      },
+      "stock": 165,
+      "media": [
+        "media/brakes.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 90.99
+          }
+        ],
+        "fitment": [
+          "POL-RZRXP1K-2014-2023",
+          "YAM-YXZ1000-2016-2025",
+          "CAN-DEFHD10-2017-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "RDG-CV-A-1101",
+      "name": "Heavy-Duty Front CV Axle – Honda",
+      "brand": "Ridgeback Drivetrain",
+      "categoryPath": [
+        "ATV & UTV Parts",
+        "Drive & Axles"
+      ],
+      "description": "Synthetic demo item. Drivetrain component built for trail and work use.",
+      "price": {
+        "gross": 159.99
+      },
+      "stock": 102,
+      "media": [
+        "media/drive-axles.png"
+      ],
+      "demo": {
+        "series": "A",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 111.99
+          },
+          {
+            "minQty": 5,
+            "gross": 106.39
+          },
+          {
+            "minQty": 10,
+            "gross": 101.09
+          },
+          {
+            "minQty": 25,
+            "gross": 95.99
+          }
+        ],
+        "fitment": [
+          "HON-TRX420-2015-2024",
+          "HON-FOR520-2020-2025",
+          "HON-PIO1000-2016-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "RDG-CV-A-1102",
+      "name": "Heavy-Duty Front CV Axle – Polaris",
+      "brand": "Ridgeback Drivetrain",
+      "categoryPath": [
+        "ATV & UTV Parts",
+        "Drive & Axles"
+      ],
+      "description": "Synthetic demo item. Drivetrain component built for trail and work use.",
+      "price": {
+        "gross": 169.99
+      },
+      "stock": 150,
+      "media": [
+        "media/drive-axles.png"
+      ],
+      "demo": {
+        "series": "A",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 118.99
+          },
+          {
+            "minQty": 5,
+            "gross": 112.99
+          },
+          {
+            "minQty": 10,
+            "gross": 107.39
+          },
+          {
+            "minQty": 25,
+            "gross": 101.99
+          }
+        ],
+        "fitment": [
+          "POL-SPT570-2014-2025",
+          "POL-RGRXP1K-2018-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "RDG-CV-A-1103",
+      "name": "Heavy-Duty Rear CV Axle – Polaris RZR",
+      "brand": "Ridgeback Drivetrain",
+      "categoryPath": [
+        "ATV & UTV Parts",
+        "Drive & Axles"
+      ],
+      "description": "Synthetic demo item. Drivetrain component built for trail and work use.",
+      "price": {
+        "gross": 189.99
+      },
+      "stock": 198,
+      "media": [
+        "media/drive-axles.png"
+      ],
+      "demo": {
+        "series": "A",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 132.99
+          },
+          {
+            "minQty": 5,
+            "gross": 126.29
+          },
+          {
+            "minQty": 10,
+            "gross": 119.99
+          },
+          {
+            "minQty": 25,
+            "gross": 113.99
+          }
+        ],
+        "fitment": [
+          "POL-RZRXP1K-2014-2023"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "RDG-CV-A-1104",
+      "name": "Heavy-Duty Front CV Axle – Can-Am/Kawasaki",
+      "brand": "Ridgeback Drivetrain",
+      "categoryPath": [
+        "ATV & UTV Parts",
+        "Drive & Axles"
+      ],
+      "description": "Synthetic demo item. Drivetrain component built for trail and work use.",
+      "price": {
+        "gross": 174.99
+      },
+      "stock": 246,
+      "media": [
+        "media/drive-axles.png"
+      ],
+      "demo": {
+        "series": "A",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 122.49
+          },
+          {
+            "minQty": 5,
+            "gross": 116.39
+          },
+          {
+            "minQty": 10,
+            "gross": 110.49
+          },
+          {
+            "minQty": 25,
+            "gross": 104.99
+          }
+        ],
+        "fitment": [
+          "CAN-OUT570-2016-2023",
+          "CAN-DEFHD10-2017-2025",
+          "KAW-BF750-2012-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "RDG-WB-X-1201",
+      "name": "Front Wheel Bearing & Seal Kit",
+      "brand": "Ridgeback Drivetrain",
+      "categoryPath": [
+        "ATV & UTV Parts",
+        "Drive & Axles"
+      ],
+      "description": "Synthetic demo item. Drivetrain component built for trail and work use.",
+      "price": {
+        "gross": 39.99
+      },
+      "stock": 172,
+      "media": [
+        "media/drive-axles.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 27.99
+          },
+          {
+            "minQty": 5,
+            "gross": 26.59
+          },
+          {
+            "minQty": 10,
+            "gross": 25.29
+          },
+          {
+            "minQty": 25,
+            "gross": 23.99
+          }
+        ],
+        "fitment": [
+          "HON-TRX420-2015-2024",
+          "YAM-GRIZ700-2016-2025",
+          "YAM-KOD450-2018-2025",
+          "POL-SPT570-2014-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "RDG-WB-X-1202",
+      "name": "Rear Wheel Bearing & Seal Kit",
+      "brand": "Ridgeback Drivetrain",
+      "categoryPath": [
+        "ATV & UTV Parts",
+        "Drive & Axles"
+      ],
+      "description": "Synthetic demo item. Drivetrain component built for trail and work use.",
+      "price": {
+        "gross": 44.99
+      },
+      "stock": 220,
+      "media": [
+        "media/drive-axles.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 31.49
+          },
+          {
+            "minQty": 5,
+            "gross": 29.89
+          },
+          {
+            "minQty": 10,
+            "gross": 28.39
+          },
+          {
+            "minQty": 25,
+            "gross": 26.99
+          }
+        ],
+        "fitment": [
+          "CAN-MAVX3-2017-2025",
+          "YAM-YXZ1000-2016-2025",
+          "YAM-WOLV1000-2021-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "RDG-DB-X-1301",
+      "name": "Performance CVT Drive Belt – Polaris",
+      "brand": "Ridgeback Drivetrain",
+      "categoryPath": [
+        "ATV & UTV Parts",
+        "Drive & Axles"
+      ],
+      "description": "Synthetic demo item. Drivetrain component built for trail and work use.",
+      "price": {
+        "gross": 119.99
+      },
+      "stock": 155,
+      "media": [
+        "media/drive-axles.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 83.99
+          }
+        ],
+        "fitment": [
+          "POL-RZRXP1K-2014-2023",
+          "POL-RGRXP1K-2018-2025",
+          "POL-SPT570-2014-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "RDG-DB-X-1302",
+      "name": "Performance CVT Drive Belt – Can-Am",
+      "brand": "Ridgeback Drivetrain",
+      "categoryPath": [
+        "ATV & UTV Parts",
+        "Drive & Axles"
+      ],
+      "description": "Synthetic demo item. Drivetrain component built for trail and work use.",
+      "price": {
+        "gross": 129.99
+      },
+      "stock": 292,
+      "media": [
+        "media/drive-axles.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 90.99
+          }
+        ],
+        "fitment": [
+          "CAN-MAVX3-2017-2025",
+          "CAN-DEFHD10-2017-2025",
+          "CAN-OUT570-2016-2023"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "IRV-SH-X-2101",
+      "name": "Adjustable Front Shock Pair",
+      "brand": "Ironvale Offroad",
+      "categoryPath": [
+        "ATV & UTV Parts",
+        "Suspension"
+      ],
+      "description": "Synthetic demo item. Suspension component for listed models.",
+      "price": {
+        "gross": 549.99
+      },
+      "stock": 116,
+      "media": [
+        "media/suspension.png"
+      ],
+      "demo": {
+        "mapPolicy": "hide_until_cart",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 384.99
+          }
+        ],
+        "fitment": [
+          "POL-RZRXP1K-2014-2023",
+          "HON-TAL1000-2019-2025",
+          "YAM-YXZ1000-2016-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "IRV-SH-X-2102",
+      "name": "Gas-Charged Rear Shock",
+      "brand": "Ironvale Offroad",
+      "categoryPath": [
+        "ATV & UTV Parts",
+        "Suspension"
+      ],
+      "description": "Synthetic demo item. Suspension component for listed models.",
+      "price": {
+        "gross": 249.99
+      },
+      "stock": 164,
+      "media": [
+        "media/suspension.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 174.99
+          }
+        ],
+        "fitment": [
+          "YAM-GRIZ700-2016-2025",
+          "YAM-KOD450-2018-2025",
+          "KAW-BF750-2012-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "IRV-AB-X-2201",
+      "name": "A-Arm Bushing Kit – Polaris/Can-Am",
+      "brand": "Ironvale Offroad",
+      "categoryPath": [
+        "ATV & UTV Parts",
+        "Suspension"
+      ],
+      "description": "Synthetic demo item. Suspension component for listed models.",
+      "price": {
+        "gross": 59.99
+      },
+      "stock": 277,
+      "media": [
+        "media/suspension.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 41.99
+          }
+        ],
+        "fitment": [
+          "POL-SPT570-2014-2025",
+          "POL-RGRXP1K-2018-2025",
+          "CAN-OUT570-2016-2023"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "IRV-AB-X-2202",
+      "name": "A-Arm Bushing Kit – Honda/Yamaha",
+      "brand": "Ironvale Offroad",
+      "categoryPath": [
+        "ATV & UTV Parts",
+        "Suspension"
+      ],
+      "description": "Synthetic demo item. Suspension component for listed models.",
+      "price": {
+        "gross": 54.99
+      },
+      "stock": 229,
+      "media": [
+        "media/suspension.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 38.49
+          }
+        ],
+        "fitment": [
+          "HON-TRX420-2015-2024",
+          "HON-FOR520-2020-2025",
+          "HON-PIO1000-2016-2025",
+          "YAM-WOLV1000-2021-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "IRV-TR-X-2301",
+      "name": "Heavy-Duty Tie Rod End Kit, Sport UTV",
+      "brand": "Ironvale Offroad",
+      "categoryPath": [
+        "ATV & UTV Parts",
+        "Suspension"
+      ],
+      "description": "Synthetic demo item. Suspension component for listed models.",
+      "price": {
+        "gross": 69.99
+      },
+      "stock": 34,
+      "media": [
+        "media/suspension.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 48.99
+          },
+          {
+            "minQty": 5,
+            "gross": 46.49
+          },
+          {
+            "minQty": 10,
+            "gross": 44.19
+          },
+          {
+            "minQty": 25,
+            "gross": 41.99
+          }
+        ],
+        "fitment": [
+          "POL-RZRXP1K-2014-2023",
+          "CAN-MAVX3-2017-2025",
+          "HON-TAL1000-2019-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "IRV-TR-X-2302",
+      "name": "Tie Rod End Kit, Utility",
+      "brand": "Ironvale Offroad",
+      "categoryPath": [
+        "ATV & UTV Parts",
+        "Suspension"
+      ],
+      "description": "Synthetic demo item. Suspension component for listed models.",
+      "price": {
+        "gross": 49.99
+      },
+      "stock": 267,
+      "media": [
+        "media/suspension.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 34.99
+          },
+          {
+            "minQty": 5,
+            "gross": 33.19
+          },
+          {
+            "minQty": 10,
+            "gross": 31.59
+          },
+          {
+            "minQty": 25,
+            "gross": 29.99
+          }
+        ],
+        "fitment": [
+          "YAM-GRIZ700-2016-2025",
+          "KAW-BF750-2012-2025",
+          "KAW-MULEFXT-2015-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "IRV-BJ-X-2401",
+      "name": "Upper Ball Joint",
+      "brand": "Ironvale Offroad",
+      "categoryPath": [
+        "ATV & UTV Parts",
+        "Suspension"
+      ],
+      "description": "Synthetic demo item. Suspension component for listed models.",
+      "price": {
+        "gross": 32.99
+      },
+      "stock": 98,
+      "media": [
+        "media/suspension.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 23.09
+          }
+        ],
+        "fitment": [
+          "CAN-DEFHD10-2017-2025",
+          "POL-RGRXP1K-2018-2025",
+          "HON-PIO1000-2016-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-OF-B-3101",
+      "name": "Oil Filter – Honda",
+      "brand": "Halvard Filtration",
+      "categoryPath": [
+        "Engine",
+        "Filters"
+      ],
+      "description": "Synthetic demo item. Filtration component; replace at each service interval.",
+      "price": {
+        "gross": 11.99
+      },
+      "stock": 150,
+      "media": [
+        "media/filters.png"
+      ],
+      "demo": {
+        "series": "B",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 8.39
+          },
+          {
+            "minQty": 5,
+            "gross": 7.99
+          },
+          {
+            "minQty": 10,
+            "gross": 7.59
+          },
+          {
+            "minQty": 25,
+            "gross": 7.19
+          }
+        ],
+        "fitment": [
+          "HON-TRX420-2015-2024",
+          "HON-FOR520-2020-2025",
+          "HON-PIO1000-2016-2025",
+          "HON-TAL1000-2019-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-OF-B-3102",
+      "name": "Oil Filter – Yamaha",
+      "brand": "Halvard Filtration",
+      "categoryPath": [
+        "Engine",
+        "Filters"
+      ],
+      "description": "Synthetic demo item. Filtration component; replace at each service interval.",
+      "price": {
+        "gross": 12.49
+      },
+      "stock": 198,
+      "media": [
+        "media/filters.png"
+      ],
+      "demo": {
+        "series": "B",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 8.69
+          },
+          {
+            "minQty": 5,
+            "gross": 8.29
+          },
+          {
+            "minQty": 10,
+            "gross": 7.89
+          },
+          {
+            "minQty": 25,
+            "gross": 7.49
+          }
+        ],
+        "fitment": [
+          "YAM-GRIZ700-2016-2025",
+          "YAM-KOD450-2018-2025",
+          "YAM-WOLV1000-2021-2025",
+          "YAM-YXZ1000-2016-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-OF-B-3103",
+      "name": "Oil Filter – Polaris",
+      "brand": "Halvard Filtration",
+      "categoryPath": [
+        "Engine",
+        "Filters"
+      ],
+      "description": "Synthetic demo item. Filtration component; replace at each service interval.",
+      "price": {
+        "gross": 13.99
+      },
+      "stock": 246,
+      "media": [
+        "media/filters.png"
+      ],
+      "demo": {
+        "series": "B",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 9.79
+          },
+          {
+            "minQty": 5,
+            "gross": 9.29
+          },
+          {
+            "minQty": 10,
+            "gross": 8.79
+          },
+          {
+            "minQty": 25,
+            "gross": 8.39
+          }
+        ],
+        "fitment": [
+          "POL-SPT570-2014-2025",
+          "POL-RZRXP1K-2014-2023",
+          "POL-RGRXP1K-2018-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-OF-B-3104",
+      "name": "Oil Filter – Can-Am",
+      "brand": "Halvard Filtration",
+      "categoryPath": [
+        "Engine",
+        "Filters"
+      ],
+      "description": "Synthetic demo item. Filtration component; replace at each service interval.",
+      "price": {
+        "gross": 14.49
+      },
+      "stock": 191,
+      "media": [
+        "media/filters.png"
+      ],
+      "demo": {
+        "series": "B",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 10.09
+          },
+          {
+            "minQty": 5,
+            "gross": 9.59
+          },
+          {
+            "minQty": 10,
+            "gross": 9.19
+          },
+          {
+            "minQty": 25,
+            "gross": 8.69
+          }
+        ],
+        "fitment": [
+          "CAN-OUT570-2016-2023",
+          "CAN-MAVX3-2017-2025",
+          "CAN-DEFHD10-2017-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-OF-B-3105",
+      "name": "Oil Filter – Kawasaki",
+      "brand": "Halvard Filtration",
+      "categoryPath": [
+        "Engine",
+        "Filters"
+      ],
+      "description": "Synthetic demo item. Filtration component; replace at each service interval.",
+      "price": {
+        "gross": 12.99
+      },
+      "stock": 239,
+      "media": [
+        "media/filters.png"
+      ],
+      "demo": {
+        "series": "B",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 9.09
+          },
+          {
+            "minQty": 5,
+            "gross": 8.59
+          },
+          {
+            "minQty": 10,
+            "gross": 8.19
+          },
+          {
+            "minQty": 25,
+            "gross": 7.79
+          }
+        ],
+        "fitment": [
+          "KAW-BF750-2012-2025",
+          "KAW-MULEFXT-2015-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-AF-X-3201",
+      "name": "High-Flow Air Filter – Polaris",
+      "brand": "Halvard Filtration",
+      "categoryPath": [
+        "Engine",
+        "Filters"
+      ],
+      "description": "Synthetic demo item. Filtration component; replace at each service interval.",
+      "price": {
+        "gross": 34.99
+      },
+      "stock": 154,
+      "media": [
+        "media/filters.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 24.49
+          },
+          {
+            "minQty": 5,
+            "gross": 23.29
+          },
+          {
+            "minQty": 10,
+            "gross": 22.09
+          },
+          {
+            "minQty": 25,
+            "gross": 20.99
+          }
+        ],
+        "fitment": [
+          "POL-RZRXP1K-2014-2023",
+          "POL-RGRXP1K-2018-2025",
+          "POL-SPT570-2014-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-AF-X-3202",
+      "name": "Dual-Stage Foam Air Filter",
+      "brand": "Halvard Filtration",
+      "categoryPath": [
+        "Engine",
+        "Filters"
+      ],
+      "description": "Synthetic demo item. Filtration component; replace at each service interval.",
+      "price": {
+        "gross": 24.99
+      },
+      "stock": 106,
+      "media": [
+        "media/filters.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 17.49
+          },
+          {
+            "minQty": 5,
+            "gross": 16.59
+          },
+          {
+            "minQty": 10,
+            "gross": 15.79
+          },
+          {
+            "minQty": 25,
+            "gross": 14.99
+          }
+        ],
+        "fitment": [
+          "HON-TRX420-2015-2024",
+          "YAM-GRIZ700-2016-2025",
+          "KAW-BF750-2012-2025",
+          "YAM-KOD450-2018-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-AF-X-3203",
+      "name": "High-Flow Air Filter – Sport UTV",
+      "brand": "Halvard Filtration",
+      "categoryPath": [
+        "Engine",
+        "Filters"
+      ],
+      "description": "Synthetic demo item. Filtration component; replace at each service interval.",
+      "price": {
+        "gross": 39.99
+      },
+      "stock": 58,
+      "media": [
+        "media/filters.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 27.99
+          },
+          {
+            "minQty": 5,
+            "gross": 26.59
+          },
+          {
+            "minQty": 10,
+            "gross": 25.29
+          },
+          {
+            "minQty": 25,
+            "gross": 23.99
+          }
+        ],
+        "fitment": [
+          "CAN-MAVX3-2017-2025",
+          "YAM-YXZ1000-2016-2025",
+          "HON-TAL1000-2019-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-GK-X-4101",
+      "name": "Top End Gasket Kit – Honda",
+      "brand": "Kestrel Powersports",
+      "categoryPath": [
+        "Engine",
+        "Gaskets & Seals"
+      ],
+      "description": "Synthetic demo item. Gasket/seal kit for listed engines.",
+      "price": {
+        "gross": 44.99
+      },
+      "stock": 167,
+      "media": [
+        "media/gaskets-seals.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 31.49
+          },
+          {
+            "minQty": 5,
+            "gross": 29.89
+          },
+          {
+            "minQty": 10,
+            "gross": 28.39
+          },
+          {
+            "minQty": 25,
+            "gross": 26.99
+          }
+        ],
+        "fitment": [
+          "HON-TRX420-2015-2024",
+          "HON-FOR520-2020-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-GK-X-4102",
+      "name": "Top End Gasket Kit – Yamaha",
+      "brand": "Kestrel Powersports",
+      "categoryPath": [
+        "Engine",
+        "Gaskets & Seals"
+      ],
+      "description": "Synthetic demo item. Gasket/seal kit for listed engines.",
+      "price": {
+        "gross": 49.99
+      },
+      "stock": 215,
+      "media": [
+        "media/gaskets-seals.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 34.99
+          },
+          {
+            "minQty": 5,
+            "gross": 33.19
+          },
+          {
+            "minQty": 10,
+            "gross": 31.59
+          },
+          {
+            "minQty": 25,
+            "gross": 29.99
+          }
+        ],
+        "fitment": [
+          "YAM-GRIZ700-2016-2025",
+          "YAM-KOD450-2018-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-GK-X-4201",
+      "name": "Complete Engine Gasket Kit – Polaris",
+      "brand": "Kestrel Powersports",
+      "categoryPath": [
+        "Engine",
+        "Gaskets & Seals"
+      ],
+      "description": "Synthetic demo item. Gasket/seal kit for listed engines.",
+      "price": {
+        "gross": 129.99
+      },
+      "stock": 118,
+      "media": [
+        "media/gaskets-seals.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 90.99
+          }
+        ],
+        "fitment": [
+          "POL-SPT570-2014-2025",
+          "POL-RGRXP1K-2018-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-SK-X-4301",
+      "name": "Front Differential Seal Kit",
+      "brand": "Kestrel Powersports",
+      "categoryPath": [
+        "Engine",
+        "Gaskets & Seals"
+      ],
+      "description": "Synthetic demo item. Gasket/seal kit for listed engines.",
+      "price": {
+        "gross": 29.99
+      },
+      "stock": 21,
+      "media": [
+        "media/gaskets-seals.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 20.99
+          }
+        ],
+        "fitment": [
+          "POL-RZRXP1K-2014-2023",
+          "CAN-MAVX3-2017-2025",
+          "CAN-DEFHD10-2017-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-SK-X-4302",
+      "name": "Water Pump Rebuild Kit",
+      "brand": "Kestrel Powersports",
+      "categoryPath": [
+        "Engine",
+        "Gaskets & Seals"
+      ],
+      "description": "Synthetic demo item. Gasket/seal kit for listed engines.",
+      "price": {
+        "gross": 59.99
+      },
+      "stock": 158,
+      "media": [
+        "media/gaskets-seals.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 41.99
+          }
+        ],
+        "fitment": [
+          "KAW-BF750-2012-2025",
+          "KAW-MULEFXT-2015-2025",
+          "CAN-OUT570-2016-2023"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-SK-X-4303",
+      "name": "Valve Cover Gasket",
+      "brand": "Kestrel Powersports",
+      "categoryPath": [
+        "Engine",
+        "Gaskets & Seals"
+      ],
+      "description": "Synthetic demo item. Gasket/seal kit for listed engines.",
+      "price": {
+        "gross": 18.99
+      },
+      "stock": 206,
+      "media": [
+        "media/gaskets-seals.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 13.29
+          }
+        ],
+        "fitment": [
+          "HON-PIO1000-2016-2025",
+          "HON-TAL1000-2019-2025",
+          "YAM-WOLV1000-2021-2025",
+          "YAM-YXZ1000-2016-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-SP-D-5101",
+      "name": "Iridium Spark Plug – Honda/Yamaha ATV",
+      "brand": "Kestrel Powersports",
+      "categoryPath": [
+        "Engine",
+        "Ignition"
+      ],
+      "description": "Synthetic demo item. Ignition component for listed models.",
+      "price": {
+        "gross": 12.99
+      },
+      "stock": 164,
+      "media": [
+        "media/ignition.png"
+      ],
+      "demo": {
+        "series": "D",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 9.09
+          },
+          {
+            "minQty": 5,
+            "gross": 8.59
+          },
+          {
+            "minQty": 10,
+            "gross": 8.19
+          },
+          {
+            "minQty": 25,
+            "gross": 7.79
+          }
+        ],
+        "fitment": [
+          "HON-TRX420-2015-2024",
+          "HON-FOR520-2020-2025",
+          "HON-PIO1000-2016-2025",
+          "HON-TAL1000-2019-2025",
+          "YAM-GRIZ700-2016-2025",
+          "YAM-KOD450-2018-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-SP-D-5102",
+      "name": "Iridium Spark Plug – Polaris",
+      "brand": "Kestrel Powersports",
+      "categoryPath": [
+        "Engine",
+        "Ignition"
+      ],
+      "description": "Synthetic demo item. Ignition component for listed models.",
+      "price": {
+        "gross": 13.49
+      },
+      "stock": 20,
+      "media": [
+        "media/ignition.png"
+      ],
+      "demo": {
+        "series": "D",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 9.39
+          },
+          {
+            "minQty": 5,
+            "gross": 8.99
+          },
+          {
+            "minQty": 10,
+            "gross": 8.49
+          },
+          {
+            "minQty": 25,
+            "gross": 8.09
+          }
+        ],
+        "fitment": [
+          "POL-SPT570-2014-2025",
+          "POL-RZRXP1K-2014-2023",
+          "POL-RGRXP1K-2018-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-SP-D-5103",
+      "name": "Iridium Spark Plug – Can-Am",
+      "brand": "Kestrel Powersports",
+      "categoryPath": [
+        "Engine",
+        "Ignition"
+      ],
+      "description": "Synthetic demo item. Ignition component for listed models.",
+      "price": {
+        "gross": 13.99
+      },
+      "stock": 68,
+      "media": [
+        "media/ignition.png"
+      ],
+      "demo": {
+        "series": "D",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 9.79
+          },
+          {
+            "minQty": 5,
+            "gross": 9.29
+          },
+          {
+            "minQty": 10,
+            "gross": 8.79
+          },
+          {
+            "minQty": 25,
+            "gross": 8.39
+          }
+        ],
+        "fitment": [
+          "CAN-OUT570-2016-2023",
+          "CAN-MAVX3-2017-2025",
+          "CAN-DEFHD10-2017-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-SP-D-5104",
+      "name": "Iridium Spark Plug – Kawasaki/Yamaha UTV",
+      "brand": "Kestrel Powersports",
+      "categoryPath": [
+        "Engine",
+        "Ignition"
+      ],
+      "description": "Synthetic demo item. Ignition component for listed models.",
+      "price": {
+        "gross": 12.49
+      },
+      "stock": 205,
+      "media": [
+        "media/ignition.png"
+      ],
+      "demo": {
+        "series": "D",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 8.69
+          },
+          {
+            "minQty": 5,
+            "gross": 8.29
+          },
+          {
+            "minQty": 10,
+            "gross": 7.89
+          },
+          {
+            "minQty": 25,
+            "gross": 7.49
+          }
+        ],
+        "fitment": [
+          "KAW-BF750-2012-2025",
+          "KAW-MULEFXT-2015-2025",
+          "YAM-WOLV1000-2021-2025",
+          "YAM-YXZ1000-2016-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-IC-X-5201",
+      "name": "Ignition Coil – Polaris",
+      "brand": "Kestrel Powersports",
+      "categoryPath": [
+        "Engine",
+        "Ignition"
+      ],
+      "description": "Synthetic demo item. Ignition component for listed models.",
+      "price": {
+        "gross": 89.99
+      },
+      "stock": 240,
+      "media": [
+        "media/ignition.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 62.99
+          }
+        ],
+        "fitment": [
+          "POL-SPT570-2014-2025",
+          "POL-RGRXP1K-2018-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-IC-X-5202",
+      "name": "Ignition Coil – Yamaha/Kawasaki",
+      "brand": "Kestrel Powersports",
+      "categoryPath": [
+        "Engine",
+        "Ignition"
+      ],
+      "description": "Synthetic demo item. Ignition component for listed models.",
+      "price": {
+        "gross": 94.99
+      },
+      "stock": 96,
+      "media": [
+        "media/ignition.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 66.49
+          }
+        ],
+        "fitment": [
+          "YAM-GRIZ700-2016-2025",
+          "YAM-KOD450-2018-2025",
+          "KAW-BF750-2012-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "BCE-BT-X-6101",
+      "name": "AGM Battery, 12V 12Ah",
+      "brand": "Bluecairn Electric",
+      "categoryPath": [
+        "Electrical",
+        "Batteries"
+      ],
+      "description": "Synthetic demo item. Maintenance-free electrical component.",
+      "price": {
+        "gross": 119.99
+      },
+      "stock": 41,
+      "media": [
+        "media/batteries.png"
+      ],
+      "demo": {
+        "mapPolicy": "hide_until_cart",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 83.99
+          }
+        ],
+        "fitment": [
+          "HON-TRX420-2015-2024",
+          "HON-FOR520-2020-2025",
+          "YAM-GRIZ700-2016-2025",
+          "YAM-KOD450-2018-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "BCE-BT-X-6102",
+      "name": "AGM Battery, 12V 14Ah",
+      "brand": "Bluecairn Electric",
+      "categoryPath": [
+        "Electrical",
+        "Batteries"
+      ],
+      "description": "Synthetic demo item. Maintenance-free electrical component.",
+      "price": {
+        "gross": 139.99
+      },
+      "stock": 178,
+      "media": [
+        "media/batteries.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 97.99
+          }
+        ],
+        "fitment": [
+          "POL-SPT570-2014-2025",
+          "CAN-OUT570-2016-2023",
+          "KAW-BF750-2012-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "BCE-BT-X-6103",
+      "name": "AGM Battery, 12V 18Ah",
+      "brand": "Bluecairn Electric",
+      "categoryPath": [
+        "Electrical",
+        "Batteries"
+      ],
+      "description": "Synthetic demo item. Maintenance-free electrical component.",
+      "price": {
+        "gross": 169.99
+      },
+      "stock": 226,
+      "media": [
+        "media/batteries.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 118.99
+          }
+        ],
+        "fitment": [
+          "POL-RZRXP1K-2014-2023",
+          "POL-RGRXP1K-2018-2025",
+          "HON-PIO1000-2016-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "BCE-BT-X-6104",
+      "name": "AGM Battery, 12V 20Ah",
+      "brand": "Bluecairn Electric",
+      "categoryPath": [
+        "Electrical",
+        "Batteries"
+      ],
+      "description": "Synthetic demo item. Maintenance-free electrical component.",
+      "price": {
+        "gross": 179.99
+      },
+      "stock": 185,
+      "media": [
+        "media/batteries.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 125.99
+          }
+        ],
+        "fitment": [
+          "CAN-MAVX3-2017-2025",
+          "CAN-DEFHD10-2017-2025",
+          "HON-TAL1000-2019-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "BCE-BT-X-6105",
+      "name": "AGM Battery, 12V 14Ah Sport",
+      "brand": "Bluecairn Electric",
+      "categoryPath": [
+        "Electrical",
+        "Batteries"
+      ],
+      "description": "Synthetic demo item. Maintenance-free electrical component.",
+      "price": {
+        "gross": 144.99
+      },
+      "stock": 233,
+      "media": [
+        "media/batteries.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 101.49
+          }
+        ],
+        "fitment": [
+          "YAM-WOLV1000-2021-2025",
+          "YAM-YXZ1000-2016-2025",
+          "KAW-MULEFXT-2015-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "BCE-HL-X-6201",
+      "name": "LED Headlight Upgrade Kit – Polaris",
+      "brand": "Bluecairn Electric",
+      "categoryPath": [
+        "Electrical",
+        "Lighting"
+      ],
+      "description": "Synthetic demo item. Lighting component; off-road use only.",
+      "price": {
+        "gross": 189.99
+      },
+      "stock": 213,
+      "media": [
+        "media/lighting.png"
+      ],
+      "demo": {
+        "mapPolicy": "hide_until_cart",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 132.99
+          }
+        ],
+        "fitment": [
+          "POL-RZRXP1K-2014-2023",
+          "POL-RGRXP1K-2018-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "BCE-HL-X-6202",
+      "name": "LED Headlight Upgrade Kit – Can-Am",
+      "brand": "Bluecairn Electric",
+      "categoryPath": [
+        "Electrical",
+        "Lighting"
+      ],
+      "description": "Synthetic demo item. Lighting component; off-road use only.",
+      "price": {
+        "gross": 179.99
+      },
+      "stock": 165,
+      "media": [
+        "media/lighting.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 125.99
+          }
+        ],
+        "fitment": [
+          "CAN-MAVX3-2017-2025",
+          "CAN-DEFHD10-2017-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "BCE-HL-X-6203",
+      "name": "LED Headlight Upgrade Kit – Honda/Yamaha UTV",
+      "brand": "Bluecairn Electric",
+      "categoryPath": [
+        "Electrical",
+        "Lighting"
+      ],
+      "description": "Synthetic demo item. Lighting component; off-road use only.",
+      "price": {
+        "gross": 169.99
+      },
+      "stock": 117,
+      "media": [
+        "media/lighting.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 118.99
+          }
+        ],
+        "fitment": [
+          "HON-TAL1000-2019-2025",
+          "HON-PIO1000-2016-2025",
+          "YAM-WOLV1000-2021-2025",
+          "YAM-YXZ1000-2016-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "BCE-TL-X-6301",
+      "name": "LED Tail Light Assembly",
+      "brand": "Bluecairn Electric",
+      "categoryPath": [
+        "Electrical",
+        "Lighting"
+      ],
+      "description": "Synthetic demo item. Lighting component; off-road use only.",
+      "price": {
+        "gross": 74.99
+      },
+      "stock": 190,
+      "media": [
+        "media/lighting.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 52.49
+          }
+        ],
+        "fitment": [
+          "YAM-GRIZ700-2016-2025",
+          "YAM-KOD450-2018-2025",
+          "HON-TRX420-2015-2024",
+          "HON-FOR520-2020-2025",
+          "POL-SPT570-2014-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "TGT-TR-X-7101",
+      "name": "All-Terrain Tire 26x9-12",
+      "brand": "Tallgrass Tire Co.",
+      "categoryPath": [
+        "Tires & Wheels"
+      ],
+      "description": "Synthetic demo item. Tire, wheel or tire-service item.",
+      "price": {
+        "gross": 129.99
+      },
+      "stock": 104,
+      "media": [
+        "media/tires-wheels.png"
+      ],
+      "demo": {
+        "mapPolicy": "hide_until_cart",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 90.99
+          }
+        ],
+        "fitment": [
+          "HON-TRX420-2015-2024",
+          "HON-FOR520-2020-2025",
+          "YAM-GRIZ700-2016-2025",
+          "YAM-KOD450-2018-2025",
+          "POL-SPT570-2014-2025",
+          "CAN-OUT570-2016-2023",
+          "KAW-BF750-2012-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "TGT-TR-X-7102",
+      "name": "All-Terrain Tire 26x11-12",
+      "brand": "Tallgrass Tire Co.",
+      "categoryPath": [
+        "Tires & Wheels"
+      ],
+      "description": "Synthetic demo item. Tire, wheel or tire-service item.",
+      "price": {
+        "gross": 139.99
+      },
+      "stock": 241,
+      "media": [
+        "media/tires-wheels.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 97.99
+          }
+        ],
+        "fitment": [
+          "HON-TRX420-2015-2024",
+          "HON-FOR520-2020-2025",
+          "YAM-GRIZ700-2016-2025",
+          "YAM-KOD450-2018-2025",
+          "POL-SPT570-2014-2025",
+          "CAN-OUT570-2016-2023",
+          "KAW-BF750-2012-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "TGT-TR-X-7201",
+      "name": "Mud Tire 30x10-14",
+      "brand": "Tallgrass Tire Co.",
+      "categoryPath": [
+        "Tires & Wheels"
+      ],
+      "description": "Synthetic demo item. Tire, wheel or tire-service item.",
+      "price": {
+        "gross": 219.99
+      },
+      "stock": 206,
+      "media": [
+        "media/tires-wheels.png"
+      ],
+      "demo": {
+        "mapPolicy": "hide_until_cart",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 153.99
+          }
+        ],
+        "fitment": [
+          "POL-RZRXP1K-2014-2023",
+          "CAN-MAVX3-2017-2025",
+          "HON-TAL1000-2019-2025",
+          "YAM-YXZ1000-2016-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "TGT-TR-X-7202",
+      "name": "Mud Tire 28x10-14",
+      "brand": "Tallgrass Tire Co.",
+      "categoryPath": [
+        "Tires & Wheels"
+      ],
+      "description": "Synthetic demo item. Tire, wheel or tire-service item.",
+      "price": {
+        "gross": 199.99
+      },
+      "stock": 69,
+      "media": [
+        "media/tires-wheels.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 139.99
+          }
+        ],
+        "fitment": [
+          "POL-RGRXP1K-2018-2025",
+          "CAN-DEFHD10-2017-2025",
+          "HON-PIO1000-2016-2025",
+          "YAM-WOLV1000-2021-2025",
+          "KAW-MULEFXT-2015-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "TGT-WH-X-7301",
+      "name": "Cast Aluminum Wheel 14x7, 4/156",
+      "brand": "Tallgrass Tire Co.",
+      "categoryPath": [
+        "Tires & Wheels"
+      ],
+      "description": "Synthetic demo item. Tire, wheel or tire-service item.",
+      "price": {
+        "gross": 159.99
+      },
+      "stock": 273,
+      "media": [
+        "media/tires-wheels.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 111.99
+          }
+        ],
+        "fitment": [
+          "POL-RZRXP1K-2014-2023",
+          "POL-RGRXP1K-2018-2025",
+          "POL-SPT570-2014-2025"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "TGT-WH-X-7302",
+      "name": "Cast Aluminum Wheel 14x7, 4/137",
+      "brand": "Tallgrass Tire Co.",
+      "categoryPath": [
+        "Tires & Wheels"
+      ],
+      "description": "Synthetic demo item. Tire, wheel or tire-service item.",
+      "price": {
+        "gross": 159.99
+      },
+      "stock": 136,
+      "media": [
+        "media/tires-wheels.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 111.99
+          }
+        ],
+        "fitment": [
+          "CAN-MAVX3-2017-2025",
+          "CAN-DEFHD10-2017-2025",
+          "CAN-OUT570-2016-2023"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "CPL-OL-X-8101",
+      "name": "Synthetic 10W-40 Engine Oil, 4 qt",
+      "brand": "Cinderpeak Lubricants",
+      "categoryPath": [
+        "Shop Supplies"
+      ],
+      "description": "Synthetic demo item. Universal shop supply; no vehicle fitment required.",
+      "price": {
+        "gross": 44.99
+      },
+      "stock": 278,
+      "media": [
+        "media/shop-supplies.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 31.49
+          },
+          {
+            "minQty": 5,
+            "gross": 29.89
+          },
+          {
+            "minQty": 10,
+            "gross": 28.39
+          },
+          {
+            "minQty": 25,
+            "gross": 26.99
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "CPL-OL-X-8102",
+      "name": "Synthetic 75W-90 Gear Oil, 1 qt",
+      "brand": "Cinderpeak Lubricants",
+      "categoryPath": [
+        "Shop Supplies"
+      ],
+      "description": "Synthetic demo item. Universal shop supply; no vehicle fitment required.",
+      "price": {
+        "gross": 16.99
+      },
+      "stock": 45,
+      "media": [
+        "media/shop-supplies.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 11.89
+          },
+          {
+            "minQty": 5,
+            "gross": 11.29
+          },
+          {
+            "minQty": 10,
+            "gross": 10.69
+          },
+          {
+            "minQty": 25,
+            "gross": 10.19
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "CPL-GR-X-8201",
+      "name": "Waterproof Marine Grease, 14 oz",
+      "brand": "Cinderpeak Lubricants",
+      "categoryPath": [
+        "Shop Supplies"
+      ],
+      "description": "Synthetic demo item. Universal shop supply; no vehicle fitment required.",
+      "price": {
+        "gross": 9.99
+      },
+      "stock": 147,
+      "media": [
+        "media/shop-supplies.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 6.99
+          },
+          {
+            "minQty": 5,
+            "gross": 6.59
+          },
+          {
+            "minQty": 10,
+            "gross": 6.29
+          },
+          {
+            "minQty": 25,
+            "gross": 5.99
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "CPL-CL-X-8301",
+      "name": "Brake Parts Cleaner, 14 oz",
+      "brand": "Cinderpeak Lubricants",
+      "categoryPath": [
+        "Shop Supplies"
+      ],
+      "description": "Synthetic demo item. Universal shop supply; no vehicle fitment required.",
+      "price": {
+        "gross": 7.49
+      },
+      "stock": 292,
+      "media": [
+        "media/shop-supplies.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 5.19
+          },
+          {
+            "minQty": 5,
+            "gross": 4.99
+          },
+          {
+            "minQty": 10,
+            "gross": 4.69
+          },
+          {
+            "minQty": 25,
+            "gross": 4.49
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "CPL-CL-X-8302",
+      "name": "Electrical Contact Cleaner, 11 oz",
+      "brand": "Cinderpeak Lubricants",
+      "categoryPath": [
+        "Shop Supplies"
+      ],
+      "description": "Synthetic demo item. Universal shop supply; no vehicle fitment required.",
+      "price": {
+        "gross": 8.99
+      },
+      "stock": 148,
+      "media": [
+        "media/shop-supplies.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 6.29
+          },
+          {
+            "minQty": 5,
+            "gross": 5.99
+          },
+          {
+            "minQty": 10,
+            "gross": 5.69
+          },
+          {
+            "minQty": 25,
+            "gross": 5.39
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "CPL-CT-X-8401",
+      "name": "Extended-Life Coolant, 1 gal",
+      "brand": "Cinderpeak Lubricants",
+      "categoryPath": [
+        "Shop Supplies"
+      ],
+      "description": "Synthetic demo item. Universal shop supply; no vehicle fitment required.",
+      "price": {
+        "gross": 24.99
+      },
+      "stock": 105,
+      "media": [
+        "media/shop-supplies.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 17.49
+          },
+          {
+            "minQty": 5,
+            "gross": 16.59
+          },
+          {
+            "minQty": 10,
+            "gross": 15.79
+          },
+          {
+            "minQty": 25,
+            "gross": 14.99
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "CPL-FS-X-8501",
+      "name": "Fuel Stabilizer, 8 oz",
+      "brand": "Cinderpeak Lubricants",
+      "categoryPath": [
+        "Shop Supplies"
+      ],
+      "description": "Synthetic demo item. Universal shop supply; no vehicle fitment required.",
+      "price": {
+        "gross": 11.99
+      },
+      "stock": 20,
+      "media": [
+        "media/shop-supplies.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 8.39
+          },
+          {
+            "minQty": 5,
+            "gross": 7.99
+          },
+          {
+            "minQty": 10,
+            "gross": 7.59
+          },
+          {
+            "minQty": 25,
+            "gross": 7.19
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "CPL-TL-X-8601",
+      "name": "Medium-Strength Thread Locker, 10 ml",
+      "brand": "Cinderpeak Lubricants",
+      "categoryPath": [
+        "Shop Supplies"
+      ],
+      "description": "Synthetic demo item. Universal shop supply; no vehicle fitment required.",
+      "price": {
+        "gross": 6.99
+      },
+      "stock": 28,
+      "media": [
+        "media/shop-supplies.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 4.89
+          },
+          {
+            "minQty": 5,
+            "gross": 4.59
+          },
+          {
+            "minQty": 10,
+            "gross": 4.39
+          },
+          {
+            "minQty": 25,
+            "gross": 4.19
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "CPL-DG-X-8602",
+      "name": "Dielectric Grease, 3 oz",
+      "brand": "Cinderpeak Lubricants",
+      "categoryPath": [
+        "Shop Supplies"
+      ],
+      "description": "Synthetic demo item. Universal shop supply; no vehicle fitment required.",
+      "price": {
+        "gross": 5.99
+      },
+      "stock": 45,
+      "media": [
+        "media/shop-supplies.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 4.19
+          },
+          {
+            "minQty": 5,
+            "gross": 3.99
+          },
+          {
+            "minQty": 10,
+            "gross": 3.79
+          },
+          {
+            "minQty": 25,
+            "gross": 3.59
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "IRV-TD-X-8701",
+      "name": "Ratchet Tie-Down Straps, 4-pack",
+      "brand": "Ironvale Offroad",
+      "categoryPath": [
+        "Shop Supplies"
+      ],
+      "description": "Synthetic demo item. Universal shop supply; no vehicle fitment required.",
+      "price": {
+        "gross": 39.99
+      },
+      "stock": 170,
+      "media": [
+        "media/shop-supplies.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 27.99
+          },
+          {
+            "minQty": 5,
+            "gross": 26.59
+          },
+          {
+            "minQty": 10,
+            "gross": 25.29
+          },
+          {
+            "minQty": 25,
+            "gross": 23.99
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "CPL-ZT-X-8801",
+      "name": "Heavy-Duty Zip Ties, 100-pack",
+      "brand": "Cinderpeak Lubricants",
+      "categoryPath": [
+        "Shop Supplies"
+      ],
+      "description": "Synthetic demo item. Universal shop supply; no vehicle fitment required.",
+      "price": {
+        "gross": 12.99
+      },
+      "stock": 99,
+      "media": [
+        "media/shop-supplies.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 9.09
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "CPL-GL-X-8802",
+      "name": "Nitrile Shop Gloves, box of 100",
+      "brand": "Cinderpeak Lubricants",
+      "categoryPath": [
+        "Shop Supplies"
+      ],
+      "description": "Synthetic demo item. Universal shop supply; no vehicle fitment required.",
+      "price": {
+        "gross": 17.99
+      },
+      "stock": 245,
+      "media": [
+        "media/shop-supplies.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 12.59
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "CPL-TW-X-8803",
+      "name": "Shop Towels, 200-count roll",
+      "brand": "Cinderpeak Lubricants",
+      "categoryPath": [
+        "Shop Supplies"
+      ],
+      "description": "Synthetic demo item. Universal shop supply; no vehicle fitment required.",
+      "price": {
+        "gross": 14.99
+      },
+      "stock": 26,
+      "media": [
+        "media/shop-supplies.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 10.49
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "CPL-AC-X-8804",
+      "name": "Air Filter Oil & Cleaner Kit",
+      "brand": "Cinderpeak Lubricants",
+      "categoryPath": [
+        "Shop Supplies"
+      ],
+      "description": "Synthetic demo item. Universal shop supply; no vehicle fitment required.",
+      "price": {
+        "gross": 19.99
+      },
+      "stock": 274,
+      "media": [
+        "media/shop-supplies.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 13.99
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "BCE-BC-X-8901",
+      "name": "Smart Battery Maintainer, 12V",
+      "brand": "Bluecairn Electric",
+      "categoryPath": [
+        "Electrical",
+        "Batteries"
+      ],
+      "description": "Synthetic demo item. Maintenance-free electrical component.",
+      "price": {
+        "gross": 64.99
+      },
+      "stock": 41,
+      "media": [
+        "media/batteries.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 45.49
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "BCE-LB-X-9101",
+      "name": "30\" Dual-Row LED Light Bar",
+      "brand": "Bluecairn Electric",
+      "categoryPath": [
+        "Electrical",
+        "Lighting"
+      ],
+      "description": "Synthetic demo item. Lighting component; off-road use only.",
+      "price": {
+        "gross": 249.99
+      },
+      "stock": 249,
+      "media": [
+        "media/lighting.png"
+      ],
+      "demo": {
+        "mapPolicy": "hide_until_cart",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 174.99
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "BCE-LP-X-9102",
+      "name": "LED Pod Light Pair, 3\"",
+      "brand": "Bluecairn Electric",
+      "categoryPath": [
+        "Electrical",
+        "Lighting"
+      ],
+      "description": "Synthetic demo item. Lighting component; off-road use only.",
+      "price": {
+        "gross": 89.99
+      },
+      "stock": 146,
+      "media": [
+        "media/lighting.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 62.99
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "BCE-WH-X-9103",
+      "name": "Light Bar Wiring Harness with Switch",
+      "brand": "Bluecairn Electric",
+      "categoryPath": [
+        "Electrical",
+        "Lighting"
+      ],
+      "description": "Synthetic demo item. Lighting component; off-road use only.",
+      "price": {
+        "gross": 34.99
+      },
+      "stock": 284,
+      "media": [
+        "media/lighting.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 24.49
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "TGT-RK-X-9201",
+      "name": "Tubeless Tire Plug Repair Kit",
+      "brand": "Tallgrass Tire Co.",
+      "categoryPath": [
+        "Tires & Wheels"
+      ],
+      "description": "Synthetic demo item. Tire, wheel or tire-service item.",
+      "price": {
+        "gross": 24.99
+      },
+      "stock": 202,
+      "media": [
+        "media/tires-wheels.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 17.49
+          },
+          {
+            "minQty": 5,
+            "gross": 16.59
+          },
+          {
+            "minQty": 10,
+            "gross": 15.79
+          },
+          {
+            "minQty": 25,
+            "gross": 14.99
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "TGT-VS-X-9202",
+      "name": "Rubber Valve Stem Kit, 4-pack",
+      "brand": "Tallgrass Tire Co.",
+      "categoryPath": [
+        "Tires & Wheels"
+      ],
+      "description": "Synthetic demo item. Tire, wheel or tire-service item.",
+      "price": {
+        "gross": 9.99
+      },
+      "stock": 226,
+      "media": [
+        "media/tires-wheels.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 6.99
+          },
+          {
+            "minQty": 5,
+            "gross": 6.59
+          },
+          {
+            "minQty": 10,
+            "gross": 6.29
+          },
+          {
+            "minQty": 25,
+            "gross": 5.99
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    }
+  ],
+  "customers": [
+    {
+      "key": "retail-rider",
+      "salutation": "not_specified",
+      "firstName": "Jordan",
+      "lastName": "Avery",
+      "email": "retail.rider@example.com",
+      "customerGroup": "Retail",
+      "passwordEnv": "PERSONA_RETAIL_PASSWORD",
+      "address": {
+        "street": "100 Demo Trail Rd",
+        "zipcode": "00000",
+        "city": "Exampleville",
+        "countryIso": "US"
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "key": "dealer-admin",
+      "salutation": "not_specified",
+      "firstName": "Morgan",
+      "lastName": "Ellis",
+      "email": "dealer.admin@example.com",
+      "customerGroup": "Dealer",
+      "company": "Summit Trail Powersports (Demo Dealer)",
+      "passwordEnv": "PERSONA_DEALER_ADMIN_PASSWORD",
+      "address": {
+        "street": "200 Demo Dealer Pkwy",
+        "zipcode": "00000",
+        "city": "Exampleville",
+        "countryIso": "US"
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    }
+  ],
+  "b2b": {
+    "company": {
+      "ownerCustomer": "dealer-admin",
+      "features": [
+        "employee_management",
+        "order_approval",
+        "quick_order",
+        "shopping_list"
+      ]
+    },
+    "roles": [
+      {
+        "key": "admin",
+        "name": "Admin",
+        "permissions": [
+          "*"
+        ]
+      },
+      {
+        "key": "junior-buyer",
+        "name": "Junior Buyer",
+        "permissionIntents": [
+          "view_products",
+          "cart",
+          "quick_order",
+          "shopping_lists",
+          "request_approval"
+        ]
+      }
+    ],
+    "employees": [
+      {
+        "key": "junior-buyer",
+        "firstName": "Casey",
+        "lastName": "Brooks",
+        "email": "junior.buyer@example.com",
+        "role": "junior-buyer",
+        "active": true,
+        "passwordEnv": "PERSONA_DEALER_JUNIOR_PASSWORD",
+        "extractionSource": "synthetic-fixture",
+        "priceConfidence": "generated"
+      }
+    ],
+    "approvalRules": [
+      {
+        "key": "junior-buyer-always",
+        "name": "DEMO · Junior Buyer approval",
+        "affectedRole": "junior-buyer",
+        "reviewerRole": "admin",
+        "condition": {
+          "type": "cartAmountGte",
+          "value": 0.01
+        }
+      }
+    ],
+    "shoppingLists": [
+      {
+        "key": "weekly-shop-restock",
+        "name": "Weekly Shop Restock",
+        "owner": "junior-buyer",
+        "items": [
+          {
+            "productNumber": "HLV-OF-B-3101",
+            "quantity": 10
+          },
+          {
+            "productNumber": "KST-SP-D-5101",
+            "quantity": 8
+          },
+          {
+            "productNumber": "CPL-OL-X-8101",
+            "quantity": 6
+          },
+          {
+            "productNumber": "CPL-CL-X-8301",
+            "quantity": 12
+          },
+          {
+            "productNumber": "CPL-GL-X-8802",
+            "quantity": 2
+          },
+          {
+            "productNumber": "CPL-TW-X-8803",
+            "quantity": 4
+          }
+        ]
+      }
+    ]
+  }
+}
