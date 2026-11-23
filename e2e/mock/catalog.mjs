@@ -10,7 +10,7 @@ const site = JSON.parse(readFileSync(path.join(ROOT, "data/fixture/site-project.
 
 const md5 = (s) => createHash("md5").update(s).digest("hex");
 export const categoryId = (pathArr) => md5(`category:${pathArr.join(" > ")}`);
-export const productId = (sku) => md5(`product:${sku}`); // placeholder; the seeder uses factory stableId
+export const productId = (sku) => md5(`product:${sku}`); // = stableId("product", sku), DEV_GUIDE §8
 const manufacturerId = (name) => md5(`manufacturer:${name}`);
 const round = (n) => Math.round(n * 100) / 100;
 

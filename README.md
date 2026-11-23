@@ -5,11 +5,14 @@ Shopware POC based on Day Motor Sports (DMS) requirements. The storefront itself
 This is a re-skinnable, neutral-branded racing-parts B2B demo (catalog: performance racing shocks). It is a Next.js App Router app (BFF to the Shopware 6.7 Store API) plus a seeder.
 Scope, decisions, and acceptance criteria live in [`DEV_GUIDE.md`](DEV_GUIDE.md). Agent rules are in [`CLAUDE.md`](CLAUDE.md).
 
+**Demo brand:** Full Throttle Supply Co. (fictional), set in `theme/brand.ts` and overridable with `NEXT_PUBLIC_BRAND_NAME`.
+
 ## Quick start (no Shopware instance yet)
 
 ```bash
 npm ci
 npm run fixture:validate      # strict schema + business checks on data/fixture/
+npm run fixture:review        # regenerate data/fixture/REVIEW.md (shows approval status)
 npm test                      # unit tests (fixture checks, BFF allowlist, gate cookie)
 npm run build && npm run e2e  # e2e against the mock Store API in e2e/mock-store-api.mjs
 ```
@@ -20,16 +23,16 @@ For local dev against the mock: copy `.env.example` to `.env.local` and use the 
 
 | Phase | State | Notes |
 | --- | --- | --- |
-| 0 · Instance and spikes | **Blocked** | Waiting on §13 instance prerequisites |
-| 1 · Fixture | **Reworked to racing shocks; awaiting re-review** | First review done; catalog then moved from ATV/UTV to racing shocks. Re-review `data/fixture/REVIEW.md` |
-| 2 · Seeder | Not started | Needs the factory repo (stableId, admin client) and an instance |
+| 0 · Instance and spikes | **Blocked** | Shopware cloud **v6.7 Commercial (Evolve)** chosen; waiting on provisioning and §13 credentials |
+| 1 · Fixture | **Done** | Racing-shocks catalog approved 2026-11-23 (`data/fixture/review-approval.json`, bound to the fixture hash; any edit needs `npm run fixture:approve` again) |
+| 2 · Seeder | Not started | **Standalone** (no factory code). Needs the Evolve instance to run |
 | 3 · App shell | **Done (against mock)** | Gate, BFF + allowlist, persona switcher, brand tokens, header/nav |
 | 4 · Catalog and pricing | **Done (against mock)** | S1–S5 e2e green; PLP/PDP/search, PriceBlock, TierTable, MAP, mini-cart, Quick View, cart with series savings |
 | 5–8 | Not started | |
 
 ### Open items and deviations from the guide
 
-- **Factory reconciliation pending.** The factory repo was not readable when Phase 1 was built. The base roots in `schemas/site-project.demo.schema.json` (`source`, `currency`, `categories`, `products`, `customers`) follow the guide's example, not the factory schema. They must be reconciled before Phase 2. `stableId` is not implemented yet.
+- **Standalone seeder (decided).** The factory repo is not used. `schemas/site-project.demo.schema.json` is the full schema (not an extension), and `stableId(entity, key)` = hex MD5 of `"entity:key"` (DEV_GUIDE §8). The mock Store API already uses the same IDs.
 - **Series promotion double-discount (needs the Phase 0 spike).** A single SKU at qty ≥ 10 already gets its own tier-10 unit price. The qty-10 series promotion is computed from the tier-5 price (§6.4), so it would discount that line a second time. The spike should decide one of three options: limit the promotion to mixes where no single line has reached the tier, accept and disclose the overlap, or note a cart processor as the production answer.
 - **Series discount rounding.** Series discounts (5% / 9.75%) come from the tier ratios. On cheap SKUs, rounding to .x9 prices leaves drift of up to about 0.8 pp (validator warning on `HLV-OF-B-3104`).
 - **Next 16** renamed `middleware.ts` to `proxy.ts`. The gate lives in `proxy.ts` and behaves as §9.3 describes.

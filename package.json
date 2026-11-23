@@ -22,7 +22,8 @@
     "seed:apply": "node seed/apply.mjs",
     "seed:verify": "node seed/verify.mjs",
     "fitment:build": "node seed/build-fitment.mjs",
-    "types:generate": "node tools/generate-store-types.mjs"
+    "types:generate": "node tools/generate-store-types.mjs",
+    "fixture:approve": "node tools/fixture-approve.mjs"
   },
   "dependencies": {
     "next": "16.4.6",

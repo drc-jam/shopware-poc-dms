@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://demo.invalid/schemas/site-project.demo.schema.json",
   "title": "Powersports B2B demo site project (composed: site-project.json + vehicles.json)",
-  "$comment": "PENDING FACTORY RECONCILIATION: DEV_GUIDE §7.2 says to extend the factory site-project.schema.json (vryan-shopware/shopware-demo-creator @ c809638). That repo was not readable when this was written, so the shapes of the factory roots (source, currency, categories, products, customers) are defined here from the guide's example and must be reconciled with the factory schema before Phase 2. The demo extensions (vehicles, series, personas, brands, b2b, products[].demo) are authoritative.",
+  "$comment": "Standalone schema (decision 2026-11-23: the seeder does not use the factory repo). All roots are authoritative here.",
   "type": "object",
   "additionalProperties": false,
   "required": ["source", "currency", "categories", "products", "customers", "vehicles", "series", "personas", "brands", "b2b"],

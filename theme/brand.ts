@@ -1,7 +1,7 @@
 // Brand tokens (DEV_GUIDE §9.5). Swap this file + public/brand/logo.svg to re-skin for a prospect.
 // Never use a real prospect's name, logo or imagery in the template build.
 export const brand = {
-  name: process.env.NEXT_PUBLIC_BRAND_NAME ?? "Trailhead Parts Supply (Demo)",
+  name: process.env.NEXT_PUBLIC_BRAND_NAME ?? "Full Throttle Supply Co.",
   logo: "/brand/logo.svg",
   colors: { primary: "#1F3A5F", accent: "#E4572E", surface: "#F6F5F2", ink: "#1B1B1B" },
   fonts: { heading: "Barlow Condensed", body: "Inter" },

@@ -4,7 +4,7 @@
 **Deliverable:** a reusable, neutral-branded powersports/auto-parts B2B demo. It is a lightweight Next.js app on Vercel connected to a Shopware 6.7 instance with Commercial B2B Components.
 **Base reference:** `partner-technical-summary.md` (Shopware Demo Factory, repo `vryan-shopware/shopware-demo-creator` @ `c809638`).
 **Prepared:** 2026-11-23 · Jamersan
-**Revised:** 2026-11-23. The catalog vertical changed from ATV/UTV powersports to **performance racing shocks** (circle track, street/strip), mirroring the shape of the prospect's racing-shocks department. This affects §6.7 and §7.1. The §0 decisions are unchanged.
+**Revised:** 2026-11-23. Decisions since first draft: instance = Shopware cloud **v6.7 Commercial (Evolve)**; seeder is **standalone** (the factory repo is not available, so its patterns in §11 are re-implemented, not ported; `stableId` is defined in §8); demo brand = **Full Throttle Supply Co.** The catalog vertical changed from ATV/UTV powersports to **performance racing shocks** (circle track, street/strip), mirroring the shape of the prospect's racing-shocks department. This affects §6.7 and §7.1. The §0 decisions are unchanged.
 
 ---
 
@@ -275,7 +275,7 @@ For a prospect-specific catalog, run the factory `generate:project` against an a
   "universal": ["<productId>", "…"]
 }
 ```
-Product IDs come from the factory `stableId('product', productNumber)`, so the index matches the seeded instance deterministically. `verify.mjs` asserts that every indexed ID exists.
+Product IDs come from `stableId('product', productNumber)` = lowercase hex MD5 of `"<entity>:<businessKey>"` (32 hex chars, a valid Shopware ID). The seeder is standalone, so this replaces the factory algorithm; the index therefore matches the seeded instance deterministically. `verify.mjs` asserts that every indexed ID exists.
 
 **Runtime (`lib/fitment.ts`):**
 - The YMM selector supplies dependent dropdowns: Make → Model → Year.
@@ -321,7 +321,7 @@ Product IDs come from the factory `stableId('product', productNumber)`, so the i
 ### 9.5 Brand tokens (`theme/brand.ts`)
 ```ts
 export const brand = {
-  name: process.env.NEXT_PUBLIC_BRAND_NAME ?? "Trailhead Parts Supply (Demo)",
+  name: process.env.NEXT_PUBLIC_BRAND_NAME ?? "Full Throttle Supply Co.",
   logo: "/brand/logo.svg",
   colors: { primary: "#1F3A5F", accent: "#E4572E", surface: "#F6F5F2", ink: "#1B1B1B" },
   fonts: { heading: "Barlow Condensed", body: "Inter" },
@@ -417,8 +417,8 @@ npm scripts: `fixture:validate`, `seed:discover`, `seed:plan`, `seed:apply`, `se
 
 | Item | Default assumed in this guide |
 | --- | --- |
-| Demo brand name and logo | "Trailhead Parts Supply (Demo)" placeholder; Jamersan to supply the final name, logo, and colors |
-| Who provisions the Shopware instance and when | Jamersan / Shopware partner team; Phase 0 is blocked until §13 is complete |
+| Demo brand name and logo | **Decided 2026-11-23:** "Full Throttle Supply Co." (fictional). Logo is a generated checkered-flag mark; colors unchanged |
+| Who provisions the Shopware instance and when | **Decided 2026-11-23:** Shopware-provided cloud demo instance, **v6.7 Commercial (Evolve)** (lowest tier with B2B Components). Phase 0 is blocked until §13 is complete |
 | Vercel team and plan | Jamersan team account; shared-password gate in middleware (works on any plan) |
 | Target demo date | Not set; the phases above are sized for about 2–3 focused weeks of Claude Code work plus review |
 | Company/roles editing in app | Read-only in the POC; editing is a stretch goal |
