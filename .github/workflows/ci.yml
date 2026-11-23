@@ -1,0 +1,69 @@
+name: CI
+
+# Runs every check that does not need the Shopware instance. e2e runs against the mock Store API
+# (e2e/mock-store-api.mjs) with test-only values from e2e/test-env.mjs: no real secrets are used.
+# Instance-backed checks (seed:verify, e2e against the deployment) are added in Phases 2 and 8.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: Fixture, types, unit, build, bundle scan, e2e
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Load mock/test environment
+        run: |
+          node --input-type=module -e "import { testEnv } from './e2e/test-env.mjs'; for (const [k, v] of Object.entries(testEnv)) console.log(k + '=' + v)" >> "$GITHUB_ENV"
+
+      - name: Fixture validation (strict schema + business checks)
+        run: npm run fixture:validate
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+      - name: Bundle secret scan (no Admin creds or secrets in the client bundle)
+        run: npm run check:bundle-secrets
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: e2e (S1-S5 + negative tests, mock Store API)
+        run: npm run e2e
+
+      - name: Upload Playwright results on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-results
+          path: test-results/
+          retention-days: 7

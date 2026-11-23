@@ -19,6 +19,16 @@ npm run build && npm run e2e  # e2e against the mock Store API in e2e/mock-store
 
 For local dev against the mock: copy `.env.example` to `.env.local` and use the values from `e2e/test-env.mjs`. Then run `npm run mock:store-api` and `npm run dev`.
 
+## CI
+
+[![CI](https://github.com/drc-jam/shopware-poc-dms/actions/workflows/ci.yml/badge.svg)](https://github.com/drc-jam/shopware-poc-dms/actions/workflows/ci.yml)
+
+`.github/workflows/ci.yml` runs on every push to `main` and on every pull request:
+- fixture validation, typecheck, unit tests, build, and the bundle secret scan
+- Playwright e2e against the mock Store API, using test-only values from `e2e/test-env.mjs`
+
+No repository secrets are needed. Checks against the real instance (`seed:verify`, e2e against the deployment) are added in Phases 2 and 8.
+
 ## Status
 
 | Phase | State | Notes |
