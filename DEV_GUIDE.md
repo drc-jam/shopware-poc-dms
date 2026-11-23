@@ -4,6 +4,7 @@
 **Deliverable:** a reusable, neutral-branded powersports/auto-parts B2B demo. It is a lightweight Next.js app on Vercel connected to a Shopware 6.7 instance with Commercial B2B Components.
 **Base reference:** `partner-technical-summary.md` (Shopware Demo Factory, repo `vryan-shopware/shopware-demo-creator` @ `c809638`).
 **Prepared:** 2026-11-23 · Jamersan
+**Revised:** 2026-11-23. The catalog vertical changed from ATV/UTV powersports to **performance racing shocks** (circle track, street/strip), mirroring the shape of the prospect's racing-shocks department. This affects §6.7 and §7.1. The §0 decisions are unchanged.
 
 ---
 
@@ -196,15 +197,15 @@ Port these steps from the factory's B2B fixture seeding. Keep its graceful-skip 
 
 ### 6.7 Categories (fixture)
 ```
-ATV & UTV Parts
-  ├─ Brakes            ├─ Drive & Axles      ├─ Suspension
-Engine
-  ├─ Filters           ├─ Gaskets & Seals    ├─ Ignition
-Electrical
-  ├─ Batteries         ├─ Lighting
-Tires & Wheels
+Shocks
+  ├─ Stock Mount Shocks   ├─ Heim Mount Shocks   ├─ Shock Packages
+Coil-Overs
+  ├─ Coil-Over Kits       ├─ Shock Ends & Extensions
+Shock Mounts
+Rebuild Components (universal)
 Shop Supplies (universal, no fitment)
 ```
+Shocks are sold as separate front and rear SKUs per chassis. A shock "series" (e.g. Velocity 70 Series) is the unit for cross-SKU series pricing (§6.4).
 
 ---
 
@@ -212,10 +213,10 @@ Shop Supplies (universal, no fitment)
 
 ### 7.1 Fixture targets
 - About **80 SKUs**: about 60 fitment-specific and about 20 universal (shop supplies, oils, tie-downs).
-- **4 series** (A–D), each with 3–6 SKUs. Example: Series C = brake pads across models.
+- **4 series** (A–D), each with 3–6 SKUs. Example: Series A = one shock series across front/rear and several chassis.
 - Tiers on about 40 SKUs (1/5/10/25). Dealer qty-1 price ≈ retail × 0.70, and each break lowers it by about 4–6%.
 - **6 MAP SKUs** (`hide_until_cart`).
-- **Vehicles:** about 15 models across real OEM makes (Honda, Yamaha, Polaris, Can-Am, Kawasaki) with year ranges. Product brands are **fictional**. All customers, companies, and addresses are fictional.
+- **Vehicles:** about 15 race-car chassis applications across real OEM makes (Chevrolet, Oldsmobile, Pontiac, Buick, Ford, Mercury) with year ranges, grouped the way racers shop (GM Metric, GM A-body, F/X-body, Fox-body, Ford/Mercury mid-size). Product brands are **fictional**. All customers, companies, and addresses are fictional. Nothing is copied from the prospect site.
 - Images: generated or licensed placeholder product shots stored in `data/fixture/media/`. No scraped prospect assets.
 - Every record carries `extractionSource: "synthetic-fixture"` and `priceConfidence: "generated"`, per the factory provenance rule.
 

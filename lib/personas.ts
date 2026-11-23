@@ -5,7 +5,7 @@ export type ActivePersona = PersonaKey | "guest";
 
 export const PERSONAS: Record<ActivePersona, { label: string; short: string; description: string; b2b: boolean }> = {
   guest: { label: "Guest", short: "Guest", description: "Not logged in", b2b: false },
-  retail: { label: "Retail Rider", short: "Retail", description: "Retail price only; MAP items hide price until cart", b2b: false },
+  retail: { label: "Retail Racer", short: "Retail", description: "Retail price only; MAP items hide price until cart", b2b: false },
   "dealer-admin": { label: "Dealer Admin", short: "Dealer Admin", description: "Dealer pricing, tiers, company admin, approves requests", b2b: true },
   "dealer-junior": { label: "Dealer Junior Buyer", short: "Junior Buyer", description: "Dealer pricing, quick order, lists, submits for approval", b2b: true },
 };

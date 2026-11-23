@@ -33,11 +33,11 @@ test.describe("persona switcher", () => {
   test.beforeEach(async ({ page }) => passGate(page));
 
   test("each persona logs in with one click", async ({ page }) => {
-    await switchPersona(page, "retail", "Retail Rider");
+    await switchPersona(page, "retail", "Retail Racer");
     await expect(page.getByTestId("persona-who")).toContainText("Jordan Avery");
 
     await switchPersona(page, "dealer-admin", "Dealer Admin");
-    await expect(page.getByTestId("persona-who")).toContainText("Morgan Ellis · Summit Trail Powersports");
+    await expect(page.getByTestId("persona-who")).toContainText("Morgan Ellis · Summit Trail Race Shop");
 
     await switchPersona(page, "dealer-junior", "Dealer Junior Buyer");
     await expect(page.getByTestId("persona-who")).toContainText("Casey Brooks");
@@ -48,13 +48,13 @@ test.describe("persona switcher", () => {
 
   test("the main navigation renders from the Store API", async ({ page }) => {
     const nav = page.getByRole("navigation", { name: "Categories" });
-    await expect(nav.getByRole("link", { name: "ATV & UTV Parts" })).toBeVisible();
+    await expect(nav.getByRole("link", { name: "Shocks" })).toBeVisible();
     await expect(nav.getByRole("link", { name: "Shop Supplies" })).toBeVisible();
   });
 
   test("carts persist per persona; reset clears them", async ({ page }) => {
-    await switchPersona(page, "retail", "Retail Rider");
-    const found = await bff(page, "POST", "search", { search: "STP-BP-C-0142", limit: 1 });
+    await switchPersona(page, "retail", "Retail Racer");
+    const found = await bff(page, "POST", "search", { search: "VRD-SM-A-1001", limit: 1 });
     const productId = ((await found.json()) as { elements: { id: string }[] }).elements[0]!.id;
     const add = await bff(page, "POST", "checkout/cart/line-item", { items: [{ type: "product", id: productId, referencedId: productId, quantity: 2 }] });
     expect(add.status()).toBe(200);
@@ -64,13 +64,13 @@ test.describe("persona switcher", () => {
     await switchPersona(page, "dealer-admin", "Dealer Admin");
     await expect(page.getByTestId("cart-count")).toHaveText("0");
 
-    await switchPersona(page, "retail", "Retail Rider");
+    await switchPersona(page, "retail", "Retail Racer");
     await expect(page.getByTestId("cart-count")).toHaveText("2");
 
     page.once("dialog", (d) => d.accept());
     await page.getByTestId("persona-reset").click();
     await expect(page.getByTestId("persona-current")).toHaveText("Guest");
-    await switchPersona(page, "retail", "Retail Rider");
+    await switchPersona(page, "retail", "Retail Racer");
     await expect(page.getByTestId("cart-count")).toHaveText("0");
   });
 });
@@ -81,7 +81,7 @@ test.describe("BFF allowlist (negative tests)", () => {
   test("no persona can create an order", async ({ page, request }) => {
     for (const [key, label] of [
       ["guest", "Guest"],
-      ["retail", "Retail Rider"],
+      ["retail", "Retail Racer"],
       ["dealer-admin", "Dealer Admin"],
       ["dealer-junior", "Dealer Junior Buyer"],
     ] as const) {

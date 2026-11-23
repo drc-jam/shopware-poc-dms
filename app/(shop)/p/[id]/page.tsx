@@ -56,7 +56,7 @@ export default async function ProductPage({ params }: Props) {
 
         {series && (
           <p className="rounded-[var(--brand-radius)] border border-primary/20 bg-primary/5 px-4 py-3 text-sm text-primary" data-testid="series-callout">
-            <strong className="mr-1">Series {series.code}.</strong>
+            <strong className="mr-1">{series.label}.</strong>
             {seriesCopy(series)}
             {!isDealer(persona) && <span className="block text-xs text-black/60">Series pricing is available to dealer accounts.</span>}
           </p>

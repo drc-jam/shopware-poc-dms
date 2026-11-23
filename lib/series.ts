@@ -18,5 +18,5 @@ export const seriesInfo = (code: string | null): SeriesInfo | null => (code ? (S
 export const pct = (n: number) => `${Number.isInteger(n) ? n : n.toFixed(2).replace(/0$/, "")}%`;
 
 export function seriesCopy(s: SeriesInfo): string {
-  return `Mix any ${s.label.replace(/ Series [A-Z]$/, "")} items in Series ${s.code}: ${s.tiers.map((t) => `${t.minQty}+ save ${pct(t.discountPct)}`).join(", ")}`;
+  return `Mix and match any ${s.label} shocks (front, rear, any chassis): ${s.tiers.map((t) => `${t.minQty}+ save ${pct(t.discountPct)}`).join(", ")}`;
 }

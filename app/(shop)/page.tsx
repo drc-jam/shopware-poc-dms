@@ -9,9 +9,9 @@ export default async function Home() {
     <div className="space-y-10">
       <section className="rounded-[var(--brand-radius)] bg-primary px-6 py-12 text-white sm:px-10">
         <p className="text-sm uppercase tracking-widest text-white/70">Shop by vehicle</p>
-        <h1 className="mt-2 text-4xl font-semibold sm:text-5xl">Parts that fit your ride</h1>
+        <h1 className="mt-2 text-4xl font-semibold sm:text-5xl">Racing shocks for your chassis</h1>
         <p className="mt-3 max-w-xl text-white/85">
-          Pick your year, make and model to see the parts that fit. The vehicle selector arrives in Phase 5.
+          Pick your year, make and model to see the shocks, coil-overs and mounts that fit. The vehicle selector arrives in Phase 5.
         </p>
       </section>
 

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ProductSummary } from "@/lib/pricing";
+import { seriesInfo } from "@/lib/series";
 import { AddToCart } from "./AddToCart";
 import { PriceBlock } from "./PriceBlock";
 import { QuickView } from "./QuickView";
@@ -19,7 +20,7 @@ export function ProductCard({ product }: { product: ProductSummary }) {
         <div className="flex flex-wrap gap-1.5">
           {product.series && (
             <span className="rounded bg-primary/10 px-1.5 py-0.5 text-xs font-medium text-primary" data-testid="series-badge">
-              Series {product.series}
+              {seriesInfo(product.series)?.label ?? `Series ${product.series}`}
             </span>
           )}
         </div>

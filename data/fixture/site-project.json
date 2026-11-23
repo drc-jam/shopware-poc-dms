@@ -2,65 +2,65 @@
   "$schema": "../../schemas/site-project.demo.schema.json",
   "source": {
     "type": "synthetic-fixture",
-    "name": "powersports-b2b-demo",
-    "description": "Curated synthetic powersports catalog. All brands, people and companies are fictional. Fitment is synthetic.",
+    "name": "racing-shocks-b2b-demo",
+    "description": "Curated synthetic racing-shocks catalog. All brands, products, people and companies are fictional. Fitment is synthetic.",
     "extractionSource": "synthetic-fixture",
     "priceConfidence": "generated"
   },
   "currency": "USD",
   "brands": [
     {
-      "code": "STP",
-      "name": "Stoneridge Moto",
-      "fictional": true,
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "code": "RDG",
-      "name": "Ridgeback Drivetrain",
-      "fictional": true,
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "code": "IRV",
-      "name": "Ironvale Offroad",
-      "fictional": true,
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "code": "HLV",
-      "name": "Halvard Filtration",
+      "code": "VRD",
+      "name": "Velocity Ride Dynamics",
       "fictional": true,
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
       "code": "KST",
-      "name": "Kestrel Powersports",
+      "name": "Kestrel Race Products",
       "fictional": true,
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
-      "code": "BCE",
-      "name": "Bluecairn Electric",
+      "code": "HLV",
+      "name": "Halvard Machine Works",
       "fictional": true,
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
-      "code": "TGT",
-      "name": "Tallgrass Tire Co.",
+      "code": "IRV",
+      "name": "Ironvale Chassis",
       "fictional": true,
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
       "code": "CPL",
-      "name": "Cinderpeak Lubricants",
+      "name": "Cinderpeak Racing Fluids",
+      "fictional": true,
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "code": "TGT",
+      "name": "Tallgrass Pit Tools",
+      "fictional": true,
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "code": "BCE",
+      "name": "Bluecairn Spring Co.",
+      "fictional": true,
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "code": "STP",
+      "name": "Stoneridge Track Supply",
       "fictional": true,
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
@@ -69,93 +69,72 @@
   "categories": [
     {
       "path": [
-        "ATV & UTV Parts"
+        "Shocks"
+      ],
+      "description": "Stock-mount and heim-mount racing shocks for circle track and street/strip. Front and rear are sold separately.",
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "path": [
+        "Shocks",
+        "Stock Mount Shocks"
       ],
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
       "path": [
-        "ATV & UTV Parts",
-        "Brakes"
+        "Shocks",
+        "Heim Mount Shocks"
       ],
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
       "path": [
-        "ATV & UTV Parts",
-        "Drive & Axles"
+        "Shocks",
+        "Shock Packages"
+      ],
+      "description": "Matched four-shock packages per chassis.",
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "path": [
+        "Coil-Overs"
       ],
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
       "path": [
-        "ATV & UTV Parts",
-        "Suspension"
+        "Coil-Overs",
+        "Coil-Over Kits"
       ],
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
       "path": [
-        "Engine"
+        "Coil-Overs",
+        "Shock Ends & Extensions"
       ],
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
       "path": [
-        "Engine",
-        "Filters"
+        "Shock Mounts"
       ],
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
       "path": [
-        "Engine",
-        "Gaskets & Seals"
+        "Rebuild Components"
       ],
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "path": [
-        "Engine",
-        "Ignition"
-      ],
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "path": [
-        "Electrical"
-      ],
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "path": [
-        "Electrical",
-        "Batteries"
-      ],
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "path": [
-        "Electrical",
-        "Lighting"
-      ],
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "path": [
-        "Tires & Wheels"
-      ],
+      "description": "Pistons, seals and service parts for shock rebuilds. Universal.",
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
@@ -163,7 +142,7 @@
       "path": [
         "Shop Supplies"
       ],
-      "description": "Universal shop consumables. No vehicle fitment required.",
+      "description": "Universal pit and shop supplies. No vehicle fitment required.",
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     }
@@ -171,8 +150,8 @@
   "series": [
     {
       "code": "A",
-      "label": "CV Axle Series A",
-      "description": "Ridgeback heavy-duty CV axles",
+      "label": "Velocity 70 Series",
+      "description": "Monotube stock-mount dry shocks, front and rear, across GM chassis",
       "tiers": [
         {
           "minQty": 10,
@@ -188,8 +167,8 @@
     },
     {
       "code": "B",
-      "label": "Oil Filter Series B",
-      "description": "Halvard oil filters",
+      "label": "Kestrel 27 Series",
+      "description": "Twin-tube stock-mount shocks for GM and Ford/Mercury chassis",
       "tiers": [
         {
           "minQty": 10,
@@ -205,8 +184,8 @@
     },
     {
       "code": "C",
-      "label": "Brake Pad Series C",
-      "description": "Stoneridge sintered brake pads across models",
+      "label": "Velocity SL Series",
+      "description": "Heim-mount monotube shocks, 7\" and 9\" stroke",
       "tiers": [
         {
           "minQty": 10,
@@ -222,8 +201,8 @@
     },
     {
       "code": "D",
-      "label": "Spark Plug Series D",
-      "description": "Kestrel iridium spark plugs",
+      "label": "Kestrel 5Q Series",
+      "description": "Steel twin-tube heim-mount circle track shocks",
       "tiers": [
         {
           "minQty": 10,
@@ -241,7 +220,7 @@
   "personas": [
     {
       "key": "retail",
-      "label": "Retail Rider",
+      "label": "Retail Racer",
       "customer": "retail-rider"
     },
     {
@@ -257,299 +236,829 @@
   ],
   "products": [
     {
-      "productNumber": "STP-BP-C-0142",
-      "name": "Sintered Front Brake Pads – Honda/Yamaha",
-      "brand": "Stoneridge Moto",
+      "productNumber": "VRD-SM-A-1001",
+      "name": "Velocity 70 Series Monotube Dry Shock, Front – GM Metric",
+      "brand": "Velocity Ride Dynamics",
       "categoryPath": [
-        "ATV & UTV Parts",
-        "Brakes"
+        "Shocks",
+        "Stock Mount Shocks"
       ],
-      "description": "Synthetic demo item. Brake component for listed models; confirm fitment before ordering.",
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
       "price": {
-        "gross": 54.99
+        "gross": 119.99
       },
-      "stock": 261,
+      "stock": 22,
       "media": [
-        "media/brakes.png"
+        "media/stock-mount-shock.png"
       ],
       "demo": {
-        "series": "C",
+        "series": "A",
         "mapPolicy": "none",
         "dealerTiers": [
           {
             "minQty": 1,
-            "gross": 38.49
+            "gross": 83.99
           },
           {
             "minQty": 5,
-            "gross": 36.59
+            "gross": 79.79
           },
           {
             "minQty": 10,
-            "gross": 34.69
+            "gross": 75.79
           },
           {
             "minQty": 25,
-            "gross": 32.99
+            "gross": 71.99
           }
         ],
         "fitment": [
-          "HON-TRX420-2015-2024",
-          "YAM-GRIZ700-2016-2025",
-          "YAM-WOLV1000-2021-2025",
-          "YAM-YXZ1000-2016-2025"
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986"
         ]
       },
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "STP-BP-C-0143",
-      "name": "Sintered Rear Brake Pads – Honda/Yamaha",
-      "brand": "Stoneridge Moto",
+      "productNumber": "VRD-SM-A-1002",
+      "name": "Velocity 70 Series Monotube Dry Shock, Rear – GM Metric",
+      "brand": "Velocity Ride Dynamics",
       "categoryPath": [
-        "ATV & UTV Parts",
-        "Brakes"
+        "Shocks",
+        "Stock Mount Shocks"
       ],
-      "description": "Synthetic demo item. Brake component for listed models; confirm fitment before ordering.",
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
       "price": {
-        "gross": 49.99
+        "gross": 119.99
       },
-      "stock": 28,
+      "stock": 77,
       "media": [
-        "media/brakes.png"
+        "media/stock-mount-shock.png"
       ],
       "demo": {
-        "series": "C",
+        "series": "A",
         "mapPolicy": "none",
         "dealerTiers": [
           {
             "minQty": 1,
-            "gross": 34.99
+            "gross": 83.99
           },
           {
             "minQty": 5,
-            "gross": 33.19
+            "gross": 79.79
           },
           {
             "minQty": 10,
-            "gross": 31.59
+            "gross": 75.79
           },
           {
             "minQty": 25,
-            "gross": 29.99
+            "gross": 71.99
           }
         ],
         "fitment": [
-          "HON-TRX420-2015-2024",
-          "YAM-GRIZ700-2016-2025",
-          "YAM-KOD450-2018-2025"
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986"
         ]
       },
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "STP-BP-C-0210",
-      "name": "Sintered Front Brake Pads – Polaris",
-      "brand": "Stoneridge Moto",
+      "productNumber": "VRD-SM-A-1003",
+      "name": "Velocity 70 Series Monotube Dry Shock, Front – GM A-Body",
+      "brand": "Velocity Ride Dynamics",
       "categoryPath": [
-        "ATV & UTV Parts",
-        "Brakes"
+        "Shocks",
+        "Stock Mount Shocks"
       ],
-      "description": "Synthetic demo item. Brake component for listed models; confirm fitment before ordering.",
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
       "price": {
-        "gross": 57.99
+        "gross": 124.99
       },
-      "stock": 131,
+      "stock": 21,
       "media": [
-        "media/brakes.png"
+        "media/stock-mount-shock.png"
       ],
       "demo": {
-        "series": "C",
+        "series": "A",
         "mapPolicy": "none",
         "dealerTiers": [
           {
             "minQty": 1,
-            "gross": 40.59
+            "gross": 87.49
           },
           {
             "minQty": 5,
-            "gross": 38.59
+            "gross": 83.09
           },
           {
             "minQty": 10,
-            "gross": 36.59
+            "gross": 78.99
           },
           {
             "minQty": 25,
-            "gross": 34.79
+            "gross": 74.99
           }
         ],
         "fitment": [
-          "POL-SPT570-2014-2025",
-          "POL-RZRXP1K-2014-2023",
-          "POL-RGRXP1K-2018-2025"
+          "CHE-CHEVELLE-1964-1972",
+          "PON-GTO-1964-1972",
+          "PON-TEMPEST-1964-1970"
         ]
       },
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "STP-BP-C-0211",
-      "name": "Sintered Rear Brake Pads – Polaris",
-      "brand": "Stoneridge Moto",
+      "productNumber": "VRD-SM-A-1004",
+      "name": "Velocity 70 Series Monotube Dry Shock, Rear – GM A-Body",
+      "brand": "Velocity Ride Dynamics",
       "categoryPath": [
-        "ATV & UTV Parts",
-        "Brakes"
+        "Shocks",
+        "Stock Mount Shocks"
       ],
-      "description": "Synthetic demo item. Brake component for listed models; confirm fitment before ordering.",
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
       "price": {
-        "gross": 52.99
+        "gross": 124.99
       },
-      "stock": 179,
+      "stock": 80,
       "media": [
-        "media/brakes.png"
+        "media/stock-mount-shock.png"
       ],
       "demo": {
-        "series": "C",
+        "series": "A",
         "mapPolicy": "none",
         "dealerTiers": [
           {
             "minQty": 1,
-            "gross": 37.09
+            "gross": 87.49
           },
           {
             "minQty": 5,
-            "gross": 35.19
+            "gross": 83.09
           },
           {
             "minQty": 10,
-            "gross": 33.49
+            "gross": 78.99
           },
           {
             "minQty": 25,
-            "gross": 31.79
+            "gross": 74.99
           }
         ],
         "fitment": [
-          "POL-SPT570-2014-2025",
-          "POL-RZRXP1K-2014-2023",
-          "POL-RGRXP1K-2018-2025"
+          "CHE-CHEVELLE-1964-1972",
+          "PON-GTO-1964-1972",
+          "PON-TEMPEST-1964-1970"
         ]
       },
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "STP-BP-C-0315",
-      "name": "Sintered Front Brake Pads – Can-Am",
-      "brand": "Stoneridge Moto",
+      "productNumber": "VRD-SM-A-1005",
+      "name": "Velocity 70 Series Monotube Dry Shock, Front – Camaro/Nova",
+      "brand": "Velocity Ride Dynamics",
       "categoryPath": [
-        "ATV & UTV Parts",
-        "Brakes"
+        "Shocks",
+        "Stock Mount Shocks"
       ],
-      "description": "Synthetic demo item. Brake component for listed models; confirm fitment before ordering.",
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
       "price": {
-        "gross": 59.99
+        "gross": 129.99
       },
-      "stock": 223,
+      "stock": 24,
       "media": [
-        "media/brakes.png"
+        "media/stock-mount-shock.png"
       ],
       "demo": {
-        "series": "C",
+        "series": "A",
         "mapPolicy": "none",
         "dealerTiers": [
           {
             "minQty": 1,
-            "gross": 41.99
+            "gross": 90.99
           },
           {
             "minQty": 5,
-            "gross": 39.89
+            "gross": 86.39
           },
           {
             "minQty": 10,
-            "gross": 37.89
+            "gross": 82.09
           },
           {
             "minQty": 25,
-            "gross": 35.99
+            "gross": 77.99
           }
         ],
         "fitment": [
-          "CAN-OUT570-2016-2023",
-          "CAN-MAVX3-2017-2025",
-          "CAN-DEFHD10-2017-2025"
+          "CHE-CAMARO-1970-1981",
+          "CHE-NOVA-1975-1979"
         ]
       },
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "STP-BP-C-0420",
-      "name": "Sintered Front Brake Pads – Kawasaki/Honda",
-      "brand": "Stoneridge Moto",
+      "productNumber": "VRD-SM-A-1006",
+      "name": "Velocity 70 Series Monotube Dry Shock, Rear – Camaro/Nova",
+      "brand": "Velocity Ride Dynamics",
       "categoryPath": [
-        "ATV & UTV Parts",
-        "Brakes"
+        "Shocks",
+        "Stock Mount Shocks"
       ],
-      "description": "Synthetic demo item. Brake component for listed models; confirm fitment before ordering.",
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
       "price": {
-        "gross": 55.99
+        "gross": 129.99
       },
-      "stock": 280,
+      "stock": 79,
       "media": [
-        "media/brakes.png"
+        "media/stock-mount-shock.png"
       ],
       "demo": {
-        "series": "C",
+        "series": "A",
         "mapPolicy": "none",
         "dealerTiers": [
           {
             "minQty": 1,
-            "gross": 39.19
+            "gross": 90.99
           },
           {
             "minQty": 5,
-            "gross": 37.19
+            "gross": 86.39
           },
           {
             "minQty": 10,
-            "gross": 35.39
+            "gross": 82.09
           },
           {
             "minQty": 25,
-            "gross": 33.59
+            "gross": 77.99
           }
         ],
         "fitment": [
-          "KAW-BF750-2012-2025",
-          "KAW-MULEFXT-2015-2025",
-          "HON-PIO1000-2016-2025",
-          "HON-TAL1000-2019-2025",
-          "HON-FOR520-2020-2025"
+          "CHE-CAMARO-1970-1981",
+          "CHE-NOVA-1975-1979"
         ]
       },
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "STP-BR-X-0501",
-      "name": "Front Brake Rotor, Sport UTV",
-      "brand": "Stoneridge Moto",
+      "productNumber": "KST-SM-B-2001",
+      "name": "Kestrel 27 Series Twin-Tube Shock, Front – GM Metric",
+      "brand": "Kestrel Race Products",
       "categoryPath": [
-        "ATV & UTV Parts",
-        "Brakes"
+        "Shocks",
+        "Stock Mount Shocks"
       ],
-      "description": "Synthetic demo item. Brake component for listed models; confirm fitment before ordering.",
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 99.99
+      },
+      "stock": 106,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "series": "B",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 69.99
+          },
+          {
+            "minQty": 5,
+            "gross": 66.49
+          },
+          {
+            "minQty": 10,
+            "gross": 63.19
+          },
+          {
+            "minQty": 25,
+            "gross": 59.99
+          }
+        ],
+        "fitment": [
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-SM-B-2002",
+      "name": "Kestrel 27 Series Twin-Tube Shock, Rear – GM Metric",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 99.99
+      },
+      "stock": 50,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "series": "B",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 69.99
+          },
+          {
+            "minQty": 5,
+            "gross": 66.49
+          },
+          {
+            "minQty": 10,
+            "gross": 63.19
+          },
+          {
+            "minQty": 25,
+            "gross": 59.99
+          }
+        ],
+        "fitment": [
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-SM-B-2003",
+      "name": "Kestrel 27 Series Twin-Tube Shock, Front – Mustang/Mustang II",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 104.99
+      },
+      "stock": 107,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "series": "B",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 73.49
+          },
+          {
+            "minQty": 5,
+            "gross": 69.79
+          },
+          {
+            "minQty": 10,
+            "gross": 66.29
+          },
+          {
+            "minQty": 25,
+            "gross": 62.99
+          }
+        ],
+        "fitment": [
+          "FOR-MUSTANG-1979-1993",
+          "FOR-MUSTANGII-1974-1978"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-SM-B-2004",
+      "name": "Kestrel 27 Series Twin-Tube Shock, Rear – Mustang/Mustang II",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 104.99
+      },
+      "stock": 51,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "series": "B",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 73.49
+          },
+          {
+            "minQty": 5,
+            "gross": 69.79
+          },
+          {
+            "minQty": 10,
+            "gross": 66.29
+          },
+          {
+            "minQty": 25,
+            "gross": 62.99
+          }
+        ],
+        "fitment": [
+          "FOR-MUSTANG-1979-1993",
+          "FOR-MUSTANGII-1974-1978"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-SM-B-2005",
+      "name": "Kestrel 27 Series Twin-Tube Shock, Front – Ford/Mercury Mid-Size",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 104.99
+      },
+      "stock": 108,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "series": "B",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 73.49
+          },
+          {
+            "minQty": 5,
+            "gross": 69.79
+          },
+          {
+            "minQty": 10,
+            "gross": 66.29
+          },
+          {
+            "minQty": 25,
+            "gross": 62.99
+          }
+        ],
+        "fitment": [
+          "FOR-TBIRD-1977-1979",
+          "MER-COUGAR-1977-1979",
+          "MER-MONTEGO-1972-1976"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-SM-B-2006",
+      "name": "Kestrel 27 Series Twin-Tube Shock, Rear – Ford/Mercury Mid-Size",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 104.99
+      },
+      "stock": 52,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "series": "B",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 73.49
+          },
+          {
+            "minQty": 5,
+            "gross": 69.79
+          },
+          {
+            "minQty": 10,
+            "gross": 66.29
+          },
+          {
+            "minQty": 25,
+            "gross": 62.99
+          }
+        ],
+        "fitment": [
+          "FOR-TBIRD-1977-1979",
+          "MER-COUGAR-1977-1979",
+          "MER-MONTEGO-1972-1976"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-SM-X-1101",
+      "name": "Velocity Drag Race Shock, Front – Camaro",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 159.99
+      },
+      "stock": 38,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "mapPolicy": "hide_until_cart",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 111.99
+          }
+        ],
+        "fitment": [
+          "CHE-CAMARO-1970-1981"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-SM-X-1102",
+      "name": "Velocity Drag Race Shock, Rear – Camaro/Nova",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 159.99
+      },
+      "stock": 95,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 111.99
+          }
+        ],
+        "fitment": [
+          "CHE-CAMARO-1970-1981",
+          "CHE-NOVA-1975-1979"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-SM-X-1103",
+      "name": "Velocity Double-Adjustable Drag Shock, Front – Mustang",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 349.99
+      },
+      "stock": 39,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "mapPolicy": "hide_until_cart",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 244.99
+          }
+        ],
+        "fitment": [
+          "FOR-MUSTANG-1979-1993"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-SM-X-1104",
+      "name": "Velocity Double-Adjustable Drag Shock, Rear – Mustang",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 349.99
+      },
+      "stock": 96,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "mapPolicy": "hide_until_cart",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 244.99
+          }
+        ],
+        "fitment": [
+          "FOR-MUSTANG-1979-1993"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-SM-X-1105",
+      "name": "Velocity Steel Stock Mount Dry Shock, Front – Ford/Mercury Mid-Size",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 114.99
+      },
+      "stock": 40,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 80.49
+          }
+        ],
+        "fitment": [
+          "FOR-TBIRD-1977-1979",
+          "MER-COUGAR-1977-1979",
+          "MER-MONTEGO-1972-1976"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-SM-X-1106",
+      "name": "Velocity Steel Stock Mount Dry Shock, Rear – Ford/Mercury Mid-Size",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 114.99
+      },
+      "stock": 97,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 80.49
+          }
+        ],
+        "fitment": [
+          "FOR-TBIRD-1977-1979",
+          "MER-COUGAR-1977-1979",
+          "MER-MONTEGO-1972-1976"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-SM-X-1107",
+      "name": "Velocity Steel Stock Mount Dry Shock, Front – Mustang II",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 114.99
+      },
+      "stock": 41,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 80.49
+          }
+        ],
+        "fitment": [
+          "FOR-MUSTANGII-1974-1978"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-SM-X-1108",
+      "name": "Velocity Steel Stock Mount Dry Shock, Rear – Mustang II",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 114.99
+      },
+      "stock": 90,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 80.49
+          }
+        ],
+        "fitment": [
+          "FOR-MUSTANGII-1974-1978"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-SM-X-2101",
+      "name": "Kestrel Street Stock Steel Shock, Front – GM A-Body",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
       "price": {
         "gross": 89.99
       },
-      "stock": 67,
+      "stock": 69,
       "media": [
-        "media/brakes.png"
+        "media/stock-mount-shock.png"
       ],
       "demo": {
         "mapPolicy": "none",
@@ -560,235 +1069,189 @@
           }
         ],
         "fitment": [
-          "POL-RZRXP1K-2014-2023",
-          "CAN-MAVX3-2017-2025",
-          "HON-TAL1000-2019-2025"
+          "CHE-CHEVELLE-1964-1972",
+          "PON-GTO-1964-1972",
+          "PON-TEMPEST-1964-1970"
         ]
       },
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "STP-BR-X-0502",
-      "name": "Front Brake Rotor, Utility ATV",
-      "brand": "Stoneridge Moto",
+      "productNumber": "KST-SM-X-2102",
+      "name": "Kestrel Street Stock Steel Shock, Rear – GM A-Body",
+      "brand": "Kestrel Race Products",
       "categoryPath": [
-        "ATV & UTV Parts",
-        "Brakes"
+        "Shocks",
+        "Stock Mount Shocks"
       ],
-      "description": "Synthetic demo item. Brake component for listed models; confirm fitment before ordering.",
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
       "price": {
-        "gross": 79.99
+        "gross": 89.99
       },
-      "stock": 300,
+      "stock": 12,
       "media": [
-        "media/brakes.png"
+        "media/stock-mount-shock.png"
       ],
       "demo": {
         "mapPolicy": "none",
         "dealerTiers": [
           {
             "minQty": 1,
-            "gross": 55.99
+            "gross": 62.99
           }
         ],
         "fitment": [
-          "YAM-GRIZ700-2016-2025",
-          "YAM-KOD450-2018-2025",
-          "POL-SPT570-2014-2025"
+          "CHE-CHEVELLE-1964-1972",
+          "PON-GTO-1964-1972",
+          "PON-TEMPEST-1964-1970"
         ]
       },
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "STP-CK-X-0610",
-      "name": "Brake Caliper Rebuild Kit",
-      "brand": "Stoneridge Moto",
+      "productNumber": "KST-SM-X-2103",
+      "name": "Kestrel Street Stock Steel Shock, Front – Camaro",
+      "brand": "Kestrel Race Products",
       "categoryPath": [
-        "ATV & UTV Parts",
-        "Brakes"
+        "Shocks",
+        "Stock Mount Shocks"
       ],
-      "description": "Synthetic demo item. Brake component for listed models; confirm fitment before ordering.",
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
       "price": {
-        "gross": 34.99
+        "gross": 94.99
       },
-      "stock": 252,
+      "stock": 68,
       "media": [
-        "media/brakes.png"
+        "media/stock-mount-shock.png"
       ],
       "demo": {
         "mapPolicy": "none",
         "dealerTiers": [
           {
             "minQty": 1,
-            "gross": 24.49
-          },
-          {
-            "minQty": 5,
-            "gross": 23.29
-          },
-          {
-            "minQty": 10,
-            "gross": 22.09
-          },
-          {
-            "minQty": 25,
-            "gross": 20.99
+            "gross": 66.49
           }
         ],
         "fitment": [
-          "KAW-BF750-2012-2025",
-          "CAN-OUT570-2016-2023",
-          "HON-TRX420-2015-2024",
-          "HON-FOR520-2020-2025"
+          "CHE-CAMARO-1970-1981"
         ]
       },
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "STP-BL-X-0720",
-      "name": "Stainless Braided Brake Line Kit",
-      "brand": "Stoneridge Moto",
+      "productNumber": "KST-SM-X-2104",
+      "name": "Kestrel Street Stock Steel Shock, Rear – Camaro",
+      "brand": "Kestrel Race Products",
       "categoryPath": [
-        "ATV & UTV Parts",
-        "Brakes"
+        "Shocks",
+        "Stock Mount Shocks"
       ],
-      "description": "Synthetic demo item. Brake component for listed models; confirm fitment before ordering.",
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
       "price": {
-        "gross": 129.99
+        "gross": 94.99
       },
-      "stock": 165,
+      "stock": 15,
       "media": [
-        "media/brakes.png"
+        "media/stock-mount-shock.png"
       ],
       "demo": {
         "mapPolicy": "none",
         "dealerTiers": [
           {
             "minQty": 1,
-            "gross": 90.99
+            "gross": 66.49
           }
         ],
         "fitment": [
-          "POL-RZRXP1K-2014-2023",
-          "YAM-YXZ1000-2016-2025",
-          "CAN-DEFHD10-2017-2025"
+          "CHE-CAMARO-1970-1981"
         ]
       },
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "RDG-CV-A-1101",
-      "name": "Heavy-Duty Front CV Axle – Honda",
-      "brand": "Ridgeback Drivetrain",
+      "productNumber": "KST-SM-X-2105",
+      "name": "Kestrel Street Stock Steel Shock, Front – Nova",
+      "brand": "Kestrel Race Products",
       "categoryPath": [
-        "ATV & UTV Parts",
-        "Drive & Axles"
+        "Shocks",
+        "Stock Mount Shocks"
       ],
-      "description": "Synthetic demo item. Drivetrain component built for trail and work use.",
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
       "price": {
-        "gross": 159.99
+        "gross": 94.99
       },
-      "stock": 102,
+      "stock": 71,
       "media": [
-        "media/drive-axles.png"
+        "media/stock-mount-shock.png"
       ],
       "demo": {
-        "series": "A",
         "mapPolicy": "none",
         "dealerTiers": [
           {
             "minQty": 1,
-            "gross": 111.99
-          },
-          {
-            "minQty": 5,
-            "gross": 106.39
-          },
-          {
-            "minQty": 10,
-            "gross": 101.09
-          },
-          {
-            "minQty": 25,
-            "gross": 95.99
+            "gross": 66.49
           }
         ],
         "fitment": [
-          "HON-TRX420-2015-2024",
-          "HON-FOR520-2020-2025",
-          "HON-PIO1000-2016-2025"
+          "CHE-NOVA-1975-1979"
         ]
       },
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "RDG-CV-A-1102",
-      "name": "Heavy-Duty Front CV Axle – Polaris",
-      "brand": "Ridgeback Drivetrain",
+      "productNumber": "KST-SM-X-2106",
+      "name": "Kestrel Street Stock Steel Shock, Rear – Nova",
+      "brand": "Kestrel Race Products",
       "categoryPath": [
-        "ATV & UTV Parts",
-        "Drive & Axles"
+        "Shocks",
+        "Stock Mount Shocks"
       ],
-      "description": "Synthetic demo item. Drivetrain component built for trail and work use.",
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
       "price": {
-        "gross": 169.99
+        "gross": 94.99
       },
-      "stock": 150,
+      "stock": 14,
       "media": [
-        "media/drive-axles.png"
+        "media/stock-mount-shock.png"
       ],
       "demo": {
-        "series": "A",
         "mapPolicy": "none",
         "dealerTiers": [
           {
             "minQty": 1,
-            "gross": 118.99
-          },
-          {
-            "minQty": 5,
-            "gross": 112.99
-          },
-          {
-            "minQty": 10,
-            "gross": 107.39
-          },
-          {
-            "minQty": 25,
-            "gross": 101.99
+            "gross": 66.49
           }
         ],
         "fitment": [
-          "POL-SPT570-2014-2025",
-          "POL-RGRXP1K-2018-2025"
+          "CHE-NOVA-1975-1979"
         ]
       },
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "RDG-CV-A-1103",
-      "name": "Heavy-Duty Rear CV Axle – Polaris RZR",
-      "brand": "Ridgeback Drivetrain",
+      "productNumber": "VRD-HM-C-3001",
+      "name": "Velocity SL Series Heim Mount Shock, 7\" Stroke, Front",
+      "brand": "Velocity Ride Dynamics",
       "categoryPath": [
-        "ATV & UTV Parts",
-        "Drive & Axles"
+        "Shocks",
+        "Heim Mount Shocks"
       ],
-      "description": "Synthetic demo item. Drivetrain component built for trail and work use.",
+      "description": "Synthetic demo item. Heim-mount racing shock; confirm stroke and mounting for your chassis.",
       "price": {
         "gross": 189.99
       },
-      "stock": 198,
+      "stock": 109,
       "media": [
-        "media/drive-axles.png"
+        "media/heim-mount-shock.png"
       ],
       "demo": {
-        "series": "A",
+        "series": "C",
         "mapPolicy": "none",
         "dealerTiers": [
           {
@@ -809,263 +1272,745 @@
           }
         ],
         "fitment": [
-          "POL-RZRXP1K-2014-2023"
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986",
+          "CHE-CHEVELLE-1964-1972",
+          "PON-GTO-1964-1972",
+          "PON-TEMPEST-1964-1970"
         ]
       },
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "RDG-CV-A-1104",
-      "name": "Heavy-Duty Front CV Axle – Can-Am/Kawasaki",
-      "brand": "Ridgeback Drivetrain",
+      "productNumber": "VRD-HM-C-3002",
+      "name": "Velocity SL Series Heim Mount Shock, 7\" Stroke, Rear",
+      "brand": "Velocity Ride Dynamics",
       "categoryPath": [
-        "ATV & UTV Parts",
-        "Drive & Axles"
+        "Shocks",
+        "Heim Mount Shocks"
       ],
-      "description": "Synthetic demo item. Drivetrain component built for trail and work use.",
+      "description": "Synthetic demo item. Heim-mount racing shock; confirm stroke and mounting for your chassis.",
       "price": {
-        "gross": 174.99
+        "gross": 189.99
       },
-      "stock": 246,
+      "stock": 54,
       "media": [
-        "media/drive-axles.png"
+        "media/heim-mount-shock.png"
       ],
       "demo": {
-        "series": "A",
+        "series": "C",
         "mapPolicy": "none",
         "dealerTiers": [
           {
             "minQty": 1,
-            "gross": 122.49
+            "gross": 132.99
           },
           {
             "minQty": 5,
-            "gross": 116.39
+            "gross": 126.29
           },
           {
             "minQty": 10,
-            "gross": 110.49
+            "gross": 119.99
           },
           {
             "minQty": 25,
-            "gross": 104.99
+            "gross": 113.99
           }
         ],
         "fitment": [
-          "CAN-OUT570-2016-2023",
-          "CAN-DEFHD10-2017-2025",
-          "KAW-BF750-2012-2025"
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986",
+          "CHE-CHEVELLE-1964-1972",
+          "PON-GTO-1964-1972",
+          "PON-TEMPEST-1964-1970"
         ]
       },
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "RDG-WB-X-1201",
-      "name": "Front Wheel Bearing & Seal Kit",
-      "brand": "Ridgeback Drivetrain",
+      "productNumber": "VRD-HM-C-3003",
+      "name": "Velocity SL Series Heim Mount Shock, 9\" Stroke, Front",
+      "brand": "Velocity Ride Dynamics",
       "categoryPath": [
-        "ATV & UTV Parts",
-        "Drive & Axles"
+        "Shocks",
+        "Heim Mount Shocks"
       ],
-      "description": "Synthetic demo item. Drivetrain component built for trail and work use.",
+      "description": "Synthetic demo item. Heim-mount racing shock; confirm stroke and mounting for your chassis.",
       "price": {
-        "gross": 39.99
+        "gross": 199.99
       },
-      "stock": 172,
+      "stock": 110,
       "media": [
-        "media/drive-axles.png"
+        "media/heim-mount-shock.png"
       ],
       "demo": {
+        "series": "C",
         "mapPolicy": "none",
         "dealerTiers": [
           {
             "minQty": 1,
-            "gross": 27.99
+            "gross": 139.99
           },
           {
             "minQty": 5,
-            "gross": 26.59
+            "gross": 132.99
           },
           {
             "minQty": 10,
-            "gross": 25.29
+            "gross": 126.29
           },
           {
             "minQty": 25,
-            "gross": 23.99
+            "gross": 119.99
           }
         ],
         "fitment": [
-          "HON-TRX420-2015-2024",
-          "YAM-GRIZ700-2016-2025",
-          "YAM-KOD450-2018-2025",
-          "POL-SPT570-2014-2025"
+          "CHE-CAMARO-1970-1981",
+          "CHE-NOVA-1975-1979",
+          "FOR-MUSTANG-1979-1993",
+          "FOR-MUSTANGII-1974-1978"
         ]
       },
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "RDG-WB-X-1202",
-      "name": "Rear Wheel Bearing & Seal Kit",
-      "brand": "Ridgeback Drivetrain",
+      "productNumber": "VRD-HM-C-3004",
+      "name": "Velocity SL Series Heim Mount Shock, 9\" Stroke, Rear",
+      "brand": "Velocity Ride Dynamics",
       "categoryPath": [
-        "ATV & UTV Parts",
-        "Drive & Axles"
+        "Shocks",
+        "Heim Mount Shocks"
       ],
-      "description": "Synthetic demo item. Drivetrain component built for trail and work use.",
+      "description": "Synthetic demo item. Heim-mount racing shock; confirm stroke and mounting for your chassis.",
       "price": {
-        "gross": 44.99
+        "gross": 199.99
       },
-      "stock": 220,
+      "stock": 51,
       "media": [
-        "media/drive-axles.png"
+        "media/heim-mount-shock.png"
       ],
       "demo": {
+        "series": "C",
         "mapPolicy": "none",
         "dealerTiers": [
           {
             "minQty": 1,
-            "gross": 31.49
+            "gross": 139.99
           },
           {
             "minQty": 5,
-            "gross": 29.89
+            "gross": 132.99
           },
           {
             "minQty": 10,
-            "gross": 28.39
+            "gross": 126.29
           },
           {
             "minQty": 25,
-            "gross": 26.99
+            "gross": 119.99
           }
         ],
         "fitment": [
-          "CAN-MAVX3-2017-2025",
-          "YAM-YXZ1000-2016-2025",
-          "YAM-WOLV1000-2021-2025"
+          "CHE-CAMARO-1970-1981",
+          "CHE-NOVA-1975-1979",
+          "FOR-MUSTANG-1979-1993",
+          "FOR-MUSTANGII-1974-1978"
         ]
       },
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "RDG-DB-X-1301",
-      "name": "Performance CVT Drive Belt – Polaris",
-      "brand": "Ridgeback Drivetrain",
+      "productNumber": "KST-HM-D-4001",
+      "name": "Kestrel 5Q Series Steel Twin-Tube Shock, 7\" Stroke, Front",
+      "brand": "Kestrel Race Products",
       "categoryPath": [
-        "ATV & UTV Parts",
-        "Drive & Axles"
+        "Shocks",
+        "Heim Mount Shocks"
       ],
-      "description": "Synthetic demo item. Drivetrain component built for trail and work use.",
+      "description": "Synthetic demo item. Heim-mount racing shock; confirm stroke and mounting for your chassis.",
       "price": {
-        "gross": 119.99
+        "gross": 139.99
       },
-      "stock": 155,
+      "stock": 112,
       "media": [
-        "media/drive-axles.png"
+        "media/heim-mount-shock.png"
       ],
       "demo": {
+        "series": "D",
         "mapPolicy": "none",
         "dealerTiers": [
           {
             "minQty": 1,
+            "gross": 97.99
+          },
+          {
+            "minQty": 5,
+            "gross": 93.09
+          },
+          {
+            "minQty": 10,
+            "gross": 88.39
+          },
+          {
+            "minQty": 25,
             "gross": 83.99
           }
         ],
         "fitment": [
-          "POL-RZRXP1K-2014-2023",
-          "POL-RGRXP1K-2018-2025",
-          "POL-SPT570-2014-2025"
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986",
+          "CHE-CHEVELLE-1964-1972",
+          "PON-GTO-1964-1972",
+          "PON-TEMPEST-1964-1970"
         ]
       },
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "RDG-DB-X-1302",
-      "name": "Performance CVT Drive Belt – Can-Am",
-      "brand": "Ridgeback Drivetrain",
+      "productNumber": "KST-HM-D-4002",
+      "name": "Kestrel 5Q Series Steel Twin-Tube Shock, 7\" Stroke, Rear",
+      "brand": "Kestrel Race Products",
       "categoryPath": [
-        "ATV & UTV Parts",
-        "Drive & Axles"
+        "Shocks",
+        "Heim Mount Shocks"
       ],
-      "description": "Synthetic demo item. Drivetrain component built for trail and work use.",
+      "description": "Synthetic demo item. Heim-mount racing shock; confirm stroke and mounting for your chassis.",
       "price": {
-        "gross": 129.99
+        "gross": 139.99
       },
-      "stock": 292,
+      "stock": 55,
       "media": [
-        "media/drive-axles.png"
+        "media/heim-mount-shock.png"
       ],
       "demo": {
+        "series": "D",
         "mapPolicy": "none",
         "dealerTiers": [
           {
             "minQty": 1,
-            "gross": 90.99
+            "gross": 97.99
+          },
+          {
+            "minQty": 5,
+            "gross": 93.09
+          },
+          {
+            "minQty": 10,
+            "gross": 88.39
+          },
+          {
+            "minQty": 25,
+            "gross": 83.99
           }
         ],
         "fitment": [
-          "CAN-MAVX3-2017-2025",
-          "CAN-DEFHD10-2017-2025",
-          "CAN-OUT570-2016-2023"
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986",
+          "CHE-CHEVELLE-1964-1972",
+          "PON-GTO-1964-1972",
+          "PON-TEMPEST-1964-1970"
         ]
       },
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "IRV-SH-X-2101",
-      "name": "Adjustable Front Shock Pair",
-      "brand": "Ironvale Offroad",
+      "productNumber": "KST-HM-D-4003",
+      "name": "Kestrel 5Q Series Steel Twin-Tube Shock, 9\" Stroke, Front",
+      "brand": "Kestrel Race Products",
       "categoryPath": [
-        "ATV & UTV Parts",
-        "Suspension"
+        "Shocks",
+        "Heim Mount Shocks"
       ],
-      "description": "Synthetic demo item. Suspension component for listed models.",
+      "description": "Synthetic demo item. Heim-mount racing shock; confirm stroke and mounting for your chassis.",
       "price": {
-        "gross": 549.99
+        "gross": 144.99
       },
-      "stock": 116,
+      "stock": 111,
       "media": [
-        "media/suspension.png"
+        "media/heim-mount-shock.png"
+      ],
+      "demo": {
+        "series": "D",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 101.49
+          },
+          {
+            "minQty": 5,
+            "gross": 96.39
+          },
+          {
+            "minQty": 10,
+            "gross": 91.59
+          },
+          {
+            "minQty": 25,
+            "gross": 86.99
+          }
+        ],
+        "fitment": [
+          "FOR-TBIRD-1977-1979",
+          "MER-COUGAR-1977-1979",
+          "MER-MONTEGO-1972-1976",
+          "FOR-MUSTANG-1979-1993"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-HM-D-4004",
+      "name": "Kestrel 5Q Series Steel Twin-Tube Shock, 9\" Stroke, Rear",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Shocks",
+        "Heim Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Heim-mount racing shock; confirm stroke and mounting for your chassis.",
+      "price": {
+        "gross": 144.99
+      },
+      "stock": 54,
+      "media": [
+        "media/heim-mount-shock.png"
+      ],
+      "demo": {
+        "series": "D",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 101.49
+          },
+          {
+            "minQty": 5,
+            "gross": 96.39
+          },
+          {
+            "minQty": 10,
+            "gross": 91.59
+          },
+          {
+            "minQty": 25,
+            "gross": 86.99
+          }
+        ],
+        "fitment": [
+          "FOR-TBIRD-1977-1979",
+          "MER-COUGAR-1977-1979",
+          "MER-MONTEGO-1972-1976",
+          "FOR-MUSTANG-1979-1993"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-HM-X-3101",
+      "name": "Velocity Single-Adjustable Heim Mount Shock, 7\" Stroke",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Heim Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Heim-mount racing shock; confirm stroke and mounting for your chassis.",
+      "price": {
+        "gross": 299.99
+      },
+      "stock": 109,
+      "media": [
+        "media/heim-mount-shock.png"
       ],
       "demo": {
         "mapPolicy": "hide_until_cart",
         "dealerTiers": [
           {
             "minQty": 1,
-            "gross": 384.99
+            "gross": 209.99
           }
         ],
         "fitment": [
-          "POL-RZRXP1K-2014-2023",
-          "HON-TAL1000-2019-2025",
-          "YAM-YXZ1000-2016-2025"
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986"
         ]
       },
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "IRV-SH-X-2102",
-      "name": "Gas-Charged Rear Shock",
-      "brand": "Ironvale Offroad",
+      "productNumber": "KST-HM-X-4101",
+      "name": "Kestrel Rebound-Adjustable Heim Mount Shock, 9\" Stroke",
+      "brand": "Kestrel Race Products",
       "categoryPath": [
-        "ATV & UTV Parts",
-        "Suspension"
+        "Shocks",
+        "Heim Mount Shocks"
       ],
-      "description": "Synthetic demo item. Suspension component for listed models.",
+      "description": "Synthetic demo item. Heim-mount racing shock; confirm stroke and mounting for your chassis.",
+      "price": {
+        "gross": 229.99
+      },
+      "stock": 99,
+      "media": [
+        "media/heim-mount-shock.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 160.99
+          }
+        ],
+        "fitment": [
+          "CHE-CAMARO-1970-1981",
+          "CHE-NOVA-1975-1979",
+          "FOR-TBIRD-1977-1979",
+          "MER-COUGAR-1977-1979",
+          "MER-MONTEGO-1972-1976"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-PK-X-1201",
+      "name": "Velocity 70 Series 4-Shock Package – GM Metric",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Shock Packages"
+      ],
+      "description": "Synthetic demo item. Matched four-shock package (two front, two rear) for the listed chassis.",
+      "price": {
+        "gross": 449.99
+      },
+      "stock": 54,
+      "media": [
+        "media/shock-package.png"
+      ],
+      "demo": {
+        "mapPolicy": "hide_until_cart",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 314.99
+          }
+        ],
+        "fitment": [
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-PK-X-1202",
+      "name": "Velocity SL Series Heim Mount 4-Shock Package – GM A-Body",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Shock Packages"
+      ],
+      "description": "Synthetic demo item. Matched four-shock package (two front, two rear) for the listed chassis.",
+      "price": {
+        "gross": 739.99
+      },
+      "stock": 109,
+      "media": [
+        "media/shock-package.png"
+      ],
+      "demo": {
+        "mapPolicy": "hide_until_cart",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 517.99
+          }
+        ],
+        "fitment": [
+          "CHE-CHEVELLE-1964-1972",
+          "PON-GTO-1964-1972",
+          "PON-TEMPEST-1964-1970"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-PK-X-2201",
+      "name": "Kestrel 27 Series 4-Shock Package – Mustang",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Shocks",
+        "Shock Packages"
+      ],
+      "description": "Synthetic demo item. Matched four-shock package (two front, two rear) for the listed chassis.",
+      "price": {
+        "gross": 379.99
+      },
+      "stock": 94,
+      "media": [
+        "media/shock-package.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 265.99
+          }
+        ],
+        "fitment": [
+          "FOR-MUSTANG-1979-1993"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-PK-X-2202",
+      "name": "Kestrel 27 Series 4-Shock Package – GM A-Body",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Shocks",
+        "Shock Packages"
+      ],
+      "description": "Synthetic demo item. Matched four-shock package (two front, two rear) for the listed chassis.",
+      "price": {
+        "gross": 389.99
+      },
+      "stock": 39,
+      "media": [
+        "media/shock-package.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 272.99
+          }
+        ],
+        "fitment": [
+          "CHE-CHEVELLE-1964-1972",
+          "PON-GTO-1964-1972",
+          "PON-TEMPEST-1964-1970"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-CO-X-5001",
+      "name": "Front Coil-Over Conversion Kit – GM Metric",
+      "brand": "Halvard Machine Works",
+      "categoryPath": [
+        "Coil-Overs",
+        "Coil-Over Kits"
+      ],
+      "description": "Synthetic demo item. Coil-over conversion hardware; springs sold separately.",
+      "price": {
+        "gross": 262.99
+      },
+      "stock": 24,
+      "media": [
+        "media/coil-over-kit.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 184.09
+          }
+        ],
+        "fitment": [
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-CO-X-5002",
+      "name": "Front Coil-Over Conversion Kit – GM A-Body",
+      "brand": "Halvard Machine Works",
+      "categoryPath": [
+        "Coil-Overs",
+        "Coil-Over Kits"
+      ],
+      "description": "Synthetic demo item. Coil-over conversion hardware; springs sold separately.",
+      "price": {
+        "gross": 262.99
+      },
+      "stock": 82,
+      "media": [
+        "media/coil-over-kit.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 184.09
+          }
+        ],
+        "fitment": [
+          "CHE-CHEVELLE-1964-1972",
+          "PON-GTO-1964-1972",
+          "PON-TEMPEST-1964-1970"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-CO-X-5003",
+      "name": "Front Coil-Over Conversion Kit – Camaro/Nova",
+      "brand": "Halvard Machine Works",
+      "categoryPath": [
+        "Coil-Overs",
+        "Coil-Over Kits"
+      ],
+      "description": "Synthetic demo item. Coil-over conversion hardware; springs sold separately.",
+      "price": {
+        "gross": 274.99
+      },
+      "stock": 25,
+      "media": [
+        "media/coil-over-kit.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 192.49
+          }
+        ],
+        "fitment": [
+          "CHE-CAMARO-1970-1981",
+          "CHE-NOVA-1975-1979"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-CO-X-5004",
+      "name": "Rear Coil-Over Conversion Kit – GM Metric",
+      "brand": "Halvard Machine Works",
+      "categoryPath": [
+        "Coil-Overs",
+        "Coil-Over Kits"
+      ],
+      "description": "Synthetic demo item. Coil-over conversion hardware; springs sold separately.",
+      "price": {
+        "gross": 239.99
+      },
+      "stock": 83,
+      "media": [
+        "media/coil-over-kit.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 167.99
+          }
+        ],
+        "fitment": [
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-CO-X-5005",
+      "name": "Rear Coil-Over Conversion Kit – GM A-Body",
+      "brand": "Halvard Machine Works",
+      "categoryPath": [
+        "Coil-Overs",
+        "Coil-Over Kits"
+      ],
+      "description": "Synthetic demo item. Coil-over conversion hardware; springs sold separately.",
+      "price": {
+        "gross": 239.99
+      },
+      "stock": 26,
+      "media": [
+        "media/coil-over-kit.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 167.99
+          }
+        ],
+        "fitment": [
+          "CHE-CHEVELLE-1964-1972",
+          "PON-GTO-1964-1972",
+          "PON-TEMPEST-1964-1970"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-CO-X-5006",
+      "name": "Rear Coil-Over Conversion Kit – Camaro",
+      "brand": "Halvard Machine Works",
+      "categoryPath": [
+        "Coil-Overs",
+        "Coil-Over Kits"
+      ],
+      "description": "Synthetic demo item. Coil-over conversion hardware; springs sold separately.",
       "price": {
         "gross": 249.99
       },
-      "stock": 164,
+      "stock": 84,
       "media": [
-        "media/suspension.png"
+        "media/coil-over-kit.png"
       ],
       "demo": {
         "mapPolicy": "none",
@@ -1076,1579 +2021,111 @@
           }
         ],
         "fitment": [
-          "YAM-GRIZ700-2016-2025",
-          "YAM-KOD450-2018-2025",
-          "KAW-BF750-2012-2025"
+          "CHE-CAMARO-1970-1981"
         ]
       },
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "IRV-AB-X-2201",
-      "name": "A-Arm Bushing Kit – Polaris/Can-Am",
-      "brand": "Ironvale Offroad",
+      "productNumber": "HLV-CO-X-5007",
+      "name": "Coil-Over Conversion Kit – Mustang/Mustang II",
+      "brand": "Halvard Machine Works",
       "categoryPath": [
-        "ATV & UTV Parts",
-        "Suspension"
+        "Coil-Overs",
+        "Coil-Over Kits"
       ],
-      "description": "Synthetic demo item. Suspension component for listed models.",
+      "description": "Synthetic demo item. Coil-over conversion hardware; springs sold separately.",
       "price": {
-        "gross": 59.99
+        "gross": 284.99
       },
-      "stock": 277,
+      "stock": 27,
       "media": [
-        "media/suspension.png"
+        "media/coil-over-kit.png"
       ],
       "demo": {
         "mapPolicy": "none",
         "dealerTiers": [
           {
             "minQty": 1,
-            "gross": 41.99
+            "gross": 199.49
           }
         ],
         "fitment": [
-          "POL-SPT570-2014-2025",
-          "POL-RGRXP1K-2018-2025",
-          "CAN-OUT570-2016-2023"
+          "FOR-MUSTANG-1979-1993",
+          "FOR-MUSTANGII-1974-1978"
         ]
       },
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "IRV-AB-X-2202",
-      "name": "A-Arm Bushing Kit – Honda/Yamaha",
-      "brand": "Ironvale Offroad",
+      "productNumber": "HLV-CO-X-5008",
+      "name": "Coil-Over Conversion Kit – Ford/Mercury Mid-Size",
+      "brand": "Halvard Machine Works",
       "categoryPath": [
-        "ATV & UTV Parts",
-        "Suspension"
+        "Coil-Overs",
+        "Coil-Over Kits"
       ],
-      "description": "Synthetic demo item. Suspension component for listed models.",
+      "description": "Synthetic demo item. Coil-over conversion hardware; springs sold separately.",
       "price": {
-        "gross": 54.99
+        "gross": 279.99
       },
-      "stock": 229,
+      "stock": 77,
       "media": [
-        "media/suspension.png"
+        "media/coil-over-kit.png"
       ],
       "demo": {
         "mapPolicy": "none",
         "dealerTiers": [
           {
             "minQty": 1,
-            "gross": 38.49
+            "gross": 195.99
           }
         ],
         "fitment": [
-          "HON-TRX420-2015-2024",
-          "HON-FOR520-2020-2025",
-          "HON-PIO1000-2016-2025",
-          "YAM-WOLV1000-2021-2025"
+          "FOR-TBIRD-1977-1979",
+          "MER-COUGAR-1977-1979",
+          "MER-MONTEGO-1972-1976"
         ]
       },
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "IRV-TR-X-2301",
-      "name": "Heavy-Duty Tie Rod End Kit, Sport UTV",
-      "brand": "Ironvale Offroad",
+      "productNumber": "HLV-CO-X-5101",
+      "name": "Coil-Over Sleeve Kit for 5\" ID Springs",
+      "brand": "Halvard Machine Works",
       "categoryPath": [
-        "ATV & UTV Parts",
-        "Suspension"
+        "Coil-Overs",
+        "Coil-Over Kits"
       ],
-      "description": "Synthetic demo item. Suspension component for listed models.",
+      "description": "Synthetic demo item. Coil-over conversion hardware; springs sold separately.",
       "price": {
-        "gross": 69.99
+        "gross": 164.95
       },
-      "stock": 34,
+      "stock": 119,
       "media": [
-        "media/suspension.png"
+        "media/coil-over-kit.png"
       ],
       "demo": {
         "mapPolicy": "none",
         "dealerTiers": [
           {
             "minQty": 1,
-            "gross": 48.99
+            "gross": 115.49
           },
           {
             "minQty": 5,
-            "gross": 46.49
+            "gross": 109.69
           },
           {
             "minQty": 10,
-            "gross": 44.19
+            "gross": 104.19
           },
           {
             "minQty": 25,
-            "gross": 41.99
-          }
-        ],
-        "fitment": [
-          "POL-RZRXP1K-2014-2023",
-          "CAN-MAVX3-2017-2025",
-          "HON-TAL1000-2019-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "IRV-TR-X-2302",
-      "name": "Tie Rod End Kit, Utility",
-      "brand": "Ironvale Offroad",
-      "categoryPath": [
-        "ATV & UTV Parts",
-        "Suspension"
-      ],
-      "description": "Synthetic demo item. Suspension component for listed models.",
-      "price": {
-        "gross": 49.99
-      },
-      "stock": 267,
-      "media": [
-        "media/suspension.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 34.99
-          },
-          {
-            "minQty": 5,
-            "gross": 33.19
-          },
-          {
-            "minQty": 10,
-            "gross": 31.59
-          },
-          {
-            "minQty": 25,
-            "gross": 29.99
-          }
-        ],
-        "fitment": [
-          "YAM-GRIZ700-2016-2025",
-          "KAW-BF750-2012-2025",
-          "KAW-MULEFXT-2015-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "IRV-BJ-X-2401",
-      "name": "Upper Ball Joint",
-      "brand": "Ironvale Offroad",
-      "categoryPath": [
-        "ATV & UTV Parts",
-        "Suspension"
-      ],
-      "description": "Synthetic demo item. Suspension component for listed models.",
-      "price": {
-        "gross": 32.99
-      },
-      "stock": 98,
-      "media": [
-        "media/suspension.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 23.09
-          }
-        ],
-        "fitment": [
-          "CAN-DEFHD10-2017-2025",
-          "POL-RGRXP1K-2018-2025",
-          "HON-PIO1000-2016-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "HLV-OF-B-3101",
-      "name": "Oil Filter – Honda",
-      "brand": "Halvard Filtration",
-      "categoryPath": [
-        "Engine",
-        "Filters"
-      ],
-      "description": "Synthetic demo item. Filtration component; replace at each service interval.",
-      "price": {
-        "gross": 11.99
-      },
-      "stock": 150,
-      "media": [
-        "media/filters.png"
-      ],
-      "demo": {
-        "series": "B",
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 8.39
-          },
-          {
-            "minQty": 5,
-            "gross": 7.99
-          },
-          {
-            "minQty": 10,
-            "gross": 7.59
-          },
-          {
-            "minQty": 25,
-            "gross": 7.19
-          }
-        ],
-        "fitment": [
-          "HON-TRX420-2015-2024",
-          "HON-FOR520-2020-2025",
-          "HON-PIO1000-2016-2025",
-          "HON-TAL1000-2019-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "HLV-OF-B-3102",
-      "name": "Oil Filter – Yamaha",
-      "brand": "Halvard Filtration",
-      "categoryPath": [
-        "Engine",
-        "Filters"
-      ],
-      "description": "Synthetic demo item. Filtration component; replace at each service interval.",
-      "price": {
-        "gross": 12.49
-      },
-      "stock": 198,
-      "media": [
-        "media/filters.png"
-      ],
-      "demo": {
-        "series": "B",
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 8.69
-          },
-          {
-            "minQty": 5,
-            "gross": 8.29
-          },
-          {
-            "minQty": 10,
-            "gross": 7.89
-          },
-          {
-            "minQty": 25,
-            "gross": 7.49
-          }
-        ],
-        "fitment": [
-          "YAM-GRIZ700-2016-2025",
-          "YAM-KOD450-2018-2025",
-          "YAM-WOLV1000-2021-2025",
-          "YAM-YXZ1000-2016-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "HLV-OF-B-3103",
-      "name": "Oil Filter – Polaris",
-      "brand": "Halvard Filtration",
-      "categoryPath": [
-        "Engine",
-        "Filters"
-      ],
-      "description": "Synthetic demo item. Filtration component; replace at each service interval.",
-      "price": {
-        "gross": 13.99
-      },
-      "stock": 246,
-      "media": [
-        "media/filters.png"
-      ],
-      "demo": {
-        "series": "B",
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 9.79
-          },
-          {
-            "minQty": 5,
-            "gross": 9.29
-          },
-          {
-            "minQty": 10,
-            "gross": 8.79
-          },
-          {
-            "minQty": 25,
-            "gross": 8.39
-          }
-        ],
-        "fitment": [
-          "POL-SPT570-2014-2025",
-          "POL-RZRXP1K-2014-2023",
-          "POL-RGRXP1K-2018-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "HLV-OF-B-3104",
-      "name": "Oil Filter – Can-Am",
-      "brand": "Halvard Filtration",
-      "categoryPath": [
-        "Engine",
-        "Filters"
-      ],
-      "description": "Synthetic demo item. Filtration component; replace at each service interval.",
-      "price": {
-        "gross": 14.49
-      },
-      "stock": 191,
-      "media": [
-        "media/filters.png"
-      ],
-      "demo": {
-        "series": "B",
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 10.09
-          },
-          {
-            "minQty": 5,
-            "gross": 9.59
-          },
-          {
-            "minQty": 10,
-            "gross": 9.19
-          },
-          {
-            "minQty": 25,
-            "gross": 8.69
-          }
-        ],
-        "fitment": [
-          "CAN-OUT570-2016-2023",
-          "CAN-MAVX3-2017-2025",
-          "CAN-DEFHD10-2017-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "HLV-OF-B-3105",
-      "name": "Oil Filter – Kawasaki",
-      "brand": "Halvard Filtration",
-      "categoryPath": [
-        "Engine",
-        "Filters"
-      ],
-      "description": "Synthetic demo item. Filtration component; replace at each service interval.",
-      "price": {
-        "gross": 12.99
-      },
-      "stock": 239,
-      "media": [
-        "media/filters.png"
-      ],
-      "demo": {
-        "series": "B",
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 9.09
-          },
-          {
-            "minQty": 5,
-            "gross": 8.59
-          },
-          {
-            "minQty": 10,
-            "gross": 8.19
-          },
-          {
-            "minQty": 25,
-            "gross": 7.79
-          }
-        ],
-        "fitment": [
-          "KAW-BF750-2012-2025",
-          "KAW-MULEFXT-2015-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "HLV-AF-X-3201",
-      "name": "High-Flow Air Filter – Polaris",
-      "brand": "Halvard Filtration",
-      "categoryPath": [
-        "Engine",
-        "Filters"
-      ],
-      "description": "Synthetic demo item. Filtration component; replace at each service interval.",
-      "price": {
-        "gross": 34.99
-      },
-      "stock": 154,
-      "media": [
-        "media/filters.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 24.49
-          },
-          {
-            "minQty": 5,
-            "gross": 23.29
-          },
-          {
-            "minQty": 10,
-            "gross": 22.09
-          },
-          {
-            "minQty": 25,
-            "gross": 20.99
-          }
-        ],
-        "fitment": [
-          "POL-RZRXP1K-2014-2023",
-          "POL-RGRXP1K-2018-2025",
-          "POL-SPT570-2014-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "HLV-AF-X-3202",
-      "name": "Dual-Stage Foam Air Filter",
-      "brand": "Halvard Filtration",
-      "categoryPath": [
-        "Engine",
-        "Filters"
-      ],
-      "description": "Synthetic demo item. Filtration component; replace at each service interval.",
-      "price": {
-        "gross": 24.99
-      },
-      "stock": 106,
-      "media": [
-        "media/filters.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 17.49
-          },
-          {
-            "minQty": 5,
-            "gross": 16.59
-          },
-          {
-            "minQty": 10,
-            "gross": 15.79
-          },
-          {
-            "minQty": 25,
-            "gross": 14.99
-          }
-        ],
-        "fitment": [
-          "HON-TRX420-2015-2024",
-          "YAM-GRIZ700-2016-2025",
-          "KAW-BF750-2012-2025",
-          "YAM-KOD450-2018-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "HLV-AF-X-3203",
-      "name": "High-Flow Air Filter – Sport UTV",
-      "brand": "Halvard Filtration",
-      "categoryPath": [
-        "Engine",
-        "Filters"
-      ],
-      "description": "Synthetic demo item. Filtration component; replace at each service interval.",
-      "price": {
-        "gross": 39.99
-      },
-      "stock": 58,
-      "media": [
-        "media/filters.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 27.99
-          },
-          {
-            "minQty": 5,
-            "gross": 26.59
-          },
-          {
-            "minQty": 10,
-            "gross": 25.29
-          },
-          {
-            "minQty": 25,
-            "gross": 23.99
-          }
-        ],
-        "fitment": [
-          "CAN-MAVX3-2017-2025",
-          "YAM-YXZ1000-2016-2025",
-          "HON-TAL1000-2019-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "KST-GK-X-4101",
-      "name": "Top End Gasket Kit – Honda",
-      "brand": "Kestrel Powersports",
-      "categoryPath": [
-        "Engine",
-        "Gaskets & Seals"
-      ],
-      "description": "Synthetic demo item. Gasket/seal kit for listed engines.",
-      "price": {
-        "gross": 44.99
-      },
-      "stock": 167,
-      "media": [
-        "media/gaskets-seals.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 31.49
-          },
-          {
-            "minQty": 5,
-            "gross": 29.89
-          },
-          {
-            "minQty": 10,
-            "gross": 28.39
-          },
-          {
-            "minQty": 25,
-            "gross": 26.99
-          }
-        ],
-        "fitment": [
-          "HON-TRX420-2015-2024",
-          "HON-FOR520-2020-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "KST-GK-X-4102",
-      "name": "Top End Gasket Kit – Yamaha",
-      "brand": "Kestrel Powersports",
-      "categoryPath": [
-        "Engine",
-        "Gaskets & Seals"
-      ],
-      "description": "Synthetic demo item. Gasket/seal kit for listed engines.",
-      "price": {
-        "gross": 49.99
-      },
-      "stock": 215,
-      "media": [
-        "media/gaskets-seals.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 34.99
-          },
-          {
-            "minQty": 5,
-            "gross": 33.19
-          },
-          {
-            "minQty": 10,
-            "gross": 31.59
-          },
-          {
-            "minQty": 25,
-            "gross": 29.99
-          }
-        ],
-        "fitment": [
-          "YAM-GRIZ700-2016-2025",
-          "YAM-KOD450-2018-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "KST-GK-X-4201",
-      "name": "Complete Engine Gasket Kit – Polaris",
-      "brand": "Kestrel Powersports",
-      "categoryPath": [
-        "Engine",
-        "Gaskets & Seals"
-      ],
-      "description": "Synthetic demo item. Gasket/seal kit for listed engines.",
-      "price": {
-        "gross": 129.99
-      },
-      "stock": 118,
-      "media": [
-        "media/gaskets-seals.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 90.99
-          }
-        ],
-        "fitment": [
-          "POL-SPT570-2014-2025",
-          "POL-RGRXP1K-2018-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "KST-SK-X-4301",
-      "name": "Front Differential Seal Kit",
-      "brand": "Kestrel Powersports",
-      "categoryPath": [
-        "Engine",
-        "Gaskets & Seals"
-      ],
-      "description": "Synthetic demo item. Gasket/seal kit for listed engines.",
-      "price": {
-        "gross": 29.99
-      },
-      "stock": 21,
-      "media": [
-        "media/gaskets-seals.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 20.99
-          }
-        ],
-        "fitment": [
-          "POL-RZRXP1K-2014-2023",
-          "CAN-MAVX3-2017-2025",
-          "CAN-DEFHD10-2017-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "KST-SK-X-4302",
-      "name": "Water Pump Rebuild Kit",
-      "brand": "Kestrel Powersports",
-      "categoryPath": [
-        "Engine",
-        "Gaskets & Seals"
-      ],
-      "description": "Synthetic demo item. Gasket/seal kit for listed engines.",
-      "price": {
-        "gross": 59.99
-      },
-      "stock": 158,
-      "media": [
-        "media/gaskets-seals.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 41.99
-          }
-        ],
-        "fitment": [
-          "KAW-BF750-2012-2025",
-          "KAW-MULEFXT-2015-2025",
-          "CAN-OUT570-2016-2023"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "KST-SK-X-4303",
-      "name": "Valve Cover Gasket",
-      "brand": "Kestrel Powersports",
-      "categoryPath": [
-        "Engine",
-        "Gaskets & Seals"
-      ],
-      "description": "Synthetic demo item. Gasket/seal kit for listed engines.",
-      "price": {
-        "gross": 18.99
-      },
-      "stock": 206,
-      "media": [
-        "media/gaskets-seals.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 13.29
-          }
-        ],
-        "fitment": [
-          "HON-PIO1000-2016-2025",
-          "HON-TAL1000-2019-2025",
-          "YAM-WOLV1000-2021-2025",
-          "YAM-YXZ1000-2016-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "KST-SP-D-5101",
-      "name": "Iridium Spark Plug – Honda/Yamaha ATV",
-      "brand": "Kestrel Powersports",
-      "categoryPath": [
-        "Engine",
-        "Ignition"
-      ],
-      "description": "Synthetic demo item. Ignition component for listed models.",
-      "price": {
-        "gross": 12.99
-      },
-      "stock": 164,
-      "media": [
-        "media/ignition.png"
-      ],
-      "demo": {
-        "series": "D",
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 9.09
-          },
-          {
-            "minQty": 5,
-            "gross": 8.59
-          },
-          {
-            "minQty": 10,
-            "gross": 8.19
-          },
-          {
-            "minQty": 25,
-            "gross": 7.79
-          }
-        ],
-        "fitment": [
-          "HON-TRX420-2015-2024",
-          "HON-FOR520-2020-2025",
-          "HON-PIO1000-2016-2025",
-          "HON-TAL1000-2019-2025",
-          "YAM-GRIZ700-2016-2025",
-          "YAM-KOD450-2018-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "KST-SP-D-5102",
-      "name": "Iridium Spark Plug – Polaris",
-      "brand": "Kestrel Powersports",
-      "categoryPath": [
-        "Engine",
-        "Ignition"
-      ],
-      "description": "Synthetic demo item. Ignition component for listed models.",
-      "price": {
-        "gross": 13.49
-      },
-      "stock": 20,
-      "media": [
-        "media/ignition.png"
-      ],
-      "demo": {
-        "series": "D",
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 9.39
-          },
-          {
-            "minQty": 5,
-            "gross": 8.99
-          },
-          {
-            "minQty": 10,
-            "gross": 8.49
-          },
-          {
-            "minQty": 25,
-            "gross": 8.09
-          }
-        ],
-        "fitment": [
-          "POL-SPT570-2014-2025",
-          "POL-RZRXP1K-2014-2023",
-          "POL-RGRXP1K-2018-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "KST-SP-D-5103",
-      "name": "Iridium Spark Plug – Can-Am",
-      "brand": "Kestrel Powersports",
-      "categoryPath": [
-        "Engine",
-        "Ignition"
-      ],
-      "description": "Synthetic demo item. Ignition component for listed models.",
-      "price": {
-        "gross": 13.99
-      },
-      "stock": 68,
-      "media": [
-        "media/ignition.png"
-      ],
-      "demo": {
-        "series": "D",
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 9.79
-          },
-          {
-            "minQty": 5,
-            "gross": 9.29
-          },
-          {
-            "minQty": 10,
-            "gross": 8.79
-          },
-          {
-            "minQty": 25,
-            "gross": 8.39
-          }
-        ],
-        "fitment": [
-          "CAN-OUT570-2016-2023",
-          "CAN-MAVX3-2017-2025",
-          "CAN-DEFHD10-2017-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "KST-SP-D-5104",
-      "name": "Iridium Spark Plug – Kawasaki/Yamaha UTV",
-      "brand": "Kestrel Powersports",
-      "categoryPath": [
-        "Engine",
-        "Ignition"
-      ],
-      "description": "Synthetic demo item. Ignition component for listed models.",
-      "price": {
-        "gross": 12.49
-      },
-      "stock": 205,
-      "media": [
-        "media/ignition.png"
-      ],
-      "demo": {
-        "series": "D",
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 8.69
-          },
-          {
-            "minQty": 5,
-            "gross": 8.29
-          },
-          {
-            "minQty": 10,
-            "gross": 7.89
-          },
-          {
-            "minQty": 25,
-            "gross": 7.49
-          }
-        ],
-        "fitment": [
-          "KAW-BF750-2012-2025",
-          "KAW-MULEFXT-2015-2025",
-          "YAM-WOLV1000-2021-2025",
-          "YAM-YXZ1000-2016-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "KST-IC-X-5201",
-      "name": "Ignition Coil – Polaris",
-      "brand": "Kestrel Powersports",
-      "categoryPath": [
-        "Engine",
-        "Ignition"
-      ],
-      "description": "Synthetic demo item. Ignition component for listed models.",
-      "price": {
-        "gross": 89.99
-      },
-      "stock": 240,
-      "media": [
-        "media/ignition.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 62.99
-          }
-        ],
-        "fitment": [
-          "POL-SPT570-2014-2025",
-          "POL-RGRXP1K-2018-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "KST-IC-X-5202",
-      "name": "Ignition Coil – Yamaha/Kawasaki",
-      "brand": "Kestrel Powersports",
-      "categoryPath": [
-        "Engine",
-        "Ignition"
-      ],
-      "description": "Synthetic demo item. Ignition component for listed models.",
-      "price": {
-        "gross": 94.99
-      },
-      "stock": 96,
-      "media": [
-        "media/ignition.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 66.49
-          }
-        ],
-        "fitment": [
-          "YAM-GRIZ700-2016-2025",
-          "YAM-KOD450-2018-2025",
-          "KAW-BF750-2012-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "BCE-BT-X-6101",
-      "name": "AGM Battery, 12V 12Ah",
-      "brand": "Bluecairn Electric",
-      "categoryPath": [
-        "Electrical",
-        "Batteries"
-      ],
-      "description": "Synthetic demo item. Maintenance-free electrical component.",
-      "price": {
-        "gross": 119.99
-      },
-      "stock": 41,
-      "media": [
-        "media/batteries.png"
-      ],
-      "demo": {
-        "mapPolicy": "hide_until_cart",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 83.99
-          }
-        ],
-        "fitment": [
-          "HON-TRX420-2015-2024",
-          "HON-FOR520-2020-2025",
-          "YAM-GRIZ700-2016-2025",
-          "YAM-KOD450-2018-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "BCE-BT-X-6102",
-      "name": "AGM Battery, 12V 14Ah",
-      "brand": "Bluecairn Electric",
-      "categoryPath": [
-        "Electrical",
-        "Batteries"
-      ],
-      "description": "Synthetic demo item. Maintenance-free electrical component.",
-      "price": {
-        "gross": 139.99
-      },
-      "stock": 178,
-      "media": [
-        "media/batteries.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 97.99
-          }
-        ],
-        "fitment": [
-          "POL-SPT570-2014-2025",
-          "CAN-OUT570-2016-2023",
-          "KAW-BF750-2012-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "BCE-BT-X-6103",
-      "name": "AGM Battery, 12V 18Ah",
-      "brand": "Bluecairn Electric",
-      "categoryPath": [
-        "Electrical",
-        "Batteries"
-      ],
-      "description": "Synthetic demo item. Maintenance-free electrical component.",
-      "price": {
-        "gross": 169.99
-      },
-      "stock": 226,
-      "media": [
-        "media/batteries.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 118.99
-          }
-        ],
-        "fitment": [
-          "POL-RZRXP1K-2014-2023",
-          "POL-RGRXP1K-2018-2025",
-          "HON-PIO1000-2016-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "BCE-BT-X-6104",
-      "name": "AGM Battery, 12V 20Ah",
-      "brand": "Bluecairn Electric",
-      "categoryPath": [
-        "Electrical",
-        "Batteries"
-      ],
-      "description": "Synthetic demo item. Maintenance-free electrical component.",
-      "price": {
-        "gross": 179.99
-      },
-      "stock": 185,
-      "media": [
-        "media/batteries.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 125.99
-          }
-        ],
-        "fitment": [
-          "CAN-MAVX3-2017-2025",
-          "CAN-DEFHD10-2017-2025",
-          "HON-TAL1000-2019-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "BCE-BT-X-6105",
-      "name": "AGM Battery, 12V 14Ah Sport",
-      "brand": "Bluecairn Electric",
-      "categoryPath": [
-        "Electrical",
-        "Batteries"
-      ],
-      "description": "Synthetic demo item. Maintenance-free electrical component.",
-      "price": {
-        "gross": 144.99
-      },
-      "stock": 233,
-      "media": [
-        "media/batteries.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 101.49
-          }
-        ],
-        "fitment": [
-          "YAM-WOLV1000-2021-2025",
-          "YAM-YXZ1000-2016-2025",
-          "KAW-MULEFXT-2015-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "BCE-HL-X-6201",
-      "name": "LED Headlight Upgrade Kit – Polaris",
-      "brand": "Bluecairn Electric",
-      "categoryPath": [
-        "Electrical",
-        "Lighting"
-      ],
-      "description": "Synthetic demo item. Lighting component; off-road use only.",
-      "price": {
-        "gross": 189.99
-      },
-      "stock": 213,
-      "media": [
-        "media/lighting.png"
-      ],
-      "demo": {
-        "mapPolicy": "hide_until_cart",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 132.99
-          }
-        ],
-        "fitment": [
-          "POL-RZRXP1K-2014-2023",
-          "POL-RGRXP1K-2018-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "BCE-HL-X-6202",
-      "name": "LED Headlight Upgrade Kit – Can-Am",
-      "brand": "Bluecairn Electric",
-      "categoryPath": [
-        "Electrical",
-        "Lighting"
-      ],
-      "description": "Synthetic demo item. Lighting component; off-road use only.",
-      "price": {
-        "gross": 179.99
-      },
-      "stock": 165,
-      "media": [
-        "media/lighting.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 125.99
-          }
-        ],
-        "fitment": [
-          "CAN-MAVX3-2017-2025",
-          "CAN-DEFHD10-2017-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "BCE-HL-X-6203",
-      "name": "LED Headlight Upgrade Kit – Honda/Yamaha UTV",
-      "brand": "Bluecairn Electric",
-      "categoryPath": [
-        "Electrical",
-        "Lighting"
-      ],
-      "description": "Synthetic demo item. Lighting component; off-road use only.",
-      "price": {
-        "gross": 169.99
-      },
-      "stock": 117,
-      "media": [
-        "media/lighting.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 118.99
-          }
-        ],
-        "fitment": [
-          "HON-TAL1000-2019-2025",
-          "HON-PIO1000-2016-2025",
-          "YAM-WOLV1000-2021-2025",
-          "YAM-YXZ1000-2016-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "BCE-TL-X-6301",
-      "name": "LED Tail Light Assembly",
-      "brand": "Bluecairn Electric",
-      "categoryPath": [
-        "Electrical",
-        "Lighting"
-      ],
-      "description": "Synthetic demo item. Lighting component; off-road use only.",
-      "price": {
-        "gross": 74.99
-      },
-      "stock": 190,
-      "media": [
-        "media/lighting.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 52.49
-          }
-        ],
-        "fitment": [
-          "YAM-GRIZ700-2016-2025",
-          "YAM-KOD450-2018-2025",
-          "HON-TRX420-2015-2024",
-          "HON-FOR520-2020-2025",
-          "POL-SPT570-2014-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "TGT-TR-X-7101",
-      "name": "All-Terrain Tire 26x9-12",
-      "brand": "Tallgrass Tire Co.",
-      "categoryPath": [
-        "Tires & Wheels"
-      ],
-      "description": "Synthetic demo item. Tire, wheel or tire-service item.",
-      "price": {
-        "gross": 129.99
-      },
-      "stock": 104,
-      "media": [
-        "media/tires-wheels.png"
-      ],
-      "demo": {
-        "mapPolicy": "hide_until_cart",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 90.99
-          }
-        ],
-        "fitment": [
-          "HON-TRX420-2015-2024",
-          "HON-FOR520-2020-2025",
-          "YAM-GRIZ700-2016-2025",
-          "YAM-KOD450-2018-2025",
-          "POL-SPT570-2014-2025",
-          "CAN-OUT570-2016-2023",
-          "KAW-BF750-2012-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "TGT-TR-X-7102",
-      "name": "All-Terrain Tire 26x11-12",
-      "brand": "Tallgrass Tire Co.",
-      "categoryPath": [
-        "Tires & Wheels"
-      ],
-      "description": "Synthetic demo item. Tire, wheel or tire-service item.",
-      "price": {
-        "gross": 139.99
-      },
-      "stock": 241,
-      "media": [
-        "media/tires-wheels.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 97.99
-          }
-        ],
-        "fitment": [
-          "HON-TRX420-2015-2024",
-          "HON-FOR520-2020-2025",
-          "YAM-GRIZ700-2016-2025",
-          "YAM-KOD450-2018-2025",
-          "POL-SPT570-2014-2025",
-          "CAN-OUT570-2016-2023",
-          "KAW-BF750-2012-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "TGT-TR-X-7201",
-      "name": "Mud Tire 30x10-14",
-      "brand": "Tallgrass Tire Co.",
-      "categoryPath": [
-        "Tires & Wheels"
-      ],
-      "description": "Synthetic demo item. Tire, wheel or tire-service item.",
-      "price": {
-        "gross": 219.99
-      },
-      "stock": 206,
-      "media": [
-        "media/tires-wheels.png"
-      ],
-      "demo": {
-        "mapPolicy": "hide_until_cart",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 153.99
-          }
-        ],
-        "fitment": [
-          "POL-RZRXP1K-2014-2023",
-          "CAN-MAVX3-2017-2025",
-          "HON-TAL1000-2019-2025",
-          "YAM-YXZ1000-2016-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "TGT-TR-X-7202",
-      "name": "Mud Tire 28x10-14",
-      "brand": "Tallgrass Tire Co.",
-      "categoryPath": [
-        "Tires & Wheels"
-      ],
-      "description": "Synthetic demo item. Tire, wheel or tire-service item.",
-      "price": {
-        "gross": 199.99
-      },
-      "stock": 69,
-      "media": [
-        "media/tires-wheels.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 139.99
-          }
-        ],
-        "fitment": [
-          "POL-RGRXP1K-2018-2025",
-          "CAN-DEFHD10-2017-2025",
-          "HON-PIO1000-2016-2025",
-          "YAM-WOLV1000-2021-2025",
-          "KAW-MULEFXT-2015-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "TGT-WH-X-7301",
-      "name": "Cast Aluminum Wheel 14x7, 4/156",
-      "brand": "Tallgrass Tire Co.",
-      "categoryPath": [
-        "Tires & Wheels"
-      ],
-      "description": "Synthetic demo item. Tire, wheel or tire-service item.",
-      "price": {
-        "gross": 159.99
-      },
-      "stock": 273,
-      "media": [
-        "media/tires-wheels.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 111.99
-          }
-        ],
-        "fitment": [
-          "POL-RZRXP1K-2014-2023",
-          "POL-RGRXP1K-2018-2025",
-          "POL-SPT570-2014-2025"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "TGT-WH-X-7302",
-      "name": "Cast Aluminum Wheel 14x7, 4/137",
-      "brand": "Tallgrass Tire Co.",
-      "categoryPath": [
-        "Tires & Wheels"
-      ],
-      "description": "Synthetic demo item. Tire, wheel or tire-service item.",
-      "price": {
-        "gross": 159.99
-      },
-      "stock": 136,
-      "media": [
-        "media/tires-wheels.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 111.99
-          }
-        ],
-        "fitment": [
-          "CAN-MAVX3-2017-2025",
-          "CAN-DEFHD10-2017-2025",
-          "CAN-OUT570-2016-2023"
-        ]
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "CPL-OL-X-8101",
-      "name": "Synthetic 10W-40 Engine Oil, 4 qt",
-      "brand": "Cinderpeak Lubricants",
-      "categoryPath": [
-        "Shop Supplies"
-      ],
-      "description": "Synthetic demo item. Universal shop supply; no vehicle fitment required.",
-      "price": {
-        "gross": 44.99
-      },
-      "stock": 278,
-      "media": [
-        "media/shop-supplies.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 31.49
-          },
-          {
-            "minQty": 5,
-            "gross": 29.89
-          },
-          {
-            "minQty": 10,
-            "gross": 28.39
-          },
-          {
-            "minQty": 25,
-            "gross": 26.99
+            "gross": 98.99
           }
         ],
         "fitment": []
@@ -2657,19 +2134,108 @@
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "CPL-OL-X-8102",
-      "name": "Synthetic 75W-90 Gear Oil, 1 qt",
-      "brand": "Cinderpeak Lubricants",
+      "productNumber": "HLV-CO-X-5102",
+      "name": "Coil-Over Sleeve Kit for 2.5\" ID Springs",
+      "brand": "Halvard Machine Works",
       "categoryPath": [
-        "Shop Supplies"
+        "Coil-Overs",
+        "Coil-Over Kits"
       ],
-      "description": "Synthetic demo item. Universal shop supply; no vehicle fitment required.",
+      "description": "Synthetic demo item. Coil-over conversion hardware; springs sold separately.",
       "price": {
-        "gross": 16.99
+        "gross": 99.95
       },
-      "stock": 45,
+      "stock": 63,
       "media": [
-        "media/shop-supplies.png"
+        "media/coil-over-kit.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 69.99
+          },
+          {
+            "minQty": 5,
+            "gross": 66.49
+          },
+          {
+            "minQty": 10,
+            "gross": 63.09
+          },
+          {
+            "minQty": 25,
+            "gross": 59.99
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-SE-X-5201",
+      "name": "Stud-Top Shock Extension, 1\" – GM Metric Front",
+      "brand": "Halvard Machine Works",
+      "categoryPath": [
+        "Coil-Overs",
+        "Shock Ends & Extensions"
+      ],
+      "description": "Synthetic demo item. Shock end, extension or adapter.",
+      "price": {
+        "gross": 14.95
+      },
+      "stock": 48,
+      "media": [
+        "media/shock-ends.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 10.49
+          },
+          {
+            "minQty": 5,
+            "gross": 9.89
+          },
+          {
+            "minQty": 10,
+            "gross": 9.39
+          },
+          {
+            "minQty": 25,
+            "gross": 8.99
+          }
+        ],
+        "fitment": [
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-SE-X-5202",
+      "name": "Stud-Top Shock Extension, 2\" – GM A-Body Front",
+      "brand": "Halvard Machine Works",
+      "categoryPath": [
+        "Coil-Overs",
+        "Shock Ends & Extensions"
+      ],
+      "description": "Synthetic demo item. Shock end, extension or adapter.",
+      "price": {
+        "gross": 16.95
+      },
+      "stock": 106,
+      "media": [
+        "media/shock-ends.png"
       ],
       "demo": {
         "mapPolicy": "none",
@@ -2691,25 +2257,143 @@
             "gross": 10.19
           }
         ],
+        "fitment": [
+          "CHE-CHEVELLE-1964-1972",
+          "PON-GTO-1964-1972",
+          "PON-TEMPEST-1964-1970"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-SE-X-5203",
+      "name": "Lower Shock Eye Adapter – Mustang II",
+      "brand": "Halvard Machine Works",
+      "categoryPath": [
+        "Coil-Overs",
+        "Shock Ends & Extensions"
+      ],
+      "description": "Synthetic demo item. Shock end, extension or adapter.",
+      "price": {
+        "gross": 18.95
+      },
+      "stock": 49,
+      "media": [
+        "media/shock-ends.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 13.29
+          }
+        ],
+        "fitment": [
+          "FOR-MUSTANGII-1974-1978"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-SE-X-5301",
+      "name": "Steel Heim End, 5/8\" Bore",
+      "brand": "Halvard Machine Works",
+      "categoryPath": [
+        "Coil-Overs",
+        "Shock Ends & Extensions"
+      ],
+      "description": "Synthetic demo item. Shock end, extension or adapter.",
+      "price": {
+        "gross": 24.99
+      },
+      "stock": 14,
+      "media": [
+        "media/shock-ends.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 17.49
+          },
+          {
+            "minQty": 5,
+            "gross": 16.59
+          },
+          {
+            "minQty": 10,
+            "gross": 15.79
+          },
+          {
+            "minQty": 25,
+            "gross": 14.99
+          }
+        ],
         "fitment": []
       },
       "extractionSource": "synthetic-fixture",
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "CPL-GR-X-8201",
-      "name": "Waterproof Marine Grease, 14 oz",
-      "brand": "Cinderpeak Lubricants",
+      "productNumber": "HLV-SE-X-5302",
+      "name": "Stud-Top to Eye Conversion Adapter",
+      "brand": "Halvard Machine Works",
       "categoryPath": [
-        "Shop Supplies"
+        "Coil-Overs",
+        "Shock Ends & Extensions"
       ],
-      "description": "Synthetic demo item. Universal shop supply; no vehicle fitment required.",
+      "description": "Synthetic demo item. Shock end, extension or adapter.",
+      "price": {
+        "gross": 12.99
+      },
+      "stock": 71,
+      "media": [
+        "media/shock-ends.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 9.09
+          },
+          {
+            "minQty": 5,
+            "gross": 8.59
+          },
+          {
+            "minQty": 10,
+            "gross": 8.19
+          },
+          {
+            "minQty": 25,
+            "gross": 7.79
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-SE-X-5303",
+      "name": "Shock Spacer Kit, 1/2\" Bolt",
+      "brand": "Halvard Machine Works",
+      "categoryPath": [
+        "Coil-Overs",
+        "Shock Ends & Extensions"
+      ],
+      "description": "Synthetic demo item. Shock end, extension or adapter.",
       "price": {
         "gross": 9.99
       },
-      "stock": 147,
+      "stock": 15,
       "media": [
-        "media/shop-supplies.png"
+        "media/shock-ends.png"
       ],
       "demo": {
         "mapPolicy": "none",
@@ -2737,19 +2421,413 @@
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "CPL-CL-X-8301",
-      "name": "Brake Parts Cleaner, 14 oz",
-      "brand": "Cinderpeak Lubricants",
+      "productNumber": "IRV-MT-X-6001",
+      "name": "Weld-On Lower Shock Mount, Front – GM Metric",
+      "brand": "Ironvale Chassis",
       "categoryPath": [
-        "Shop Supplies"
+        "Shock Mounts"
       ],
-      "description": "Synthetic demo item. Universal shop supply; no vehicle fitment required.",
+      "description": "Synthetic demo item. Weld-on or bolt-in shock mounting hardware for the listed chassis.",
+      "price": {
+        "gross": 44.99
+      },
+      "stock": 109,
+      "media": [
+        "media/shock-mounts.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 31.49
+          },
+          {
+            "minQty": 5,
+            "gross": 29.89
+          },
+          {
+            "minQty": 10,
+            "gross": 28.39
+          },
+          {
+            "minQty": 25,
+            "gross": 26.99
+          }
+        ],
+        "fitment": [
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "IRV-MT-X-6002",
+      "name": "Upper Shock Mount Plate – GM Metric",
+      "brand": "Ironvale Chassis",
+      "categoryPath": [
+        "Shock Mounts"
+      ],
+      "description": "Synthetic demo item. Weld-on or bolt-in shock mounting hardware for the listed chassis.",
+      "price": {
+        "gross": 39.99
+      },
+      "stock": 53,
+      "media": [
+        "media/shock-mounts.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 27.99
+          },
+          {
+            "minQty": 5,
+            "gross": 26.59
+          },
+          {
+            "minQty": 10,
+            "gross": 25.29
+          },
+          {
+            "minQty": 25,
+            "gross": 23.99
+          }
+        ],
+        "fitment": [
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "IRV-MT-X-6003",
+      "name": "Rear Shock Relocation Bracket – GM A-Body",
+      "brand": "Ironvale Chassis",
+      "categoryPath": [
+        "Shock Mounts"
+      ],
+      "description": "Synthetic demo item. Weld-on or bolt-in shock mounting hardware for the listed chassis.",
+      "price": {
+        "gross": 69.99
+      },
+      "stock": 110,
+      "media": [
+        "media/shock-mounts.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 48.99
+          }
+        ],
+        "fitment": [
+          "CHE-CHEVELLE-1964-1972",
+          "PON-GTO-1964-1972",
+          "PON-TEMPEST-1964-1970"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "IRV-MT-X-6004",
+      "name": "Rear Shock Relocation Bracket – GM Metric",
+      "brand": "Ironvale Chassis",
+      "categoryPath": [
+        "Shock Mounts"
+      ],
+      "description": "Synthetic demo item. Weld-on or bolt-in shock mounting hardware for the listed chassis.",
+      "price": {
+        "gross": 69.99
+      },
+      "stock": 54,
+      "media": [
+        "media/shock-mounts.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 48.99
+          }
+        ],
+        "fitment": [
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "IRV-MT-X-6005",
+      "name": "Front Shock Tower Mount – Camaro",
+      "brand": "Ironvale Chassis",
+      "categoryPath": [
+        "Shock Mounts"
+      ],
+      "description": "Synthetic demo item. Weld-on or bolt-in shock mounting hardware for the listed chassis.",
+      "price": {
+        "gross": 54.99
+      },
+      "stock": 111,
+      "media": [
+        "media/shock-mounts.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 38.49
+          }
+        ],
+        "fitment": [
+          "CHE-CAMARO-1970-1981"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "IRV-MT-X-6006",
+      "name": "Rear Lower Shock Mount – Mustang",
+      "brand": "Ironvale Chassis",
+      "categoryPath": [
+        "Shock Mounts"
+      ],
+      "description": "Synthetic demo item. Weld-on or bolt-in shock mounting hardware for the listed chassis.",
+      "price": {
+        "gross": 59.99
+      },
+      "stock": 55,
+      "media": [
+        "media/shock-mounts.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 41.99
+          }
+        ],
+        "fitment": [
+          "FOR-MUSTANG-1979-1993"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "IRV-MT-X-6007",
+      "name": "Rear Shock Mount Kit – Ford/Mercury Mid-Size",
+      "brand": "Ironvale Chassis",
+      "categoryPath": [
+        "Shock Mounts"
+      ],
+      "description": "Synthetic demo item. Weld-on or bolt-in shock mounting hardware for the listed chassis.",
+      "price": {
+        "gross": 64.99
+      },
+      "stock": 112,
+      "media": [
+        "media/shock-mounts.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 45.49
+          }
+        ],
+        "fitment": [
+          "FOR-TBIRD-1977-1979",
+          "MER-COUGAR-1977-1979",
+          "MER-MONTEGO-1972-1976"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "IRV-MT-X-6008",
+      "name": "Front Upper Shock Mount – Nova",
+      "brand": "Ironvale Chassis",
+      "categoryPath": [
+        "Shock Mounts"
+      ],
+      "description": "Synthetic demo item. Weld-on or bolt-in shock mounting hardware for the listed chassis.",
+      "price": {
+        "gross": 49.99
+      },
+      "stock": 48,
+      "media": [
+        "media/shock-mounts.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 34.99
+          }
+        ],
+        "fitment": [
+          "CHE-NOVA-1975-1979"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "IRV-MT-X-6009",
+      "name": "Rear Upper Shock Crossmember – GM Metric",
+      "brand": "Ironvale Chassis",
+      "categoryPath": [
+        "Shock Mounts"
+      ],
+      "description": "Synthetic demo item. Weld-on or bolt-in shock mounting hardware for the listed chassis.",
+      "price": {
+        "gross": 89.99
+      },
+      "stock": 105,
+      "media": [
+        "media/shock-mounts.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 62.99
+          }
+        ],
+        "fitment": [
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-RB-X-7001",
+      "name": "Linear-Digressive Shock Piston",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Rebuild Components"
+      ],
+      "description": "Synthetic demo item. Shock rebuild component. Universal.",
+      "price": {
+        "gross": 68.95
+      },
+      "stock": 109,
+      "media": [
+        "media/rebuild-components.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 48.29
+          },
+          {
+            "minQty": 5,
+            "gross": 45.89
+          },
+          {
+            "minQty": 10,
+            "gross": 43.59
+          },
+          {
+            "minQty": 25,
+            "gross": 41.39
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-RB-X-7002",
+      "name": "Shock Shaft Seal Kit",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Rebuild Components"
+      ],
+      "description": "Synthetic demo item. Shock rebuild component. Universal.",
+      "price": {
+        "gross": 14.99
+      },
+      "stock": 54,
+      "media": [
+        "media/rebuild-components.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 10.49
+          },
+          {
+            "minQty": 5,
+            "gross": 9.99
+          },
+          {
+            "minQty": 10,
+            "gross": 9.49
+          },
+          {
+            "minQty": 25,
+            "gross": 8.99
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-RB-X-7003",
+      "name": "Shock Fill Plug Assembly",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Rebuild Components"
+      ],
+      "description": "Synthetic demo item. Shock rebuild component. Universal.",
       "price": {
         "gross": 7.49
       },
-      "stock": 292,
+      "stock": 110,
       "media": [
-        "media/shop-supplies.png"
+        "media/rebuild-components.png"
       ],
       "demo": {
         "mapPolicy": "none",
@@ -2777,38 +2855,38 @@
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "CPL-CL-X-8302",
-      "name": "Electrical Contact Cleaner, 11 oz",
-      "brand": "Cinderpeak Lubricants",
+      "productNumber": "KST-RB-X-7004",
+      "name": "Valving Shim Assortment",
+      "brand": "Kestrel Race Products",
       "categoryPath": [
-        "Shop Supplies"
+        "Rebuild Components"
       ],
-      "description": "Synthetic demo item. Universal shop supply; no vehicle fitment required.",
+      "description": "Synthetic demo item. Shock rebuild component. Universal.",
       "price": {
-        "gross": 8.99
+        "gross": 29.99
       },
-      "stock": 148,
+      "stock": 39,
       "media": [
-        "media/shop-supplies.png"
+        "media/rebuild-components.png"
       ],
       "demo": {
         "mapPolicy": "none",
         "dealerTiers": [
           {
             "minQty": 1,
-            "gross": 6.29
+            "gross": 20.99
           },
           {
             "minQty": 5,
-            "gross": 5.99
+            "gross": 19.89
           },
           {
             "minQty": 10,
-            "gross": 5.69
+            "gross": 18.89
           },
           {
             "minQty": 25,
-            "gross": 5.39
+            "gross": 17.99
           }
         ],
         "fitment": []
@@ -2817,139 +2895,19 @@
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "CPL-CT-X-8401",
-      "name": "Extended-Life Coolant, 1 gal",
-      "brand": "Cinderpeak Lubricants",
+      "productNumber": "KST-RB-X-7005",
+      "name": "Stud-Top Bushing Kit",
+      "brand": "Kestrel Race Products",
       "categoryPath": [
-        "Shop Supplies"
+        "Rebuild Components"
       ],
-      "description": "Synthetic demo item. Universal shop supply; no vehicle fitment required.",
+      "description": "Synthetic demo item. Shock rebuild component. Universal.",
       "price": {
-        "gross": 24.99
+        "gross": 5.95
       },
-      "stock": 105,
+      "stock": 111,
       "media": [
-        "media/shop-supplies.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 17.49
-          },
-          {
-            "minQty": 5,
-            "gross": 16.59
-          },
-          {
-            "minQty": 10,
-            "gross": 15.79
-          },
-          {
-            "minQty": 25,
-            "gross": 14.99
-          }
-        ],
-        "fitment": []
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "CPL-FS-X-8501",
-      "name": "Fuel Stabilizer, 8 oz",
-      "brand": "Cinderpeak Lubricants",
-      "categoryPath": [
-        "Shop Supplies"
-      ],
-      "description": "Synthetic demo item. Universal shop supply; no vehicle fitment required.",
-      "price": {
-        "gross": 11.99
-      },
-      "stock": 20,
-      "media": [
-        "media/shop-supplies.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 8.39
-          },
-          {
-            "minQty": 5,
-            "gross": 7.99
-          },
-          {
-            "minQty": 10,
-            "gross": 7.59
-          },
-          {
-            "minQty": 25,
-            "gross": 7.19
-          }
-        ],
-        "fitment": []
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "CPL-TL-X-8601",
-      "name": "Medium-Strength Thread Locker, 10 ml",
-      "brand": "Cinderpeak Lubricants",
-      "categoryPath": [
-        "Shop Supplies"
-      ],
-      "description": "Synthetic demo item. Universal shop supply; no vehicle fitment required.",
-      "price": {
-        "gross": 6.99
-      },
-      "stock": 28,
-      "media": [
-        "media/shop-supplies.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 4.89
-          },
-          {
-            "minQty": 5,
-            "gross": 4.59
-          },
-          {
-            "minQty": 10,
-            "gross": 4.39
-          },
-          {
-            "minQty": 25,
-            "gross": 4.19
-          }
-        ],
-        "fitment": []
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "CPL-DG-X-8602",
-      "name": "Dielectric Grease, 3 oz",
-      "brand": "Cinderpeak Lubricants",
-      "categoryPath": [
-        "Shop Supplies"
-      ],
-      "description": "Synthetic demo item. Universal shop supply; no vehicle fitment required.",
-      "price": {
-        "gross": 5.99
-      },
-      "stock": 45,
-      "media": [
-        "media/shop-supplies.png"
+        "media/rebuild-components.png"
       ],
       "demo": {
         "mapPolicy": "none",
@@ -2977,109 +2935,13 @@
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "IRV-TD-X-8701",
-      "name": "Ratchet Tie-Down Straps, 4-pack",
-      "brand": "Ironvale Offroad",
+      "productNumber": "CPL-OL-X-8001",
+      "name": "Racing Shock Oil, 1 qt",
+      "brand": "Cinderpeak Racing Fluids",
       "categoryPath": [
         "Shop Supplies"
       ],
-      "description": "Synthetic demo item. Universal shop supply; no vehicle fitment required.",
-      "price": {
-        "gross": 39.99
-      },
-      "stock": 170,
-      "media": [
-        "media/shop-supplies.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 27.99
-          },
-          {
-            "minQty": 5,
-            "gross": 26.59
-          },
-          {
-            "minQty": 10,
-            "gross": 25.29
-          },
-          {
-            "minQty": 25,
-            "gross": 23.99
-          }
-        ],
-        "fitment": []
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "CPL-ZT-X-8801",
-      "name": "Heavy-Duty Zip Ties, 100-pack",
-      "brand": "Cinderpeak Lubricants",
-      "categoryPath": [
-        "Shop Supplies"
-      ],
-      "description": "Synthetic demo item. Universal shop supply; no vehicle fitment required.",
-      "price": {
-        "gross": 12.99
-      },
-      "stock": 99,
-      "media": [
-        "media/shop-supplies.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 9.09
-          }
-        ],
-        "fitment": []
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "CPL-GL-X-8802",
-      "name": "Nitrile Shop Gloves, box of 100",
-      "brand": "Cinderpeak Lubricants",
-      "categoryPath": [
-        "Shop Supplies"
-      ],
-      "description": "Synthetic demo item. Universal shop supply; no vehicle fitment required.",
-      "price": {
-        "gross": 17.99
-      },
-      "stock": 245,
-      "media": [
-        "media/shop-supplies.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
-          {
-            "minQty": 1,
-            "gross": 12.59
-          }
-        ],
-        "fitment": []
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "CPL-TW-X-8803",
-      "name": "Shop Towels, 200-count roll",
-      "brand": "Cinderpeak Lubricants",
-      "categoryPath": [
-        "Shop Supplies"
-      ],
-      "description": "Synthetic demo item. Universal shop supply; no vehicle fitment required.",
+      "description": "Synthetic demo item. Universal pit and shop supply; no vehicle fitment required.",
       "price": {
         "gross": 14.99
       },
@@ -3093,6 +2955,18 @@
           {
             "minQty": 1,
             "gross": 10.49
+          },
+          {
+            "minQty": 5,
+            "gross": 9.99
+          },
+          {
+            "minQty": 10,
+            "gross": 9.49
+          },
+          {
+            "minQty": 25,
+            "gross": 8.99
           }
         ],
         "fitment": []
@@ -3101,17 +2975,17 @@
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "CPL-AC-X-8804",
-      "name": "Air Filter Oil & Cleaner Kit",
-      "brand": "Cinderpeak Lubricants",
+      "productNumber": "CPL-OL-X-8002",
+      "name": "Racing Shock Oil, 1 gal",
+      "brand": "Cinderpeak Racing Fluids",
       "categoryPath": [
         "Shop Supplies"
       ],
-      "description": "Synthetic demo item. Universal shop supply; no vehicle fitment required.",
+      "description": "Synthetic demo item. Universal pit and shop supply; no vehicle fitment required.",
       "price": {
-        "gross": 19.99
+        "gross": 48.99
       },
-      "stock": 274,
+      "stock": 81,
       "media": [
         "media/shop-supplies.png"
       ],
@@ -3120,7 +2994,19 @@
         "dealerTiers": [
           {
             "minQty": 1,
-            "gross": 13.99
+            "gross": 34.29
+          },
+          {
+            "minQty": 5,
+            "gross": 32.59
+          },
+          {
+            "minQty": 10,
+            "gross": 30.89
+          },
+          {
+            "minQty": 25,
+            "gross": 29.39
           }
         ],
         "fitment": []
@@ -3129,27 +3015,38 @@
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "BCE-BC-X-8901",
-      "name": "Smart Battery Maintainer, 12V",
-      "brand": "Bluecairn Electric",
+      "productNumber": "TGT-TL-X-8101",
+      "name": "Coil-Over Spanner Wrench Set",
+      "brand": "Tallgrass Pit Tools",
       "categoryPath": [
-        "Electrical",
-        "Batteries"
+        "Shop Supplies"
       ],
-      "description": "Synthetic demo item. Maintenance-free electrical component.",
+      "description": "Synthetic demo item. Universal pit and shop supply; no vehicle fitment required.",
       "price": {
-        "gross": 64.99
+        "gross": 54.99
       },
-      "stock": 41,
+      "stock": 12,
       "media": [
-        "media/batteries.png"
+        "media/shop-supplies.png"
       ],
       "demo": {
         "mapPolicy": "none",
         "dealerTiers": [
           {
             "minQty": 1,
-            "gross": 45.49
+            "gross": 38.49
+          },
+          {
+            "minQty": 5,
+            "gross": 36.59
+          },
+          {
+            "minQty": 10,
+            "gross": 34.69
+          },
+          {
+            "minQty": 25,
+            "gross": 32.99
           }
         ],
         "fitment": []
@@ -3158,27 +3055,26 @@
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "BCE-LB-X-9101",
-      "name": "30\" Dual-Row LED Light Bar",
-      "brand": "Bluecairn Electric",
+      "productNumber": "TGT-TL-X-8102",
+      "name": "Nitrogen Shock Inflation Tool",
+      "brand": "Tallgrass Pit Tools",
       "categoryPath": [
-        "Electrical",
-        "Lighting"
+        "Shop Supplies"
       ],
-      "description": "Synthetic demo item. Lighting component; off-road use only.",
+      "description": "Synthetic demo item. Universal pit and shop supply; no vehicle fitment required.",
       "price": {
-        "gross": 249.99
+        "gross": 159.95
       },
-      "stock": 249,
+      "stock": 67,
       "media": [
-        "media/lighting.png"
+        "media/shop-supplies.png"
       ],
       "demo": {
-        "mapPolicy": "hide_until_cart",
+        "mapPolicy": "none",
         "dealerTiers": [
           {
             "minQty": 1,
-            "gross": 174.99
+            "gross": 111.99
           }
         ],
         "fitment": []
@@ -3187,20 +3083,115 @@
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "BCE-LP-X-9102",
-      "name": "LED Pod Light Pair, 3\"",
-      "brand": "Bluecairn Electric",
+      "productNumber": "TGT-RK-X-8201",
+      "name": "Aluminum Shock Rack, 12-Shock",
+      "brand": "Tallgrass Pit Tools",
       "categoryPath": [
-        "Electrical",
-        "Lighting"
+        "Shop Supplies"
       ],
-      "description": "Synthetic demo item. Lighting component; off-road use only.",
+      "description": "Synthetic demo item. Universal pit and shop supply; no vehicle fitment required.",
+      "price": {
+        "gross": 184.99
+      },
+      "stock": 110,
+      "media": [
+        "media/shop-supplies.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 129.49
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "TGT-RK-X-8202",
+      "name": "Shock Rack Pin Kit",
+      "brand": "Tallgrass Pit Tools",
+      "categoryPath": [
+        "Shop Supplies"
+      ],
+      "description": "Synthetic demo item. Universal pit and shop supply; no vehicle fitment required.",
+      "price": {
+        "gross": 69.99
+      },
+      "stock": 52,
+      "media": [
+        "media/shop-supplies.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 48.99
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "BCE-BB-X-8301",
+      "name": "Urethane Shock Bumper, Medium",
+      "brand": "Bluecairn Spring Co.",
+      "categoryPath": [
+        "Shop Supplies"
+      ],
+      "description": "Synthetic demo item. Universal pit and shop supply; no vehicle fitment required.",
+      "price": {
+        "gross": 32.99
+      },
+      "stock": 112,
+      "media": [
+        "media/shop-supplies.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 23.09
+          },
+          {
+            "minQty": 5,
+            "gross": 21.89
+          },
+          {
+            "minQty": 10,
+            "gross": 20.79
+          },
+          {
+            "minQty": 25,
+            "gross": 19.79
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "BCE-BS-X-8302",
+      "name": "Bump Spring, 400 lb",
+      "brand": "Bluecairn Spring Co.",
+      "categoryPath": [
+        "Shop Supplies"
+      ],
+      "description": "Synthetic demo item. Universal pit and shop supply; no vehicle fitment required.",
       "price": {
         "gross": 89.99
       },
-      "stock": 146,
+      "stock": 71,
       "media": [
-        "media/lighting.png"
+        "media/shop-supplies.png"
       ],
       "demo": {
         "mapPolicy": "none",
@@ -3208,35 +3199,18 @@
           {
             "minQty": 1,
             "gross": 62.99
-          }
-        ],
-        "fitment": []
-      },
-      "extractionSource": "synthetic-fixture",
-      "priceConfidence": "generated"
-    },
-    {
-      "productNumber": "BCE-WH-X-9103",
-      "name": "Light Bar Wiring Harness with Switch",
-      "brand": "Bluecairn Electric",
-      "categoryPath": [
-        "Electrical",
-        "Lighting"
-      ],
-      "description": "Synthetic demo item. Lighting component; off-road use only.",
-      "price": {
-        "gross": 34.99
-      },
-      "stock": 284,
-      "media": [
-        "media/lighting.png"
-      ],
-      "demo": {
-        "mapPolicy": "none",
-        "dealerTiers": [
+          },
           {
-            "minQty": 1,
-            "gross": 24.49
+            "minQty": 5,
+            "gross": 59.79
+          },
+          {
+            "minQty": 10,
+            "gross": 56.89
+          },
+          {
+            "minQty": 25,
+            "gross": 53.99
           }
         ],
         "fitment": []
@@ -3245,19 +3219,19 @@
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "TGT-RK-X-9201",
-      "name": "Tubeless Tire Plug Repair Kit",
-      "brand": "Tallgrass Tire Co.",
+      "productNumber": "STP-CV-X-8401",
+      "name": "Coil-Over Spring Covers, Pair",
+      "brand": "Stoneridge Track Supply",
       "categoryPath": [
-        "Tires & Wheels"
+        "Shop Supplies"
       ],
-      "description": "Synthetic demo item. Tire, wheel or tire-service item.",
+      "description": "Synthetic demo item. Universal pit and shop supply; no vehicle fitment required.",
       "price": {
         "gross": 24.99
       },
-      "stock": 202,
+      "stock": 21,
       "media": [
-        "media/tires-wheels.png"
+        "media/shop-supplies.png"
       ],
       "demo": {
         "mapPolicy": "none",
@@ -3285,38 +3259,26 @@
       "priceConfidence": "generated"
     },
     {
-      "productNumber": "TGT-VS-X-9202",
-      "name": "Rubber Valve Stem Kit, 4-pack",
-      "brand": "Tallgrass Tire Co.",
+      "productNumber": "STP-GA-X-8501",
+      "name": "Ride Height Gauge",
+      "brand": "Stoneridge Track Supply",
       "categoryPath": [
-        "Tires & Wheels"
+        "Shop Supplies"
       ],
-      "description": "Synthetic demo item. Tire, wheel or tire-service item.",
+      "description": "Synthetic demo item. Universal pit and shop supply; no vehicle fitment required.",
       "price": {
-        "gross": 9.99
+        "gross": 39.99
       },
-      "stock": 226,
+      "stock": 86,
       "media": [
-        "media/tires-wheels.png"
+        "media/shop-supplies.png"
       ],
       "demo": {
         "mapPolicy": "none",
         "dealerTiers": [
           {
             "minQty": 1,
-            "gross": 6.99
-          },
-          {
-            "minQty": 5,
-            "gross": 6.59
-          },
-          {
-            "minQty": 10,
-            "gross": 6.29
-          },
-          {
-            "minQty": 25,
-            "gross": 5.99
+            "gross": 27.99
           }
         ],
         "fitment": []
@@ -3335,7 +3297,7 @@
       "customerGroup": "Retail",
       "passwordEnv": "PERSONA_RETAIL_PASSWORD",
       "address": {
-        "street": "100 Demo Trail Rd",
+        "street": "100 Demo Speedway Rd",
         "zipcode": "00000",
         "city": "Exampleville",
         "countryIso": "US"
@@ -3350,10 +3312,10 @@
       "lastName": "Ellis",
       "email": "dealer.admin@example.com",
       "customerGroup": "Dealer",
-      "company": "Summit Trail Powersports (Demo Dealer)",
+      "company": "Summit Trail Race Shop (Demo Dealer)",
       "passwordEnv": "PERSONA_DEALER_ADMIN_PASSWORD",
       "address": {
-        "street": "200 Demo Dealer Pkwy",
+        "street": "200 Demo Pit Row",
         "zipcode": "00000",
         "city": "Exampleville",
         "countryIso": "US"
@@ -3424,28 +3386,28 @@
         "owner": "junior-buyer",
         "items": [
           {
-            "productNumber": "HLV-OF-B-3101",
-            "quantity": 10
-          },
-          {
-            "productNumber": "KST-SP-D-5101",
-            "quantity": 8
-          },
-          {
-            "productNumber": "CPL-OL-X-8101",
-            "quantity": 6
-          },
-          {
-            "productNumber": "CPL-CL-X-8301",
+            "productNumber": "CPL-OL-X-8001",
             "quantity": 12
           },
           {
-            "productNumber": "CPL-GL-X-8802",
-            "quantity": 2
+            "productNumber": "KST-RB-X-7002",
+            "quantity": 10
           },
           {
-            "productNumber": "CPL-TW-X-8803",
-            "quantity": 4
+            "productNumber": "KST-RB-X-7003",
+            "quantity": 20
+          },
+          {
+            "productNumber": "KST-RB-X-7005",
+            "quantity": 20
+          },
+          {
+            "productNumber": "HLV-SE-X-5301",
+            "quantity": 8
+          },
+          {
+            "productNumber": "BCE-BB-X-8301",
+            "quantity": 8
           }
         ]
       }

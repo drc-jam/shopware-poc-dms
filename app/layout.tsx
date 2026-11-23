@@ -5,7 +5,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: { default: brand.name, template: `%s · ${brand.name}` },
-  description: "Powersports B2B commerce demo (fictional brand).",
+  description: "Racing parts B2B commerce demo (fictional brand).",
   robots: { index: false, follow: false },
 };
 

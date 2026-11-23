@@ -11,16 +11,21 @@ const { chromium } = require("playwright");
 const OUT = path.resolve(import.meta.dirname, "../data/fixture/media");
 
 // Simple geometric glyphs per category (stroke-only, brand-neutral).
+const shockBody = (x, s = 1) =>
+  `<g transform="translate(${x} 0) scale(${s} 1)"><rect x="-34" y="230" width="68" height="250" rx="12" fill="none" stroke-width="16"/>` +
+  `<line x1="0" y1="480" x2="0" y2="560" stroke-width="14"/></g>`;
 const glyphs = {
-  "brakes": `<circle cx="400" cy="380" r="170" fill="none" stroke-width="28"/><circle cx="400" cy="380" r="55" fill="none" stroke-width="20"/><path d="M520 250 a170 170 0 0 1 40 120 l-60 0 a110 110 0 0 0 -25 -80z" stroke-width="16"/>`,
-  "drive-axles": `<rect x="170" y="360" width="460" height="40" rx="20" stroke-width="18" fill="none"/><circle cx="170" cy="380" r="70" fill="none" stroke-width="22"/><circle cx="630" cy="380" r="70" fill="none" stroke-width="22"/>`,
-  "suspension": `<path d="M400 190 v40 l-60 25 l120 40 l-120 40 l120 40 l-120 40 l60 25 v40" fill="none" stroke-width="20" stroke-linejoin="round"/><rect x="350" y="150" width="100" height="40" rx="8" fill="none" stroke-width="16"/><rect x="350" y="530" width="100" height="40" rx="8" fill="none" stroke-width="16"/>`,
-  "filters": `<rect x="290" y="210" width="220" height="330" rx="30" fill="none" stroke-width="22"/>${Array.from({ length: 7 }, (_, i) => `<line x1="${320 + i * 27}" y1="250" x2="${320 + i * 27}" y2="500" stroke-width="10"/>`).join("")}`,
-  "gaskets-seals": `<rect x="200" y="240" width="400" height="280" rx="60" fill="none" stroke-width="22"/><circle cx="330" cy="380" r="60" fill="none" stroke-width="16"/><circle cx="470" cy="380" r="60" fill="none" stroke-width="16"/>`,
-  "ignition": `<rect x="370" y="170" width="60" height="90" rx="10" fill="none" stroke-width="16"/><rect x="340" y="260" width="120" height="70" rx="8" fill="none" stroke-width="18"/><rect x="365" y="330" width="70" height="150" fill="none" stroke-width="16"/><line x1="400" y1="480" x2="400" y2="560" stroke-width="16"/>`,
-  "batteries": `<rect x="220" y="250" width="360" height="260" rx="20" fill="none" stroke-width="22"/><rect x="270" y="210" width="60" height="40" fill="none" stroke-width="16"/><rect x="470" y="210" width="60" height="40" fill="none" stroke-width="16"/><path d="M300 380 h50 M325 355 v50 M450 380 h50" stroke-width="16"/>`,
-  "lighting": `<rect x="160" y="300" width="480" height="140" rx="40" fill="none" stroke-width="22"/>${Array.from({ length: 5 }, (_, i) => `<circle cx="${230 + i * 85}" cy="370" r="28" fill="none" stroke-width="12"/>`).join("")}`,
-  "tires-wheels": `<circle cx="400" cy="380" r="190" fill="none" stroke-width="40" stroke-dasharray="30 14"/><circle cx="400" cy="380" r="110" fill="none" stroke-width="18"/><circle cx="400" cy="380" r="25" stroke-width="12" fill="none"/>`,
+  "stock-mount-shock": `${shockBody(400)}<circle cx="400" cy="195" r="32" fill="none" stroke-width="14"/><circle cx="400" cy="592" r="32" fill="none" stroke-width="14"/>`,
+  "heim-mount-shock": `${shockBody(400)}<rect x="440" y="250" width="70" height="140" rx="12" fill="none" stroke-width="12"/><line x1="434" y1="300" x2="440" y2="300" stroke-width="10"/>` +
+    `<circle cx="400" cy="185" r="38" fill="none" stroke-width="12"/><circle cx="400" cy="185" r="12"/><circle cx="400" cy="600" r="38" fill="none" stroke-width="12"/><circle cx="400" cy="600" r="12"/>`,
+  "shock-package": [250, 350, 450, 550].map((x) => `<g transform="translate(0 40) scale(1 0.85)">${shockBody(x, 0.7)}<circle cx="${x}" cy="200" r="22" fill="none" stroke-width="10"/><circle cx="${x}" cy="590" r="22" fill="none" stroke-width="10"/></g>`).join(""),
+  "coil-over-kit": `${shockBody(400)}<path d="M330 250 l140 25 l-140 25 l140 25 l-140 25 l140 25 l-140 25 l140 25 l-140 25 l140 25" fill="none" stroke-width="12" stroke-linejoin="round"/>` +
+    `<rect x="320" y="232" width="160" height="16" rx="4"/><rect x="320" y="500" width="160" height="16" rx="4"/>`,
+  "shock-ends": `<circle cx="400" cy="300" r="95" fill="none" stroke-width="24"/><circle cx="400" cy="300" r="35" fill="none" stroke-width="14"/><rect x="370" y="395" width="60" height="170" rx="8" fill="none" stroke-width="16"/>` +
+    Array.from({ length: 6 }, (_, i) => `<line x1="372" y1="${420 + i * 24}" x2="428" y2="${430 + i * 24}" stroke-width="6"/>`).join(""),
+  "shock-mounts": `<path d="M220 520 h360 v-60 h-300 v-240 h-60 z" fill="none" stroke-width="18" stroke-linejoin="round"/><circle cx="250" cy="300" r="18" fill="none" stroke-width="10"/><circle cx="420" cy="490" r="18" fill="none" stroke-width="10"/><circle cx="520" cy="490" r="18" fill="none" stroke-width="10"/>`,
+  "rebuild-components": `<circle cx="400" cy="380" r="170" fill="none" stroke-width="24"/><circle cx="400" cy="380" r="40" fill="none" stroke-width="16"/>` +
+    Array.from({ length: 6 }, (_, i) => { const a = (i * Math.PI) / 3; return `<circle cx="${400 + 105 * Math.cos(a)}" cy="${380 + 105 * Math.sin(a)}" r="20" fill="none" stroke-width="10"/>`; }).join(""),
   "shop-supplies": `<rect x="300" y="250" width="200" height="290" rx="24" fill="none" stroke-width="22"/><rect x="355" y="190" width="90" height="60" rx="10" fill="none" stroke-width="16"/><line x1="330" y1="360" x2="470" y2="360" stroke-width="12"/><line x1="330" y1="400" x2="440" y2="400" stroke-width="12"/>`,
 };
 

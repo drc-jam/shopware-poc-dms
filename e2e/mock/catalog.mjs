@@ -9,7 +9,7 @@ const ROOT = path.resolve(import.meta.dirname, "../..");
 const site = JSON.parse(readFileSync(path.join(ROOT, "data/fixture/site-project.json"), "utf8"));
 
 const md5 = (s) => createHash("md5").update(s).digest("hex");
-export const categoryId = (pathArr) => md5(`category:${pathArr.join(" > ")}`); // matches e2e/fixtures/navigation.json
+export const categoryId = (pathArr) => md5(`category:${pathArr.join(" > ")}`);
 export const productId = (sku) => md5(`product:${sku}`); // placeholder; the seeder uses factory stableId
 const manufacturerId = (name) => md5(`manufacturer:${name}`);
 const round = (n) => Math.round(n * 100) / 100;
@@ -234,3 +234,18 @@ export function calculateCart(token, items, group, base) {
     errors: {},
   };
 }
+
+/** Main navigation tree (depth 2) in Shopware's navigation shape, derived from the fixture categories. */
+export const navigation = categories
+  .filter((c) => c.path.length === 1)
+  .map((root) => ({
+    id: root.id,
+    name: root.name,
+    translated: { name: root.name },
+    type: "page",
+    visible: true,
+    active: true,
+    children: categories
+      .filter((c) => c.path.length === 2 && c.path[0] === root.name)
+      .map((c) => ({ id: c.id, name: c.name, translated: { name: c.name }, type: "page", visible: true, active: true, children: [] })),
+  }));

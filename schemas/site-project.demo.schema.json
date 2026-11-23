@@ -292,9 +292,9 @@
         "key": { "$ref": "#/$defs/vehicleKey" },
         "make": { "type": "string", "minLength": 1 },
         "model": { "type": "string", "minLength": 1 },
-        "yearFrom": { "type": "integer", "minimum": 1980, "maximum": 2100 },
-        "yearTo": { "type": "integer", "minimum": 1980, "maximum": 2100 },
-        "type": { "enum": ["ATV", "UTV", "Motorcycle", "Snowmobile", "PWC"] },
+        "yearFrom": { "type": "integer", "minimum": 1900, "maximum": 2100 },
+        "yearTo": { "type": "integer", "minimum": 1900, "maximum": 2100 },
+        "type": { "enum": ["Car", "Truck", "ATV", "UTV", "Motorcycle", "Snowmobile", "PWC"] },
         "extractionSource": { "$ref": "#/$defs/extractionSource" },
         "priceConfidence": { "$ref": "#/$defs/priceConfidence" }
       }

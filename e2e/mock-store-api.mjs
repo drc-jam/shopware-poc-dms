@@ -6,11 +6,10 @@ import { createServer } from "node:http";
 import { randomBytes } from "node:crypto";
 import { readFileSync, existsSync } from "node:fs";
 import path from "node:path";
-import { calculateCart, categories, inCategory, listing, priced, productById, products, search } from "./mock/catalog.mjs";
+import { calculateCart, categories, inCategory, listing, navigation, priced, productById, products, search } from "./mock/catalog.mjs";
 
 const FIX = path.join(import.meta.dirname, "fixtures");
 const MEDIA = path.resolve(import.meta.dirname, "../data/fixture/media");
-const navigation = JSON.parse(readFileSync(path.join(FIX, "navigation.json"), "utf8"));
 const { customers } = JSON.parse(readFileSync(path.join(FIX, "customers.json"), "utf8"));
 const PORT = Number(process.env.MOCK_STORE_API_PORT ?? 4010);
 const BASE = `http://127.0.0.1:${PORT}`;

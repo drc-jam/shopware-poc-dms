@@ -3,9 +3,9 @@ import { addFromPdp, openPdp, passGate, resetDemo, switchPersona, usd } from "./
 import { dealerAt, mapSkus, product, series, seriesMembers } from "./fixture-data";
 
 // S1–S5 (DEV_GUIDE §3). Against the mock by default; against a deployment with E2E_BASE_URL.
-const SKU = "STP-BP-C-0142"; // tiered, Series C, not MAP
-const [SERIES_A, SERIES_B] = seriesMembers("C") as [string, string];
-const MAP_SKU = mapSkus().find((s) => s === "IRV-SH-X-2101") ?? mapSkus()[0]!;
+const SKU = "VRD-SM-A-1001"; // tiered, Series A (front shock), not MAP
+const [SERIES_A, SERIES_B] = seriesMembers("A") as [string, string]; // front + rear of the same series
+const MAP_SKU = mapSkus().find((s) => s === "VRD-SM-X-1103") ?? mapSkus()[0]!;
 
 test.beforeEach(async ({ page }) => {
   await passGate(page);
@@ -14,7 +14,7 @@ test.beforeEach(async ({ page }) => {
 
 test.describe("S1 · Retail vs Your price on the PDP", () => {
   test("Retail sees only the retail price", async ({ page }) => {
-    await switchPersona(page, "retail", "Retail Rider");
+    await switchPersona(page, "retail", "Retail Racer");
     await openPdp(page, SKU);
     await expect(page.getByTestId("price-unit")).toHaveText(usd(product(SKU).price.gross));
     await expect(page.getByTestId("price-list")).toHaveCount(0);
@@ -33,7 +33,7 @@ test.describe("S1 · Retail vs Your price on the PDP", () => {
 
 test.describe("S2 · PLP shows the persona's price", () => {
   for (const [key, label, expected] of [
-    ["retail", "Retail Rider", () => product(SKU).price.gross],
+    ["retail", "Retail Racer", () => product(SKU).price.gross],
     ["dealer-admin", "Dealer Admin", () => dealerAt(SKU, 1)],
   ] as const) {
     test(`${label} card price on the category listing`, async ({ page }) => {
@@ -76,7 +76,7 @@ test.describe("S3 · Quantity tiers", () => {
 });
 
 test.describe("S4 · Cross-SKU series tiers", () => {
-  const tier10 = series("C").tiers.find((t) => t.minQty === 10)!;
+  const tier10 = series("A").tiers.find((t) => t.minQty === 10)!;
 
   test("5 × A + 5 × B shows the series savings line", async ({ page }) => {
     await switchPersona(page, "dealer-admin", "Dealer Admin");
@@ -110,7 +110,7 @@ test.describe("S4 · Cross-SKU series tiers", () => {
   });
 
   test("Retail gets no series savings", async ({ page }) => {
-    await switchPersona(page, "retail", "Retail Rider");
+    await switchPersona(page, "retail", "Retail Racer");
     await addFromPdp(page, SERIES_A, 5);
     await addFromPdp(page, SERIES_B, 5);
     await page.goto("/cart");
@@ -120,7 +120,7 @@ test.describe("S4 · Cross-SKU series tiers", () => {
 
 test.describe("S5 · MAP", () => {
   test("Retail: price hidden on PLP and PDP, real price in cart", async ({ page }) => {
-    await switchPersona(page, "retail", "Retail Rider");
+    await switchPersona(page, "retail", "Retail Racer");
     const p = product(MAP_SKU);
     await page.goto(`/search?search=${MAP_SKU}`);
     const card = page.locator(`[data-testid="product-card"][data-sku="${MAP_SKU}"]`);
@@ -147,7 +147,7 @@ test.describe("S5 · MAP", () => {
 
 test.describe("PLP UX carried over from DMS feedback", () => {
   test("add to cart opens the mini-cart drawer without leaving the page", async ({ page }) => {
-    await switchPersona(page, "retail", "Retail Rider");
+    await switchPersona(page, "retail", "Retail Racer");
     await page.goto(`/search?search=${SKU}`);
     const url = page.url();
     await page.locator(`[data-testid="product-card"][data-sku="${SKU}"]`).getByTestId("add-to-cart").click();

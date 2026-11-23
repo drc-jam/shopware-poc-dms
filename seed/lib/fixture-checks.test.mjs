@@ -36,7 +36,7 @@ describe("fixture business checks", () => {
     ["no MAP SKU", (d) => { for (const p of d.products) p.demo.mapPolicy = "none"; }, /MAP/],
     ["unresolved category", (d) => { d.products[0].categoryPath = ["Engine", "Turbo"]; }, /does not resolve/],
     ["real-looking email", (d) => { d.customers[0].email = "someone@gmail.com"; }, /real-looking email/],
-    ["series with 1 SKU", (d) => { for (const p of d.products) if (p.demo.series === "A" && p.productNumber !== "RDG-CV-A-1101") delete p.demo.series; }, /needs ≥ 2 SKUs/],
+    ["series with 1 SKU", (d) => { for (const p of d.products) if (p.demo.series === "A" && p.productNumber !== "VRD-SM-A-1001") delete p.demo.series; }, /needs ≥ 2 SKUs/],
     ["series discount mismatch", (d) => { d.series[0].tiers[0].discountPct = 20; }, /implied/],
     ["fitment on shop supplies", (d) => { d.products.find((p) => p.categoryPath[0] === "Shop Supplies").demo.fitment = [d.vehicles[0].key]; }, /must be universal/],
     ["shopping list unknown SKU", (d) => { d.b2b.shoppingLists[0].items[0].productNumber = "ZZZ-ZZ-X-0000"; }, /not a fixture product/],
