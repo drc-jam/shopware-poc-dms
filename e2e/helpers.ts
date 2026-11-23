@@ -31,3 +31,32 @@ export function bff(page: Page, method: string, path: string, data?: unknown, or
 export async function mockHits(request: APIRequestContext): Promise<{ method: string; route: string }[]> {
   return (await request.get(`${MOCK_URL}/__mock/hits`)).json();
 }
+
+/** Clears every persona's cart and the garage (same as the Reset button, without the confirm dialog). */
+export async function resetDemo(page: Page) {
+  const base = new URL(page.url()).origin;
+  const res = await page.request.post("/api/persona", {
+    data: JSON.stringify({ action: "reset" }),
+    headers: { Origin: base, "Content-Type": "application/json" },
+  });
+  expect(res.status()).toBe(200);
+  await page.reload();
+}
+
+/** Opens a PDP by SKU through the search page (IDs come from the Store API, never computed). */
+export async function openPdp(page: Page, sku: string) {
+  await page.goto(`/search?search=${encodeURIComponent(sku)}`);
+  const card = page.locator(`[data-testid="product-card"][data-sku="${sku}"]`);
+  await card.getByRole("link").last().click();
+  await expect(page.getByTestId("pdp")).toHaveAttribute("data-sku", sku);
+}
+
+export async function addFromPdp(page: Page, sku: string, qty: number) {
+  await openPdp(page, sku);
+  await page.getByTestId("qty-input").fill(String(qty));
+  await page.getByTestId("add-to-cart").click();
+  await expect(page.getByTestId("mini-cart")).toBeVisible();
+  await page.getByRole("button", { name: "Close", exact: true }).click();
+}
+
+export const usd = (n: number) => new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(n);

@@ -5,6 +5,7 @@ import { getActivePersona } from "@/lib/session";
 import { getHeaderState, getMainNavigation } from "@/lib/shopware/queries";
 import { MainNav } from "./MainNav";
 import { PersonaSwitcher } from "./PersonaSwitcher";
+import { SearchBox } from "./SearchBox";
 
 export async function Header() {
   const persona = await getActivePersona();
@@ -23,16 +24,7 @@ export async function Header() {
           <span className="font-heading text-xl font-semibold text-primary">{brand.name}</span>
         </Link>
 
-        <form action="/search" method="get" role="search" className="order-last w-full sm:order-none sm:ml-4 sm:w-auto sm:flex-1">
-          <label htmlFor="q" className="sr-only">Search parts</label>
-          <input
-            id="q"
-            name="search"
-            type="search"
-            placeholder="Search parts or SKU…"
-            className="w-full rounded-[var(--brand-radius)] border border-black/15 px-3 py-2 text-sm"
-          />
-        </form>
+        <SearchBox />
 
         <div className="flex w-full min-w-0 flex-wrap items-center justify-between gap-3 sm:ml-auto sm:w-auto sm:justify-end">
           <PersonaSwitcher

@@ -22,7 +22,8 @@ For local dev against the mock: copy `.env.example` to `.env.local` and use the 
 | 1 · Fixture | **Built, awaiting human review** | Review `data/fixture/REVIEW.md` (`npm run fixture:review` regenerates it) |
 | 2 · Seeder | Not started | Needs the factory repo (stableId, admin client) and an instance |
 | 3 · App shell | **Done (against mock)** | Gate, BFF + allowlist, persona switcher, brand tokens, header/nav |
-| 4–8 | Not started | |
+| 4 · Catalog and pricing | **Done (against mock)** | S1–S5 e2e green; PLP/PDP/search, PriceBlock, TierTable, MAP, mini-cart, Quick View, cart with series savings |
+| 5–8 | Not started | |
 
 ### Open items and deviations from the guide
 
@@ -33,5 +34,6 @@ For local dev against the mock: copy `.env.example` to `.env.local` and use the 
 - **Vehicles live in `data/fixture/vehicles.json`** (per the repo layout §5). The validator composes them with `site-project.json` before checking the schema.
 - **B2B Store API routes are not hard-coded.** `data/b2b-routes.json` stays `pending-discovery` until `seed:discover` fills it from the instance's OpenAPI document. Until then the BFF denies every B2B route.
 - **Fitment data is synthetic.** Vehicle makes and models are real OEMs, but which parts fit which vehicle is invented.
+- **The mock Store API emulates Shopware response shapes and the intended pricing** (`e2e/mock/catalog.mjs`, built from the fixture). Green e2e against the mock proves the app logic, not Shopware's pricing or promotions. `seed:verify` and e2e against the real instance prove those.
 - **Placeholder images** in `data/fixture/media/` are generated category illustrations (`tools/make-placeholder-media.mjs`).
 - `lib/shopware/types.ts` is hand-written for now. Replace it with `npm run types:generate` in Phase 0.

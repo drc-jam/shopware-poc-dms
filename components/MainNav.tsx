@@ -19,7 +19,7 @@ export function MainNav({ items }: { items: NavCategory[] }) {
                 {nameOf(c)}
               </Link>
               {children.length > 0 && (
-                <ul className="absolute left-0 top-full z-20 hidden min-w-56 max-w-[calc(100vw-2rem)] rounded-b-[var(--brand-radius)] bg-white py-2 text-ink shadow-lg group-focus-within:block group-hover:block">
+                <ul className="absolute left-0 top-full z-20 hidden min-w-56 max-w-[calc(100vw-2rem)] rounded-b-[var(--brand-radius)] bg-white py-2 text-ink shadow-lg group-hover:block group-has-[:focus-visible]:block">
                   {children.map((k) => (
                     <li key={k.id}>
                       <Link href={href(k)} className="block px-4 py-2 text-sm hover:bg-surface focus:bg-surface">

@@ -53,9 +53,10 @@ test.describe("persona switcher", () => {
   });
 
   test("carts persist per persona; reset clears them", async ({ page }) => {
-    test.skip(!usingMock, "uses a mock product id");
     await switchPersona(page, "retail", "Retail Rider");
-    const add = await bff(page, "POST", "checkout/cart/line-item", { items: [{ type: "product", referencedId: "p-1", quantity: 2 }] });
+    const found = await bff(page, "POST", "search", { search: "STP-BP-C-0142", limit: 1 });
+    const productId = ((await found.json()) as { elements: { id: string }[] }).elements[0]!.id;
+    const add = await bff(page, "POST", "checkout/cart/line-item", { items: [{ type: "product", id: productId, referencedId: productId, quantity: 2 }] });
     expect(add.status()).toBe(200);
     await page.reload();
     await expect(page.getByTestId("cart-count")).toHaveText("2");
