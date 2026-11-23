@@ -1,0 +1,3416 @@
+{
+  "$schema": "../../schemas/site-project.demo.schema.json",
+  "source": {
+    "type": "synthetic-fixture",
+    "name": "racing-shocks-b2b-demo",
+    "description": "Curated synthetic racing-shocks catalog. All brands, products, people and companies are fictional. Fitment is synthetic.",
+    "extractionSource": "synthetic-fixture",
+    "priceConfidence": "generated"
+  },
+  "currency": "USD",
+  "brands": [
+    {
+      "code": "VRD",
+      "name": "Velocity Ride Dynamics",
+      "fictional": true,
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "code": "KST",
+      "name": "Kestrel Race Products",
+      "fictional": true,
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "code": "HLV",
+      "name": "Halvard Machine Works",
+      "fictional": true,
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "code": "IRV",
+      "name": "Ironvale Chassis",
+      "fictional": true,
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "code": "CPL",
+      "name": "Cinderpeak Racing Fluids",
+      "fictional": true,
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "code": "TGT",
+      "name": "Tallgrass Pit Tools",
+      "fictional": true,
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "code": "BCE",
+      "name": "Bluecairn Spring Co.",
+      "fictional": true,
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "code": "STP",
+      "name": "Stoneridge Track Supply",
+      "fictional": true,
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    }
+  ],
+  "categories": [
+    {
+      "path": [
+        "Shocks"
+      ],
+      "description": "Stock-mount and heim-mount racing shocks for circle track and street/strip. Front and rear are sold separately.",
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "path": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "path": [
+        "Shocks",
+        "Heim Mount Shocks"
+      ],
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "path": [
+        "Shocks",
+        "Shock Packages"
+      ],
+      "description": "Matched four-shock packages per chassis.",
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "path": [
+        "Coil-Overs"
+      ],
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "path": [
+        "Coil-Overs",
+        "Coil-Over Kits"
+      ],
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "path": [
+        "Coil-Overs",
+        "Shock Ends & Extensions"
+      ],
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "path": [
+        "Shock Mounts"
+      ],
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "path": [
+        "Rebuild Components"
+      ],
+      "description": "Pistons, seals and service parts for shock rebuilds. Universal.",
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "path": [
+        "Shop Supplies"
+      ],
+      "description": "Universal pit and shop supplies. No vehicle fitment required.",
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    }
+  ],
+  "series": [
+    {
+      "code": "A",
+      "label": "Velocity 70 Series",
+      "description": "Monotube stock-mount dry shocks, front and rear, across GM chassis",
+      "tiers": [
+        {
+          "minQty": 10,
+          "discountPct": 5
+        },
+        {
+          "minQty": 25,
+          "discountPct": 9.75
+        }
+      ],
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "code": "B",
+      "label": "Kestrel 27 Series",
+      "description": "Twin-tube stock-mount shocks for GM and Ford/Mercury chassis",
+      "tiers": [
+        {
+          "minQty": 10,
+          "discountPct": 5
+        },
+        {
+          "minQty": 25,
+          "discountPct": 9.75
+        }
+      ],
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "code": "C",
+      "label": "Velocity SL Series",
+      "description": "Heim-mount monotube shocks, 7\" and 9\" stroke",
+      "tiers": [
+        {
+          "minQty": 10,
+          "discountPct": 5
+        },
+        {
+          "minQty": 25,
+          "discountPct": 9.75
+        }
+      ],
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "code": "D",
+      "label": "Kestrel 5Q Series",
+      "description": "Steel twin-tube heim-mount circle track shocks",
+      "tiers": [
+        {
+          "minQty": 10,
+          "discountPct": 5
+        },
+        {
+          "minQty": 25,
+          "discountPct": 9.75
+        }
+      ],
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    }
+  ],
+  "personas": [
+    {
+      "key": "retail",
+      "label": "Retail Racer",
+      "customer": "retail-rider"
+    },
+    {
+      "key": "dealer-admin",
+      "label": "Dealer Admin",
+      "customer": "dealer-admin"
+    },
+    {
+      "key": "dealer-junior",
+      "label": "Dealer Junior Buyer",
+      "employee": "junior-buyer"
+    }
+  ],
+  "products": [
+    {
+      "productNumber": "VRD-SM-A-1001",
+      "name": "Velocity 70 Series Monotube Dry Shock, Front – GM Metric",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 119.99
+      },
+      "stock": 22,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "series": "A",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 83.99
+          },
+          {
+            "minQty": 5,
+            "gross": 79.79
+          },
+          {
+            "minQty": 10,
+            "gross": 75.79
+          },
+          {
+            "minQty": 25,
+            "gross": 71.99
+          }
+        ],
+        "fitment": [
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-SM-A-1002",
+      "name": "Velocity 70 Series Monotube Dry Shock, Rear – GM Metric",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 119.99
+      },
+      "stock": 77,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "series": "A",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 83.99
+          },
+          {
+            "minQty": 5,
+            "gross": 79.79
+          },
+          {
+            "minQty": 10,
+            "gross": 75.79
+          },
+          {
+            "minQty": 25,
+            "gross": 71.99
+          }
+        ],
+        "fitment": [
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-SM-A-1003",
+      "name": "Velocity 70 Series Monotube Dry Shock, Front – GM A-Body",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 124.99
+      },
+      "stock": 21,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "series": "A",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 87.49
+          },
+          {
+            "minQty": 5,
+            "gross": 83.09
+          },
+          {
+            "minQty": 10,
+            "gross": 78.99
+          },
+          {
+            "minQty": 25,
+            "gross": 74.99
+          }
+        ],
+        "fitment": [
+          "CHE-CHEVELLE-1964-1972",
+          "PON-GTO-1964-1972",
+          "PON-TEMPEST-1964-1970"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-SM-A-1004",
+      "name": "Velocity 70 Series Monotube Dry Shock, Rear – GM A-Body",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 124.99
+      },
+      "stock": 80,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "series": "A",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 87.49
+          },
+          {
+            "minQty": 5,
+            "gross": 83.09
+          },
+          {
+            "minQty": 10,
+            "gross": 78.99
+          },
+          {
+            "minQty": 25,
+            "gross": 74.99
+          }
+        ],
+        "fitment": [
+          "CHE-CHEVELLE-1964-1972",
+          "PON-GTO-1964-1972",
+          "PON-TEMPEST-1964-1970"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-SM-A-1005",
+      "name": "Velocity 70 Series Monotube Dry Shock, Front – Camaro/Nova",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 129.99
+      },
+      "stock": 24,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "series": "A",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 90.99
+          },
+          {
+            "minQty": 5,
+            "gross": 86.39
+          },
+          {
+            "minQty": 10,
+            "gross": 82.09
+          },
+          {
+            "minQty": 25,
+            "gross": 77.99
+          }
+        ],
+        "fitment": [
+          "CHE-CAMARO-1970-1981",
+          "CHE-NOVA-1975-1979"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-SM-A-1006",
+      "name": "Velocity 70 Series Monotube Dry Shock, Rear – Camaro/Nova",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 129.99
+      },
+      "stock": 79,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "series": "A",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 90.99
+          },
+          {
+            "minQty": 5,
+            "gross": 86.39
+          },
+          {
+            "minQty": 10,
+            "gross": 82.09
+          },
+          {
+            "minQty": 25,
+            "gross": 77.99
+          }
+        ],
+        "fitment": [
+          "CHE-CAMARO-1970-1981",
+          "CHE-NOVA-1975-1979"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-SM-B-2001",
+      "name": "Kestrel 27 Series Twin-Tube Shock, Front – GM Metric",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 99.99
+      },
+      "stock": 106,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "series": "B",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 69.99
+          },
+          {
+            "minQty": 5,
+            "gross": 66.49
+          },
+          {
+            "minQty": 10,
+            "gross": 63.19
+          },
+          {
+            "minQty": 25,
+            "gross": 59.99
+          }
+        ],
+        "fitment": [
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-SM-B-2002",
+      "name": "Kestrel 27 Series Twin-Tube Shock, Rear – GM Metric",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 99.99
+      },
+      "stock": 50,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "series": "B",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 69.99
+          },
+          {
+            "minQty": 5,
+            "gross": 66.49
+          },
+          {
+            "minQty": 10,
+            "gross": 63.19
+          },
+          {
+            "minQty": 25,
+            "gross": 59.99
+          }
+        ],
+        "fitment": [
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-SM-B-2003",
+      "name": "Kestrel 27 Series Twin-Tube Shock, Front – Mustang/Mustang II",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 104.99
+      },
+      "stock": 107,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "series": "B",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 73.49
+          },
+          {
+            "minQty": 5,
+            "gross": 69.79
+          },
+          {
+            "minQty": 10,
+            "gross": 66.29
+          },
+          {
+            "minQty": 25,
+            "gross": 62.99
+          }
+        ],
+        "fitment": [
+          "FOR-MUSTANG-1979-1993",
+          "FOR-MUSTANGII-1974-1978"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-SM-B-2004",
+      "name": "Kestrel 27 Series Twin-Tube Shock, Rear – Mustang/Mustang II",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 104.99
+      },
+      "stock": 51,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "series": "B",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 73.49
+          },
+          {
+            "minQty": 5,
+            "gross": 69.79
+          },
+          {
+            "minQty": 10,
+            "gross": 66.29
+          },
+          {
+            "minQty": 25,
+            "gross": 62.99
+          }
+        ],
+        "fitment": [
+          "FOR-MUSTANG-1979-1993",
+          "FOR-MUSTANGII-1974-1978"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-SM-B-2005",
+      "name": "Kestrel 27 Series Twin-Tube Shock, Front – Ford/Mercury Mid-Size",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 104.99
+      },
+      "stock": 108,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "series": "B",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 73.49
+          },
+          {
+            "minQty": 5,
+            "gross": 69.79
+          },
+          {
+            "minQty": 10,
+            "gross": 66.29
+          },
+          {
+            "minQty": 25,
+            "gross": 62.99
+          }
+        ],
+        "fitment": [
+          "FOR-TBIRD-1977-1979",
+          "MER-COUGAR-1977-1979",
+          "MER-MONTEGO-1972-1976"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-SM-B-2006",
+      "name": "Kestrel 27 Series Twin-Tube Shock, Rear – Ford/Mercury Mid-Size",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 104.99
+      },
+      "stock": 52,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "series": "B",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 73.49
+          },
+          {
+            "minQty": 5,
+            "gross": 69.79
+          },
+          {
+            "minQty": 10,
+            "gross": 66.29
+          },
+          {
+            "minQty": 25,
+            "gross": 62.99
+          }
+        ],
+        "fitment": [
+          "FOR-TBIRD-1977-1979",
+          "MER-COUGAR-1977-1979",
+          "MER-MONTEGO-1972-1976"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-SM-X-1101",
+      "name": "Velocity Drag Race Shock, Front – Camaro",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 159.99
+      },
+      "stock": 38,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "mapPolicy": "hide_until_cart",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 111.99
+          }
+        ],
+        "fitment": [
+          "CHE-CAMARO-1970-1981"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-SM-X-1102",
+      "name": "Velocity Drag Race Shock, Rear – Camaro/Nova",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 159.99
+      },
+      "stock": 95,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 111.99
+          }
+        ],
+        "fitment": [
+          "CHE-CAMARO-1970-1981",
+          "CHE-NOVA-1975-1979"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-SM-X-1103",
+      "name": "Velocity Double-Adjustable Drag Shock, Front – Mustang",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 349.99
+      },
+      "stock": 39,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "mapPolicy": "hide_until_cart",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 244.99
+          }
+        ],
+        "fitment": [
+          "FOR-MUSTANG-1979-1993"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-SM-X-1104",
+      "name": "Velocity Double-Adjustable Drag Shock, Rear – Mustang",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 349.99
+      },
+      "stock": 96,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "mapPolicy": "hide_until_cart",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 244.99
+          }
+        ],
+        "fitment": [
+          "FOR-MUSTANG-1979-1993"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-SM-X-1105",
+      "name": "Velocity Steel Stock Mount Dry Shock, Front – Ford/Mercury Mid-Size",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 114.99
+      },
+      "stock": 40,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 80.49
+          }
+        ],
+        "fitment": [
+          "FOR-TBIRD-1977-1979",
+          "MER-COUGAR-1977-1979",
+          "MER-MONTEGO-1972-1976"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-SM-X-1106",
+      "name": "Velocity Steel Stock Mount Dry Shock, Rear – Ford/Mercury Mid-Size",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 114.99
+      },
+      "stock": 97,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 80.49
+          }
+        ],
+        "fitment": [
+          "FOR-TBIRD-1977-1979",
+          "MER-COUGAR-1977-1979",
+          "MER-MONTEGO-1972-1976"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-SM-X-1107",
+      "name": "Velocity Steel Stock Mount Dry Shock, Front – Mustang II",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 114.99
+      },
+      "stock": 41,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 80.49
+          }
+        ],
+        "fitment": [
+          "FOR-MUSTANGII-1974-1978"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-SM-X-1108",
+      "name": "Velocity Steel Stock Mount Dry Shock, Rear – Mustang II",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 114.99
+      },
+      "stock": 90,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 80.49
+          }
+        ],
+        "fitment": [
+          "FOR-MUSTANGII-1974-1978"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-SM-X-2101",
+      "name": "Kestrel Street Stock Steel Shock, Front – GM A-Body",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 89.99
+      },
+      "stock": 69,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 62.99
+          }
+        ],
+        "fitment": [
+          "CHE-CHEVELLE-1964-1972",
+          "PON-GTO-1964-1972",
+          "PON-TEMPEST-1964-1970"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-SM-X-2102",
+      "name": "Kestrel Street Stock Steel Shock, Rear – GM A-Body",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 89.99
+      },
+      "stock": 12,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 62.99
+          }
+        ],
+        "fitment": [
+          "CHE-CHEVELLE-1964-1972",
+          "PON-GTO-1964-1972",
+          "PON-TEMPEST-1964-1970"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-SM-X-2103",
+      "name": "Kestrel Street Stock Steel Shock, Front – Camaro",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 94.99
+      },
+      "stock": 68,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 66.49
+          }
+        ],
+        "fitment": [
+          "CHE-CAMARO-1970-1981"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-SM-X-2104",
+      "name": "Kestrel Street Stock Steel Shock, Rear – Camaro",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 94.99
+      },
+      "stock": 15,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 66.49
+          }
+        ],
+        "fitment": [
+          "CHE-CAMARO-1970-1981"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-SM-X-2105",
+      "name": "Kestrel Street Stock Steel Shock, Front – Nova",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 94.99
+      },
+      "stock": 71,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 66.49
+          }
+        ],
+        "fitment": [
+          "CHE-NOVA-1975-1979"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-SM-X-2106",
+      "name": "Kestrel Street Stock Steel Shock, Rear – Nova",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Shocks",
+        "Stock Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Stock-mount racing shock; front and rear sold separately. Confirm chassis fitment before ordering.",
+      "price": {
+        "gross": 94.99
+      },
+      "stock": 14,
+      "media": [
+        "media/stock-mount-shock.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 66.49
+          }
+        ],
+        "fitment": [
+          "CHE-NOVA-1975-1979"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-HM-C-3001",
+      "name": "Velocity SL Series Heim Mount Shock, 7\" Stroke, Front",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Heim Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Heim-mount racing shock; confirm stroke and mounting for your chassis.",
+      "price": {
+        "gross": 189.99
+      },
+      "stock": 109,
+      "media": [
+        "media/heim-mount-shock.png"
+      ],
+      "demo": {
+        "series": "C",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 132.99
+          },
+          {
+            "minQty": 5,
+            "gross": 126.29
+          },
+          {
+            "minQty": 10,
+            "gross": 119.99
+          },
+          {
+            "minQty": 25,
+            "gross": 113.99
+          }
+        ],
+        "fitment": [
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986",
+          "CHE-CHEVELLE-1964-1972",
+          "PON-GTO-1964-1972",
+          "PON-TEMPEST-1964-1970"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-HM-C-3002",
+      "name": "Velocity SL Series Heim Mount Shock, 7\" Stroke, Rear",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Heim Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Heim-mount racing shock; confirm stroke and mounting for your chassis.",
+      "price": {
+        "gross": 189.99
+      },
+      "stock": 54,
+      "media": [
+        "media/heim-mount-shock.png"
+      ],
+      "demo": {
+        "series": "C",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 132.99
+          },
+          {
+            "minQty": 5,
+            "gross": 126.29
+          },
+          {
+            "minQty": 10,
+            "gross": 119.99
+          },
+          {
+            "minQty": 25,
+            "gross": 113.99
+          }
+        ],
+        "fitment": [
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986",
+          "CHE-CHEVELLE-1964-1972",
+          "PON-GTO-1964-1972",
+          "PON-TEMPEST-1964-1970"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-HM-C-3003",
+      "name": "Velocity SL Series Heim Mount Shock, 9\" Stroke, Front",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Heim Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Heim-mount racing shock; confirm stroke and mounting for your chassis.",
+      "price": {
+        "gross": 199.99
+      },
+      "stock": 110,
+      "media": [
+        "media/heim-mount-shock.png"
+      ],
+      "demo": {
+        "series": "C",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 139.99
+          },
+          {
+            "minQty": 5,
+            "gross": 132.99
+          },
+          {
+            "minQty": 10,
+            "gross": 126.29
+          },
+          {
+            "minQty": 25,
+            "gross": 119.99
+          }
+        ],
+        "fitment": [
+          "CHE-CAMARO-1970-1981",
+          "CHE-NOVA-1975-1979",
+          "FOR-MUSTANG-1979-1993",
+          "FOR-MUSTANGII-1974-1978"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-HM-C-3004",
+      "name": "Velocity SL Series Heim Mount Shock, 9\" Stroke, Rear",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Heim Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Heim-mount racing shock; confirm stroke and mounting for your chassis.",
+      "price": {
+        "gross": 199.99
+      },
+      "stock": 51,
+      "media": [
+        "media/heim-mount-shock.png"
+      ],
+      "demo": {
+        "series": "C",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 139.99
+          },
+          {
+            "minQty": 5,
+            "gross": 132.99
+          },
+          {
+            "minQty": 10,
+            "gross": 126.29
+          },
+          {
+            "minQty": 25,
+            "gross": 119.99
+          }
+        ],
+        "fitment": [
+          "CHE-CAMARO-1970-1981",
+          "CHE-NOVA-1975-1979",
+          "FOR-MUSTANG-1979-1993",
+          "FOR-MUSTANGII-1974-1978"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-HM-D-4001",
+      "name": "Kestrel 5Q Series Steel Twin-Tube Shock, 7\" Stroke, Front",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Shocks",
+        "Heim Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Heim-mount racing shock; confirm stroke and mounting for your chassis.",
+      "price": {
+        "gross": 139.99
+      },
+      "stock": 112,
+      "media": [
+        "media/heim-mount-shock.png"
+      ],
+      "demo": {
+        "series": "D",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 97.99
+          },
+          {
+            "minQty": 5,
+            "gross": 93.09
+          },
+          {
+            "minQty": 10,
+            "gross": 88.39
+          },
+          {
+            "minQty": 25,
+            "gross": 83.99
+          }
+        ],
+        "fitment": [
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986",
+          "CHE-CHEVELLE-1964-1972",
+          "PON-GTO-1964-1972",
+          "PON-TEMPEST-1964-1970"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-HM-D-4002",
+      "name": "Kestrel 5Q Series Steel Twin-Tube Shock, 7\" Stroke, Rear",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Shocks",
+        "Heim Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Heim-mount racing shock; confirm stroke and mounting for your chassis.",
+      "price": {
+        "gross": 139.99
+      },
+      "stock": 55,
+      "media": [
+        "media/heim-mount-shock.png"
+      ],
+      "demo": {
+        "series": "D",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 97.99
+          },
+          {
+            "minQty": 5,
+            "gross": 93.09
+          },
+          {
+            "minQty": 10,
+            "gross": 88.39
+          },
+          {
+            "minQty": 25,
+            "gross": 83.99
+          }
+        ],
+        "fitment": [
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986",
+          "CHE-CHEVELLE-1964-1972",
+          "PON-GTO-1964-1972",
+          "PON-TEMPEST-1964-1970"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-HM-D-4003",
+      "name": "Kestrel 5Q Series Steel Twin-Tube Shock, 9\" Stroke, Front",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Shocks",
+        "Heim Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Heim-mount racing shock; confirm stroke and mounting for your chassis.",
+      "price": {
+        "gross": 144.99
+      },
+      "stock": 111,
+      "media": [
+        "media/heim-mount-shock.png"
+      ],
+      "demo": {
+        "series": "D",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 101.49
+          },
+          {
+            "minQty": 5,
+            "gross": 96.39
+          },
+          {
+            "minQty": 10,
+            "gross": 91.59
+          },
+          {
+            "minQty": 25,
+            "gross": 86.99
+          }
+        ],
+        "fitment": [
+          "FOR-TBIRD-1977-1979",
+          "MER-COUGAR-1977-1979",
+          "MER-MONTEGO-1972-1976",
+          "FOR-MUSTANG-1979-1993"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-HM-D-4004",
+      "name": "Kestrel 5Q Series Steel Twin-Tube Shock, 9\" Stroke, Rear",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Shocks",
+        "Heim Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Heim-mount racing shock; confirm stroke and mounting for your chassis.",
+      "price": {
+        "gross": 144.99
+      },
+      "stock": 54,
+      "media": [
+        "media/heim-mount-shock.png"
+      ],
+      "demo": {
+        "series": "D",
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 101.49
+          },
+          {
+            "minQty": 5,
+            "gross": 96.39
+          },
+          {
+            "minQty": 10,
+            "gross": 91.59
+          },
+          {
+            "minQty": 25,
+            "gross": 86.99
+          }
+        ],
+        "fitment": [
+          "FOR-TBIRD-1977-1979",
+          "MER-COUGAR-1977-1979",
+          "MER-MONTEGO-1972-1976",
+          "FOR-MUSTANG-1979-1993"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-HM-X-3101",
+      "name": "Velocity Single-Adjustable Heim Mount Shock, 7\" Stroke",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Heim Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Heim-mount racing shock; confirm stroke and mounting for your chassis.",
+      "price": {
+        "gross": 299.99
+      },
+      "stock": 109,
+      "media": [
+        "media/heim-mount-shock.png"
+      ],
+      "demo": {
+        "mapPolicy": "hide_until_cart",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 209.99
+          }
+        ],
+        "fitment": [
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-HM-X-4101",
+      "name": "Kestrel Rebound-Adjustable Heim Mount Shock, 9\" Stroke",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Shocks",
+        "Heim Mount Shocks"
+      ],
+      "description": "Synthetic demo item. Heim-mount racing shock; confirm stroke and mounting for your chassis.",
+      "price": {
+        "gross": 229.99
+      },
+      "stock": 99,
+      "media": [
+        "media/heim-mount-shock.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 160.99
+          }
+        ],
+        "fitment": [
+          "CHE-CAMARO-1970-1981",
+          "CHE-NOVA-1975-1979",
+          "FOR-TBIRD-1977-1979",
+          "MER-COUGAR-1977-1979",
+          "MER-MONTEGO-1972-1976"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-PK-X-1201",
+      "name": "Velocity 70 Series 4-Shock Package – GM Metric",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Shock Packages"
+      ],
+      "description": "Synthetic demo item. Matched four-shock package (two front, two rear) for the listed chassis.",
+      "price": {
+        "gross": 449.99
+      },
+      "stock": 54,
+      "media": [
+        "media/shock-package.png"
+      ],
+      "demo": {
+        "mapPolicy": "hide_until_cart",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 314.99
+          }
+        ],
+        "fitment": [
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "VRD-PK-X-1202",
+      "name": "Velocity SL Series Heim Mount 4-Shock Package – GM A-Body",
+      "brand": "Velocity Ride Dynamics",
+      "categoryPath": [
+        "Shocks",
+        "Shock Packages"
+      ],
+      "description": "Synthetic demo item. Matched four-shock package (two front, two rear) for the listed chassis.",
+      "price": {
+        "gross": 739.99
+      },
+      "stock": 109,
+      "media": [
+        "media/shock-package.png"
+      ],
+      "demo": {
+        "mapPolicy": "hide_until_cart",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 517.99
+          }
+        ],
+        "fitment": [
+          "CHE-CHEVELLE-1964-1972",
+          "PON-GTO-1964-1972",
+          "PON-TEMPEST-1964-1970"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-PK-X-2201",
+      "name": "Kestrel 27 Series 4-Shock Package – Mustang",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Shocks",
+        "Shock Packages"
+      ],
+      "description": "Synthetic demo item. Matched four-shock package (two front, two rear) for the listed chassis.",
+      "price": {
+        "gross": 379.99
+      },
+      "stock": 94,
+      "media": [
+        "media/shock-package.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 265.99
+          }
+        ],
+        "fitment": [
+          "FOR-MUSTANG-1979-1993"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-PK-X-2202",
+      "name": "Kestrel 27 Series 4-Shock Package – GM A-Body",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Shocks",
+        "Shock Packages"
+      ],
+      "description": "Synthetic demo item. Matched four-shock package (two front, two rear) for the listed chassis.",
+      "price": {
+        "gross": 389.99
+      },
+      "stock": 39,
+      "media": [
+        "media/shock-package.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 272.99
+          }
+        ],
+        "fitment": [
+          "CHE-CHEVELLE-1964-1972",
+          "PON-GTO-1964-1972",
+          "PON-TEMPEST-1964-1970"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-CO-X-5001",
+      "name": "Front Coil-Over Conversion Kit – GM Metric",
+      "brand": "Halvard Machine Works",
+      "categoryPath": [
+        "Coil-Overs",
+        "Coil-Over Kits"
+      ],
+      "description": "Synthetic demo item. Coil-over conversion hardware; springs sold separately.",
+      "price": {
+        "gross": 262.99
+      },
+      "stock": 24,
+      "media": [
+        "media/coil-over-kit.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 184.09
+          }
+        ],
+        "fitment": [
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-CO-X-5002",
+      "name": "Front Coil-Over Conversion Kit – GM A-Body",
+      "brand": "Halvard Machine Works",
+      "categoryPath": [
+        "Coil-Overs",
+        "Coil-Over Kits"
+      ],
+      "description": "Synthetic demo item. Coil-over conversion hardware; springs sold separately.",
+      "price": {
+        "gross": 262.99
+      },
+      "stock": 82,
+      "media": [
+        "media/coil-over-kit.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 184.09
+          }
+        ],
+        "fitment": [
+          "CHE-CHEVELLE-1964-1972",
+          "PON-GTO-1964-1972",
+          "PON-TEMPEST-1964-1970"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-CO-X-5003",
+      "name": "Front Coil-Over Conversion Kit – Camaro/Nova",
+      "brand": "Halvard Machine Works",
+      "categoryPath": [
+        "Coil-Overs",
+        "Coil-Over Kits"
+      ],
+      "description": "Synthetic demo item. Coil-over conversion hardware; springs sold separately.",
+      "price": {
+        "gross": 274.99
+      },
+      "stock": 25,
+      "media": [
+        "media/coil-over-kit.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 192.49
+          }
+        ],
+        "fitment": [
+          "CHE-CAMARO-1970-1981",
+          "CHE-NOVA-1975-1979"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-CO-X-5004",
+      "name": "Rear Coil-Over Conversion Kit – GM Metric",
+      "brand": "Halvard Machine Works",
+      "categoryPath": [
+        "Coil-Overs",
+        "Coil-Over Kits"
+      ],
+      "description": "Synthetic demo item. Coil-over conversion hardware; springs sold separately.",
+      "price": {
+        "gross": 239.99
+      },
+      "stock": 83,
+      "media": [
+        "media/coil-over-kit.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 167.99
+          }
+        ],
+        "fitment": [
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-CO-X-5005",
+      "name": "Rear Coil-Over Conversion Kit – GM A-Body",
+      "brand": "Halvard Machine Works",
+      "categoryPath": [
+        "Coil-Overs",
+        "Coil-Over Kits"
+      ],
+      "description": "Synthetic demo item. Coil-over conversion hardware; springs sold separately.",
+      "price": {
+        "gross": 239.99
+      },
+      "stock": 26,
+      "media": [
+        "media/coil-over-kit.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 167.99
+          }
+        ],
+        "fitment": [
+          "CHE-CHEVELLE-1964-1972",
+          "PON-GTO-1964-1972",
+          "PON-TEMPEST-1964-1970"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-CO-X-5006",
+      "name": "Rear Coil-Over Conversion Kit – Camaro",
+      "brand": "Halvard Machine Works",
+      "categoryPath": [
+        "Coil-Overs",
+        "Coil-Over Kits"
+      ],
+      "description": "Synthetic demo item. Coil-over conversion hardware; springs sold separately.",
+      "price": {
+        "gross": 249.99
+      },
+      "stock": 84,
+      "media": [
+        "media/coil-over-kit.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 174.99
+          }
+        ],
+        "fitment": [
+          "CHE-CAMARO-1970-1981"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-CO-X-5007",
+      "name": "Coil-Over Conversion Kit – Mustang/Mustang II",
+      "brand": "Halvard Machine Works",
+      "categoryPath": [
+        "Coil-Overs",
+        "Coil-Over Kits"
+      ],
+      "description": "Synthetic demo item. Coil-over conversion hardware; springs sold separately.",
+      "price": {
+        "gross": 284.99
+      },
+      "stock": 27,
+      "media": [
+        "media/coil-over-kit.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 199.49
+          }
+        ],
+        "fitment": [
+          "FOR-MUSTANG-1979-1993",
+          "FOR-MUSTANGII-1974-1978"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-CO-X-5008",
+      "name": "Coil-Over Conversion Kit – Ford/Mercury Mid-Size",
+      "brand": "Halvard Machine Works",
+      "categoryPath": [
+        "Coil-Overs",
+        "Coil-Over Kits"
+      ],
+      "description": "Synthetic demo item. Coil-over conversion hardware; springs sold separately.",
+      "price": {
+        "gross": 279.99
+      },
+      "stock": 77,
+      "media": [
+        "media/coil-over-kit.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 195.99
+          }
+        ],
+        "fitment": [
+          "FOR-TBIRD-1977-1979",
+          "MER-COUGAR-1977-1979",
+          "MER-MONTEGO-1972-1976"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-CO-X-5101",
+      "name": "Coil-Over Sleeve Kit for 5\" ID Springs",
+      "brand": "Halvard Machine Works",
+      "categoryPath": [
+        "Coil-Overs",
+        "Coil-Over Kits"
+      ],
+      "description": "Synthetic demo item. Coil-over conversion hardware; springs sold separately.",
+      "price": {
+        "gross": 164.95
+      },
+      "stock": 119,
+      "media": [
+        "media/coil-over-kit.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 115.49
+          },
+          {
+            "minQty": 5,
+            "gross": 109.69
+          },
+          {
+            "minQty": 10,
+            "gross": 104.19
+          },
+          {
+            "minQty": 25,
+            "gross": 98.99
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-CO-X-5102",
+      "name": "Coil-Over Sleeve Kit for 2.5\" ID Springs",
+      "brand": "Halvard Machine Works",
+      "categoryPath": [
+        "Coil-Overs",
+        "Coil-Over Kits"
+      ],
+      "description": "Synthetic demo item. Coil-over conversion hardware; springs sold separately.",
+      "price": {
+        "gross": 99.95
+      },
+      "stock": 63,
+      "media": [
+        "media/coil-over-kit.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 69.99
+          },
+          {
+            "minQty": 5,
+            "gross": 66.49
+          },
+          {
+            "minQty": 10,
+            "gross": 63.09
+          },
+          {
+            "minQty": 25,
+            "gross": 59.99
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-SE-X-5201",
+      "name": "Stud-Top Shock Extension, 1\" – GM Metric Front",
+      "brand": "Halvard Machine Works",
+      "categoryPath": [
+        "Coil-Overs",
+        "Shock Ends & Extensions"
+      ],
+      "description": "Synthetic demo item. Shock end, extension or adapter.",
+      "price": {
+        "gross": 14.95
+      },
+      "stock": 48,
+      "media": [
+        "media/shock-ends.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 10.49
+          },
+          {
+            "minQty": 5,
+            "gross": 9.89
+          },
+          {
+            "minQty": 10,
+            "gross": 9.39
+          },
+          {
+            "minQty": 25,
+            "gross": 8.99
+          }
+        ],
+        "fitment": [
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-SE-X-5202",
+      "name": "Stud-Top Shock Extension, 2\" – GM A-Body Front",
+      "brand": "Halvard Machine Works",
+      "categoryPath": [
+        "Coil-Overs",
+        "Shock Ends & Extensions"
+      ],
+      "description": "Synthetic demo item. Shock end, extension or adapter.",
+      "price": {
+        "gross": 16.95
+      },
+      "stock": 106,
+      "media": [
+        "media/shock-ends.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 11.89
+          },
+          {
+            "minQty": 5,
+            "gross": 11.29
+          },
+          {
+            "minQty": 10,
+            "gross": 10.69
+          },
+          {
+            "minQty": 25,
+            "gross": 10.19
+          }
+        ],
+        "fitment": [
+          "CHE-CHEVELLE-1964-1972",
+          "PON-GTO-1964-1972",
+          "PON-TEMPEST-1964-1970"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-SE-X-5203",
+      "name": "Lower Shock Eye Adapter – Mustang II",
+      "brand": "Halvard Machine Works",
+      "categoryPath": [
+        "Coil-Overs",
+        "Shock Ends & Extensions"
+      ],
+      "description": "Synthetic demo item. Shock end, extension or adapter.",
+      "price": {
+        "gross": 18.95
+      },
+      "stock": 49,
+      "media": [
+        "media/shock-ends.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 13.29
+          }
+        ],
+        "fitment": [
+          "FOR-MUSTANGII-1974-1978"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-SE-X-5301",
+      "name": "Steel Heim End, 5/8\" Bore",
+      "brand": "Halvard Machine Works",
+      "categoryPath": [
+        "Coil-Overs",
+        "Shock Ends & Extensions"
+      ],
+      "description": "Synthetic demo item. Shock end, extension or adapter.",
+      "price": {
+        "gross": 24.99
+      },
+      "stock": 14,
+      "media": [
+        "media/shock-ends.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 17.49
+          },
+          {
+            "minQty": 5,
+            "gross": 16.59
+          },
+          {
+            "minQty": 10,
+            "gross": 15.79
+          },
+          {
+            "minQty": 25,
+            "gross": 14.99
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-SE-X-5302",
+      "name": "Stud-Top to Eye Conversion Adapter",
+      "brand": "Halvard Machine Works",
+      "categoryPath": [
+        "Coil-Overs",
+        "Shock Ends & Extensions"
+      ],
+      "description": "Synthetic demo item. Shock end, extension or adapter.",
+      "price": {
+        "gross": 12.99
+      },
+      "stock": 71,
+      "media": [
+        "media/shock-ends.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 9.09
+          },
+          {
+            "minQty": 5,
+            "gross": 8.59
+          },
+          {
+            "minQty": 10,
+            "gross": 8.19
+          },
+          {
+            "minQty": 25,
+            "gross": 7.79
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "HLV-SE-X-5303",
+      "name": "Shock Spacer Kit, 1/2\" Bolt",
+      "brand": "Halvard Machine Works",
+      "categoryPath": [
+        "Coil-Overs",
+        "Shock Ends & Extensions"
+      ],
+      "description": "Synthetic demo item. Shock end, extension or adapter.",
+      "price": {
+        "gross": 9.99
+      },
+      "stock": 15,
+      "media": [
+        "media/shock-ends.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 6.99
+          },
+          {
+            "minQty": 5,
+            "gross": 6.59
+          },
+          {
+            "minQty": 10,
+            "gross": 6.29
+          },
+          {
+            "minQty": 25,
+            "gross": 5.99
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "IRV-MT-X-6001",
+      "name": "Weld-On Lower Shock Mount, Front – GM Metric",
+      "brand": "Ironvale Chassis",
+      "categoryPath": [
+        "Shock Mounts"
+      ],
+      "description": "Synthetic demo item. Weld-on or bolt-in shock mounting hardware for the listed chassis.",
+      "price": {
+        "gross": 44.99
+      },
+      "stock": 109,
+      "media": [
+        "media/shock-mounts.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 31.49
+          },
+          {
+            "minQty": 5,
+            "gross": 29.89
+          },
+          {
+            "minQty": 10,
+            "gross": 28.39
+          },
+          {
+            "minQty": 25,
+            "gross": 26.99
+          }
+        ],
+        "fitment": [
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "IRV-MT-X-6002",
+      "name": "Upper Shock Mount Plate – GM Metric",
+      "brand": "Ironvale Chassis",
+      "categoryPath": [
+        "Shock Mounts"
+      ],
+      "description": "Synthetic demo item. Weld-on or bolt-in shock mounting hardware for the listed chassis.",
+      "price": {
+        "gross": 39.99
+      },
+      "stock": 53,
+      "media": [
+        "media/shock-mounts.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 27.99
+          },
+          {
+            "minQty": 5,
+            "gross": 26.59
+          },
+          {
+            "minQty": 10,
+            "gross": 25.29
+          },
+          {
+            "minQty": 25,
+            "gross": 23.99
+          }
+        ],
+        "fitment": [
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "IRV-MT-X-6003",
+      "name": "Rear Shock Relocation Bracket – GM A-Body",
+      "brand": "Ironvale Chassis",
+      "categoryPath": [
+        "Shock Mounts"
+      ],
+      "description": "Synthetic demo item. Weld-on or bolt-in shock mounting hardware for the listed chassis.",
+      "price": {
+        "gross": 69.99
+      },
+      "stock": 110,
+      "media": [
+        "media/shock-mounts.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 48.99
+          }
+        ],
+        "fitment": [
+          "CHE-CHEVELLE-1964-1972",
+          "PON-GTO-1964-1972",
+          "PON-TEMPEST-1964-1970"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "IRV-MT-X-6004",
+      "name": "Rear Shock Relocation Bracket – GM Metric",
+      "brand": "Ironvale Chassis",
+      "categoryPath": [
+        "Shock Mounts"
+      ],
+      "description": "Synthetic demo item. Weld-on or bolt-in shock mounting hardware for the listed chassis.",
+      "price": {
+        "gross": 69.99
+      },
+      "stock": 54,
+      "media": [
+        "media/shock-mounts.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 48.99
+          }
+        ],
+        "fitment": [
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "IRV-MT-X-6005",
+      "name": "Front Shock Tower Mount – Camaro",
+      "brand": "Ironvale Chassis",
+      "categoryPath": [
+        "Shock Mounts"
+      ],
+      "description": "Synthetic demo item. Weld-on or bolt-in shock mounting hardware for the listed chassis.",
+      "price": {
+        "gross": 54.99
+      },
+      "stock": 111,
+      "media": [
+        "media/shock-mounts.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 38.49
+          }
+        ],
+        "fitment": [
+          "CHE-CAMARO-1970-1981"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "IRV-MT-X-6006",
+      "name": "Rear Lower Shock Mount – Mustang",
+      "brand": "Ironvale Chassis",
+      "categoryPath": [
+        "Shock Mounts"
+      ],
+      "description": "Synthetic demo item. Weld-on or bolt-in shock mounting hardware for the listed chassis.",
+      "price": {
+        "gross": 59.99
+      },
+      "stock": 55,
+      "media": [
+        "media/shock-mounts.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 41.99
+          }
+        ],
+        "fitment": [
+          "FOR-MUSTANG-1979-1993"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "IRV-MT-X-6007",
+      "name": "Rear Shock Mount Kit – Ford/Mercury Mid-Size",
+      "brand": "Ironvale Chassis",
+      "categoryPath": [
+        "Shock Mounts"
+      ],
+      "description": "Synthetic demo item. Weld-on or bolt-in shock mounting hardware for the listed chassis.",
+      "price": {
+        "gross": 64.99
+      },
+      "stock": 112,
+      "media": [
+        "media/shock-mounts.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 45.49
+          }
+        ],
+        "fitment": [
+          "FOR-TBIRD-1977-1979",
+          "MER-COUGAR-1977-1979",
+          "MER-MONTEGO-1972-1976"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "IRV-MT-X-6008",
+      "name": "Front Upper Shock Mount – Nova",
+      "brand": "Ironvale Chassis",
+      "categoryPath": [
+        "Shock Mounts"
+      ],
+      "description": "Synthetic demo item. Weld-on or bolt-in shock mounting hardware for the listed chassis.",
+      "price": {
+        "gross": 49.99
+      },
+      "stock": 48,
+      "media": [
+        "media/shock-mounts.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 34.99
+          }
+        ],
+        "fitment": [
+          "CHE-NOVA-1975-1979"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "IRV-MT-X-6009",
+      "name": "Rear Upper Shock Crossmember – GM Metric",
+      "brand": "Ironvale Chassis",
+      "categoryPath": [
+        "Shock Mounts"
+      ],
+      "description": "Synthetic demo item. Weld-on or bolt-in shock mounting hardware for the listed chassis.",
+      "price": {
+        "gross": 89.99
+      },
+      "stock": 105,
+      "media": [
+        "media/shock-mounts.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 62.99
+          }
+        ],
+        "fitment": [
+          "CHE-MALIBU-1978-1983",
+          "CHE-MONTECARLO-1977-1986",
+          "OLD-CUTLASS-1977-1986",
+          "PON-GRANDPRIX-1977-1986",
+          "BUI-REGAL-1977-1986"
+        ]
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-RB-X-7001",
+      "name": "Linear-Digressive Shock Piston",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Rebuild Components"
+      ],
+      "description": "Synthetic demo item. Shock rebuild component. Universal.",
+      "price": {
+        "gross": 68.95
+      },
+      "stock": 109,
+      "media": [
+        "media/rebuild-components.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 48.29
+          },
+          {
+            "minQty": 5,
+            "gross": 45.89
+          },
+          {
+            "minQty": 10,
+            "gross": 43.59
+          },
+          {
+            "minQty": 25,
+            "gross": 41.39
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-RB-X-7002",
+      "name": "Shock Shaft Seal Kit",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Rebuild Components"
+      ],
+      "description": "Synthetic demo item. Shock rebuild component. Universal.",
+      "price": {
+        "gross": 14.99
+      },
+      "stock": 54,
+      "media": [
+        "media/rebuild-components.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 10.49
+          },
+          {
+            "minQty": 5,
+            "gross": 9.99
+          },
+          {
+            "minQty": 10,
+            "gross": 9.49
+          },
+          {
+            "minQty": 25,
+            "gross": 8.99
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-RB-X-7003",
+      "name": "Shock Fill Plug Assembly",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Rebuild Components"
+      ],
+      "description": "Synthetic demo item. Shock rebuild component. Universal.",
+      "price": {
+        "gross": 7.49
+      },
+      "stock": 110,
+      "media": [
+        "media/rebuild-components.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 5.19
+          },
+          {
+            "minQty": 5,
+            "gross": 4.99
+          },
+          {
+            "minQty": 10,
+            "gross": 4.69
+          },
+          {
+            "minQty": 25,
+            "gross": 4.49
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-RB-X-7004",
+      "name": "Valving Shim Assortment",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Rebuild Components"
+      ],
+      "description": "Synthetic demo item. Shock rebuild component. Universal.",
+      "price": {
+        "gross": 29.99
+      },
+      "stock": 39,
+      "media": [
+        "media/rebuild-components.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 20.99
+          },
+          {
+            "minQty": 5,
+            "gross": 19.89
+          },
+          {
+            "minQty": 10,
+            "gross": 18.89
+          },
+          {
+            "minQty": 25,
+            "gross": 17.99
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "KST-RB-X-7005",
+      "name": "Stud-Top Bushing Kit",
+      "brand": "Kestrel Race Products",
+      "categoryPath": [
+        "Rebuild Components"
+      ],
+      "description": "Synthetic demo item. Shock rebuild component. Universal.",
+      "price": {
+        "gross": 5.95
+      },
+      "stock": 111,
+      "media": [
+        "media/rebuild-components.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 4.19
+          },
+          {
+            "minQty": 5,
+            "gross": 3.99
+          },
+          {
+            "minQty": 10,
+            "gross": 3.79
+          },
+          {
+            "minQty": 25,
+            "gross": 3.59
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "CPL-OL-X-8001",
+      "name": "Racing Shock Oil, 1 qt",
+      "brand": "Cinderpeak Racing Fluids",
+      "categoryPath": [
+        "Shop Supplies"
+      ],
+      "description": "Synthetic demo item. Universal pit and shop supply; no vehicle fitment required.",
+      "price": {
+        "gross": 14.99
+      },
+      "stock": 26,
+      "media": [
+        "media/shop-supplies.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 10.49
+          },
+          {
+            "minQty": 5,
+            "gross": 9.99
+          },
+          {
+            "minQty": 10,
+            "gross": 9.49
+          },
+          {
+            "minQty": 25,
+            "gross": 8.99
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "CPL-OL-X-8002",
+      "name": "Racing Shock Oil, 1 gal",
+      "brand": "Cinderpeak Racing Fluids",
+      "categoryPath": [
+        "Shop Supplies"
+      ],
+      "description": "Synthetic demo item. Universal pit and shop supply; no vehicle fitment required.",
+      "price": {
+        "gross": 48.99
+      },
+      "stock": 81,
+      "media": [
+        "media/shop-supplies.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 34.29
+          },
+          {
+            "minQty": 5,
+            "gross": 32.59
+          },
+          {
+            "minQty": 10,
+            "gross": 30.89
+          },
+          {
+            "minQty": 25,
+            "gross": 29.39
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "TGT-TL-X-8101",
+      "name": "Coil-Over Spanner Wrench Set",
+      "brand": "Tallgrass Pit Tools",
+      "categoryPath": [
+        "Shop Supplies"
+      ],
+      "description": "Synthetic demo item. Universal pit and shop supply; no vehicle fitment required.",
+      "price": {
+        "gross": 54.99
+      },
+      "stock": 12,
+      "media": [
+        "media/shop-supplies.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 38.49
+          },
+          {
+            "minQty": 5,
+            "gross": 36.59
+          },
+          {
+            "minQty": 10,
+            "gross": 34.69
+          },
+          {
+            "minQty": 25,
+            "gross": 32.99
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "TGT-TL-X-8102",
+      "name": "Nitrogen Shock Inflation Tool",
+      "brand": "Tallgrass Pit Tools",
+      "categoryPath": [
+        "Shop Supplies"
+      ],
+      "description": "Synthetic demo item. Universal pit and shop supply; no vehicle fitment required.",
+      "price": {
+        "gross": 159.95
+      },
+      "stock": 67,
+      "media": [
+        "media/shop-supplies.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 111.99
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "TGT-RK-X-8201",
+      "name": "Aluminum Shock Rack, 12-Shock",
+      "brand": "Tallgrass Pit Tools",
+      "categoryPath": [
+        "Shop Supplies"
+      ],
+      "description": "Synthetic demo item. Universal pit and shop supply; no vehicle fitment required.",
+      "price": {
+        "gross": 184.99
+      },
+      "stock": 110,
+      "media": [
+        "media/shop-supplies.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 129.49
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "TGT-RK-X-8202",
+      "name": "Shock Rack Pin Kit",
+      "brand": "Tallgrass Pit Tools",
+      "categoryPath": [
+        "Shop Supplies"
+      ],
+      "description": "Synthetic demo item. Universal pit and shop supply; no vehicle fitment required.",
+      "price": {
+        "gross": 69.99
+      },
+      "stock": 52,
+      "media": [
+        "media/shop-supplies.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 48.99
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "BCE-BB-X-8301",
+      "name": "Urethane Shock Bumper, Medium",
+      "brand": "Bluecairn Spring Co.",
+      "categoryPath": [
+        "Shop Supplies"
+      ],
+      "description": "Synthetic demo item. Universal pit and shop supply; no vehicle fitment required.",
+      "price": {
+        "gross": 32.99
+      },
+      "stock": 112,
+      "media": [
+        "media/shop-supplies.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 23.09
+          },
+          {
+            "minQty": 5,
+            "gross": 21.89
+          },
+          {
+            "minQty": 10,
+            "gross": 20.79
+          },
+          {
+            "minQty": 25,
+            "gross": 19.79
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "BCE-BS-X-8302",
+      "name": "Bump Spring, 400 lb",
+      "brand": "Bluecairn Spring Co.",
+      "categoryPath": [
+        "Shop Supplies"
+      ],
+      "description": "Synthetic demo item. Universal pit and shop supply; no vehicle fitment required.",
+      "price": {
+        "gross": 89.99
+      },
+      "stock": 71,
+      "media": [
+        "media/shop-supplies.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 62.99
+          },
+          {
+            "minQty": 5,
+            "gross": 59.79
+          },
+          {
+            "minQty": 10,
+            "gross": 56.89
+          },
+          {
+            "minQty": 25,
+            "gross": 53.99
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "STP-CV-X-8401",
+      "name": "Coil-Over Spring Covers, Pair",
+      "brand": "Stoneridge Track Supply",
+      "categoryPath": [
+        "Shop Supplies"
+      ],
+      "description": "Synthetic demo item. Universal pit and shop supply; no vehicle fitment required.",
+      "price": {
+        "gross": 24.99
+      },
+      "stock": 21,
+      "media": [
+        "media/shop-supplies.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 17.49
+          },
+          {
+            "minQty": 5,
+            "gross": 16.59
+          },
+          {
+            "minQty": 10,
+            "gross": 15.79
+          },
+          {
+            "minQty": 25,
+            "gross": 14.99
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "productNumber": "STP-GA-X-8501",
+      "name": "Ride Height Gauge",
+      "brand": "Stoneridge Track Supply",
+      "categoryPath": [
+        "Shop Supplies"
+      ],
+      "description": "Synthetic demo item. Universal pit and shop supply; no vehicle fitment required.",
+      "price": {
+        "gross": 39.99
+      },
+      "stock": 86,
+      "media": [
+        "media/shop-supplies.png"
+      ],
+      "demo": {
+        "mapPolicy": "none",
+        "dealerTiers": [
+          {
+            "minQty": 1,
+            "gross": 27.99
+          }
+        ],
+        "fitment": []
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    }
+  ],
+  "customers": [
+    {
+      "key": "retail-rider",
+      "salutation": "not_specified",
+      "firstName": "Jordan",
+      "lastName": "Avery",
+      "email": "retail.rider@example.com",
+      "customerGroup": "Retail",
+      "passwordEnv": "PERSONA_RETAIL_PASSWORD",
+      "address": {
+        "street": "100 Demo Speedway Rd",
+        "zipcode": "00000",
+        "city": "Exampleville",
+        "countryIso": "US"
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    },
+    {
+      "key": "dealer-admin",
+      "salutation": "not_specified",
+      "firstName": "Morgan",
+      "lastName": "Ellis",
+      "email": "dealer.admin@example.com",
+      "customerGroup": "Dealer",
+      "company": "Summit Trail Race Shop (Demo Dealer)",
+      "passwordEnv": "PERSONA_DEALER_ADMIN_PASSWORD",
+      "address": {
+        "street": "200 Demo Pit Row",
+        "zipcode": "00000",
+        "city": "Exampleville",
+        "countryIso": "US"
+      },
+      "extractionSource": "synthetic-fixture",
+      "priceConfidence": "generated"
+    }
+  ],
+  "b2b": {
+    "company": {
+      "ownerCustomer": "dealer-admin",
+      "features": [
+        "employee_management",
+        "order_approval",
+        "quick_order",
+        "shopping_list"
+      ]
+    },
+    "roles": [
+      {
+        "key": "admin",
+        "name": "Admin",
+        "permissions": [
+          "*"
+        ]
+      },
+      {
+        "key": "junior-buyer",
+        "name": "Junior Buyer",
+        "permissionIntents": [
+          "view_products",
+          "cart",
+          "quick_order",
+          "shopping_lists",
+          "request_approval"
+        ]
+      }
+    ],
+    "employees": [
+      {
+        "key": "junior-buyer",
+        "firstName": "Casey",
+        "lastName": "Brooks",
+        "email": "junior.buyer@example.com",
+        "role": "junior-buyer",
+        "active": true,
+        "passwordEnv": "PERSONA_DEALER_JUNIOR_PASSWORD",
+        "extractionSource": "synthetic-fixture",
+        "priceConfidence": "generated"
+      }
+    ],
+    "approvalRules": [
+      {
+        "key": "junior-buyer-always",
+        "name": "DEMO · Junior Buyer approval",
+        "affectedRole": "junior-buyer",
+        "reviewerRole": "admin",
+        "condition": {
+          "type": "cartAmountGte",
+          "value": 0.01
+        }
+      }
+    ],
+    "shoppingLists": [
+      {
+        "key": "weekly-shop-restock",
+        "name": "Weekly Shop Restock",
+        "owner": "junior-buyer",
+        "items": [
+          {
+            "productNumber": "CPL-OL-X-8001",
+            "quantity": 12
+          },
+          {
+            "productNumber": "KST-RB-X-7002",
+            "quantity": 10
+          },
+          {
+            "productNumber": "KST-RB-X-7003",
+            "quantity": 20
+          },
+          {
+            "productNumber": "KST-RB-X-7005",
+            "quantity": 20
+          },
+          {
+            "productNumber": "HLV-SE-X-5301",
+            "quantity": 8
+          },
+          {
+            "productNumber": "BCE-BB-X-8301",
+            "quantity": 8
+          }
+        ]
+      }
+    ]
+  }
+}

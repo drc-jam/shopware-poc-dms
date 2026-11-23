@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Full Throttle Supply Co. mark (fictional demo brand)">
+  <rect width="48" height="48" rx="8" fill="#1F3A5F"/>
+  <!-- speed lines -->
+  <rect x="6" y="15" width="10" height="3" rx="1.5" fill="#E4572E"/>
+  <rect x="4" y="22" width="12" height="3" rx="1.5" fill="#E4572E"/>
+  <rect x="7" y="29" width="9" height="3" rx="1.5" fill="#E4572E"/>
+  <!-- checkered flag -->
+  <g transform="translate(19 11) skewY(-8)">
+    <rect width="22" height="18" fill="#F6F5F2"/>
+    <rect x="0" y="0" width="5.5" height="6" fill="#1B1B1B"/>
+    <rect x="11" y="0" width="5.5" height="6" fill="#1B1B1B"/>
+    <rect x="5.5" y="6" width="5.5" height="6" fill="#1B1B1B"/>
+    <rect x="16.5" y="6" width="5.5" height="6" fill="#1B1B1B"/>
+    <rect x="0" y="12" width="5.5" height="6" fill="#1B1B1B"/>
+    <rect x="11" y="12" width="5.5" height="6" fill="#1B1B1B"/>
+  </g>
+  <rect x="18" y="12" width="2.5" height="27" rx="1" fill="#F6F5F2"/>
+</svg>
