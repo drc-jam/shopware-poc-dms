@@ -6,6 +6,21 @@ import { getActivePersona } from "@/lib/session";
 import { getCart, getProductsByIds } from "@/lib/shopware/catalog";
 import { isDealer, money, tiersOf } from "@/lib/pricing";
 import { PERSONAS } from "@/lib/personas";
+import { SubmitForApproval } from "@/components/b2b/ApprovalActions";
+
+/**
+ * Shopware 6.7.16 adds a blocking cart error for an employee whose role needs approval:
+ * key "order-approval-blocked", messageKey "warning.<condition>", translatedMessage for display.
+ * Returns the message to show, or null.
+ */
+function approvalNotice(errors: unknown): string | null {
+  const list = (Array.isArray(errors) ? errors : Object.values((errors as Record<string, unknown>) ?? {})) as {
+    key?: string;
+    translatedMessage?: string;
+  }[];
+  const e = list.find((x) => x && (x.key === "order-approval-blocked" || /order-?approval/i.test(x.key ?? "")));
+  return e ? (e.translatedMessage || "This cart needs approval before it can be ordered.") : null;
+}
 
 export const metadata: Metadata = { title: "Cart" };
 
@@ -78,10 +93,23 @@ export default async function CartPage() {
           <span>Total</span>
           <span className="tabular-nums" data-testid="cart-total">{money(cart.price?.totalPrice ?? 0)}</span>
         </div>
-        <p className="rounded bg-surface px-3 py-2 text-sm text-black/70" data-testid="checkout-disabled">
-          Checkout is disabled in this demo.
-          {persona === "dealer-junior" && " Submit for approval arrives in Phase 6."}
-        </p>
+        {persona === "dealer-junior" ? (
+          <>
+            {approvalNotice(cart.errors) && (
+              <p className="rounded border border-amber-700/30 bg-amber-50 px-3 py-2 text-sm text-amber-900" data-testid="approval-required">
+                {approvalNotice(cart.errors)} Submit it to your Dealer Admin.
+              </p>
+            )}
+            <SubmitForApproval />
+            <p className="rounded bg-surface px-3 py-2 text-xs text-black/60" data-testid="checkout-disabled">
+              Checkout is disabled in this demo; an approved request does not place an order.
+            </p>
+          </>
+        ) : (
+          <p className="rounded bg-surface px-3 py-2 text-sm text-black/70" data-testid="checkout-disabled">
+            Checkout is disabled in this demo.
+          </p>
+        )}
       </aside>
     </div>
   );

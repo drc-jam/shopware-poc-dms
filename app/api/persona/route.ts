@@ -66,5 +66,6 @@ async function reset(req: NextRequest, secure: boolean) {
   res.cookies.set(COOKIE.persona, "guest", { ...cookieBase(secure), maxAge: CTX_COOKIE_MAX_AGE });
   res.cookies.delete(COOKIE.garage);
   res.cookies.delete(COOKIE.garageActive);
+  res.cookies.delete(COOKIE.pendingOrders);
   return res;
 }

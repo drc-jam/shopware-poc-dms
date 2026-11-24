@@ -6,6 +6,7 @@ import { sanitizeErrors, storeFetch, StoreApiError } from "@/lib/shopware/store-
 import { redactSecrets } from "@/lib/shopware/redact";
 import { isSameOrigin, isSecure, jsonError, NO_STORE, readCappedBody } from "@/lib/http";
 import { cookieBase, CTX_COOKIE_MAX_AGE } from "@/lib/session";
+import { addPendingOrderId } from "@/lib/pending-orders";
 
 // Allowlisted BFF proxy to the Shopware Store API (DEV_GUIDE §9.2).
 export const runtime = "nodejs";
@@ -60,6 +61,12 @@ async function handle(req: NextRequest, ctx: Ctx) {
     const res = upstream.ok
       ? NextResponse.json(redactSecrets(upstream.data ?? {}), { status: upstream.status === 204 ? 200 : upstream.status, headers: NO_STORE })
       : NextResponse.json(sanitizeErrors(upstream.data, upstream.status), { status: upstream.status, headers: NO_STORE });
+    // D3: the Store API cannot list pending orders, so remember the IDs this browser requested.
+    if (upstream.ok && decision.rule.id === "b2b.requestOrderApproval") {
+      const id = (upstream.data as { id?: unknown } | null)?.id;
+      const next = addPendingOrderId(req.cookies.get(COOKIE.pendingOrders)?.value, id);
+      if (next) res.cookies.set(COOKIE.pendingOrders, next, { ...cookieBase(isSecure(req)), maxAge: CTX_COOKIE_MAX_AGE });
+    }
     // Persist a rotated/new context token for this persona (guest gets one on first cart write).
     if (upstream.contextToken && upstream.contextToken !== token && /^[A-Za-z0-9_-]{8,128}$/.test(upstream.contextToken)) {
       res.cookies.set(COOKIE.ctx(persona), upstream.contextToken, { ...cookieBase(isSecure(req)), maxAge: CTX_COOKIE_MAX_AGE });

@@ -8,6 +8,9 @@ import { isDealer, summarize } from "@/lib/pricing";
 import { seriesCopy, seriesInfo } from "@/lib/series";
 import { FitmentBadge, FitmentTable } from "@/components/Fitment";
 import { fitStatus, fitmentRows, getGarage } from "@/lib/fitment";
+import { AddToListForm } from "@/components/b2b/ListActions";
+import { getShoppingListNames } from "@/lib/shopware/b2b";
+import { PERSONAS } from "@/lib/personas";
 
 type Props = { params: Promise<{ id: string }> };
 
@@ -70,6 +73,7 @@ export default async function ProductPage({ params }: Props) {
         )}
 
         <ProductBuyBox productId={s.id} available={s.available} tiers={s.tiers} />
+        {PERSONAS[persona].b2b && <AddToListForm productId={s.id} lists={await getShoppingListNames()} />}
 
         <p className="text-sm text-black/60">
           {s.available ? `In stock (${product.availableStock ?? product.stock ?? 0})` : "Out of stock"}

@@ -24,6 +24,7 @@ export const APP_B2B_OPERATIONS = Object.freeze({
   removeLineItems: "write",
   updateLineItems: "write",
   addShoppingListsToCart: "write",
+  removeShoppingLists: "write",
   // Order approval (S10)
   readApprovalRules: "read",
   listApprovalRules: "read",

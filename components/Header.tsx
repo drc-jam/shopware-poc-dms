@@ -4,6 +4,7 @@ import { brand } from "@/theme/brand";
 import { getActivePersona } from "@/lib/session";
 import { getHeaderState, getMainNavigation } from "@/lib/shopware/queries";
 import { MainNav } from "./MainNav";
+import { PERSONAS } from "@/lib/personas";
 import { PersonaSwitcher } from "./PersonaSwitcher";
 import { SearchBox } from "./SearchBox";
 import { GarageSelector } from "./GarageSelector";
@@ -53,6 +54,23 @@ export async function Header() {
           </Link>
         </div>
       </div>
+      {PERSONAS[persona].b2b && (
+        <nav aria-label="Dealer tools" className="border-t border-black/5 bg-surface" data-testid="b2b-nav">
+          <ul className="mx-auto flex max-w-7xl flex-wrap gap-x-5 gap-y-1 px-4 py-1.5 text-sm">
+            <li className="font-semibold text-black/60">Dealer tools</li>
+            <li><Link href="/quick-order" className="text-primary hover:underline" data-testid="nav-quick-order">Quick order</Link></li>
+            <li><Link href="/account/lists" className="text-primary hover:underline" data-testid="nav-lists">Shopping lists</Link></li>
+            <li>
+              <Link href="/account/approvals" className="text-primary hover:underline" data-testid="nav-approvals">
+                {persona === "dealer-admin" ? "Approvals" : "My requests"}
+              </Link>
+            </li>
+            {persona === "dealer-admin" && (
+              <li><Link href="/account/company" className="text-primary hover:underline" data-testid="nav-company">Company</Link></li>
+            )}
+          </ul>
+        </nav>
+      )}
       <MainNav items={nav.items} />
     </header>
   );

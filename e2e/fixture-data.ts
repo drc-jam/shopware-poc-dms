@@ -46,3 +46,13 @@ export const allowedSkus = (key: string, year: number) =>
   new Set([...(fitmentIndex.byVehicleYear[`${key}|${year}`] ?? []), ...fitmentIndex.universal].map((id) => fitmentIndex.skuById[id]!));
 export const fitmentOf = (sku: string) => fitmentIndex.byProduct[idBySku[sku]!] ?? [];
 export const inTopCategory = (top: string) => site.products.filter((p) => p.categoryPath[0] === top).map((p) => p.productNumber);
+
+// B2B fixture (S7–S10): the seeded shopping list and employees.
+const b2bFixture = JSON.parse(readFileSync(fileURLToPath(new URL("../data/fixture/site-project.json", import.meta.url)), "utf8")).b2b as {
+  employees: { firstName: string; lastName: string; email: string }[];
+  roles: { name: string }[];
+  shoppingLists: { name: string; items: { productNumber: string; quantity: number }[] }[];
+};
+export const seededList = () => b2bFixture.shoppingLists[0]!;
+export const juniorEmployee = () => b2bFixture.employees[0]!;
+export const roleNames = () => b2bFixture.roles.map((r) => r.name);
