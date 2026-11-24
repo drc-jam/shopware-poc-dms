@@ -31,23 +31,34 @@ export function createAdminClient({ url, clientId, clientSecret, readOnly = true
     return token;
   }
 
-  async function request(method, path, { body, headers = {} } = {}) {
+  async function request(method, path, { body, rawBody, contentType, headers = {}, retries = 2 } = {}) {
     const m = method.toUpperCase();
     if (readOnly && !(m === "GET" || (m === "POST" && READ_ONLY_POST.test(path)))) {
       throw new Error(`read-only admin client refused ${m} ${path}`);
     }
-    const res = await fetch(`${url}/api${path}`, {
-      method: m,
-      headers: {
-        Authorization: `Bearer ${await auth()}`,
-        Accept: "application/json",
-        ...(body !== undefined ? { "Content-Type": "application/json" } : {}),
-        ...headers,
-      },
-      body: body !== undefined ? JSON.stringify(body) : undefined,
-      redirect: "error",
-      signal: AbortSignal.timeout(timeoutMs),
-    });
+    let res;
+    for (let attempt = 0; ; attempt++) {
+      try {
+        res = await fetch(`${url}/api${path}`, {
+          method: m,
+          headers: {
+            Authorization: `Bearer ${await auth()}`,
+            Accept: "application/json",
+            ...(rawBody !== undefined ? { "Content-Type": contentType ?? "application/octet-stream" } : body !== undefined ? { "Content-Type": "application/json" } : {}),
+            ...headers,
+          },
+          body: rawBody !== undefined ? rawBody : body !== undefined ? JSON.stringify(body) : undefined,
+          redirect: "error",
+          signal: AbortSignal.timeout(timeoutMs),
+        });
+      } catch (e) {
+        if (attempt < retries) { await new Promise((r) => setTimeout(r, 1000 * 2 ** attempt)); continue; }
+        throw e;
+      }
+      // Retry transient upstream errors (gateway, deadlock) with backoff; never 4xx.
+      if ([502, 503, 504].includes(res.status) && attempt < retries) { await new Promise((r) => setTimeout(r, 1000 * 2 ** attempt)); continue; }
+      break;
+    }
     const text = await res.text();
     let data = null;
     try {
@@ -78,7 +89,19 @@ export function createAdminClient({ url, clientId, clientSecret, readOnly = true
     return out;
   }
 
+  /** IDs only (POST /search-ids). Avoids entity hydration, which fails for b2b_components_shopping_list on
+   *  instances whose system currency is not Shopware's stock default ID (found in Phase 2). */
+  async function searchIdsAll(entity, criteria = {}, pageSize = 100) {
+    const out = [];
+    for (let page = 1; ; page++) {
+      const r = await request("POST", `/search-ids/${route(entity)}`, { body: { "total-count-mode": 1, ...criteria, limit: pageSize, page } });
+      out.push(...(r.data ?? []));
+      if (!r.data?.length || out.length >= (r.total ?? 0) || r.data.length < pageSize) break;
+    }
+    return out;
+  }
+
   const count = async (entity, filter = []) => (await search(entity, { limit: 1, filter, includes: { [entity]: ["id"] } })).total ?? 0;
 
-  return { request, get: (p) => request("GET", p), search, searchAll, count, route, readOnly };
+  return { request, get: (p) => request("GET", p), search, searchAll, searchIdsAll, count, route, readOnly };
 }
