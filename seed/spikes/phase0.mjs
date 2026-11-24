@@ -53,12 +53,16 @@ async function up(entity, payload) {
 // ------------------------------------------------------------------ cleanup mode
 if (process.argv.includes("--cleanup")) {
   const order = [
-    "b2b_components_shopping_list", "b2b_components_approval_rule", "b2b_employee", "b2b_employee_account", "b2b_components_role",
+    "b2b_components_pending_order", "b2b_components_shopping_list", "b2b_components_approval_rule", "b2b_employee_account", "b2b_employee", "b2b_components_role",
     "customer_specific_features", "b2b_business_partner", "promotion", "customer", "product", "rule", "product_stream",
     "custom_field_set", "customer_group",
   ];
   for (const entity of order) {
-    const ids = ledger.entries.filter((e) => e.entity === entity && e.action !== "deleted").map((e) => e.id);
+    // Deleting the employee account removes its primary membership (B2B__PRIMARY_MEMBERSHIP_CANNOT_BE_DELETED
+    // otherwise), so only delete what still exists.
+    const listed = [...new Set(ledger.entries.filter((e) => e.entity === entity && e.action !== "deleted").map((e) => e.id))];
+    const ids = listed.length ? await admin.searchIdsAll(entity, { ids: listed }) : [];
+    for (const id of listed.filter((x) => !ids.includes(x))) remember(entity, null, id, "deleted", { note: "already gone (cascade)" });
     if (!ids.length) continue;
     await admin.request("POST", "/_action/sync", { body: [{ key: `${entity}-delete`, action: "delete", entity, payload: ids.map((id) => ({ id })) }] });
     for (const id of ids) remember(entity, null, id, "deleted");

@@ -88,19 +88,5 @@ Routes come from the instance's OpenAPI document and are recorded in `data/b2b-r
 - With advanced prices, `calculatedPrice` stays at the **retail default**. The dealer price is `calculatedPrices[0]`, `calculatedCheapestPrice` is the **lowest tier**, and the tier `quantity` is the range end. Tier `listPrice` (retail) is returned, so the strike-through works. The app already reads `calculatedPrices[0]`.
 - The `SHOPWARE_SALES_CHANNEL_ID` env var is unset, so discovery derived `98432def39fc4624b33213a56b8c944d` from the access key. Set it in `.env.seed`.
 
-## Spike records left on the instance
-Every record is prefixed `SPIKE ·` (or uses `spike.*@example.com`) and carries `customFields.demo_fixture = "phase0-spike"`:
-- 3 products
-- 1 custom field set
-- 1 customer group
-- 1 product stream
-- 4 rules
-- 4 promotions (A2 inactive)
-- 2 customers, with a business partner and features
-- 2 roles
-- 1 employee and its account
-- 2 approval rules (one inactive probe)
-- 2 shopping lists
-- 2 pending orders (approved / declined)
-
-`node seed/spikes/phase0.mjs --cleanup` deletes exactly the ledger entries. It is **not** run automatically. Pending orders are not deleted by cleanup; they are not orders.
+## Spike records
+Every spike record (28, all `SPIKE ·` / `spike.*@example.com`, plus 2 pending orders) was **deleted on 2026-11-24** with `node seed/spikes/phase0.mjs --cleanup`, and a check confirmed none remain. Note for any B2B cleanup: delete the `b2b_employee_account` (it removes the primary membership); deleting the `b2b_employee` first fails with `B2B__PRIMARY_MEMBERSHIP_CANNOT_BE_DELETED`.

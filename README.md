@@ -78,4 +78,4 @@ Persona passwords for Vercel (Phase 8) are the `PERSONA_*` values in `.env.seed`
 - **Shopware quirk.** Reading `b2b_components_shopping_list` through the Admin `search` endpoint fails on this instance (`Could not find currency b7d2554b…`, the stock default-currency ID, which this SaaS instance does not use). The seeder uses `search-ids` for existence checks; the Store API reads lists normally.
 - **Approval rule.** The fixture's `cartAmountGte 0.01` maps to the instance condition `cartCartAmount ≥ 0.01`; `seed:verify` confirms a Junior Buyer cart requires approval.
 - **Each `seed:verify` run** leaves two decided pending orders (one approved, one declined) on the demo company. They are not orders; `--replace-demo` removes them.
-- **Phase 0 spike records** (`SPIKE ·`) are still on the instance. `node seed/spikes/phase0.mjs --cleanup` removes them.
+- **Phase 0 spike records** were removed on 2026-11-24 with `node seed/spikes/phase0.mjs --cleanup` (28 records; none remain).
