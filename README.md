@@ -97,7 +97,7 @@ Persona passwords (`PERSONA_RETAIL_PASSWORD`, `PERSONA_DEALER_ADMIN_PASSWORD`, `
 
 The app is a standard Next.js project; `vercel.json` pins the functions to `fra1` (the Shopware instance is in the EU) and `package.json` pins Node 22.
 
-Set these in the Vercel project (Production and Preview). Never add `SHOPWARE_ADMIN_*`: the app refuses to run on Vercel if they are present.
+Set these in the Vercel project (Production and Preview). Never add `SHOPWARE_ADMIN_*`: the build fails on Vercel if any is present (`prebuild` runs `tools/check-deploy-env.mjs`).
 
 | Variable | Value |
 | --- | --- |

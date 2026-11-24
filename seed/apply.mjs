@@ -116,6 +116,24 @@ async function pruneChildren(records, exists) {
   return pruned;
 }
 
+/**
+ * Removes product → category links the fixture no longer has (categories are a many-to-many list, which an
+ * upsert only adds to). Returns Map<productId, removedCount>.
+ */
+async function pruneProductCategories(records, exists) {
+  const pruned = new Map();
+  const existing = records.filter((r) => exists.has(r.id));
+  if (!existing.length) return pruned;
+  const want = new Map(existing.map((r) => [r.id, new Set(r.payload.categories.map((c) => c.id))]));
+  for (const part of chunks(existing.map((r) => r.id), ref.pageSize)) {
+    const rows = await admin.searchAll("product", { ids: part, associations: { categories: {} }, includes: { product: ["id", "categories"], category: ["id"] } }, ref.pageSize);
+    const stale = rows.flatMap((p) => (p.categories ?? []).filter((c) => !want.get(p.id)?.has(c.id)).map((c) => ({ productId: p.id, categoryId: c.id })));
+    if (stale.length) await sync("product_category", "delete", stale);
+    for (const x of stale) pruned.set(x.productId, (pruned.get(x.productId) ?? 0) + 1);
+  }
+  return pruned;
+}
+
 let permissionNames = null;
 async function instancePermissions() {
   if (permissionNames) return permissionNames;
@@ -163,6 +181,9 @@ async function upsertStage(st) {
   if (!records.length) return;
   const exists = await existingIds(admin, st.entity, records.map((r) => r.id), ref.pageSize);
   const pruned = await pruneChildren(records, exists);
+  if (st.entity === "product") {
+    for (const [id, n] of await pruneProductCategories(records, exists)) pruned.set(id, (pruned.get(id) ?? 0) + n);
+  }
   const prepared = [];
   for (const r of records) {
     try {

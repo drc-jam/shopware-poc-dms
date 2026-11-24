@@ -41,7 +41,14 @@ export type TourStep = Tour["steps"][number];
 export type TourRun = TourStep["runs"][number];
 export type TourTarget = TourRun["target"];
 
-export const tour: Tour = TourSchema.parse(raw);
+// Presenters edit data/tour.json by hand. An invalid file must break only the tour, not every page
+// (the shop layout renders the tour bar), so fall back to an empty tour and report the problem on /tour.
+const parsed = TourSchema.safeParse(raw);
+export const tourError: string | null = parsed.success
+  ? null
+  : parsed.error.issues.slice(0, 5).map((i) => `${i.path.join(".")}: ${i.message}`).join("; ");
+if (tourError) console.error(`[tour] data/tour.json is invalid: ${tourError}`);
+export const tour: Tour = parsed.success ? parsed.data : { version: 1, steps: [] };
 export const TOUR_BUDGET_MINUTES = 15;
 export const plannedMinutes = (t: Tour = tour) => t.steps.reduce((n, s) => n + s.minutes, 0);
 export const stepById = (id: string | undefined | null) => tour.steps.find((s) => s.id === id) ?? null;

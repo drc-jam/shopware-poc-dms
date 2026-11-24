@@ -10,20 +10,7 @@ const storeSchema = z.object({
   SHOPWARE_SW_ACCESS_KEY: z.string().min(8),
 });
 
-/** Admin API variables that must never exist in the deployed app (CLAUDE.md security boundaries). */
-export const ADMIN_ENV_NAMES = ["SHOPWARE_ADMIN_URL", "SHOPWARE_ADMIN_CLIENT_ID", "SHOPWARE_ADMIN_CLIENT_SECRET"] as const;
-
-/** On Vercel (VERCEL=1), returns the Admin API variable names that are set, so the app can refuse to run. */
-export function adminCredentialsOnVercel(env: Record<string, string | undefined> = process.env): string[] {
-  if (env.VERCEL !== "1") return [];
-  return ADMIN_ENV_NAMES.filter((k) => !!env[k]);
-}
-
 export function storeEnv() {
-  const leaked = adminCredentialsOnVercel();
-  if (leaked.length) {
-    throw new Error(`Refusing to run: ${leaked.join(", ")} must not be set in Vercel (Admin API credentials are for local/CI seeding only). Remove them and redeploy.`);
-  }
   const r = storeSchema.safeParse(process.env);
   if (!r.success) throw new Error(`Store API env invalid: ${r.error.issues.map((i) => i.path.join(".")).join(", ")}`);
   return r.data;

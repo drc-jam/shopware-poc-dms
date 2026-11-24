@@ -1,12 +1,16 @@
 import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
-import { plannedMinutes, tour, TourSchema, TOUR_BUDGET_MINUTES } from "./tour";
+import { plannedMinutes, tour, tourError, TourSchema, TOUR_BUDGET_MINUTES } from "./tour";
 import { parseVehicle } from "./fitment";
 
 const fx = JSON.parse(readFileSync(new URL("../data/fixture/site-project.json", import.meta.url), "utf8"));
 const skus = new Set(fx.products.map((p: { productNumber: string }) => p.productNumber));
 
 describe("presenter tour (data/tour.json)", () => {
+  it("is valid (the site falls back to an empty tour at runtime, so CI must catch schema errors)", () => {
+    expect(tourError).toBeNull();
+  });
+
   it("covers S1–S10 in order", () => {
     expect(tour.steps.map((s) => s.id)).toEqual(Array.from({ length: 10 }, (_, i) => `S${i + 1}`));
   });

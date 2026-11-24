@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PERSONAS } from "@/lib/personas";
-import { plannedMinutes, tour, TOUR_BUDGET_MINUTES } from "@/lib/tour";
+import { plannedMinutes, tour, tourError, TOUR_BUDGET_MINUTES } from "@/lib/tour";
 import { TourRunButton } from "@/components/tour/TourRunButton";
 
 export const metadata: Metadata = { title: "Guided tour" };
@@ -9,6 +9,15 @@ const fmt = (m: number) => (Number.isInteger(m) ? `${m}` : m.toFixed(1));
 
 /** S1–S10 presenter tour (DEV_GUIDE §9.4). Text lives in data/tour.json. */
 export default function TourPage() {
+  if (tourError || !tour.steps.length) {
+    return (
+      <div role="alert" className="mx-auto max-w-2xl space-y-2 rounded-[var(--brand-radius)] border border-red-700/30 bg-red-50 p-6" data-testid="tour-invalid">
+        <h1 className="text-3xl font-semibold">The tour script needs fixing</h1>
+        <p className="text-sm text-red-900">data/tour.json did not pass validation, so the tour is hidden. The rest of the demo works.</p>
+        {tourError && <p className="font-mono text-xs text-red-900">{tourError}</p>}
+      </div>
+    );
+  }
   const total = plannedMinutes();
   const pillars = [...new Set(tour.steps.map((s) => s.pillar))];
   return (

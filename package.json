@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node tools/check-deploy-env.mjs",
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",

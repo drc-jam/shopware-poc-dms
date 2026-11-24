@@ -5,6 +5,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { callBff } from "@/lib/client-bff";
 import { money } from "@/lib/pricing";
 import { useCart } from "@/components/CartProvider";
+import { MAX_ROWS, normSku as norm, parseCsv } from "@/lib/quick-order";
 
 interface Row {
   key: number;
@@ -19,20 +20,6 @@ interface Found {
 }
 
 const blank = (key: number): Row => ({ key, sku: "", qty: "1" });
-const norm = (sku: string) => sku.trim().toUpperCase();
-const MAX_ROWS = 50;
-
-/** Parses pasted CSV / spreadsheet rows: "SKU,qty", "SKU;qty", "SKU<tab>qty" or "SKU qty". A header row is skipped. */
-export function parseCsv(text: string): { sku: string; qty: string }[] {
-  const out: { sku: string; qty: string }[] = [];
-  for (const line of text.split(/\r?\n/)) {
-    const [sku = "", qty = "1"] = line.trim().split(/\s*[,;\t]\s*|\s+/);
-    if (!sku) continue;
-    if (/^(sku|product ?number|item)$/i.test(sku)) continue;
-    out.push({ sku: norm(sku), qty: qty || "1" });
-  }
-  return out.slice(0, MAX_ROWS);
-}
 
 /** S7 quick order pad: SKU + quantity rows with live lookup, CSV paste, add to cart or to a shopping list. */
 export function QuickOrderPad({ lists }: { lists: { id: string; name: string }[] }) {
@@ -41,6 +28,8 @@ export function QuickOrderPad({ lists }: { lists: { id: string; name: string }[]
   const [rows, setRows] = useState<Row[]>(() => [0, 1, 2, 3, 4].map(blank));
   const [found, setFound] = useState<Record<string, Found | null>>({});
   const [checking, setChecking] = useState(false);
+  const [lookupError, setLookupError] = useState<string | null>(null);
+  const [retry, setRetry] = useState(0);
   const [csv, setCsv] = useState("");
   const [listId, setListId] = useState(lists[0]?.id ?? "");
   const [message, setMessage] = useState<{ kind: "ok" | "error"; text: string } | null>(null);
@@ -59,7 +48,12 @@ export function QuickOrderPad({ lists }: { lists: { id: string; name: string }[]
         { filter: [{ type: "equalsAny", field: "productNumber", value: unknown }], limit: unknown.length },
       );
       setChecking(false);
-      if (!r.ok || !r.data) return;
+      if (!r.ok || !r.data) {
+        // Leave the rows unresolved, but say so and offer a retry (otherwise the pad stays on "Checking…").
+        setLookupError(r.error ?? "The SKU check failed.");
+        return;
+      }
+      setLookupError(null);
       const next: Record<string, Found | null> = {};
       for (const s of unknown) next[s] = null;
       for (const p of r.data.elements) {
@@ -73,7 +67,7 @@ export function QuickOrderPad({ lists }: { lists: { id: string; name: string }[]
       setFound((f) => ({ ...f, ...next }));
     }, 300);
     return () => clearTimeout(t);
-  }, [skus, found]);
+  }, [skus, found, retry]);
 
   const status = (r: Row): { kind: "empty" | "checking" | "ok" | "error"; text: string } => {
     const s = norm(r.sku);
@@ -233,6 +227,14 @@ export function QuickOrderPad({ lists }: { lists: { id: string; name: string }[]
             </div>
           ) : (
             <p className="text-sm text-black/60">No shopping lists yet. <Link href="/account/lists" className="text-primary underline">Create one</Link>.</p>
+          )}
+          {lookupError && (
+            <p role="alert" className="text-sm text-red-700" data-testid="qo-lookup-error">
+              Could not check SKUs ({lookupError}).{" "}
+              <button type="button" className="underline" onClick={() => { setLookupError(null); setRetry((n) => n + 1); }} data-testid="qo-lookup-retry">
+                Retry
+              </button>
+            </p>
           )}
           {message && (
             <p role={message.kind === "error" ? "alert" : "status"} className={`text-sm ${message.kind === "error" ? "text-red-700" : "text-emerald-800"}`} data-testid="qo-message">

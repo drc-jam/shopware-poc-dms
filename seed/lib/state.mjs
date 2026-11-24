@@ -38,8 +38,16 @@ export async function businessKeyConflicts(admin, model, pageSize = 100) {
   await check("b2b_employee", "email", recsOf("b2b_employee"), (r) => r.payload.email);
   await check("custom_field_set", "name", recsOf("custom_field_set"), (r) => r.payload.name);
   // custom fields are nested in the set; check their names too.
-  const fields = recsOf("custom_field_set").flatMap((r) => r.payload.customFields.map((f) => ({ entity: "custom_field", key: f.name, id: f.id, payload: f })));
+  const sets = recsOf("custom_field_set");
+  const fields = sets.flatMap((r) => r.payload.customFields.map((f) => ({ entity: "custom_field", key: f.name, id: f.id, payload: f, setKey: r.key })));
+  const before = new Set(out.keys());
   await check("custom_field", "name", fields, (r) => r.payload.name);
+  // Report a field-name collision on the owning set record: that is the record plan shows and apply writes.
+  for (const [k, c] of [...out].filter(([k]) => !before.has(k) && k.startsWith("custom_field:"))) {
+    const f = fields.find((x) => `custom_field:${x.key}` === k);
+    out.delete(k);
+    if (f && !out.has(`custom_field_set:${f.setKey}`)) out.set(`custom_field_set:${f.setKey}`, { ...c, field: `customField ${c.field}` });
+  }
   const media = recsOf("media");
   for (const m of media) {
     const r = await admin.search("media", { filter: [{ type: "equals", field: "fileName", value: m.file.fileName }], limit: 5, includes: { media: ["id", "fileName"] } });

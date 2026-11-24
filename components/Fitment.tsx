@@ -26,7 +26,9 @@ export function FitmentBadge({ status, vehicle }: { status: FitStatus; vehicle: 
   if (status === "unknown") {
     return (
       <p className="rounded-[var(--brand-radius)] border border-black/15 bg-white px-4 py-2 text-sm text-black/70" data-testid="fitment-badge" data-fit="unknown">
-        Select your vehicle in the header to check fitment.
+        {vehicle
+          ? `No fitment data for this part, so it cannot be checked against your ${vehicle.label}.`
+          : "Select your vehicle in the header to check fitment."}
       </p>
     );
   }

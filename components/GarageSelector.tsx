@@ -210,17 +210,23 @@ export function GarageSelector({ tree, garage, active, variant = "header" }: Pro
 export function ClearVehicleButton() {
   const router = useRouter();
   const [pending, startTransition] = useTransition();
+  const [error, setError] = useState<string | null>(null);
   return (
-    <button
-      type="button"
-      disabled={pending}
-      onClick={async () => {
-        if (!(await postGarage({ action: "clear-active" }))) startTransition(() => router.refresh());
-      }}
-      className="font-semibold underline"
-      data-testid="fitment-clear"
-    >
-      Clear
-    </button>
+    <>
+      <button
+        type="button"
+        disabled={pending}
+        onClick={async () => {
+          const err = await postGarage({ action: "clear-active" });
+          setError(err);
+          if (!err) startTransition(() => router.refresh());
+        }}
+        className="font-semibold underline"
+        data-testid="fitment-clear"
+      >
+        Clear
+      </button>
+      {error && <span role="alert" className="text-red-700">{error}</span>}
+    </>
   );
 }
