@@ -69,7 +69,7 @@ npm run spike:phase0    # Phase 0 spikes (SPIKE-tagged records only)
 
 `npm run seed:apply -- --replace-demo` deletes every fixture-owned record (and the demo company's runtime pending orders and shopping lists) before applying, then rebuilds from the fixture. It is the only delete path and is never run implicitly; `npm run seed:plan -- --replace-demo` previews it read-only. The navigation root category is kept (the sales channel points at it); its children are replaced. Tested 2026-11-24: 146 deleted, 153 created, 0 failed, `seed:verify` 16/16.
 
-Persona passwords for Vercel (Phase 8) are the `PERSONA_*` values in `.env.seed`. Re-running `seed:apply` with new values rotates them.
+Persona passwords (`PERSONA_RETAIL_PASSWORD`, `PERSONA_DEALER_ADMIN_PASSWORD`, `PERSONA_DEALER_JUNIOR_PASSWORD`) and `SHOPWARE_SALES_CHANNEL_ID` are set as environment variables in the Claude Code cloud environment (since 2026-11-24); the owner keeps the passwords for Vercel (Phase 8). Process env wins over `.env.seed`. Persona e-mails default to the fixture. Re-running `seed:apply` with new passwords rotates them; `seed:init-env` only fills values that are missing everywhere.
 
 ### Seeder notes (Phase 2)
 - **IDs and ownership.** Every record ID is `stableId(entity, businessKey)`, so plan, apply, verify and `--replace-demo` agree without a database. Records carry `customFields.demo_fixture`. A business key (product number, customer or employee e-mail, custom field name, media file name) that belongs to a non-fixture record is refused and logged as `failed`, never overwritten.

@@ -118,8 +118,10 @@ await guarded("login", "persona logins", async () => {
     ["dealer-junior", "PERSONA_DEALER_JUNIOR"],
   ];
   const out = {};
+  // E-mails are not secrets: fall back to the fixture when PERSONA_*_EMAIL is unset (passwords must come from env).
+  const fixtureEmail = Object.fromEntries([...fx.customers, ...fx.b2b.employees].map((p) => [p.passwordEnv.replace(/_PASSWORD$/, ""), p.email]));
   for (const [k, env] of personas) {
-    const r = await store.call("POST", "account/login", { body: { email: process.env[`${env}_EMAIL`], password: process.env[`${env}_PASSWORD`] } });
+    const r = await store.call("POST", "account/login", { body: { email: process.env[`${env}_EMAIL`] ?? fixtureEmail[env], password: process.env[`${env}_PASSWORD`] } });
     tokens[k] = r.contextToken ?? r.data?.contextToken ?? null;
     out[k] = r.status;
   }
