@@ -40,7 +40,8 @@ No repository secrets are needed. Checks against the real instance (`seed:verify
 | 4 · Catalog and pricing | **Done (against mock)** | S1–S5 e2e green; PLP/PDP/search, PriceBlock, TierTable, MAP, mini-cart, Quick View, cart with series savings |
 | 5 · Fitment | **Done (against mock)** | S6 e2e green: YMM selector (header + home hero), My Garage (3 vehicles, cookies validated against the index), PLP/search filtered to fitting + universal parts, PDP badge + fitment table. The real Store API honors the `id` filter (probe: Shocks 40 → 10 for a 1980 Malibu, matching the index) |
 | 6 · B2B buying | **Done** | S7–S10 + no-order negative tests green against the mock **and the real Evolve instance** (full suite 47/47 both ways, 2026-11-24): quick order (row errors, CSV paste, add to cart / list), shopping lists (seeded list → 6 cart lines; create / add from PDP / remove / delete), company view (Admin only; Shopware enforces `employee.read` too), approvals (Junior submits, Admin approves / declines; pending IDs tracked in a cookie per D3; never an order) |
-| 7–8 | Not started | |
+| 7 · Tour and polish | **Done** | `/tour` runs S1–S10 with one click per step (persona switch + cart / vehicle staging + deep link) and a presenter bar with the expected result and Next. Planned 14 of 15 min. The full tour passes e2e on desktop and tablet (810×1080, touch) against the mock and the real instance (suite 53/53 both). Loading, error and not-found states; responsive header (phone / tablet / desktop); screenshots in [`docs/tour/`](docs/tour/) |
+| 8 · Deploy | Not started | |
 
 ### Open items and deviations from the guide
 
@@ -84,3 +85,11 @@ Persona passwords (`PERSONA_RETAIL_PASSWORD`, `PERSONA_DEALER_ADMIN_PASSWORD`, `
 - **Approval rule.** The fixture's `cartAmountGte 0.01` maps to the instance condition `cartCartAmount ≥ 0.01`; `seed:verify` confirms a Junior Buyer cart requires approval.
 - **Each `seed:verify` run** leaves two decided pending orders (one approved, one declined) on the demo company. They are not orders; `--replace-demo` removes them.
 - **Phase 0 spike records** were removed on 2026-11-24 with `node seed/spikes/phase0.mjs --cleanup` (28 records; none remain).
+
+## Presenter tour (Phase 7)
+
+- Open **/tour** (also linked in the header). Press **Reset** in the header before a new audience, then **Start tour**.
+- Each step button switches persona, stages the scene declared in `data/tour.json` (replaces that persona's cart, sets or clears the active vehicle) and opens the page. The dark bar shows the expected result, extra views for the step (e.g. "Show as Dealer Admin") and **Next**.
+- Edit titles, talking points, expected results and minutes in `data/tour.json`. `npm run tour:generate` refreshes the targets from the fixture (after a re-skin) and keeps your text; add `"lockRuns": true` to a step to keep its targets too. The schema (`lib/tour.ts`) only allows in-app deep links.
+- `npm run tour:screenshots` (after `npm run build`, with the mock or `E2E_BASE_URL`) saves one screenshot per step and device to `docs/tour/`.
+

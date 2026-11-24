@@ -19,25 +19,34 @@ export async function Header() {
     <header className="border-b border-black/10 bg-white">
       {nav.error && (
         <div role="status" className="bg-amber-100 px-4 py-1 text-center text-xs text-amber-900" data-testid="store-api-warning">
-          Store API not reachable ({nav.error}). Check SHOPWARE_STORE_API_URL. Phase 0 is pending instance provisioning.
+          The store cannot be reached right now ({nav.error}). Pages may be incomplete; check SHOPWARE_STORE_API_URL and the Shopware instance.
         </div>
       )}
-      <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-4 px-4 py-3">
-        <Link href="/" className="flex items-center gap-2" aria-label={`${brand.name} home`}>
+      {/* Order (CSS only, one copy of each control): below xl = row 1 logo + tour/cart, row 2 full-width
+          search, row 3 vehicle + persona; xl (desktop) = one row. */}
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-x-4 gap-y-3 px-4 py-3">
+        <Link href="/" className="order-1 flex min-w-0 flex-1 items-center gap-2 xl:flex-none" aria-label={`${brand.name} home`}>
           <Image src={brand.logo} alt="" width={36} height={36} priority />
-          <span className="font-heading text-xl font-semibold text-primary">{brand.name}</span>
+          <span className="truncate font-heading text-xl font-semibold text-primary">{brand.name}</span>
         </Link>
 
         <SearchBox />
-        <GarageSelector tree={vehicleTree()} garage={garageItems} active={garage.active?.id ?? null} />
+        <div className="order-4 xl:order-3">
+          <GarageSelector tree={vehicleTree()} garage={garageItems} active={garage.active?.id ?? null} />
+        </div>
 
-        <div className="flex w-full min-w-0 flex-wrap items-center justify-between gap-3 sm:ml-auto sm:w-auto sm:justify-end">
+        <div className="order-5 flex min-w-0 flex-wrap items-center gap-3 sm:ml-auto xl:order-4">
           <PersonaSwitcher
             persona={persona}
             displayName={state.displayName}
             company={state.company}
             warning={state.error ?? null}
           />
+        </div>
+        <div className="order-2 flex items-center gap-2 xl:order-5">
+          <Link href="/tour" className="rounded-[var(--brand-radius)] px-2 py-2 text-sm text-primary hover:underline" data-testid="header-tour">
+            Tour
+          </Link>
           <Link
             href="/cart"
             className="relative rounded-[var(--brand-radius)] border border-black/15 px-3 py-2 text-sm"

@@ -58,7 +58,7 @@ export default async function CartPage() {
                   // eslint-disable-next-line @next/next/no-img-element
                   <img src={li.cover.url} alt="" width={80} height={80} className="h-20 w-20 rounded border border-black/10 object-cover" />
                 )}
-                <div className="min-w-0 flex-1 space-y-1">
+                <div className="min-w-48 flex-1 space-y-1">
                   <Link href={`/p/${li.referencedId ?? li.id}`} className="font-medium hover:underline">{li.label}</Link>
                   <p className="text-xs text-black/60" data-testid="cart-line-sku">SKU {li.payload?.productNumber}</p>
                   <p className="text-sm">

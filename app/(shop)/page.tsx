@@ -40,7 +40,7 @@ export default async function Home() {
         <div className="rounded-[var(--brand-radius)] border border-black/10 bg-white p-5">
           <h2 className="text-xl font-semibold">Guided tour</h2>
           <p className="mt-1 text-sm text-black/70">
-            The presenter tour lives at <Link className="text-primary underline" href="/tour">/tour</Link> (Phase 7).
+            Ten one-click steps across dealer pricing, vehicle fitment and B2B buying. <Link className="text-primary underline" href="/tour" data-testid="home-tour-link">Open the tour</Link>.
           </p>
         </div>
       </section>

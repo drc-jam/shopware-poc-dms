@@ -1,0 +1,349 @@
+{
+  "$comment": "Presenter tour (DEV_GUIDE §9.4). Edit the text freely; `npm run tour:generate` keeps title, pillar, talkingPoints, expected, minutes and dmsRef, and refreshes runs from the fixture unless a step has \"lockRuns\": true.",
+  "version": 1,
+  "steps": [
+    {
+      "id": "S1",
+      "title": "Retail vs “Your price”",
+      "pillar": "Dealer pricing",
+      "minutes": 1.5,
+      "runs": [
+        {
+          "label": "Show as Retail",
+          "persona": "retail",
+          "target": {
+            "type": "product",
+            "sku": "HLV-CO-X-5101"
+          }
+        },
+        {
+          "label": "Show as Dealer Admin",
+          "persona": "dealer-admin",
+          "target": {
+            "type": "product",
+            "sku": "HLV-CO-X-5101"
+          }
+        }
+      ],
+      "talkingPoints": [
+        "DMS today: dealers and retail customers see the same default price until a custom price display is built.",
+        "Shopware: one product, a Dealer customer-group rule with advanced prices. Retail sees one price; the dealer sees retail struck through and “Your price”.",
+        "No extension and no price-list app: it is standard Rule Builder + advanced pricing."
+      ],
+      "expected": "Retail: a single price. Dealer Admin: retail struck through, “Your price” at the dealer qty-1 price, and a tier table.",
+      "dmsRef": {
+        "label": "Retail + 'Yours' price display",
+        "url": "https://app.clickup.com/t/868k5m8mz"
+      }
+    },
+    {
+      "id": "S2",
+      "title": "Listing pages show the persona's price",
+      "pillar": "Dealer pricing",
+      "minutes": 1,
+      "runs": [
+        {
+          "label": "Open the category as Dealer Admin",
+          "persona": "dealer-admin",
+          "target": {
+            "type": "category",
+            "path": [
+              "Coil-Overs"
+            ]
+          }
+        }
+      ],
+      "talkingPoints": [
+        "DMS 11/18 feedback: price-list customers saw the default price on the category page and only their price on the product page.",
+        "Shopware calculates prices in the customer's context for listings too (calculatedPrice / cheapest price), so the card already shows “Your price”.",
+        "Same Store API call for every persona; the context token decides the price."
+      ],
+      "expected": "Every card shows the dealer qty-1 price labelled “Your price”, not the retail price.",
+      "dmsRef": {
+        "label": "11/18 Meeting Feedback",
+        "url": "https://app.clickup.com/t/1gage70c48a"
+      }
+    },
+    {
+      "id": "S3",
+      "title": "Quantity tiers on the PDP and in the cart",
+      "pillar": "Dealer pricing",
+      "minutes": 1.5,
+      "runs": [
+        {
+          "label": "Open the cart with 4 in it",
+          "persona": "dealer-admin",
+          "target": {
+            "type": "path",
+            "href": "/cart"
+          },
+          "setup": {
+            "cart": [
+              {
+                "sku": "HLV-CO-X-5101",
+                "qty": 4
+              }
+            ]
+          }
+        }
+      ],
+      "talkingPoints": [
+        "DMS needed quantity-break pricing visible on the product page and honoured in the cart.",
+        "Shopware advanced prices carry quantity ranges (1 / 5 / 10 / 25); the PDP tier table and the cart re-pricing both come from the same data.",
+        "Change the quantity from 4 to 5, then 10 and 25: the unit price steps down at each break with no custom code."
+      ],
+      "expected": "Cart line at qty 4 shows the next-break hint; changing to 5 / 10 / 25 lowers the unit price at each break.",
+      "dmsRef": {
+        "label": "Quantity tier pricing on PDP",
+        "url": "https://app.clickup.com/t/868k5m8n2"
+      }
+    },
+    {
+      "id": "S4",
+      "title": "Cross-SKU series tiers (mix and match)",
+      "pillar": "Dealer pricing",
+      "minutes": 1.5,
+      "runs": [
+        {
+          "label": "Open the cart with 5 + 5 Velocity 70 Series",
+          "persona": "dealer-admin",
+          "target": {
+            "type": "path",
+            "href": "/cart"
+          },
+          "setup": {
+            "cart": [
+              {
+                "sku": "VRD-SM-A-1001",
+                "qty": 5
+              },
+              {
+                "sku": "VRD-SM-A-1002",
+                "qty": 5
+              }
+            ]
+          }
+        }
+      ],
+      "talkingPoints": [
+        "DMS: quantities across SKUs in the same series must add up to reach a tier. BigCommerce needed a custom bridge app.",
+        "Shopware: an automatic promotion per series tier with a Rule Builder condition on the series quantity: 10+ saves 5%, 25+ saves 9.75%, the higher tier replaces the lower.",
+        "Front and rear shocks, any chassis, count together; other products in the cart do not. No code."
+      ],
+      "expected": "The cart shows a “Velocity 70 Series mix-and-match — 10+ tier” savings line. Set one line to 4 and it disappears.",
+      "dmsRef": {
+        "label": "Product Group Quantity Tier Pricing",
+        "url": "https://app.clickup.com/t/868k5m8mv"
+      }
+    },
+    {
+      "id": "S5",
+      "title": "MAP: price hidden until the cart",
+      "pillar": "Dealer pricing",
+      "minutes": 1,
+      "runs": [
+        {
+          "label": "Open a MAP product as Retail",
+          "persona": "retail",
+          "target": {
+            "type": "product",
+            "sku": "VRD-SM-X-1101"
+          },
+          "setup": {
+            "cart": [
+              {
+                "sku": "VRD-SM-X-1101",
+                "qty": 1
+              }
+            ]
+          }
+        },
+        {
+          "label": "Then the cart",
+          "persona": "retail",
+          "target": {
+            "type": "path",
+            "href": "/cart"
+          }
+        }
+      ],
+      "talkingPoints": [
+        "DMS flags MAP items so the advertised price is not shown below MAP on listing and product pages.",
+        "The demo marks MAP items with a product custom field; the storefront shows “See price in cart” for retail and the real price in the cart.",
+        "This is a storefront rule (stated openly); dealers always see their price."
+      ],
+      "expected": "PDP and listings show “See price in cart” for Retail; the cart shows the real price.",
+      "dmsRef": {
+        "label": "MAP compliance flags",
+        "url": "https://app.clickup.com/t/868k5m8n3"
+      }
+    },
+    {
+      "id": "S6",
+      "title": "Shop by vehicle",
+      "pillar": "Vehicle fitment",
+      "minutes": 2,
+      "runs": [
+        {
+          "label": "Shop Shocks for a 1982 Buick Regal",
+          "persona": "retail",
+          "target": {
+            "type": "category",
+            "path": [
+              "Shocks"
+            ]
+          },
+          "setup": {
+            "vehicle": "BUI-REGAL-1977-1986|1982"
+          }
+        }
+      ],
+      "talkingPoints": [
+        "DMS relies on a third-party search and fitment app on BigCommerce.",
+        "Here the year / make / model selector and My Garage filter category pages and search to parts that fit plus universal parts; the PDP shows a fit badge and a fitment table.",
+        "Fitment is a data file generated with the catalog, so a production build can swap in a full ACES/PIES fitment service without changing pages."
+      ],
+      "expected": "The fitment bar reads “Showing parts that fit 1982 Buick Regal”, the count drops, and each PDP shows Fits / Doesn't fit / Universal.",
+      "dmsRef": {
+        "label": "Convermax Search & Vehicle Fitment",
+        "url": "https://app.clickup.com/t/868k5m8p7"
+      }
+    },
+    {
+      "id": "S7",
+      "title": "Quick order pad",
+      "pillar": "B2B buying",
+      "minutes": 1.5,
+      "runs": [
+        {
+          "label": "Open quick order as the Junior Buyer",
+          "persona": "dealer-junior",
+          "target": {
+            "type": "path",
+            "href": "/quick-order"
+          }
+        }
+      ],
+      "talkingPoints": [
+        "DMS dealers order by part number in bulk; BigCommerce needed a quick-order add-on.",
+        "Type CPL-OL-X-8001 and KST-RB-X-7002 plus a made-up SKU, or paste rows from a spreadsheet: unknown SKUs get a row error, valid rows go to the cart or a list.",
+        "Built on Shopware's B2B Quick Order feature and the Store API product lookup."
+      ],
+      "expected": "The bad SKU row shows “Unknown SKU”; the valid rows are added and the mini-cart opens.",
+      "dmsRef": {
+        "label": "Quick Order Pad",
+        "url": "https://app.clickup.com/t/868k5m8mp"
+      }
+    },
+    {
+      "id": "S8",
+      "title": "Shopping lists",
+      "pillar": "B2B buying",
+      "minutes": 1,
+      "runs": [
+        {
+          "label": "Open “Weekly Shop Restock”",
+          "persona": "dealer-junior",
+          "target": {
+            "type": "list",
+            "name": "Weekly Shop Restock"
+          }
+        }
+      ],
+      "talkingPoints": [
+        "DMS dealers reorder the same restock items every week from saved lists.",
+        "Shopware B2B Shopping Lists: shared by the company, add from any product page or the quick order pad, then add the whole list to the cart.",
+        "Click “Add all to cart”: 6 lines, priced for the dealer."
+      ],
+      "expected": "The list shows 6 items; “Add all to cart” fills the cart with 6 lines.",
+      "dmsRef": {
+        "label": "Saved product lists",
+        "url": "https://app.clickup.com/t/868k5m8mu"
+      }
+    },
+    {
+      "id": "S9",
+      "title": "Company, roles and permissions",
+      "pillar": "B2B buying",
+      "minutes": 1,
+      "runs": [
+        {
+          "label": "Company view as Dealer Admin",
+          "persona": "dealer-admin",
+          "target": {
+            "type": "path",
+            "href": "/account/company"
+          }
+        },
+        {
+          "label": "Same page as Junior Buyer",
+          "persona": "dealer-junior",
+          "target": {
+            "type": "path",
+            "href": "/account/company"
+          }
+        }
+      ],
+      "talkingPoints": [
+        "DMS needs company accounts where an owner manages buyers with limited rights.",
+        "Shopware B2B Employee Management: the Admin role has every permission; the Junior Buyer role can shop, use lists and quick order, and must request approval.",
+        "The Junior Buyer does not get the Company menu, and Shopware itself refuses the data (403), not just the UI."
+      ],
+      "expected": "Admin: employees with roles and a permission summary. Junior Buyer: no Company menu; the page explains the role cannot view it.",
+      "dmsRef": {
+        "label": "Company accounts / roles / approval",
+        "url": "https://app.clickup.com/t/868k5m8mg"
+      }
+    },
+    {
+      "id": "S10",
+      "title": "Approval loop",
+      "pillar": "B2B buying",
+      "minutes": 2,
+      "runs": [
+        {
+          "label": "Junior Buyer: cart ready to submit",
+          "persona": "dealer-junior",
+          "target": {
+            "type": "path",
+            "href": "/cart"
+          },
+          "setup": {
+            "cart": [
+              {
+                "sku": "CPL-OL-X-8001",
+                "qty": 12
+              },
+              {
+                "sku": "KST-RB-X-7002",
+                "qty": 10
+              },
+              {
+                "sku": "KST-RB-X-7003",
+                "qty": 20
+              }
+            ]
+          }
+        },
+        {
+          "label": "Dealer Admin: approve or decline",
+          "persona": "dealer-admin",
+          "target": {
+            "type": "path",
+            "href": "/account/approvals"
+          }
+        }
+      ],
+      "talkingPoints": [
+        "DMS wants junior buyers to build carts that an owner approves before anything is ordered.",
+        "Shopware B2B Order Approval: an approval rule says every Junior Buyer cart needs the Admin role's approval. Submitting creates a pending request, not an order.",
+        "The Admin approves or declines with a comment; the Junior sees the result under My requests. In this demo no order is ever placed."
+      ],
+      "expected": "The cart shows the approval notice; after Submit, My requests shows Pending; the Admin approves it and the Junior sees Approved.",
+      "dmsRef": {
+        "label": "Company accounts / roles / approval",
+        "url": "https://app.clickup.com/t/868k5m8mg"
+      }
+    }
+  ]
+}

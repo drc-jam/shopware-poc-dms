@@ -38,8 +38,9 @@ export default async function CategoryPage({ params, searchParams }: Props) {
   return (
     <div className="space-y-6">
       <header>
-        {category.breadcrumb && category.breadcrumb.length > 1 && (
-          <p className="text-sm text-black/60">{category.breadcrumb.slice(0, -1).join(" › ")}</p>
+        {/* Shopware's breadcrumb starts with the sales channel's navigation root (not shown) and ends with this category. */}
+        {(category.breadcrumb?.length ?? 0) > 2 && (
+          <p className="text-sm text-black/60" data-testid="plp-breadcrumb">{category.breadcrumb!.slice(1, -1).join(" › ")}</p>
         )}
         <h1 className="text-4xl font-semibold" data-testid="plp-title">{nameOf(category)}</h1>
         {category.description && <p className="mt-1 text-black/70">{category.description}</p>}

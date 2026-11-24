@@ -21,7 +21,9 @@ export const categories = site.categories.map((c) => ({
   path: c.path,
   name: c.path.at(-1),
   translated: { name: c.path.at(-1) },
-  breadcrumb: c.path,
+  // Like Shopware: the breadcrumb starts with the sales channel's navigation root (level 1).
+  breadcrumb: ["Demo catalog (fixture)", ...c.path],
+  level: c.path.length + 1,
   description: c.description ?? null,
 }));
 

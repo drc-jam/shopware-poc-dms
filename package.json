@@ -13,6 +13,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "e2e": "playwright test --trace off",
+    "tour:generate": "node tools/tour-generate.mjs",
+    "tour:screenshots": "TOUR_SCREENSHOTS=docs/tour playwright test e2e/phase7-tour.spec.ts --trace off",
     "mock:store-api": "node e2e/mock-store-api.mjs",
     "fixture:validate": "node seed/validate-fixture.mjs",
     "fixture:review": "node tools/fixture-review.mjs",
