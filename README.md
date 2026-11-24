@@ -93,3 +93,32 @@ Persona passwords (`PERSONA_RETAIL_PASSWORD`, `PERSONA_DEALER_ADMIN_PASSWORD`, `
 - Edit titles, talking points, expected results and minutes in `data/tour.json`. `npm run tour:generate` refreshes the targets from the fixture (after a re-skin) and keeps your text; add `"lockRuns": true` to a step to keep its targets too. The schema (`lib/tour.ts`) only allows in-app deep links.
 - `npm run tour:screenshots` (after `npm run build`, with the mock or `E2E_BASE_URL`) saves one screenshot per step and device to `docs/tour/`.
 
+## Deploy to Vercel (Phase 8)
+
+The app is a standard Next.js project; `vercel.json` pins the functions to `fra1` (the Shopware instance is in the EU) and `package.json` pins Node 22.
+
+Set these in the Vercel project (Production and Preview). Never add `SHOPWARE_ADMIN_*`: the app refuses to run on Vercel if they are present.
+
+| Variable | Value |
+| --- | --- |
+| `SHOPWARE_STORE_API_URL` | Store API base URL of the instance (no trailing `/store-api`) |
+| `SHOPWARE_SW_ACCESS_KEY` | Sales channel access key (server-only) |
+| `PERSONA_RETAIL_EMAIL` / `_PASSWORD` | `retail.rider@example.com` / the seeded password |
+| `PERSONA_DEALER_ADMIN_EMAIL` / `_PASSWORD` | `dealer.admin@example.com` / the seeded password |
+| `PERSONA_DEALER_JUNIOR_EMAIL` / `_PASSWORD` | `junior.buyer@example.com` / the seeded password |
+| `DEMO_PASSWORD` | The shared password presenters type at `/gate` |
+| `DEMO_COOKIE_SECRET` | 32+ random characters, e.g. `openssl rand -base64 48` |
+| `NEXT_PUBLIC_BRAND_NAME` | Optional brand override (public) |
+
+After a deploy, check it from a machine with the seeder env:
+
+```bash
+npm run seed:verify
+```
+
+```bash
+E2E_BASE_URL=https://<production-domain> E2E_DEMO_PASSWORD=<DEMO_PASSWORD> npx playwright test --trace off
+```
+
+Re-deploy after re-seeding (`data/fitment-index.json` is bundled with the build).
+
