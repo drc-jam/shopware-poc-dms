@@ -33,7 +33,7 @@ No repository secrets are needed. Checks against the real instance (`seed:verify
 
 | Phase | State | Notes |
 | --- | --- | --- |
-| 0 · Instance and spikes | **Done** | Evolve 6.7.16.1: §13 checks pass (13.8 needs owner confirmation). `seed:discover` recorded the B2B routes; spikes and decisions D1–D3 (approved 2026-11-24) in [`artifacts/spikes.md`](artifacts/spikes.md) |
+| 0 · Instance and spikes | **Done** | Evolve 6.7.16.1: all §13 prerequisites met (13.8 confirmed by the owner 2026-11-24). `seed:discover` recorded the B2B routes; spikes and decisions D1–D3 (approved 2026-11-24) in [`artifacts/spikes.md`](artifacts/spikes.md) |
 | 1 · Fixture | **Done** | Racing-shocks catalog approved 2026-11-23 (`data/fixture/review-approval.json`, bound to the fixture hash; any edit needs `npm run fixture:approve` again) |
 | 2 · Seeder | **Done** | Standalone seeder against Evolve 6.7.16.1: clean apply (155 created, 0 failed), second apply a no-op (0 created), `seed:verify` 16/16 green |
 | 3 · App shell | **Done (against mock)** | Gate, BFF + allowlist, persona switcher, brand tokens, header/nav |

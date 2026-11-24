@@ -389,14 +389,14 @@ npm scripts: `fixture:validate`, `seed:discover`, `seed:plan`, `seed:apply`, `se
 
 ## 13. Shopware instance prerequisites (owner: Jamersan, before Phase 0)
 
-- [ ] Shopware **6.7.x** with a **Commercial** plan including B2B Components: Employee Management, Order Approval, Quick Order, Shopping Lists.
-- [ ] A dedicated **demo sales channel** (Storefront or Headless type) with USD and the US country, and a domain configured for the Store API.
-- [ ] An **Integration** (Admin API) with write access, for the seeder only.
-- [ ] Sales channel **access key** for the Store API.
-- [ ] Invoice payment and a flat-rate shipping method assigned to the sales channel.
-- [ ] B2B features activated at the system level (customer-specific toggles are set by the seeder).
-- [ ] CORS is not required (all calls are server-side through the BFF).
-- [ ] An instance that can be reset safely. Nothing here may point at production data.
+- [x] Shopware **6.7.x** with a **Commercial** plan including B2B Components: Employee Management, Order Approval, Quick Order, Shopping Lists. *(6.7.16.1 Evolve; verified by `seed:discover` 2026-11-23)*
+- [x] A dedicated **demo sales channel** (Storefront or Headless type) with USD and the US country, and a domain configured for the Store API. *("Headless", USD/US; verified 2026-11-23)*
+- [x] An **Integration** (Admin API) with write access, for the seeder only.
+- [x] Sales channel **access key** for the Store API.
+- [x] Invoice payment and a flat-rate shipping method assigned to the sales channel.
+- [x] B2B features activated at the system level (customer-specific toggles are set by the seeder).
+- [x] CORS is not required (all calls are server-side through the BFF).
+- [x] An instance that can be reset safely. Nothing here may point at production data. *(Confirmed by Jamersan 2026-11-24: dedicated academy sandbox, no production data, safe to reset.)*
 
 ---
 
