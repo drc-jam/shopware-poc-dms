@@ -47,7 +47,7 @@ export function SearchBox({ initial = "" }: { initial?: string }) {
   return (
     <form
       role="search"
-      className="relative order-last w-full sm:order-none sm:ml-4 sm:w-auto sm:flex-1"
+      className="relative order-3 w-full min-w-0 xl:order-2 xl:w-auto xl:flex-1"
       onSubmit={(e) => {
         e.preventDefault();
         setOpen(false);

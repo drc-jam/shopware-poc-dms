@@ -24,4 +24,6 @@ export const COOKIE = {
   ctx: (p: ActivePersona) => `sw_ctx_${p.replace(/-/g, "_")}`,
   garage: "garage",
   garageActive: "garage_active",
+  /** D3: IDs of approval requests made in this browser (the Store API cannot list pending orders). */
+  pendingOrders: "pending_orders",
 } as const;

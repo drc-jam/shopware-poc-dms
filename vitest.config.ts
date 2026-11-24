@@ -8,5 +8,5 @@ export default defineConfig({
       "server-only": path.resolve(import.meta.dirname, "lib/test/server-only-stub.ts"),
     },
   },
-  test: { include: ["lib/**/*.test.ts", "seed/**/*.test.mjs"], environment: "node" },
+  test: { include: ["lib/**/*.test.ts", "seed/**/*.test.mjs", "tools/**/*.test.mjs"], environment: "node" },
 });

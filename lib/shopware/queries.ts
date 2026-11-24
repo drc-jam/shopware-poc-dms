@@ -3,7 +3,7 @@ import { cache } from "react";
 import type { ActivePersona } from "@/lib/personas";
 import { getContextToken } from "@/lib/session";
 import { storeFetch } from "./store-client";
-import type { Cart, Customer, NavCategory } from "./types";
+import type { Cart, NavCategory, StoreContext } from "./types";
 
 export const nameOf = (c: { translated?: { name?: string | null }; name?: string | null }) => c.translated?.name ?? c.name ?? "";
 
@@ -35,17 +35,21 @@ export const getHeaderState = cache(async (persona: ActivePersona): Promise<Head
   const state: HeaderState = { cartCount: 0, displayName: null, company: null };
   if (!token) return state;
   try {
-    const [cart, customer] = await Promise.all([
+    // GET context, not account/customer: the latter is 403 for B2B employees (Phase 0). For an employee,
+    // context.customer is the company (business partner) and extensions.b2bEmployee is the employee.
+    const [cart, context] = await Promise.all([
       storeFetch<Cart>("checkout/cart", { method: "GET", contextToken: token }),
-      persona === "guest" ? null : storeFetch<Customer>("account/customer", { method: "GET", contextToken: token }),
+      persona === "guest" ? null : storeFetch<StoreContext>("context", { method: "GET", contextToken: token }),
     ]);
     if (cart.ok && cart.data) {
       state.cartCount = cart.data.lineItems.filter((li) => li.type === "product").reduce((n, li) => n + li.quantity, 0);
     }
-    if (customer?.ok && customer.data) {
-      state.displayName = `${customer.data.firstName} ${customer.data.lastName}`.trim();
-      state.company = customer.data.company ?? customer.data.activeBillingAddress?.company ?? null;
-    } else if (customer) {
+    const customer = context?.ok ? context.data?.customer : null;
+    if (customer?.id) {
+      const person = context?.data?.extensions?.b2bEmployee ?? customer;
+      state.displayName = `${person.firstName ?? ""} ${person.lastName ?? ""}`.trim() || null;
+      state.company = customer.company ?? customer.activeBillingAddress?.company ?? null;
+    } else if (context) {
       state.error = "session expired; switch persona again";
     }
   } catch (e) {

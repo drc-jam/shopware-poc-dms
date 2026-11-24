@@ -21,7 +21,9 @@ export const categories = site.categories.map((c) => ({
   path: c.path,
   name: c.path.at(-1),
   translated: { name: c.path.at(-1) },
-  breadcrumb: c.path,
+  // Like Shopware: the breadcrumb starts with the sales channel's navigation root (level 1).
+  breadcrumb: ["Demo catalog (fixture)", ...c.path],
+  level: c.path.length + 1,
   description: c.description ?? null,
 }));
 
@@ -172,10 +174,10 @@ export function search(term) {
 }
 
 /**
- * Cart calculation, including series promotions emulated as Shopware set-group promotions:
- * Dealer only; per series pick the highest tier whose minQty ≤ total series qty (higher tier
- * excludes lower); discount applies to the units in complete packages (floor(qty/minQty)·minQty),
- * cheapest units first.
+ * Cart calculation, including series promotions as configured after Phase 0 decision D1
+ * ("all units", verified on Shopware 6.7.16): Dealer only; per series pick the highest tier whose
+ * minQty ≤ total series qty (higher tier excludes lower); the percentage applies to EVERY series unit
+ * in the cart (cart rule on total series quantity + discount rule = series items; no set-group packages).
  */
 export function calculateCart(token, items, group, base) {
   const lineItems = [];
@@ -208,8 +210,7 @@ export function calculateCart(token, items, group, base) {
       }
       const tier = [...s.tiers].sort((a, b) => b.minQty - a.minQty).find((t) => units.length >= t.minQty);
       if (!tier) continue;
-      const counted = Math.floor(units.length / tier.minQty) * tier.minQty;
-      const discountBase = units.sort((a, b) => a - b).slice(0, counted).reduce((n, u) => n + u, 0);
+      const discountBase = units.reduce((n, u) => n + u, 0);
       const discount = round((discountBase * tier.discountPct) / 100);
       lineItems.push({
         id: `promotion-series-${s.code}-${tier.minQty}`,

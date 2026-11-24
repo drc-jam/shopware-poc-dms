@@ -7,6 +7,7 @@ import { randomBytes } from "node:crypto";
 import { readFileSync, existsSync } from "node:fs";
 import path from "node:path";
 import { calculateCart, categories, inCategory, listing, navigation, priced, productById, products, search } from "./mock/catalog.mjs";
+import { createB2B } from "./mock/b2b.mjs";
 
 const FIX = path.join(import.meta.dirname, "fixtures");
 const MEDIA = path.resolve(import.meta.dirname, "../data/fixture/media");
@@ -15,6 +16,7 @@ const PORT = Number(process.env.MOCK_STORE_API_PORT ?? 4010);
 const BASE = `http://127.0.0.1:${PORT}`;
 const ACCESS_KEY = process.env.SHOPWARE_SW_ACCESS_KEY;
 
+const b2b = createB2B(customers);
 const sessions = new Map(); // token -> { customerId | null, cart: Map<productId, qty> }
 const hits = [];
 const newToken = () => randomBytes(16).toString("hex");
@@ -41,7 +43,7 @@ createServer(async (req, res) => {
   }
 
   if (p === "/__mock/hits") return send(res, 200, hits);
-  if (p === "/__mock/reset") { hits.length = 0; sessions.clear(); return send(res, 200, { ok: true }); }
+  if (p === "/__mock/reset") { hits.length = 0; sessions.clear(); b2b.reset(); return send(res, 200, { ok: true }); }
   if (p.startsWith("/media/")) {
     const file = path.join(MEDIA, path.basename(p));
     if (!existsSync(file)) return err(res, 404, "MEDIA__NOT_FOUND", "not found");
@@ -63,7 +65,7 @@ createServer(async (req, res) => {
   const group = groupOf(session);
   const H = { "sw-context-token": token };
   const key = `${req.method} ${route}`;
-  const cart = () => calculateCart(token, session.cart, group, BASE);
+  const cart = () => ({ ...calculateCart(token, session.cart, group, BASE), errors: b2b.cartErrors(session) });
   let m;
 
   if (key === "POST account/login") {
@@ -81,9 +83,25 @@ createServer(async (req, res) => {
   if (key === "GET account/customer" || key === "POST account/customer") {
     const c = customers.find((x) => x.id === session.customerId);
     if (!c) return err(res, 403, "CHECKOUT__CUSTOMER_NOT_LOGGED_IN", "Customer is not logged in.", H);
+    // Shopware 6.7.16 (Phase 0 spike): account/customer is 403 for a logged-in B2B employee.
+    if (c.persona === "dealer-junior") return err(res, 403, "B2B__EMPLOYEE_MISSING_PERMISSIONS", "Employee is missing permissions.", H);
     return send(res, 200, { id: c.id, firstName: c.firstName, lastName: c.lastName, company: c.company, group: { name: c.group } }, H);
   }
-  if (key === "GET context") return send(res, 200, { token, customer: session.customerId ? { id: session.customerId } : null }, H);
+  if (key === "GET context") {
+    const c = customers.find((x) => x.id === session.customerId);
+    if (!c) return send(res, 200, { token, customer: null }, H);
+    // Like Shopware: an employee's context carries the company owner as customer and the employee
+    // (including its password hash, which the BFF must redact) under extensions.b2bEmployee.
+    if (c.persona === "dealer-junior") {
+      const owner = customers.find((x) => x.persona === "dealer-admin");
+      return send(res, 200, {
+        token,
+        customer: { id: owner.id, firstName: owner.firstName, lastName: owner.lastName, company: owner.company },
+        extensions: { b2bEmployee: { firstName: c.firstName, lastName: c.lastName, email: "junior@example.com", password: "$2y$12$mockhashmockhashmockhash" } },
+      }, H);
+    }
+    return send(res, 200, { token, customer: { id: c.id, firstName: c.firstName, lastName: c.lastName, company: c.company } }, H);
+  }
   if (req.method === "POST" && /^navigation\/[^/]+\/[^/]+$/.test(route)) return send(res, 200, navigation, H);
 
   // ---- catalog ----
@@ -133,6 +151,12 @@ createServer(async (req, res) => {
     const ids = body.ids ?? url.searchParams.getAll("ids[]");
     for (const id of ids) session.cart.delete(id);
     return send(res, 200, cart(), H);
+  }
+  // ---- B2B Components (employees, roles, shopping lists, approvals)
+  const b = b2b.handle(req.method, route, body, { session, cart });
+  if (b) {
+    if (b.error) return send(res, b.status, { errors: [{ status: String(b.error.status), code: b.error.code, title: b.error.title, detail: b.error.title, meta: {} }] }, H);
+    return send(res, b.status, b.body, H);
   }
   // Deliberately answers so a BFF leak would be visible in the hit log.
   if (key === "POST checkout/order") return send(res, 200, { id: "order-should-never-exist" }, H);

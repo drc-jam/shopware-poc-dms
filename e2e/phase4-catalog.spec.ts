@@ -3,7 +3,8 @@ import { addFromPdp, openPdp, passGate, resetDemo, switchPersona, usd } from "./
 import { dealerAt, mapSkus, product, series, seriesMembers } from "./fixture-data";
 
 // S1–S5 (DEV_GUIDE §3). Against the mock by default; against a deployment with E2E_BASE_URL.
-const SKU = "VRD-SM-A-1001"; // tiered, Series A (front shock), not MAP
+const SKU = "VRD-SM-A-1001"; // Series A (front shock), dealer tiers 1/5 only (D2), not MAP
+const TIERED_SKU = "HLV-CO-X-5101"; // non-series, dealer tiers 1/5/10/25, not MAP
 const [SERIES_A, SERIES_B] = seriesMembers("A") as [string, string]; // front + rear of the same series
 const MAP_SKU = mapSkus().find((s) => s === "VRD-SM-X-1103") ?? mapSkus()[0]!;
 
@@ -50,9 +51,9 @@ test.describe("S2 · PLP shows the persona's price", () => {
 test.describe("S3 · Quantity tiers", () => {
   test("Dealer PDP shows the tier table from calculatedPrices", async ({ page }) => {
     await switchPersona(page, "dealer-admin", "Dealer Admin");
-    await openPdp(page, SKU);
+    await openPdp(page, TIERED_SKU);
     const rows = page.getByTestId("tier-row");
-    const tiers = product(SKU).demo.dealerTiers;
+    const tiers = product(TIERED_SKU).demo.dealerTiers;
     await expect(rows).toHaveCount(tiers.length);
     for (const [i, t] of tiers.entries()) await expect(rows.nth(i)).toContainText(usd(t.gross));
     await expect(rows.last()).toContainText(`${tiers.at(-1)!.minQty}+`);
@@ -60,17 +61,17 @@ test.describe("S3 · Quantity tiers", () => {
 
   test("Cart re-prices when quantity crosses each break", async ({ page }) => {
     await switchPersona(page, "dealer-admin", "Dealer Admin");
-    await addFromPdp(page, SKU, 4);
+    await addFromPdp(page, TIERED_SKU, 4);
     await page.goto("/cart");
-    const line = page.locator(`[data-testid="cart-line"][data-sku="${SKU}"]`);
-    await expect(line.getByTestId("cart-line-unit")).toHaveText(usd(dealerAt(SKU, 4)));
-    await expect(line.getByTestId("cart-line-sku")).toHaveText(`SKU ${SKU}`);
+    const line = page.locator(`[data-testid="cart-line"][data-sku="${TIERED_SKU}"]`);
+    await expect(line.getByTestId("cart-line-unit")).toHaveText(usd(dealerAt(TIERED_SKU, 4)));
+    await expect(line.getByTestId("cart-line-sku")).toHaveText(`SKU ${TIERED_SKU}`);
     for (const qty of [5, 10, 25]) {
       const qtyInput = line.getByTestId("cart-line-qty");
       await qtyInput.fill(String(qty));
       await qtyInput.press("Enter");
-      await expect(line.getByTestId("cart-line-unit")).toHaveText(usd(dealerAt(SKU, qty)));
-      await expect(line.getByTestId("cart-line-total")).toHaveText(usd(Math.round(dealerAt(SKU, qty) * qty * 100) / 100));
+      await expect(line.getByTestId("cart-line-unit")).toHaveText(usd(dealerAt(TIERED_SKU, qty)));
+      await expect(line.getByTestId("cart-line-total")).toHaveText(usd(Math.round(dealerAt(TIERED_SKU, qty) * qty * 100) / 100));
     }
   });
 });
@@ -98,6 +99,24 @@ test.describe("S4 · Cross-SKU series tiers", () => {
     await page.goto("/cart");
     await expect(page.getByTestId("cart-line")).toHaveCount(2);
     await expect(page.getByTestId("series-savings")).toHaveCount(0);
+  });
+
+  test("13 mixed items: every series unit gets the 10+ discount (all units, decision D1)", async ({ page }) => {
+    await switchPersona(page, "dealer-admin", "Dealer Admin");
+    await addFromPdp(page, SERIES_A, 8);
+    await addFromPdp(page, SERIES_B, 5);
+    await page.goto("/cart");
+    const base = 8 * dealerAt(SERIES_A, 8) + 5 * dealerAt(SERIES_B, 5);
+    await expect(page.getByTestId("series-savings-amount")).toHaveText(usd(-Math.round(base * tier10.discountPct) / 100));
+  });
+
+  test("10 of one series SKU: unit stays at the qty-5 price and the series line gives the 10+ break (no double discount, D2)", async ({ page }) => {
+    await switchPersona(page, "dealer-admin", "Dealer Admin");
+    await addFromPdp(page, SERIES_A, 10);
+    await page.goto("/cart");
+    const line = page.locator(`[data-testid="cart-line"][data-sku="${SERIES_A}"]`);
+    await expect(line.getByTestId("cart-line-unit")).toHaveText(usd(dealerAt(SERIES_A, 5)));
+    await expect(page.getByTestId("series-savings-amount")).toHaveText(usd(-Math.round(10 * dealerAt(SERIES_A, 5) * tier10.discountPct) / 100));
   });
 
   test("25 mixed items switch to the 25+ tier (tiers do not stack)", async ({ page }) => {

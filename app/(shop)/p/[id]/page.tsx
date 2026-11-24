@@ -6,6 +6,11 @@ import { getActivePersona } from "@/lib/session";
 import { getProduct, isId } from "@/lib/shopware/catalog";
 import { isDealer, summarize } from "@/lib/pricing";
 import { seriesCopy, seriesInfo } from "@/lib/series";
+import { FitmentBadge, FitmentTable } from "@/components/Fitment";
+import { fitStatus, fitmentRows, getGarage } from "@/lib/fitment";
+import { AddToListForm } from "@/components/b2b/ListActions";
+import { getShoppingListNames } from "@/lib/shopware/b2b";
+import { PERSONAS } from "@/lib/personas";
 
 type Props = { params: Promise<{ id: string }> };
 
@@ -21,7 +26,10 @@ export default async function ProductPage({ params }: Props) {
   const product = await getProduct(id);
   if (!product) notFound();
   const persona = await getActivePersona();
+  const { active } = await getGarage();
   const s = summarize(product, persona);
+  const fit = fitStatus(product.id, active);
+  const fitRows = fitmentRows(product.id);
   const series = seriesInfo(s.series);
   const gallery = (product.media ?? []).map((m) => m.media.url);
   const description = product.translated?.description ?? product.description ?? "";
@@ -50,6 +58,8 @@ export default async function ProductPage({ params }: Props) {
           <p className="mt-1 text-sm text-black/60" data-testid="pdp-sku">SKU {s.productNumber}</p>
         </div>
 
+        <FitmentBadge status={fit} vehicle={active} />
+
         <div className="rounded-[var(--brand-radius)] border border-black/10 bg-white p-4">
           <PriceBlock price={s.price} size="lg" />
         </div>
@@ -63,11 +73,13 @@ export default async function ProductPage({ params }: Props) {
         )}
 
         <ProductBuyBox productId={s.id} available={s.available} tiers={s.tiers} />
+        {PERSONAS[persona].b2b && <AddToListForm productId={s.id} lists={await getShoppingListNames()} />}
 
         <p className="text-sm text-black/60">
           {s.available ? `In stock (${product.availableStock ?? product.stock ?? 0})` : "Out of stock"}
         </p>
         {description && <div className="prose max-w-none text-sm text-black/80"><p>{description}</p></div>}
+        <FitmentTable rows={fitRows} activeKey={active?.key} />
       </section>
     </article>
   );

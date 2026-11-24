@@ -3,7 +3,8 @@ import { z } from "zod";
 import { COOKIE, PERSONA_KEYS, PERSONAS, type ActivePersona, type PersonaKey } from "@/lib/personas";
 import { isSameOrigin, isSecure, jsonError, NO_STORE, readCappedBody } from "@/lib/http";
 import { cookieBase, CTX_COOKIE_MAX_AGE } from "@/lib/session";
-import { loginPersona, tokenIsLoggedIn } from "@/lib/shopware/login";
+import { loginPersona } from "@/lib/shopware/login";
+import { ensurePersonaToken } from "@/lib/persona-session";
 import { storeFetch, StoreApiError } from "@/lib/shopware/store-client";
 
 export const runtime = "nodejs";
@@ -42,8 +43,7 @@ async function switchTo(req: NextRequest, key: ActivePersona, secure: boolean) {
   if (key === "guest") return res;
 
   // Reuse the persona's existing context (keeps its cart) if it is still logged in; otherwise log in.
-  const existing = req.cookies.get(COOKIE.ctx(key))?.value;
-  const token = existing && (await tokenIsLoggedIn(existing)) ? existing : await loginPersona(key);
+  const token = await ensurePersonaToken(req, key);
   res.cookies.set(COOKIE.ctx(key), token, { ...cookieBase(secure), maxAge: CTX_COOKIE_MAX_AGE });
   return res;
 }
@@ -66,5 +66,7 @@ async function reset(req: NextRequest, secure: boolean) {
   res.cookies.set(COOKIE.persona, "guest", { ...cookieBase(secure), maxAge: CTX_COOKIE_MAX_AGE });
   res.cookies.delete(COOKIE.garage);
   res.cookies.delete(COOKIE.garageActive);
+  res.cookies.delete(COOKIE.pendingOrders);
+  res.cookies.delete("tour_step");
   return res;
 }

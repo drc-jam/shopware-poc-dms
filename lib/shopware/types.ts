@@ -104,6 +104,15 @@ export interface Cart {
   errors?: Record<string, { message?: string; messageKey?: string }> | unknown[];
 }
 
+/** Subset of GET /store-api/context used by the app. */
+export interface StoreContext {
+  customer?: Customer | null;
+  extensions?: {
+    /** Present when a B2B employee is logged in (Shopware 6.7.16; Phase 0 spike). */
+    b2bEmployee?: { firstName?: string; lastName?: string; email?: string } | null;
+  };
+}
+
 export interface Customer {
   id: string;
   firstName: string;
@@ -112,4 +121,53 @@ export interface Customer {
   company?: string | null;
   activeBillingAddress?: { company?: string | null } | null;
   group?: { name?: string; translated?: Translated } | null;
+}
+
+// ---- B2B Components (Store API, Shopware 6.7.16 shapes observed on the instance)
+
+export interface EntitySearchResult<T> {
+  elements: T[];
+  total: number;
+}
+
+export interface ShoppingListLineItem {
+  id: string;
+  productId: string;
+  quantity: number;
+}
+
+export interface ShoppingList {
+  id: string;
+  name: string;
+  active?: boolean;
+  employeeId?: string | null;
+  createdAt?: string;
+  /** null in the index (shopping-lists); present on the detail route. */
+  lineItems: ShoppingListLineItem[] | null;
+}
+
+export interface B2bRole {
+  id: string;
+  name: string;
+  permissions?: string[];
+}
+
+export interface B2bEmployee {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  status?: string;
+  role?: B2bRole | null;
+}
+
+export interface PendingOrder {
+  id: string;
+  createdAt?: string;
+  updatedAt?: string | null;
+  orderId: string | null;
+  amountTotal?: number;
+  price?: { totalPrice?: number };
+  stateMachineState?: { technicalName: string; name?: string; translated?: { name?: string } };
+  employee?: { firstName?: string; lastName?: string; email?: string } | null;
 }

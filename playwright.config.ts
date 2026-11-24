@@ -15,6 +15,12 @@ export default defineConfig({
   use: { baseURL: external ?? `http://127.0.0.1:${APP_PORT}`, trace: "off" },
   projects: [
     { name: "desktop", use: { ...devices["Desktop Chrome"] } },
+    // Phase 7: the presenter tour must also run on a tablet (iPad-sized viewport, touch; Chromium engine).
+    {
+      name: "tablet",
+      testMatch: /phase7-tour\.spec\.ts/,
+      use: { ...devices["Desktop Chrome"], viewport: { width: 810, height: 1080 }, hasTouch: true, isMobile: true, deviceScaleFactor: 2 },
+    },
   ],
   webServer: external
     ? undefined

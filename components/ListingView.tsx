@@ -4,6 +4,7 @@ import { summarize } from "@/lib/pricing";
 import type { ListingResult } from "@/lib/shopware/types";
 import { nameOf } from "@/lib/shopware/queries";
 import { ProductCard } from "./ProductCard";
+import type { FitStatus } from "@/lib/fitment";
 
 type Params = Record<string, string | undefined>;
 
@@ -15,7 +16,23 @@ const withParams = (base: string, current: Params, patch: Params) => {
 };
 
 /** PLP/search grid with sorting, manufacturer filter (Store API aggregations) and pagination. */
-export function ListingView({ listing, persona, basePath, params }: { listing: ListingResult; persona: ActivePersona; basePath: string; params: Params }) {
+export function ListingView({
+  listing,
+  persona,
+  basePath,
+  params,
+  fit,
+  banner,
+}: {
+  listing: ListingResult;
+  persona: ActivePersona;
+  basePath: string;
+  params: Params;
+  /** Phase 5: fit status per product id (when a vehicle is active). */
+  fit?: Record<string, FitStatus>;
+  /** Shown above the results (the fitment bar). */
+  banner?: React.ReactNode;
+}) {
   const selected = new Set((params.manufacturer ?? "").split("|").filter(Boolean));
   const manufacturers = listing.aggregations?.manufacturer?.entities ?? [];
   const pages = Math.max(1, Math.ceil(listing.total / listing.limit));
@@ -51,6 +68,7 @@ export function ListingView({ listing, persona, basePath, params }: { listing: L
       </aside>
 
       <div className="space-y-4">
+        {banner}
         <div className="flex flex-wrap items-center justify-between gap-3 text-sm">
           <p data-testid="listing-total">{listing.total} {listing.total === 1 ? "product" : "products"}</p>
           <nav aria-label="Sort" className="flex flex-wrap gap-1">
@@ -69,12 +87,12 @@ export function ListingView({ listing, persona, basePath, params }: { listing: L
 
         {listing.elements.length === 0 ? (
           <p className="rounded-[var(--brand-radius)] border border-dashed border-black/20 bg-white p-8 text-center text-black/60">
-            No products match these filters.
+            {banner ? "No parts match these filters for your vehicle." : "No products match these filters."}
           </p>
         ) : (
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-4" data-testid="product-grid">
             {listing.elements.map((p) => (
-              <ProductCard key={p.id} product={summarize(p, persona)} />
+              <ProductCard key={p.id} product={summarize(p, persona)} fit={fit?.[p.id]} />
             ))}
           </div>
         )}

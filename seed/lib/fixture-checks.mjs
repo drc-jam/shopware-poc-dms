@@ -122,7 +122,7 @@ export function checkFixture(doc, opts = {}) {
     const shared = [...(breaks[0] ?? [])].filter((q) => breaks.filter((b) => b.has(q)).length >= 2);
     if (shared.length === 0) err(where, "no two member SKUs share a tier break");
 
-    // Series discount must match 1 − tierPrice(qty)/tierPrice(5) on every member (§6.4).
+    // Series tiers: increasing qty and discount (§6.4).
     const tierQtys = s.tiers.map((t) => t.minQty);
     if (new Set(tierQtys).size !== tierQtys.length) err(where, "duplicate series tier minQty");
     for (let i = 1; i < s.tiers.length; i++) {
@@ -130,25 +130,16 @@ export function checkFixture(doc, opts = {}) {
         err(where, "series tiers must increase in both minQty and discountPct");
       }
     }
+    // Phase 0 decision D2: series SKUs carry dealer tiers below the first series break only (1 and 5).
+    // The series promotion (all units, D1) provides the 10/25 breaks as tier5 × (1 − discountPct), so a
+    // single SKU and a mixed cart get the same unit price and nothing is discounted twice.
+    const firstBreak = Math.min(...tierQtys);
     for (const m of members) {
-      const at = (q) => m.demo.dealerTiers.find((t) => t.minQty === q)?.gross;
-      const base = at(5);
-      if (base === undefined) {
-        err(`${where} / ${m.productNumber}`, "series member has no qty-5 dealer tier (needed for discount math)");
-        continue;
-      }
-      for (const t of s.tiers) {
-        const tierPrice = at(t.minQty);
-        if (tierPrice === undefined) {
-          err(`${where} / ${m.productNumber}`, `series tier ${t.minQty} has no matching dealer tier on this SKU`);
-          continue;
-        }
-        const implied = (1 - tierPrice / base) * 100;
-        if (Math.abs(implied - t.discountPct) > 1.5) {
-          err(`${where} / ${m.productNumber}`, `discountPct ${t.discountPct}% vs implied ${implied.toFixed(2)}% at qty ${t.minQty}`);
-        } else if (Math.abs(implied - t.discountPct) > 0.75) {
-          warn(`${where} / ${m.productNumber}`, `discountPct ${t.discountPct}% vs implied ${implied.toFixed(2)}% (rounding drift)`);
-        }
+      const qtys = m.demo.dealerTiers.map((t) => t.minQty);
+      if (!qtys.includes(5)) err(`${where} / ${m.productNumber}`, "series member has no qty-5 dealer tier (series discounts apply to the qty-5 price)");
+      const overlap = qtys.filter((q) => q >= firstBreak);
+      if (overlap.length) {
+        err(`${where} / ${m.productNumber}`, `dealer tier(s) at ${overlap.join(", ")} overlap the series break at ${firstBreak}+ (would discount twice)`);
       }
     }
   }

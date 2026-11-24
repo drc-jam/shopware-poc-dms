@@ -12,6 +12,8 @@ interface CartApi {
   error: string | null;
   setOpen: (v: boolean) => void;
   add: (productId: string, quantity: number) => Promise<boolean>;
+  /** Adds several products in one request and opens the mini-cart (quick order). */
+  addMany: (items: { productId: string; quantity: number }[]) => Promise<boolean>;
   update: (lineItemId: string, quantity: number) => Promise<boolean>;
   remove: (lineItemId: string) => Promise<boolean>;
 }
@@ -77,6 +79,14 @@ export function CartProvider({ children }: { children: ReactNode }) {
       setOpen,
       add: (productId, quantity) =>
         run("POST", "checkout/cart/line-item", { items: [{ id: productId, referencedId: productId, type: "product", quantity }] }, "Could not add to cart", true),
+      addMany: (items) =>
+        run(
+          "POST",
+          "checkout/cart/line-item",
+          { items: items.map((i) => ({ id: i.productId, referencedId: i.productId, type: "product", quantity: i.quantity })) },
+          "Could not add to cart",
+          true,
+        ),
       update: (id, quantity) => run("PATCH", "checkout/cart/line-item", { items: [{ id, quantity }] }, "Could not update quantity", false),
       remove: (id) => run("POST", "checkout/cart/line-item/delete", { ids: [id] }, "Could not remove item", false),
     }),
