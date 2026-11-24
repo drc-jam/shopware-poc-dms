@@ -6,10 +6,13 @@ import { getHeaderState, getMainNavigation } from "@/lib/shopware/queries";
 import { MainNav } from "./MainNav";
 import { PersonaSwitcher } from "./PersonaSwitcher";
 import { SearchBox } from "./SearchBox";
+import { GarageSelector } from "./GarageSelector";
+import { getGarage, vehicleTree } from "@/lib/fitment";
 
 export async function Header() {
   const persona = await getActivePersona();
-  const [nav, state] = await Promise.all([getMainNavigation(), getHeaderState(persona)]);
+  const [nav, state, garage] = await Promise.all([getMainNavigation(), getHeaderState(persona), getGarage()]);
+  const garageItems = garage.vehicles.map(({ id, label }) => ({ id, label }));
 
   return (
     <header className="border-b border-black/10 bg-white">
@@ -25,6 +28,7 @@ export async function Header() {
         </Link>
 
         <SearchBox />
+        <GarageSelector tree={vehicleTree()} garage={garageItems} active={garage.active?.id ?? null} />
 
         <div className="flex w-full min-w-0 flex-wrap items-center justify-between gap-3 sm:ml-auto sm:w-auto sm:justify-end">
           <PersonaSwitcher

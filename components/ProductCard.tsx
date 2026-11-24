@@ -4,8 +4,10 @@ import { seriesInfo } from "@/lib/series";
 import { AddToCart } from "./AddToCart";
 import { PriceBlock } from "./PriceBlock";
 import { QuickView } from "./QuickView";
+import { FitChip } from "./Fitment";
+import type { FitStatus } from "@/lib/fitment";
 
-export function ProductCard({ product }: { product: ProductSummary }) {
+export function ProductCard({ product, fit }: { product: ProductSummary; fit?: FitStatus }) {
   return (
     <article className="flex flex-col rounded-[var(--brand-radius)] border border-black/10 bg-white p-3" data-testid="product-card" data-sku={product.productNumber}>
       <Link href={`/p/${product.id}`} className="block">
@@ -18,6 +20,7 @@ export function ProductCard({ product }: { product: ProductSummary }) {
       </Link>
       <div className="mt-3 flex flex-1 flex-col gap-2">
         <div className="flex flex-wrap gap-1.5">
+          {fit && <FitChip status={fit} />}
           {product.series && (
             <span className="rounded bg-primary/10 px-1.5 py-0.5 text-xs font-medium text-primary" data-testid="series-badge">
               {seriesInfo(product.series)?.label ?? `Series ${product.series}`}

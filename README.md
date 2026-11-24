@@ -38,7 +38,8 @@ No repository secrets are needed. Checks against the real instance (`seed:verify
 | 2 · Seeder | **Done** | Standalone seeder against Evolve 6.7.16.1: clean apply (155 created, 0 failed), second apply a no-op (0 created), `seed:verify` 16/16 green |
 | 3 · App shell | **Done (against mock)** | Gate, BFF + allowlist, persona switcher, brand tokens, header/nav |
 | 4 · Catalog and pricing | **Done (against mock)** | S1–S5 e2e green; PLP/PDP/search, PriceBlock, TierTable, MAP, mini-cart, Quick View, cart with series savings |
-| 5–8 | Not started | |
+| 5 · Fitment | **Done (against mock)** | S6 e2e green: YMM selector (header + home hero), My Garage (3 vehicles, cookies validated against the index), PLP/search filtered to fitting + universal parts, PDP badge + fitment table. The real Store API honors the `id` filter (probe: Shocks 40 → 10 for a 1980 Malibu, matching the index) |
+| 6–8 | Not started | |
 
 ### Open items and deviations from the guide
 
