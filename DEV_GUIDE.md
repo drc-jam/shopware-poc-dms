@@ -4,7 +4,8 @@
 **Deliverable:** a reusable, neutral-branded powersports/auto-parts B2B demo. It is a lightweight Next.js app on Vercel connected to a Shopware 6.7 instance with Commercial B2B Components.
 **Base reference:** `partner-technical-summary.md` (Shopware Demo Factory, repo `vryan-shopware/shopware-demo-creator` @ `c809638`).
 **Prepared:** 2026-11-23 · Jamersan
-**Revised:** 2026-11-23. Decisions since first draft: instance = Shopware cloud **v6.7 Commercial (Evolve)**; seeder is **standalone** (the factory repo is not available, so its patterns in §11 are re-implemented, not ported; `stableId` is defined in §8); demo brand = **Full Throttle Supply Co.** The catalog vertical changed from ATV/UTV powersports to **performance racing shocks** (circle track, street/strip), mirroring the shape of the prospect's racing-shocks department. This affects §6.7 and §7.1. The §0 decisions are unchanged.
+**Revised:** 2026-11-23. Decisions since first draft: instance = Shopware cloud **v6.7 Commercial (Evolve)**; seeder is **standalone** (the factory repo is not available, so its patterns in §11 are re-implemented, not ported; `stableId` is defined in §8); demo brand = **Full Throttle Supply Co.** The catalog vertical changed from ATV/UTV powersports to **performance racing shocks** (circle track, street/strip), mirroring the shape of the prospect's racing-shocks department. This affects §6.7 and §7.1.
+**Revised:** 2026-11-24, after the Phase 0 spikes (`artifacts/spikes.md`), approved by Jamersan: **D1** series promotions use a cart rule on total series quantity and discount **every** series unit, instead of set groups (changes the §0 "Cross-SKU series tiers" row and §6.4); **D2** series SKUs carry dealer tiers at 1 and 5 only, and the series promotion provides the 10/25 breaks (§6.3, §6.4, §7.1, §7.3); **D3** the Store API cannot list pending orders, so the app tracks request IDs in an httpOnly cookie (§9.4).
 
 ---
 
@@ -16,7 +17,7 @@
 | Frontend | **Next.js App Router (TypeScript)** on Vercel. Route handlers act as the server-side Store API proxy (BFF). |
 | Scenario pillars | **Dealer pricing**, **Vehicle fitment**, and **B2B buying**. Account/ERP features (invoices, quotes, terms) are out of scope. |
 | Fitment | **App-side fitment index.** The seeder emits `fitment-index.json` (SKU → vehicles). The app resolves Year/Make/Model to product IDs and filters Store API calls. No Shopware plugin is needed. |
-| Cross-SKU series tiers | **Native Shopware promotions with set groups.** No custom code. See §6.4 for how this differs from DMS's unit-price behavior. |
+| Cross-SKU series tiers | **Native Shopware promotions + Rule Builder** (cart rule: total series quantity ≥ N; discount on every series unit). No custom code. Changed from set groups on 2026-11-24 (Phase 0 decision D1). See §6.4. |
 | Branding | A **neutral demo brand** with swappable theme tokens (`theme/brand.ts` + CSS variables). |
 | Checkout | **Cart only.** The one exception: the **Dealer Junior Buyer may submit a cart for approval**, which creates a pending order. No persona can place a real order. |
 | Catalog | A **curated synthetic fixture** of about 80 fictional SKUs with fitment, series, tiers, and MAP flags. It is stored as a reviewed site-project JSON. |
@@ -61,7 +62,7 @@ Each scenario becomes one `/tour` step with a deep link, a persona, talking poin
 | S1 | **Retail vs "Your price"**: the same PDP shows only the retail price to Retail; Dealer sees Retail (struck through) plus *Your price*. | Retail ↔ Dealer Admin | Advanced prices tied to a `customer group = Dealer` rule; `listPrice` for retail reference | [Retail + 'Yours' price display](https://app.clickup.com/t/868k5m8mz) |
 | S2 | **PLP shows the persona's price**, not the default price. | Dealer Admin | `calculatedCheapestPrice` / `calculatedPrice` in context | [11/18 Meeting Feedback](https://app.clickup.com/t/1gage70c48a) (PLP showed default price for price-list customers) |
 | S3 | **Quantity tier table on PDP** (min qty → unit price), with the cart re-pricing at breaks. | Dealer Admin | Advanced prices with `quantityStart` | [Quantity tier pricing on PDP](https://app.clickup.com/t/868k5m8n2) |
-| S4 | **Cross-SKU series tiers**: 5 × SKU A + 5 × SKU B from the same series triggers qty-10 savings. | Dealer Admin | Promotion with set groups scoped to a series rule (§6.4) | [Product Group Quantity Tier Pricing](https://app.clickup.com/t/868k5m8mv) (needed a custom bridge app on BC) |
+| S4 | **Cross-SKU series tiers**: 5 × SKU A + 5 × SKU B from the same series triggers qty-10 savings. | Dealer Admin | Promotion with a series-quantity cart rule (§6.4) | [Product Group Quantity Tier Pricing](https://app.clickup.com/t/868k5m8mv) (needed a custom bridge app on BC) |
 | S5 | **MAP handling**: MAP-flagged items show "See price in cart" on PLP/PDP, with the real price in the cart. | Retail | Product custom field `demo_map_policy`, rendered by the app | [MAP compliance flags](https://app.clickup.com/t/868k5m8n3) |
 | S6 | **Shop by vehicle**: pick Year/Make/Model, save it to "My Garage", and get filtered PLP/search, a PDP "Fits your …" badge, and a fitment table. | Retail or Dealer | App-side fitment index (§8) | [Convermax Search & Vehicle Fitment](https://app.clickup.com/t/868k5m8p7) (third-party app on BC) |
 | S7 | **Quick order pad**: enter SKU + qty rows or paste CSV, then add to cart or a list. | Junior Buyer | B2B Quick Order | [Quick Order Pad](https://app.clickup.com/t/868k5m8mp) |
@@ -163,7 +164,7 @@ Sales channel (explicit ID), USD currency, a 0% demo tax rule (or the US standar
 ### 6.3 Prices
 For each product:
 - `price` = **retail gross** (what Retail sees).
-- `prices[]` (advanced prices) under rule `Customer group = Dealer`: tier rows with `quantityStart` (1, 5, 10, 25 for tiered SKUs) and dealer unit prices. Each tier price also carries `listPrice` = retail, so the Store API returns a reference price for the strike-through display.
+- `prices[]` (advanced prices) under rule `Customer group = Dealer`: tier rows with `quantityStart` (1, 5, 10, 25 for tiered non-series SKUs; **1 and 5 only for series SKUs**, see §6.4) and dealer unit prices. Each tier price also carries `listPrice` = retail, so the Store API returns a reference price for the strike-through display.
 - Net is computed from gross using the resolved tax rate, as the factory seeder already does.
 
 **Acceptance (S1–S3):** for the Dealer context, the PLP card shows the dealer qty-1 price. The PDP shows the retail strike-through, Your price, and a tier table built from `calculatedPrices`. The cart unit price changes when quantity crosses a break.
@@ -171,16 +172,18 @@ For each product:
 ### 6.4 Cross-SKU series pricing via promotions (S4)
 DMS behavior: quantities of SKUs in the same series are summed to pick the tier, so 5 of A + 5 of B gets the qty-10 **unit price**.
 
-Shopware-native approach for the POC:
-- Mark series membership with the product custom field `demo_series` (for example `C`). Create one **dynamic product group (product stream)** per series.
-- For each series × tier (10, 25), create an **automatic promotion** (no code), restricted to the `Dealer` customer group rule. Use **set groups** with mode *Number* and a value equal to the tier quantity, assigning items from that series via a rule (line item in product stream, or line item custom field `demo_series = C`).
-- The discount is a percentage computed in the fixture as `1 − tierPrice(qty)/tierPrice(5)`. It applies to the set-group items.
-- Use promotion **priority** and **exclusions** so the higher tier wins over the lower one.
+Shopware-native approach for the POC (decided 2026-11-24 from the Phase 0 spike, decisions D1 + D2):
+- Mark series membership with the product custom field `demo_series` (for example `C`). Create one **dynamic product group (product stream)** per series, and a rule `DEMO · Series <code> line item` (`cartLineItemInProductStream`).
+- For each series × tier (10, 25), create an **automatic promotion** (no code) with:
+  - persona rule `DEMO · Customer group = Dealer`;
+  - cart rule `DEMO · Series <code> qty ≥ N`: condition `cartLineItemGoodsTotal ≥ N` with the series line-item rule as its filter;
+  - one **percentage** discount, scope `cart`, `considerAdvancedRules: true`, discount rule = the series line-item rule (only series items are discounted; every series unit, no packages).
+- **Series SKUs carry dealer tiers at 1 and 5 only.** The series discount (`discountPct` on the series in the fixture) applies to the qty-5 price, so 10+ costs `tier5 × (1 − discountPct)` whether the cart holds 10 of one SKU or a mix. Nothing is discounted twice.
+- Use promotion **priority** and mutual **exclusions** so the 25+ tier replaces the 10+ tier.
 
 **What the prospect sees:** a cart discount line labeled, for example, "Series C mix-and-match — 10+ tier", not a changed unit price. Talking point: *"BigCommerce needed a custom bridge app; Shopware does this natively with Promotions + Rule Builder."*
 
-**Phase 0 spike (required):** confirm in 6.7 that (a) the set-group rule can target a series by stream or custom field, (b) the set-group package math gives the expected discount at 10 and at 13 items (packages vs. remainder), and (c) the tiers do not stack. If the spike fails, fall back to one promotion per series with a *cart line-item quantity in stream ≥ N* condition and a percentage discount scoped to that series' items. Record the result in `artifacts/spikes.md`.
-Exact per-unit parity with DMS would require a cart processor plugin. That is out of scope; note it as a production option.
+**Phase 0 spike result (6.7.16, `artifacts/spikes.md`):** both set groups and the cart-rule approach target a series and do not stack. Set groups discount only whole packages (13 items → the cheapest 10), so the cart-rule approach was chosen; it discounts all 13. With tiers 1/5 on series SKUs, the unit economics match DMS's summed-quantity tiers (rounding aside). The visible difference that remains is presentation: a discount line instead of a lower unit price. A cart processor plugin would show it as a unit price; that is a production option, out of scope.
 
 ### 6.5 MAP (S5)
 Product custom field `demo_map_policy`: `none` | `hide_until_cart`. The app's `lib/pricing.ts` renders "See price in cart" on PLP and PDP for `hide_until_cart`. The cart always shows the real price. Retail personas only; dealers always see their price. This is an app rule, and the talking point should say so.
@@ -214,7 +217,7 @@ Shocks are sold as separate front and rear SKUs per chassis. A shock "series" (e
 ### 7.1 Fixture targets
 - About **80 SKUs**: about 60 fitment-specific and about 20 universal (shop supplies, oils, tie-downs).
 - **4 series** (A–D), each with 3–6 SKUs. Example: Series A = one shock series across front/rear and several chassis.
-- Tiers on about 40 SKUs (1/5/10/25). Dealer qty-1 price ≈ retail × 0.70, and each break lowers it by about 4–6%.
+- Tiers on about 40 SKUs: non-series SKUs 1/5/10/25; series SKUs 1/5 only, with the 10/25 breaks coming from the series discount (§6.4). Dealer qty-1 price ≈ retail × 0.70, and each break lowers it by about 4–6%.
 - **6 MAP SKUs** (`hide_until_cart`).
 - **Vehicles:** about 15 race-car chassis applications across real OEM makes (Chevrolet, Oldsmobile, Pontiac, Buick, Ford, Mercury) with year ranges, grouped the way racers shop (GM Metric, GM A-body, F/X-body, Fox-body, Ford/Mercury mid-size). Product brands are **fictional**. All customers, companies, and addresses are fictional. Nothing is copied from the prospect site.
 - Images: generated or licensed placeholder product shots stored in `data/fixture/media/`. No scraped prospect assets.
@@ -252,7 +255,7 @@ Extend the factory `site-project.schema.json`. Required roots are unchanged: `so
 
 ### 7.3 Validation (`seed/validate-fixture.mjs`)
 - Strict ajv validation against the extended schema. This must fail CI on any error, unlike the factory's `validate-project.mjs`.
-- Business checks: unique `productNumber`s; each `fitment` key exists in `vehicles`; tiers are strictly decreasing and every tier is below retail; each series has ≥ 2 SKUs that share at least one tier; MAP SKUs number ≥ 1; every category path resolves; no real-looking emails (use `@example.com`).
+- Business checks: unique `productNumber`s; each `fitment` key exists in `vehicles`; tiers are strictly decreasing and every tier is below retail; each series has ≥ 2 SKUs that share at least one tier; series tiers increase in quantity and discount; series SKUs have a qty-5 tier and no tier at or above the first series break; MAP SKUs number ≥ 1; every category path resolves; no real-looking emails (use `@example.com`).
 
 ### 7.4 Re-skinning for the next prospect
 To reuse the template: swap `theme/brand.ts` and logo, then edit `site-project.json` (categories, products, series, vehicles) and `tour.json` talking points. Re-run `validate → plan → apply → verify`. No app code changes should be needed.
@@ -315,7 +318,7 @@ Product IDs come from `stableId('product', productNumber)` = lowercase hex MD5 o
 - **Quick order:** a row grid (SKU, qty) with SKU lookup/validation as you type, plus a CSV paste area. Add all to cart or to a list. Show per-row errors for unknown SKUs.
 - **Shopping lists:** list index, detail, add all to cart, remove item.
 - **Company (admin):** employees table (name, email, role, status) and roles with permission summaries. Read-only in the POC.
-- **Approvals:** the Admin sees a pending table with details and Approve/Decline + comment. The Junior Buyer sees "My requests" with status.
+- **Approvals:** the Admin sees a pending table with details and Approve/Decline + comment. The Junior Buyer sees "My requests" with status. The Store API has no route that lists pending orders (Phase 0, decision D3): the BFF records each ID returned by the approval request in an httpOnly cookie (`pending_orders`, IDs only, capped at about 20) and the page fetches each one with the per-ID route. Both personas share the presenter's browser, so the Admin sees the Junior's requests. **Reset demo** clears the cookie.
 - **Tour (`/tour`):** steps S1–S10 from `data/tour.json`. Each step has a title, the persona to switch to (one click), a deep link, 3 talking points (DMS pain → Shopware native), and an "expected result" line. Edited tour text must survive regeneration.
 
 ### 9.5 Brand tokens (`theme/brand.ts`)
@@ -422,5 +425,5 @@ npm scripts: `fixture:validate`, `seed:discover`, `seed:plan`, `seed:apply`, `se
 | Vercel team and plan | Jamersan team account; shared-password gate in middleware (works on any plan) |
 | Target demo date | Not set; the phases above are sized for about 2–3 focused weeks of Claude Code work plus review |
 | Company/roles editing in app | Read-only in the POC; editing is a stretch goal |
-| Exact DMS unit-price parity for series tiers | Not in the POC (promotion-line approach); cart processor plugin noted as a production option |
+| Exact DMS unit-price parity for series tiers | **Decided 2026-11-24 (D1 + D2):** price parity via tiers 1/5 + all-units series promotions; shown as a discount line, not a unit price. A cart processor plugin is the production option for unit-price display |
 | Account/ERP pillar (invoices, quotes, terms) | Out of scope; can be added later as S11+ |

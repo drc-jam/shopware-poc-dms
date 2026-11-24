@@ -6,9 +6,9 @@
 
 | # | Spike | Result | Decision |
 | --- | --- | --- | --- |
-| A | Cross-SKU series promotion (§6.4) | **PASS**, with 2 behavioral differences from DMS | Set groups work as written. Two decisions are needed (D1, D2) |
+| A | Cross-SKU series promotion (§6.4) | **PASS**, with 2 behavioral differences from DMS | **Decided:** all-units cart-rule promotions (D1); series SKUs keep tiers 1/5 only (D2) |
 | B | Employee login (§9.3) | **PASS** | Employees use `POST account/login`. `employeeLogin` stays `null` in `data/b2b-routes.json` |
-| C | Approval routes (S10) | **PASS**, with a fallback for listing | Request / approve / decline work. No list route exists, so the app tracks IDs (D3) |
+| C | Approval routes (S10) | **PASS**, with a fallback for listing | Request / approve / decline work. **Decided:** pending-order IDs tracked in an httpOnly cookie (D3) |
 | — | Shopping lists (S8) | **PASS** | The seeder can create lists and items through the Admin API |
 | — | Quick order (S7) | **No Store API route**. App-side composition **PASS** | Quick order = product lookup by `productNumber` + cart add |
 
@@ -33,11 +33,11 @@
 
 **A2, an alternative (still native: Promotions + Rule Builder, no code):** the cart rule is `cartLineItemGoodsTotal ≥ N`, with a child filter `cartLineItemInProductStream`. The discount scope is `cart` (percentage) and `discountRules` = the series rule, so only series items are discounted. There are no set groups. Results are identical to A1 except for **8A + 5B, where all 13 units are discounted** (−39.65 = 5% × 793). This matches DMS "all units get the tier" behavior. It does not stack and it excludes non-series items. The double discount (D2) remains.
 
-The spike leaves A1 active and A2 inactive.
+The spike leaves its own A1 promotions active and A2 inactive. That is spike data only; the Phase 2 seeder creates the real `DEMO ·` promotions using A2.
 
-### Decisions needed
-- **D1. Remainder units.** A1 (set groups, as locked in §0) discounts only whole packages of N. A2 discounts every series unit once the total reaches N, which is closer to DMS. *Recommendation: A2.* Switching changes the §0 wording ("promotions with set groups"), so **it needs your approval** (CLAUDE.md).
-- **D2. Double discount on a single SKU at a tier break.** A line that reaches qty 10 on its own already gets its tier-10 unit price, and the series promotion then takes another 5%. That makes 10 × A cost 59.85/unit, which is below the 25+ tier price. *Recommendation:* series SKUs carry dealer tiers at **1 and 5 only**, and the promotion provides the 10/25 breaks. Because the fixture computes `discountPct = 1 − tier(qty)/tier(5)`, A2 then gives **exact DMS unit parity** for both single-SKU and mixed carts, apart from rounding. Non-series SKUs keep tiers 1/5/10/25. This edits the approved fixture (re-approval needed) and changes what the TierTable shows for series SKUs. Alternatives: accept the overlap and disclose it, or point to a cart processor for production.
+### Decisions (approved by Jamersan on 2026-11-24, recorded in DEV_GUIDE §0, §6.3, §6.4, §7.1, §7.3, §9.4)
+- **D1. Remainder units → A2 approved.** A1 (set groups, as locked in §0) discounts only whole packages of N. A2 discounts every series unit once the total reaches N, which is closer to DMS. *Recommendation: A2.* Switching changes the §0 wording ("promotions with set groups"), so **it needs your approval** (CLAUDE.md).
+- **D2. Double discount on a single SKU at a tier break → tiers 1/5 on series SKUs approved.** Applied to `data/fixture/site-project.json` (20 series SKUs) and enforced by `fixture:validate`. A line that reaches qty 10 on its own already gets its tier-10 unit price, and the series promotion then takes another 5%. That makes 10 × A cost 59.85/unit, which is below the 25+ tier price. *Recommendation:* series SKUs carry dealer tiers at **1 and 5 only**, and the promotion provides the 10/25 breaks. Because the fixture computes `discountPct = 1 − tier(qty)/tier(5)`, A2 then gives **exact DMS unit parity** for both single-SKU and mixed carts, apart from rounding. Non-series SKUs keep tiers 1/5/10/25. This edits the approved fixture (re-approval needed) and changes what the TierTable shows for series SKUs. Alternatives: accept the overlap and disclose it, or point to a cart processor for production.
 
 ---
 
@@ -64,7 +64,7 @@ Routes come from the instance's OpenAPI document and are recorded in `data/b2b-r
 | Junior decides | same | — | 403 `B2B__EMPLOYEE_MISSING_PERMISSIONS`. Shopware enforces this too, in addition to the BFF |
 | Place order | `pending-order/{id}/checkout/order` | **nobody** | Not called. It is denied by the BFF hard-deny list (unit + e2e tests) |
 
-- **D3. Listing pending orders.** The Store API has no list route (`POST/GET pending-orders` return 404, and `POST order` does not include pending orders). *Fallback:* the app keeps the IDs returned by `pending-orders/request` in an httpOnly cookie and fetches each with `pending-order/{id}`. This works because one presenter's browser holds both personas. A Store API app-script endpoint would be the production answer.
+- **D3. Listing pending orders → cookie fallback approved.** The Store API has no list route (`POST/GET pending-orders` return 404, and `POST order` does not include pending orders). *Fallback:* the app keeps the IDs returned by `pending-orders/request` in an httpOnly cookie and fetches each with `pending-order/{id}`. This works because one presenter's browser holds both personas. A Store API app-script endpoint would be the production answer.
 - The condition types this instance offers come from its own Storefront approval-rule form: `orderApprovalAllOrders` ("All orders"), `cartCartAmount`, `cartPositionPrice`, `cartGoodsPrice`, `cartShippingCost`, `cartGoodsCount`, `cartLineItemGoodsTotal`, `cartLineItemsInCartCount`, `cartVolume`, `cartWeight`, `cartTotalPurchasePrice`, `paymentMethod`, and `shippingMethod`.
 - The Store API `approval-rule/create` route does **not** match its OpenAPI document. It reads `name` / `reviewerRoleId` / `affectedRoleId` and a JSON-**string** `approvalRuleCondition`, and it accepts unknown condition types without validation. The BFF does not allow this route; the seeder uses the Admin API.
 
