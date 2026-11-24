@@ -80,12 +80,34 @@ describe("seed model", () => {
     expect(JSON.stringify(model)).not.toMatch(/"password"/);
   });
 
-  it("lists owned IDs per entity once, in reverse dependency order, excluding the sales channel", () => {
+  it("lists owned IDs once, in reverse dependency order, excluding the sales channel", () => {
     const owned = ownedIds(model);
+    const all = owned.flatMap((o) => o.ids.map((id) => `${o.entity}:${id}`));
+    expect(new Set(all).size).toBe(all.length);
     const entities = owned.map((o) => o.entity);
-    expect(new Set(entities).size).toBe(entities.length);
     expect(entities).not.toContain("sales_channel");
     expect(entities.indexOf("b2b_components_shopping_list")).toBeLessThan(entities.indexOf("product"));
     expect(entities.indexOf("product")).toBeLessThan(entities.indexOf("tax"));
+    // employee account before employee (deleting the primary membership directly is refused)
+    expect(entities.indexOf("b2b_employee_account")).toBeLessThan(entities.indexOf("b2b_employee"));
+  });
+
+  it("deletes the dealer rule only after the products whose prices reference it (--replace-demo)", () => {
+    const owned = ownedIds(model, { forDelete: true });
+    const dealerAt = owned.findIndex((o) => o.entity === "rule" && o.ids.includes(model.ids.ruleDealer));
+    expect(dealerAt).toBeGreaterThan(owned.findIndex((o) => o.entity === "product"));
+    expect(dealerAt).toBeGreaterThan(owned.findIndex((o) => o.entity === "promotion"));
+  });
+
+  it("creates product streams before products (product.streamIds is computed on product write)", () => {
+    const at = (entity) => model.stages.findIndex((st) => st.entity === entity);
+    expect(at("product_stream")).toBeLessThan(at("product"));
+    expect(at("product")).toBeLessThan(at("promotion"));
+  });
+
+  it("keeps the navigation root category on --replace-demo but deletes its children", () => {
+    const cats = ownedIds(model, { forDelete: true }).filter((o) => o.entity === "category").flatMap((o) => o.ids);
+    expect(cats).not.toContain(model.ids.rootCategory);
+    expect(cats).toHaveLength(fx.categories.length);
   });
 });

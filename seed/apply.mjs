@@ -64,17 +64,29 @@ if (REPLACE) {
       }
     }
   }
-  for (const o of ownedIds(model)) {
+  for (const o of ownedIds(model, { forDelete: true })) {
+    // Re-check existence right before deleting: earlier deletes may have cascaded (e.g. account → employee).
     const ex = [...(await existingIds(admin, o.entity, o.ids, ref.pageSize))];
     for (const part of chunks(ex, ref.pageSize)) {
       try {
         await sync(o.entity, "delete", part.map((id) => ({ id })));
         for (const id of part) L.add(o.entity, null, id, "deleted");
-      } catch (e) {
-        for (const id of part) L.add(o.entity, null, id, "failed", { error: errText(e) });
+      } catch {
+        // One by one, so a blocked record does not fail the whole batch and the ledger names it.
+        for (const id of part) {
+          try {
+            await sync(o.entity, "delete", [{ id }]);
+            L.add(o.entity, null, id, "deleted");
+          } catch (e) {
+            const gone = !(await existingIds(admin, o.entity, [id], ref.pageSize)).size;
+            L.add(o.entity, null, id, gone ? "deleted" : "failed", gone ? { note: "removed by cascade" } : { error: errText(e) });
+          }
+        }
       }
     }
   }
+  const kept = model.stages.flatMap((s) => s.records.filter((r) => r.keepOnReplace).map((r) => [s.entity, r]));
+  for (const [entity, r] of kept) L.add(entity, r.key, r.id, "skipped", { note: "kept on --replace-demo: the sales channel navigation root points here; its children are replaced" });
   L.save();
 }
 

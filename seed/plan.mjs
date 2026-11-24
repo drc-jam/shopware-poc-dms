@@ -41,7 +41,7 @@ const missingSecrets = secretEnvs.filter((k) => !process.env[k]);
 let replaceDemo = null;
 if (process.argv.includes("--replace-demo")) {
   replaceDemo = [];
-  for (const o of ownedIds(model)) {
+  for (const o of ownedIds(model, { forDelete: true })) {
     const ex = await existingIds(admin, o.entity, o.ids, ref.pageSize);
     replaceDemo.push({ entity: o.entity, wouldDelete: ex.size });
   }

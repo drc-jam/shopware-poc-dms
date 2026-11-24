@@ -96,7 +96,8 @@ export function buildModel(fx, ref) {
 
   // ---- categories: own root + fixture tree, ordered as in the fixture
   const catRecords = [[{
-    key: "__root__", id: ids.rootCategory,
+    // The demo sales channel's navigation root points here, so --replace-demo keeps it (children are replaced).
+    key: "__root__", id: ids.rootCategory, keepOnReplace: true,
     payload: { id: ids.rootCategory, name: "Demo catalog (fixture)", type: "page", productAssignmentType: "product", displayNestedProducts: true, active: true, visible: true, customFields: marker },
   }]];
   const maxDepth = Math.max(...fx.categories.map((c) => c.path.length));
@@ -160,36 +161,6 @@ export function buildModel(fx, ref) {
     payload: { id: mediaId(rel), mediaFolderId: ref.productMediaFolderId, private: false, alt: null, customFields: marker },
   })));
 
-  // ---- products + media + advanced prices (dealer tiers with retail listPrice)
-  const productRecords = fx.products.map((p) => {
-    const pid = productId(p.productNumber);
-    const tiers = p.demo.dealerTiers ?? [];
-    const prices = tiers.map((t, i) => ({
-      id: id("product_price", `${p.productNumber}:${t.minQty}`),
-      ruleId: ids.ruleDealer,
-      quantityStart: t.minQty,
-      quantityEnd: tiers[i + 1] ? tiers[i + 1].minQty - 1 : null,
-      price: money(t.gross, p.price.gross),
-    }));
-    const pm = (p.media ?? []).map((rel, i) => ({ id: id("product_media", `${p.productNumber}:${i}`), mediaId: mediaId(rel), position: i }));
-    return {
-      key: p.productNumber, id: pid,
-      keepChildren: { product_price: prices.map((x) => x.id), product_media: pm.map((x) => x.id) },
-      payload: {
-        id: pid, productNumber: p.productNumber, name: p.name, description: p.description ?? null,
-        active: true, stock: p.stock, taxId: ids.tax, manufacturerId: manufacturerId(p.brand),
-        price: money(p.price.gross),
-        categories: [{ id: catId(p.categoryPath) }],
-        visibilities: [{ id: id("product_visibility", `${p.productNumber}:${sc}`), salesChannelId: sc, visibility: 30 }],
-        media: pm,
-        coverId: pm[0]?.id ?? null,
-        prices,
-        customFields: { ...marker, demo_series: p.demo.series ?? null, demo_map_policy: p.demo.mapPolicy ?? "none" },
-      },
-    };
-  });
-  stage("products", "product", productRecords, { chunk: 20 });
-
   // ---- series: product stream → line-item rule → qty rules → promotions (D1: all units, no set groups)
   const streams = [], seriesRules = [], promotions = [];
   for (const s of fx.series) {
@@ -240,7 +211,41 @@ export function buildModel(fx, ref) {
       });
     });
   }
+  // Streams BEFORE products: Shopware computes product.streamIds when a product is written, so a stream created
+  // after the products stays empty on a fresh build (found by the first --replace-demo run). The series rules
+  // match line items through these streams.
   stage("product streams", "product_stream", streams);
+
+  // ---- products + media + advanced prices (dealer tiers with retail listPrice)
+  const productRecords = fx.products.map((p) => {
+    const pid = productId(p.productNumber);
+    const tiers = p.demo.dealerTiers ?? [];
+    const prices = tiers.map((t, i) => ({
+      id: id("product_price", `${p.productNumber}:${t.minQty}`),
+      ruleId: ids.ruleDealer,
+      quantityStart: t.minQty,
+      quantityEnd: tiers[i + 1] ? tiers[i + 1].minQty - 1 : null,
+      price: money(t.gross, p.price.gross),
+    }));
+    const pm = (p.media ?? []).map((rel, i) => ({ id: id("product_media", `${p.productNumber}:${i}`), mediaId: mediaId(rel), position: i }));
+    return {
+      key: p.productNumber, id: pid,
+      keepChildren: { product_price: prices.map((x) => x.id), product_media: pm.map((x) => x.id) },
+      payload: {
+        id: pid, productNumber: p.productNumber, name: p.name, description: p.description ?? null,
+        active: true, stock: p.stock, taxId: ids.tax, manufacturerId: manufacturerId(p.brand),
+        price: money(p.price.gross),
+        categories: [{ id: catId(p.categoryPath) }],
+        visibilities: [{ id: id("product_visibility", `${p.productNumber}:${sc}`), salesChannelId: sc, visibility: 30 }],
+        media: pm,
+        coverId: pm[0]?.id ?? null,
+        prices,
+        customFields: { ...marker, demo_series: p.demo.series ?? null, demo_map_policy: p.demo.mapPolicy ?? "none" },
+      },
+    };
+  });
+  stage("products", "product", productRecords, { chunk: 20 });
+
   stage("rules: series", "rule", seriesRules);
   stage("promotions", "promotion", promotions);
 
@@ -342,14 +347,22 @@ export function approvalConditions(cond) {
   throw new Error(`unsupported approval condition ${cond.type}`);
 }
 
-/** Every record ID the model owns, per entity, in reverse dependency order (for --replace-demo). */
-export function ownedIds(model) {
-  const out = new Map();
+/**
+ * Record IDs the model owns, in reverse stage (dependency) order, for readback and --replace-demo.
+ * Stages are kept separate (the dealer rule must go after the products whose prices use it); each ID is listed once.
+ * With { forDelete: true }, records marked keepOnReplace (the navigation root anchor) are left out.
+ */
+export function ownedIds(model, { forDelete = false } = {}) {
+  const seen = new Set();
+  const out = [];
   for (const st of [...model.stages].reverse()) {
     if (st.entity === "sales_channel") continue; // alignment, never deleted
-    const set = out.get(st.entity) ?? new Set();
-    for (const r of st.records) set.add(r.id);
-    out.set(st.entity, set);
+    const ids = st.records.filter((r) => !(forDelete && r.keepOnReplace)).map((r) => r.id).filter((id) => !seen.has(`${st.entity}:${id}`));
+    ids.forEach((id) => seen.add(`${st.entity}:${id}`));
+    if (!ids.length) continue;
+    const last = out.at(-1);
+    if (last?.entity === st.entity) last.ids.push(...ids);
+    else out.push({ entity: st.entity, ids });
   }
-  return [...out].map(([entity, ids]) => ({ entity, ids: [...ids] })).filter((x) => x.ids.length);
+  return out;
 }
